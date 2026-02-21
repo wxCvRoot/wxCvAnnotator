@@ -190,8 +190,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         # 設置圖標（如果存在）
         try:
             # Try loading .ico first, then .png
-            icon_path_ico = PROJECT_ROOT / "resources" / "icon.ico"
-            icon_path_png = PROJECT_ROOT / "resources" / "logo.png"
+            icon_path_ico = PACKAGE_ROOT / "assets" / "icon.ico"
+            icon_path_png = PACKAGE_ROOT / "assets" / "logo.png"
             
             if icon_path_ico.exists():
                 icon = wx.Icon(str(icon_path_ico))
@@ -2332,8 +2332,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         info.AddDeveloper("wxCvRoot")
         
         # Add Icon to About box
-        icon_path_ico = PROJECT_ROOT / "resources" / "icon.ico"
-        icon_path_png = PROJECT_ROOT / "resources" / "logo.png"
+        icon_path_ico = PACKAGE_ROOT / "assets" / "icon.ico"
+        icon_path_png = PACKAGE_ROOT / "assets" / "logo.png"
         
         if icon_path_ico.exists():
             info.SetIcon(wx.Icon(str(icon_path_ico)))
