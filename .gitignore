@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+.venv/
+venv/
+.env/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.python-version
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Project specific
+image_cache/
+*.log
+.vscode/
+.idea/
+.claude/
+.antigravity/
+test_models/
+labelme/
+
+# AI context files (local use only, not for end users)
+CLAUDE.md
+
+# Downloaded AI models
+models/
+wxcvannotator/models/
+
+# User-specific runtime settings (contains local paths, do not commit)
+config/settings.json
+config/theme_settings.json
+wxcvannotator/config/settings.json
+wxcvannotator/config/theme_settings.json
+
+# Dev lib override (local C++ binaries, not committed)
+wxcvannotator/lib/
+
+# Data and backups
+*.bak
+config/theme_settings.json.bak
+docs/history/*.log
+phase3_results.txt
+phase4_results.txt
+
+# IDE/Editor specific
+.history/
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,1386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 23:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "🎯 Select"
+msgstr "🎯 選択"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "Select or edit annotations (S)"
+msgstr "アノテーションを選択または編集 (S)"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "🔷 Polygon"
+msgstr "🔷 ポリゴン"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "Create polygon annotation (P)"
+msgstr "ポリゴンアノテーションを作成 (P)"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "📐 Rotated Rect"
+msgstr "📐 回転矩形"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "Create rotated rectangle (R)"
+msgstr "回転矩形を作成 (R)"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "⬛ Rectangle"
+msgstr "⬛ 矩形"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "Create rectangle annotation"
+msgstr "矩形アノテーションを作成"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "⭕ Circle"
+msgstr "⭕ 円"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "Create circle annotation"
+msgstr "円アノテーションを作成"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "🍩 Annulus"
+msgstr "🍩 アニュラス"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "Create annulus annotation"
+msgstr "アニュラスアノテーションを作成"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:574
+#: ..\ui\annotation_toolbar.py:595
+msgid "➕ Add"
+msgstr "➕ 追加"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:575
+#: ..\ui\annotation_toolbar.py:595
+msgid "Add object to list (Enter)"
+msgstr "オブジェクトをリストに追加 (Enter)"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "🚫 Cancel"
+msgstr "🚫 キャンセル"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "Cancel current drawing (Esc)"
+msgstr "現在の描画をキャンセル (Esc)"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "↩️ Undo"
+msgstr "↩️ 元に戻す"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "Undo operation (Ctrl+Z)"
+msgstr "操作を元に戻す (Ctrl+Z)"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "↪️ Redo"
+msgstr "↪️ やり直す"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "Redo operation (Ctrl+Y)"
+msgstr "操作をやり直す (Ctrl+Y)"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "🔍 Zoom In"
+msgstr "🔍 ズームイン"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "Zoom in view"
+msgstr "表示を拡大"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "🔎 Zoom Out"
+msgstr "🔎 ズームアウト"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "Zoom out view"
+msgstr "表示を縮小"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "🖼️ Fit View"
+msgstr "🖼️ 全体表示"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "Fit image to window"
+msgstr "画像をウィンドウに合わせる"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+#: ..\ui\main_window.py:1079
+msgid "🤖 AI Polygon"
+msgstr "🤖 AIポリゴン"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+msgid "AI-Assisted Polygon (SAM)"
+msgstr "AI補助ポリゴン (SAM)"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+#: ..\ui\main_window.py:1080
+msgid "🎭 AI Mask"
+msgstr "🎭 AIマスク"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+msgid "AI-Assisted Pixel Mask (SAM)"
+msgstr "AI補助ピクセルマスク (SAM)"
+
+#: ..\ui\annotation_toolbar.py:87 ..\ui\annotation_toolbar.py:613
+msgid "Annotation Tools"
+msgstr "アノテーションツール"
+
+#: ..\ui\annotation_toolbar.py:114 ..\ui\main_window.py:584
+msgid "Tool: Select"
+msgstr "ツール: 選択"
+
+#: ..\ui\annotation_toolbar.py:121 ..\ui\annotation_toolbar.py:457
+msgid "Hint: Right-click for options"
+msgstr "ヒント: 右クリックでオプションを表示"
+
+#: ..\ui\annotation_toolbar.py:137 ..\ui\annotation_toolbar.py:614
+msgid "Tools"
+msgstr "ツール"
+
+#: ..\ui\annotation_toolbar.py:167 ..\ui\annotation_toolbar.py:615
+msgid "AI Assist"
+msgstr "AIアシスト"
+
+#: ..\ui\annotation_toolbar.py:187
+msgid "Model:"
+msgstr "モデル:"
+
+#: ..\ui\annotation_toolbar.py:214 ..\ui\annotation_toolbar.py:616
+msgid "Actions"
+msgstr "アクション"
+
+#: ..\ui\annotation_toolbar.py:246 ..\ui\annotation_toolbar.py:617
+#: ..\ui\main_window.py:546
+msgid "View"
+msgstr "表示"
+
+#: ..\ui\annotation_toolbar.py:406
+msgid "Tool Help"
+msgstr "ツールヘルプ"
+
+#: ..\ui\annotation_toolbar.py:414
+msgid "Toolbar Settings"
+msgstr "ツールバー設定"
+
+#: ..\ui\annotation_toolbar.py:415
+msgid "Hotkey Help"
+msgstr "ホットキーヘルプ"
+
+#: ..\ui\annotation_toolbar.py:416
+msgid "About Annotation Tools"
+msgstr "アノテーションツールについて"
+
+#: ..\ui\annotation_toolbar.py:437
+msgid "Select/Edit"
+msgstr "選択/編集"
+
+#: ..\ui\annotation_toolbar.py:438 ..\ui\main_window.py:530
+#: ..\ui\main_window.py:1073
+msgid "Polygon"
+msgstr "ポリゴン"
+
+#: ..\ui\annotation_toolbar.py:439 ..\ui\main_window.py:1077
+msgid "Rotated Rect"
+msgstr "回転矩形"
+
+#: ..\ui\annotation_toolbar.py:440 ..\ui\main_window.py:529
+#: ..\ui\main_window.py:1072
+msgid "Rectangle"
+msgstr "矩形"
+
+#: ..\ui\annotation_toolbar.py:441 ..\ui\main_window.py:531
+#: ..\ui\main_window.py:1074
+msgid "Circle"
+msgstr "円"
+
+#: ..\ui\annotation_toolbar.py:442 ..\ui\main_window.py:532
+#: ..\ui\main_window.py:1075
+msgid "Annulus"
+msgstr "アニュラス"
+
+#: ..\ui\annotation_toolbar.py:446 ..\ui\main_window.py:1082
+msgid "Tool: {}"
+msgstr "ツール: {}"
+
+#: ..\ui\annotation_toolbar.py:449
+msgid "Hint: Click to select/edit an annotation"
+msgstr "ヒント: クリックしてアノテーションを選択/編集"
+
+#: ..\ui\annotation_toolbar.py:450
+msgid "Hint: Click to add vertex, double-click or right-click to finish"
+msgstr "ヒント: クリックで頂点を追加、ダブルクリックまたは右クリックで完了"
+
+#: ..\ui\annotation_toolbar.py:451
+msgid "Hint: Drag to create rotated rectangle"
+msgstr "ヒント: ドラッグして回転矩形を作成"
+
+#: ..\ui\annotation_toolbar.py:452
+msgid "Hint: Drag to create standard rectangle"
+msgstr "ヒント: ドラッグして標準矩形を作成"
+
+#: ..\ui\annotation_toolbar.py:453
+msgid "Hint: Drag to create circle"
+msgstr "ヒント: ドラッグして円を作成"
+
+#: ..\ui\annotation_toolbar.py:454
+msgid "Hint: Drag to create annulus"
+msgstr "ヒント: ドラッグしてアニュラスを作成"
+
+#: ..\ui\annotation_toolbar.py:570
+msgid "🔄 Update"
+msgstr "🔄 更新"
+
+#: ..\ui\annotation_toolbar.py:571
+msgid "Update selected object (Enter)"
+msgstr "選択中のオブジェクトを更新 (Enter)"
+
+#: ..\ui\export_dialog.py:23
+msgid "Batch Export"
+msgstr "一括エクスポート"
+
+#: ..\ui\export_dialog.py:34
+msgid "Export {} images to selected format."
+msgstr "{}枚の画像を定形式でエクスポートします。"
+
+#: ..\ui\export_dialog.py:38 ..\ui\export_dialog.py:145
+msgid "Export Format"
+msgstr "エクスポート形式"
+
+#: ..\ui\export_dialog.py:40 ..\ui\export_dialog.py:148
+msgid "YOLO Segmentation (Polygon)"
+msgstr "YOLO セグメンテーション (ポリゴン)"
+
+#: ..\ui\export_dialog.py:41
+msgid "YOLO Detection (BBox)"
+msgstr "YOLO 検出 (BBox)"
+
+#: ..\ui\export_dialog.py:42 ..\ui\export_dialog.py:149
+msgid "YOLO OBB (Rotated Rect)"
+msgstr "YOLO OBB (回転矩形)"
+
+#: ..\ui\export_dialog.py:43
+msgid "MS COCO (Standard, Index=1)"
+msgstr "MS COCO (標準, インデックス=1)"
+
+#: ..\ui\export_dialog.py:44
+msgid "MS COCO (Custom, Index=0)"
+msgstr "MS COCO (カスタム, インデックス=0)"
+
+#: ..\ui\export_dialog.py:45 ..\ui\export_dialog.py:151
+msgid "Pascal VOC 2012 (XML)"
+msgstr "Pascal VOC 2012 (XML)"
+
+#: ..\ui\export_dialog.py:46 ..\ui\export_dialog.py:152
+msgid "CSV (Generic table)"
+msgstr "CSV (汎用テーブル)"
+
+#: ..\ui\export_dialog.py:54
+msgid "Output Directory"
+msgstr "出力フォルダ"
+
+#: ..\ui\export_dialog.py:61
+msgid "Start Export"
+msgstr "エクスポート開始"
+
+#: ..\ui\export_dialog.py:62 ..\ui\main_window.py:1366
+#: ..\ui\main_window.py:1792 ..\ui\settings_dialog.py:73
+#: ..\ui\settings_dialog.py:131
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:328
+msgid "Please select an output directory"
+msgstr "出力ディレクトリを選択してください"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:315
+#: ..\ui\export_dialog.py:328 ..\ui\main_window.py:937
+#: ..\ui\main_window.py:940 ..\ui\main_window.py:974 ..\ui\main_window.py:1005
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+#: ..\ui\main_window.py:1347 ..\ui\main_window.py:1390
+#: ..\ui\main_window.py:1408 ..\ui\main_window.py:1411
+#: ..\ui\main_window.py:1440 ..\ui\main_window.py:1627
+#: ..\ui\main_window.py:1756 ..\ui\main_window.py:1775
+#: ..\ui\main_window.py:1954 ..\ui\main_window.py:2236
+msgid "Error"
+msgstr "エラー"
+
+#: ..\ui\export_dialog.py:80
+msgid "Exporting..."
+msgstr "エクスポート中..."
+
+#: ..\ui\export_dialog.py:81
+msgid "Processing images"
+msgstr "画像を処理中"
+
+#: ..\ui\export_dialog.py:93
+msgid ""
+"Batch Export Complete!\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"一括エクスポート完了！\n"
+"{}/{} 枚の画像を正常にエクスポートしました。"
+
+#: ..\ui\export_dialog.py:94
+msgid "Finished"
+msgstr "完了"
+
+#: ..\ui\export_dialog.py:104
+msgid "Dataset Export (Split)"
+msgstr "データセットエクスポート (分割)"
+
+#: ..\ui\export_dialog.py:147
+msgid "YOLO Detection (Bounding Box)"
+msgstr "YOLO 検出 (バウンディングボックス)"
+
+#: ..\ui\export_dialog.py:150
+msgid "MS COCO (JSON)"
+msgstr "MS COCO (JSON)"
+
+#: ..\ui\export_dialog.py:170
+msgid "Dataset Splitting"
+msgstr "データセット分割"
+
+#: ..\ui\export_dialog.py:173
+msgid "Honor Manual Status (fixed in File List)"
+msgstr "手動ステータスを尊重 (ファイル一リストで固定)"
+
+#: ..\ui\export_dialog.py:181
+msgid "Train (%):"
+msgstr "学習用 (%):"
+
+#: ..\ui\export_dialog.py:188
+msgid "Val (%):"
+msgstr "検証用 (%):"
+
+#: ..\ui\export_dialog.py:195
+msgid "Test (%):"
+msgstr "テスト用 (%):"
+
+#: ..\ui\export_dialog.py:206
+msgid "Distribution Preview"
+msgstr "分布プレビュー"
+
+#: ..\ui\export_dialog.py:207
+msgid "Analyzing..."
+msgstr "分析中..."
+
+#: ..\ui\export_dialog.py:212
+msgid "Format Specific Options"
+msgstr "フォーマット固有オプション"
+
+#: ..\ui\export_dialog.py:215
+msgid "Category Index Start:"
+msgstr "カテゴリ開始インデックス："
+
+#: ..\ui\export_dialog.py:226
+msgid "Output Settings"
+msgstr "出力設定"
+
+#: ..\ui\export_dialog.py:228
+msgid "Copy Image Files (create standalone dataset)"
+msgstr "画像ファイルをコピー (独立したデータセットを作成)"
+
+#: ..\ui\export_dialog.py:233
+msgid "Output Dir:"
+msgstr "出力ディレクトリ:"
+
+#: ..\ui\export_dialog.py:315
+msgid "Train and Val ratios must be greater than 0%"
+msgstr "学習用と検証用の比率は 0% より大きくする必要があります"
+
+#: ..\ui\export_dialog.py:322
+msgid ""
+"Note: Ratios sum to {}%. The application will treat them as weights but it's"
+" recommended to sum to 100%."
+msgstr "注：比率の合計が {}% です。アプリケーションはこれらを重みとして扱いますが、合計を 100% にすることをお勧めします。"
+
+#: ..\ui\export_dialog.py:323
+msgid "Warning"
+msgstr "警告"
+
+#: ..\ui\i18n.py:156
+msgid "Switch to {}"
+msgstr "{} に切り替え"
+
+#: ..\ui\image_display_panel.py:333
+msgid "ROI Complete: Right-click image or use Toolbar/Enter to save"
+msgstr "ROI 完了: 画像を右クリックするかツールバー/Enterで保存"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Select Category:"
+msgstr "カテゴリを選択:"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Category"
+msgstr "カテゴリ"
+
+#: ..\ui\image_display_panel.py:546 ..\ui\image_display_panel.py:655
+msgid "Drawing Label: {}"
+msgstr "描画ラベル: {}"
+
+#: ..\ui\image_display_panel.py:613 ..\ui\image_display_panel.py:653
+msgid ""
+"AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
+msgstr "AIモード有効：左クリック（緑）で追加、右クリック（赤）で除外。"
+
+#: ..\ui\image_display_panel.py:719
+msgid "Editing {}. Shape locked. Press Enter to update."
+msgstr "{} を編集中。形状はロックされています。Enterで更新。"
+
+#: ..\ui\image_display_panel.py:778
+msgid "AI: First point must be a positive prompt (Left-click)."
+msgstr "AI：最初の点は正例プロンプトでなければなりません（左クリック）"
+
+#: ..\ui\image_display_panel.py:914
+msgid "🤖 Preparing AI Model: {}... (Downloading if needed)"
+msgstr "🤖 AIモデルを準備中: {}... (必要に応じてダウンロード)"
+
+#: ..\ui\image_display_panel.py:923
+msgid "❌ AI Model initialization failed."
+msgstr "❌ AIモデルの初期화に失敗しました。"
+
+#: ..\ui\image_display_panel.py:930
+msgid "🧠 AI Embedding... (Wait)"
+msgstr "🧠 AI埋め込み中... (お待ちください)"
+
+#: ..\ui\image_display_panel.py:954
+msgid "AI Active: {} positive, {} negative prompts."
+msgstr "AI有効: 正例 {}、負例 {}"
+
+#: ..\ui\image_display_panel.py:983
+msgid "AI Annotation added."
+msgstr "AIアノテーションが追加されました。"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Complete Annotation"
+msgstr "アノテーションを完了"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Update Object"
+msgstr "オブジェクトを更新"
+
+#: ..\ui\image_display_panel.py:1040
+msgid "Cancel Drawing"
+msgstr "描画をキャンセル"
+
+#: ..\ui\image_display_panel.py:1061
+msgid "Select Overlapping Object"
+msgstr "重なり合うオブジェクトを選択"
+
+#: ..\ui\image_display_panel.py:1069
+msgid "Bring to Front"
+msgstr "最前面に移動"
+
+#: ..\ui\image_display_panel.py:1072
+msgid "Send to Back"
+msgstr "最背面に移動"
+
+#: ..\ui\image_display_panel.py:1076
+msgid "Delete Object"
+msgstr "オブジェクトを削除"
+
+#: ..\ui\image_display_panel.py:1084
+msgid "Create Rectangle"
+msgstr "矩形を作成"
+
+#: ..\ui\image_display_panel.py:1087
+msgid "Create Rotated Rect"
+msgstr "回転矩形を作成"
+
+#: ..\ui\image_display_panel.py:1090
+msgid "Create Circle"
+msgstr "円を作成"
+
+#: ..\ui\image_display_panel.py:1093
+msgid "Create Annulus"
+msgstr "円環（アニュラス）を作成"
+
+#: ..\ui\image_display_panel.py:1096
+msgid "Create Polygon"
+msgstr "多角形を作成"
+
+#: ..\ui\image_display_panel.py:1102
+msgid "Zoom to Fit"
+msgstr "全体表示にズーム"
+
+#: ..\ui\image_display_panel.py:1105
+msgid "Full Screen"
+msgstr "全画面"
+
+#: ..\ui\image_display_panel.py:1119
+msgid "Moved object to top layer"
+msgstr "オブジェクトを最前面のレイヤーに移動しました"
+
+#: ..\ui\image_display_panel.py:1125
+msgid "Moved object to bottom layer"
+msgstr "オブジェクトを最背面のレイヤーに移動しました"
+
+#: ..\ui\image_display_panel.py:1200
+msgid "Error: Invalid ROI size"
+msgstr "エラー：無効なROIサイズ"
+
+#: ..\ui\image_display_panel.py:1207
+msgid "Updated: {}"
+msgstr "更新: {}"
+
+#: ..\ui\image_display_panel.py:1216
+msgid "Added: {}"
+msgstr "追加: {}"
+
+#: ..\ui\image_display_panel.py:1250
+msgid "Drawing/Edit cancelled"
+msgstr "描画/編集をキャンセルしました"
+
+#: ..\ui\main_window.py:330 ..\ui\main_window.py:730
+msgid "Label List"
+msgstr "ラベル一覧"
+
+#: ..\ui\main_window.py:378
+msgid "Label set to: {}"
+msgstr "ラベルを {} に設定"
+
+#: ..\ui\main_window.py:386 ..\ui\main_window.py:732
+msgid "Annotation List"
+msgstr "アノテーション一覧"
+
+#: ..\ui\main_window.py:400 ..\ui\main_window.py:739
+msgid "ID"
+msgstr "ID"
+
+#: ..\ui\main_window.py:401 ..\ui\main_window.py:743
+msgid "Label"
+msgstr "ラベル"
+
+#: ..\ui\main_window.py:402 ..\ui\main_window.py:747
+msgid "Type"
+msgstr "種類"
+
+#: ..\ui\main_window.py:403 ..\ui\main_window.py:751
+msgid "Vis"
+msgstr "表示"
+
+#: ..\ui\main_window.py:414 ..\ui\main_window.py:525 ..\ui\main_window.py:769
+msgid "Edit"
+msgstr "編集"
+
+#: ..\ui\main_window.py:415 ..\ui\main_window.py:771
+msgid "Delete"
+msgstr "削除"
+
+#: ..\ui\main_window.py:416 ..\ui\main_window.py:773
+msgid "Visibility"
+msgstr "表示/非表示"
+
+#: ..\ui\main_window.py:443 ..\ui\main_window.py:734
+msgid "File List"
+msgstr "ファイル一覧"
+
+#: ..\ui\main_window.py:457 ..\ui\main_window.py:756
+msgid "Filename"
+msgstr "ファイル名"
+
+#: ..\ui\main_window.py:458 ..\ui\main_window.py:760
+msgid "Count"
+msgstr "件数"
+
+#: ..\ui\main_window.py:459 ..\ui\main_window.py:764
+msgid "Status"
+msgstr "状態"
+
+#: ..\ui\main_window.py:470 ..\ui\main_window.py:775
+msgid "Prev"
+msgstr "前へ"
+
+#: ..\ui\main_window.py:471 ..\ui\main_window.py:777
+msgid "Next"
+msgstr "次へ"
+
+#: ..\ui\main_window.py:499
+msgid "Open Image"
+msgstr "画像を開く"
+
+#: ..\ui\main_window.py:500
+msgid "Open Folder"
+msgstr "フォルダを開く"
+
+#: ..\ui\main_window.py:502
+msgid "Save"
+msgstr "保存"
+
+#: ..\ui\main_window.py:503
+msgid "Save As..."
+msgstr "名前を付けて保存..."
+
+#: ..\ui\main_window.py:505
+msgid "Exit"
+msgstr "終了"
+
+#: ..\ui\main_window.py:507
+msgid "File"
+msgstr "ファイル"
+
+#: ..\ui\main_window.py:511
+msgid "Save Labels to Project Folder"
+msgstr "ラベルをプロジェクトフォルダに保存"
+
+#: ..\ui\main_window.py:512
+msgid "Reload Labels from Project"
+msgstr "プロジェクトからラベルを再読み込み"
+
+#: ..\ui\main_window.py:514
+msgid "Manage Categories..."
+msgstr "カテゴリ管理..."
+
+#: ..\ui\main_window.py:514
+msgid "Open category manager dialog"
+msgstr "カテゴリ管理ダイアログを開く"
+
+#: ..\ui\main_window.py:516
+msgid "Project"
+msgstr "プロジェクト"
+
+#: ..\ui\main_window.py:520
+msgid "Undo"
+msgstr "元に戻す"
+
+#: ..\ui\main_window.py:521
+msgid "Redo"
+msgstr "やり直す"
+
+#: ..\ui\main_window.py:523
+msgid "Delete Annotation"
+msgstr "アノテーションを削除"
+
+#: ..\ui\main_window.py:533 ..\ui\main_window.py:1076
+msgid "Point"
+msgstr "点"
+
+#: ..\ui\main_window.py:535
+msgid "Select Tool"
+msgstr "選択ツール"
+
+#: ..\ui\main_window.py:537
+msgid "Annotate"
+msgstr "アノテーション"
+
+#: ..\ui\main_window.py:542
+msgid "Zoom In"
+msgstr "ズームイン"
+
+#: ..\ui\main_window.py:543
+msgid "Zoom Out"
+msgstr "ズームアウト"
+
+#: ..\ui\main_window.py:544
+msgid "Fit Window"
+msgstr "ウィンドウに合わせる"
+
+#: ..\ui\main_window.py:550
+msgid "Batch Export..."
+msgstr "一括エクスポート..."
+
+#: ..\ui\main_window.py:551
+msgid "Export Dataset (Split)..."
+msgstr "データセットエクスポート (分割)..."
+
+#: ..\ui\main_window.py:553
+msgid "Supported Formats"
+msgstr "対応形式"
+
+#: ..\ui\main_window.py:555
+msgid "Export"
+msgstr "エクスポート"
+
+#: ..\ui\main_window.py:559
+msgid "Settings..."
+msgstr "設定..."
+
+#: ..\ui\main_window.py:561 ..\ui\settings_dialog.py:19
+#: ..\ui\settings_dialog.py:90
+msgid "Settings"
+msgstr "設定"
+
+#: ..\ui\main_window.py:565
+msgid "About"
+msgstr "情報"
+
+#: ..\ui\main_window.py:567
+msgid "Help"
+msgstr "ヘルプ"
+
+#: ..\ui\main_window.py:583
+msgid "Ready"
+msgstr "準備完了"
+
+#: ..\ui\main_window.py:585
+msgid "Count: 0"
+msgstr "件数: 0"
+
+#: ..\ui\main_window.py:716
+msgid "Language changed to {}. Interface elements have been updated."
+msgstr "言語を{}に変更しました。インターフェース要素を更新しました。"
+
+#: ..\ui\main_window.py:717
+msgid "Language Changed"
+msgstr "言語変更"
+
+#: ..\ui\main_window.py:914
+msgid "Select Image File"
+msgstr "画像ファイルを選択"
+
+#: ..\ui\main_window.py:915
+msgid "Image Files"
+msgstr "画像ファイル"
+
+#: ..\ui\main_window.py:915
+msgid "All Files"
+msgstr "すべてのファイル"
+
+#: ..\ui\main_window.py:930
+msgid "Opened: {}"
+msgstr "開きました: {}"
+
+#: ..\ui\main_window.py:937
+msgid "Cannot load image: {}"
+msgstr "画像を読み込めません: {}"
+
+#: ..\ui\main_window.py:940
+msgid "Image Panel not initialized"
+msgstr "画像パネルが初期化されていません"
+
+#: ..\ui\main_window.py:950
+msgid "Select Folder containing images"
+msgstr "画像を含むフォルダを選択"
+
+#: ..\ui\main_window.py:972
+msgid "Annotations Saved (Base64: {})"
+msgstr "アノテーションを保存しました (Base64: {})"
+
+#: ..\ui\main_window.py:974
+msgid "Failed to save annotations"
+msgstr "アノテーションの保存に失敗しました"
+
+#: ..\ui\main_window.py:976
+msgid "No current image"
+msgstr "現在の画像がありません"
+
+#: ..\ui\main_window.py:976 ..\ui\main_window.py:1332
+#: ..\ui\main_window.py:1398 ..\ui\main_window.py:1419
+#: ..\ui\main_window.py:1604 ..\ui\main_window.py:1763
+msgid "Hint"
+msgstr "ヒント"
+
+#: ..\ui\main_window.py:1003
+msgid "Annotations saved as... (Base64: {})"
+msgstr "アノテーションを名前を付けて保存しました (Base64: {})"
+
+#: ..\ui\main_window.py:1005
+msgid "Save failed"
+msgstr "保存失敗"
+
+#: ..\ui\main_window.py:1064
+msgid "AI Mode: UI locked. Use Enter/Esc to finish."
+msgstr "AIモード：UIロック中。Enter/Escで終了"
+
+#: ..\ui\main_window.py:1066
+msgid "UI Unlocked"
+msgstr "UIロック解除"
+
+#: ..\ui\main_window.py:1078
+msgid "Select"
+msgstr "選択"
+
+#: ..\ui\main_window.py:1107
+msgid "added"
+msgstr "追加"
+
+#: ..\ui\main_window.py:1108
+msgid "deleted"
+msgstr "削除"
+
+#: ..\ui\main_window.py:1109
+msgid "updated"
+msgstr "更新"
+
+#: ..\ui\main_window.py:1110
+msgid "loaded"
+msgstr "読み込み"
+
+#: ..\ui\main_window.py:1111
+msgid "undone"
+msgstr "元に戻した"
+
+#: ..\ui\main_window.py:1112
+msgid "redone"
+msgstr "やり直した"
+
+#: ..\ui\main_window.py:1114 ..\ui\main_window.py:1429
+#: ..\ui\main_window.py:1437
+msgid "Annotation {}"
+msgstr "アノテーション {}"
+
+#: ..\ui\main_window.py:1259 ..\ui\main_window.py:1273
+msgid "Switched to image {}"
+msgstr "画像 {} に切り替えました"
+
+#: ..\ui\main_window.py:1261
+msgid "Already at the first image"
+msgstr "最初の画像です"
+
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+msgid "Failed to switch image: {}"
+msgstr "画像切り替えに失敗: {}"
+
+#: ..\ui\main_window.py:1275
+msgid "Already at the last image"
+msgstr "最後の画像です"
+
+#: ..\ui\main_window.py:1277
+msgid "No images loaded"
+msgstr "画像が読み込まれていません"
+
+#: ..\ui\main_window.py:1332
+msgid "Please select an annotation to edit"
+msgstr "編集するアノテーションを選択してください"
+
+#: ..\ui\main_window.py:1347
+msgid "Selected annotation not found"
+msgstr "選択したアノテーションが見つかりません"
+
+#: ..\ui\main_window.py:1351
+msgid "Edit Annotation"
+msgstr "アノテーションを編集"
+
+#: ..\ui\main_window.py:1355
+msgid "Category:"
+msgstr "カテゴリ:"
+
+#: ..\ui\main_window.py:1365 ..\ui\settings_dialog.py:72
+#: ..\ui\settings_dialog.py:130
+msgid "OK"
+msgstr "OK"
+
+#: ..\ui\main_window.py:1385
+msgid "Label updated to: {}"
+msgstr "ラベルを {} に更新"
+
+#: ..\ui\main_window.py:1390
+msgid "Failed to edit annotation: {}"
+msgstr "アノテーションの編集に失敗: {}"
+
+#: ..\ui\main_window.py:1398
+msgid "Please select an annotation to delete"
+msgstr "削除するアノテーションを選択してください"
+
+#: ..\ui\main_window.py:1401
+msgid "Are you sure you want to delete the selected annotation?"
+msgstr "選択したアノテーションを削除しますか？"
+
+#: ..\ui\main_window.py:1401
+msgid "Confirm"
+msgstr "確認"
+
+#: ..\ui\main_window.py:1406
+msgid "Annotation Deleted"
+msgstr "アノテーションを削除しました"
+
+#: ..\ui\main_window.py:1408
+msgid "Failed to delete annotation"
+msgstr "アノテーションの削除に失敗しました"
+
+#: ..\ui\main_window.py:1411
+msgid "Failed to delete annotation: {}"
+msgstr "アノテーションの削除に失敗: {}"
+
+#: ..\ui\main_window.py:1419
+msgid "Please select an annotation to toggle visibility"
+msgstr "表示/非表示を切り替えるアノテーションを選択してください"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Shown"
+msgstr "表示"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Hidden"
+msgstr "非表示"
+
+#: ..\ui\main_window.py:1440
+msgid "Failed to toggle visibility: {}"
+msgstr "表示切り替えに失敗: {}"
+
+#: ..\ui\main_window.py:1578
+msgid "Enabled"
+msgstr "有効"
+
+#: ..\ui\main_window.py:1578
+msgid "Disabled"
+msgstr "無効"
+
+#: ..\ui\main_window.py:1579
+msgid "Base64 Embedding: {}"
+msgstr "Base64埋め込み: {}"
+
+#: ..\ui\main_window.py:1604
+msgid ""
+"No image files found in folder\n"
+"{}"
+msgstr ""
+"フォルダ内に画像ファイルが見つかりません\n"
+"{}"
+
+#: ..\ui\main_window.py:1623
+msgid "Loaded folder: {} ({} images)"
+msgstr "フォルダを読み込みました: {} ({} 枚)"
+
+#: ..\ui\main_window.py:1627
+msgid "Failed to load folder: {}"
+msgstr "フォルダの読み込みに失敗: {}"
+
+#: ..\ui\main_window.py:1713
+msgid "None"
+msgstr "なし"
+
+#: ..\ui\main_window.py:1732
+msgid "Add Category..."
+msgstr "カテゴリを追加..."
+
+#: ..\ui\main_window.py:1733
+msgid "Edit Category..."
+msgstr "カテゴリを編集..."
+
+#: ..\ui\main_window.py:1734
+msgid "Delete Selected Category"
+msgstr "選択したカテゴリを削除"
+
+#: ..\ui\main_window.py:1745
+msgid "Add Category"
+msgstr "カテゴリ追加"
+
+#: ..\ui\main_window.py:1754
+msgid "Category added: {}"
+msgstr "カテゴリを追加しました：{}"
+
+#: ..\ui\main_window.py:1756
+msgid "Category '{}' already exists"
+msgstr "カテゴリ '{}' は既に存在します"
+
+#: ..\ui\main_window.py:1763
+msgid "Please select a category to edit"
+msgstr "編集するカテゴリを選択してください"
+
+#: ..\ui\main_window.py:1767
+msgid "Edit Category"
+msgstr "カテゴリ編集"
+
+#: ..\ui\main_window.py:1775
+msgid "Category name cannot be empty"
+msgstr "カテゴリ名を空にすることはできません"
+
+#: ..\ui\main_window.py:1784
+msgid ""
+"You are renaming category '{}' to '{}'.\n"
+"\n"
+"Do you want to update all existing annotation files in this folder?\n"
+"\n"
+"Yes: Update ALL files in folder\n"
+"No: Update only the category list\n"
+"Cancel: Abort changes"
+msgstr ""
+"カテゴリ '{}' を '{}' に変更しようとしています。\n"
+"\n"
+"このフォルダ内の既存のアノテーションファイルをすべて更新しますか？\n"
+"\n"
+"はい：フォルダ内のすべてのファイルを更新\n"
+"いいえ：カテゴリリストのみ更新\n"
+"キャンセル：変更を中止"
+
+#: ..\ui\main_window.py:1790
+msgid "Rename Confirmation"
+msgstr "名前の変更を確認"
+
+#: ..\ui\main_window.py:1792
+msgid "Update All"
+msgstr "すべて更新"
+
+#: ..\ui\main_window.py:1792
+msgid "List Only"
+msgstr "リストのみ"
+
+#: ..\ui\main_window.py:1804
+msgid "Renamed '{}' to '{}' in {} files"
+msgstr "'{}' を '{}' に変更しました（{}ファイル）"
+
+#: ..\ui\main_window.py:1806
+msgid "Renamed '{}' to '{}' in list only"
+msgstr "リスト内のみで '{}' を '{}' に変更"
+
+#: ..\ui\main_window.py:1809
+msgid "Updated color for Category: {}"
+msgstr "カテゴリ {} の色を更新しました"
+
+#: ..\ui\main_window.py:1875
+msgid "Are you sure you want to delete category '{}'?"
+msgstr "カテゴリ '{}' を削除してもよろしいですか？"
+
+#: ..\ui\main_window.py:1876
+msgid "Confirm Delete"
+msgstr "削除を確認"
+
+#: ..\ui\main_window.py:1879
+msgid "Category deleted: {}"
+msgstr "カテゴリを削除しました：{}"
+
+#: ..\ui\main_window.py:1881
+msgid "Cannot delete default category '{}'"
+msgstr "デフォルトカテゴリ '{}' は削除できません"
+
+#: ..\ui\main_window.py:1882
+msgid "Constraint"
+msgstr "制約"
+
+#: ..\ui\main_window.py:1904
+msgid "Delete Annotation File"
+msgstr "アノテーションファイルを削除"
+
+#: ..\ui\main_window.py:1923
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\n"
+"This action cannot be undone."
+msgstr ""
+"'{}' のアノテーションファイルを削除してもよろしいですか？\n"
+"この操作は取り消せません。"
+
+#: ..\ui\main_window.py:1924
+msgid "Confirm Deletion"
+msgstr "削除を確認"
+
+#: ..\ui\main_window.py:1950
+msgid "Deleted annotation file for: {}"
+msgstr "{} のアノテーションファイルを削除しました"
+
+#: ..\ui\main_window.py:1954
+msgid "Failed to delete annotation file: {}"
+msgstr "アノテーションファイルの削除に失敗: {}"
+
+#: ..\ui\main_window.py:2168
+msgid "Categories updated"
+msgstr "カテゴリを更新しました"
+
+#: ..\ui\main_window.py:2201
+msgid "No images loaded to export"
+msgstr "エクスポートする画像がありません"
+
+#: ..\ui\main_window.py:2201
+msgid "Information"
+msgstr "情報"
+
+#: ..\ui\main_window.py:2210
+msgid "Generating Dataset..."
+msgstr "データセットを生成中..."
+
+#: ..\ui\main_window.py:2211
+msgid "Processing splitting and export formats"
+msgstr "分割とエクスポート形式を処理中"
+
+#: ..\ui\main_window.py:2231
+msgid ""
+"Dataset Export Complete!\n"
+"Target: {}\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"データセットのエクスポートが完了しました！\n"
+"ターゲット: {}\n"
+"{}/{} 枚の画像を正常にエクスポートしました。"
+
+#: ..\ui\main_window.py:2233
+msgid "Success"
+msgstr "成功"
+
+#: ..\ui\main_window.py:2251
+msgid "Supported Export Formats:"
+msgstr "対応エクスポート形式："
+
+#: ..\ui\main_window.py:2257
+msgid "Features:"
+msgstr "機能詳細："
+
+#: ..\ui\main_window.py:2263
+msgid "Export Format Info"
+msgstr "エクスポート形式の詳細"
+
+#: ..\ui\main_window.py:2271
+msgid ""
+"A professional computer vision annotation tool.\n"
+"\n"
+"Key Features:\n"
+"• Advanced Export: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• Integrated AI: SAM, SAM2, EfficientSAM, and various detection models.\n"
+"• Cross-platform support with industrial-grade precision.\n"
+"\n"
+"Designed for professional computer vision research and dataset preparation."
+msgstr ""
+"プロフェッショナルなコンピュータビジョンアノテーションツール。\n"
+"\n"
+"主な機能：\n"
+"• 高度なエクスポート: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• 統合AI: SAM, SAM2, EfficientSAM, および各種検出モデル.\n"
+"• 産業級の精度を備えたクロスプラットフォーム対応.\n"
+"\n"
+"プロフェッショナルなコンピュータビジョン研究およびデータセット作成用に設計されています。"
+
+#: ..\ui\theme_manager.py:35
+msgid "Dark (Default)"
+msgstr "ダーク (デフォルト)"
+
+#: ..\ui\theme_manager.py:48
+msgid "Light (VS)"
+msgstr "ライト (VS)"
+
+#: ..\ui\theme_manager.py:61
+msgid "Visual Studio Blue"
+msgstr "Visual Studio ブルー"
+
+#: ..\ui\theme_manager.py:74
+msgid "Monokai"
+msgstr "Monokai"
+
+#: ..\ui\settings_dialog.py:50 ..\ui\settings_dialog.py:93
+msgid "Language"
+msgstr "言語"
+
+#: ..\ui\settings_dialog.py:54 ..\ui\settings_dialog.py:94
+msgid "Theme"
+msgstr "テーマ"
+
+#: ..\ui\settings_dialog.py:58 ..\ui\settings_dialog.py:95
+msgid "User Settings"
+msgstr "ユーザー設定"
+
+#: ..\ui\settings_dialog.py:62 ..\ui\settings_dialog.py:96
+msgid "Annotation"
+msgstr "注釈"
+
+#: ..\ui\settings_dialog.py:66 ..\ui\settings_dialog.py:97
+msgid "AI Annotation"
+msgstr "アノテーションが削除されました"
+
+#: ..\ui\settings_dialog.py:74 ..\ui\settings_dialog.py:132
+msgid "Apply"
+msgstr "適用"
+
+#: ..\ui\settings_dialog.py:100 ..\ui\settings_dialog.py:170
+msgid "Language Selection"
+msgstr "言語選択"
+
+#: ..\ui\settings_dialog.py:101 ..\ui\settings_dialog.py:199
+msgid "UI Appearance"
+msgstr "UIの外観"
+
+#: ..\ui\settings_dialog.py:102 ..\ui\settings_dialog.py:234
+msgid "Annotator Information"
+msgstr "アノテーター情報"
+
+#: ..\ui\settings_dialog.py:103 ..\ui\settings_dialog.py:274
+msgid "LabelMe Storage Format"
+msgstr "LabelMe保存フォーマット"
+
+#: ..\ui\settings_dialog.py:104 ..\ui\settings_dialog.py:289
+msgid "Attribute Panel"
+msgstr "属性パネル"
+
+#: ..\ui\settings_dialog.py:105 ..\ui\settings_dialog.py:318
+msgid "AI Assisted Labeling Settings"
+msgstr "AI補助ラベル付け設定"
+
+#: ..\ui\settings_dialog.py:108 ..\ui\settings_dialog.py:186
+msgid "Select Interface Language:"
+msgstr "インターフェース言語を選択:"
+
+#: ..\ui\settings_dialog.py:109 ..\ui\settings_dialog.py:209
+msgid "Color Theme:"
+msgstr "カラーテーマ:"
+
+#: ..\ui\settings_dialog.py:110 ..\ui\settings_dialog.py:218
+msgid "Font Size:"
+msgstr "フォントサイズ:"
+
+#: ..\ui\settings_dialog.py:112 ..\ui\settings_dialog.py:237
+msgid "Enable User Information (Save to JSON)"
+msgstr "ユーザー情報を有効にする (JSONに保存)"
+
+#: ..\ui\settings_dialog.py:113 ..\ui\settings_dialog.py:244
+msgid "Name:"
+msgstr "氏名:"
+
+#: ..\ui\settings_dialog.py:114 ..\ui\settings_dialog.py:251
+msgid "Quality Score (0-100):"
+msgstr "品質スコア (0-100):"
+
+#: ..\ui\settings_dialog.py:115 ..\ui\settings_dialog.py:260
+msgid "Note: User info will only be added to JSON when enabled above."
+msgstr "注：上記の設定が有効な場合のみ、ユーザー情報がJSONに追加されます。"
+
+#: ..\ui\settings_dialog.py:117 ..\ui\settings_dialog.py:276
+msgid "Embed Image Data (Base64) in JSON"
+msgstr "JSONに画像データを埋め込む (Base64)"
+
+#: ..\ui\settings_dialog.py:118 ..\ui\settings_dialog.py:281
+msgid "Note: Enabling this will significantly increase JSON file size."
+msgstr "注：これを有効にすると、JSONファイルのサイズが大幅に増加します。"
+
+#: ..\ui\settings_dialog.py:119 ..\ui\settings_dialog.py:291
+msgid "Enable Attribute Panel (show below annotation list)"
+msgstr "属性パネルを有効にする (アノテーションリストの下に表示)"
+
+#: ..\ui\settings_dialog.py:120 ..\ui\settings_dialog.py:296
+msgid "Default Flags:"
+msgstr "デフォルトのフラグ:"
+
+#: ..\ui\settings_dialog.py:121 ..\ui\settings_dialog.py:305
+msgid "Comma-separated flag names, e.g.: occluded, truncated, difficult"
+msgstr "カンマ区切りのフラグ名（例：occluded, truncated, difficult）"
+
+#: ..\ui\settings_dialog.py:123 ..\ui\settings_dialog.py:321
+msgid "AI Model Directory:"
+msgstr "AIモデルディレクトリ:"
+
+#: ..\ui\settings_dialog.py:124 ..\ui\settings_dialog.py:331
+msgid "Enable Continuous Inference (Real-time)"
+msgstr "連続推論を有効にする (リアルタイム)"
+
+#: ..\ui\settings_dialog.py:125 ..\ui\settings_dialog.py:337
+msgid "Inference Interval (ms):"
+msgstr "推論間隔 (ms):"
+
+#: ..\ui\settings_dialog.py:126 ..\ui\settings_dialog.py:346
+msgid "Auto-simplify Polygon (0.004 Tolerance)"
+msgstr "ポリゴンの自動簡易化 (0.004 許容誤差)"
+
+#: ..\ui\settings_dialog.py:127 ..\ui\settings_dialog.py:350
+msgid "Denoise Mask (Filter small fragments)"
+msgstr "マスクのノイズ除去 (小さな断片をフィルタリング)"
+
+msgid "+ Add"
+msgstr "+ 追加"
+
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\\nThis action "
+"cannot be undone."
+msgstr ""
+"本当に '{}' のアノテーションファイルを削除しますか？\n"
+"この操作は取り消せません。"
+
+msgid "Attributes"
+msgstr "属性"
+
+msgid "Automated directory structure generation"
+msgstr "ディレクトリ構造の自動生成"
+
+msgid "Batch Export Complete!\\nSuccessfully exported {}/{} images."
+msgstr ""
+"一括エクスポート完了！\n"
+"{}/{} 枚の画像を正常にエクスポートしました。"
+
+msgid "Batch export to directory"
+msgstr "ディレクトリへの一括エクスポート"
+
+msgid "Create line annotation (L)"
+msgstr "ラインアノテーションを作成 (L)"
+
+msgid "Custom Attributes:"
+msgstr "カスタム属性:"
+
+msgid ""
+"Dataset Export Complete!\\nTarget: {}\\nSuccessfully exported {}/{} images."
+msgstr ""
+"データセットのエクスポートが完了しました！\n"
+"ターゲット: {}\n"
+"{}/{} 枚の画像を正常にエクスポートしました。"
+
+msgid "Dataset splitting (Train/Val/Test)"
+msgstr "データセット分割 (Train/Val/Test)"
+
+msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
+msgstr "検出 (BBox), セグメンテーション (Polygon), OBB (回転矩形)"
+
+msgid "Edit Label"
+msgstr "ラベル編集"
+
+msgid "Flags:"
+msgstr "フラグ:"
+
+msgid "Generic coordinate table for custom analysis"
+msgstr "カスタム分析用の汎用座標テーブル"
+
+msgid "Hint: Drag to create line"
+msgstr "ヒント：ドラッグしてラインを作成"
+
+msgid "Image Annotation Tool"
+msgstr "画像アノテーションツール"
+
+msgid "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
+msgstr "業界標準のJSON、インデックス0（カスタム）または1（標準）を設定可能"
+
+msgid "Info"
+msgstr "情報"
+
+msgid "Line"
+msgstr "ライン"
+
+msgid "No annotation file found for this image."
+msgstr "この画像のファイルが見つかりません。"
+
+msgid "No image files found in folder\\n{}"
+msgstr ""
+"フォルダ内に画像ファイルが見つかりません\n"
+"{}"
+
+msgid "Preview of split distribution"
+msgstr "分割分布のプレビュー"
+
+msgid "Select an annotation to edit attributes"
+msgstr "属性を編集するアノテーションを選択"
+
+msgid "Standardized to VOC 2012 XML with 1-based pixel precision"
+msgstr "1ベースのピクセル精度を持つVOC 2012 XMLに標準化"
+
+msgid "Test"
+msgstr "テスト"
+
+msgid "Total Images"
+msgstr "総画像数"
+
+msgid "Train"
+msgstr "学習"
+
+msgid "Transcription:"
+msgstr "転記:"
+
+msgid "Unknown"
+msgstr "不明"
+
+msgid "Valid"
+msgstr "検証"
+
+msgid "📏 Line"
+msgstr "📏 ライン"

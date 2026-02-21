@@ -1,0 +1,1377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 23:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "🎯 Select"
+msgstr "🎯 选取"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "Select or edit annotations (S)"
+msgstr "选取或编辑标注 (S)"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "🔷 Polygon"
+msgstr "🔷 多边形"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "Create polygon annotation (P)"
+msgstr "创建多边形标注 (P)"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "📐 Rotated Rect"
+msgstr "📐 旋转矩形"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "Create rotated rectangle (R)"
+msgstr "创建旋转矩形 (R)"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "⬛ Rectangle"
+msgstr "⬛ 矩形"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "Create rectangle annotation"
+msgstr "创建矩形标注"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "⭕ Circle"
+msgstr "⭕ 圆形"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "Create circle annotation"
+msgstr "创建圆形标注"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "🍩 Annulus"
+msgstr "🍩 圆环"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "Create annulus annotation"
+msgstr "创建圆环标注"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:574
+#: ..\ui\annotation_toolbar.py:595
+msgid "➕ Add"
+msgstr "➕ 添加"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:575
+#: ..\ui\annotation_toolbar.py:595
+msgid "Add object to list (Enter)"
+msgstr "将物体添加到列表 (Enter)"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "🚫 Cancel"
+msgstr "🚫 取消"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "Cancel current drawing (Esc)"
+msgstr "取消当前绘制 (Esc)"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "↩️ Undo"
+msgstr "↩️ 撤销"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "Undo operation (Ctrl+Z)"
+msgstr "撤销操作 (Ctrl+Z)"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "↪️ Redo"
+msgstr "↪️ 重做"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "Redo operation (Ctrl+Y)"
+msgstr "重做操作 (Ctrl+Y)"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "🔍 Zoom In"
+msgstr "🔍 放大"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "Zoom in view"
+msgstr "放大视图"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "🔎 Zoom Out"
+msgstr "🔎 缩小"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "Zoom out view"
+msgstr "缩小视图"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "🖼️ Fit View"
+msgstr "🖼️ 适应窗口"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "Fit image to window"
+msgstr "将图像适应窗口大小"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+#: ..\ui\main_window.py:1079
+msgid "🤖 AI Polygon"
+msgstr "🤖 AI 多边形"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+msgid "AI-Assisted Polygon (SAM)"
+msgstr "AI 辅助多边形 (SAM)"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+#: ..\ui\main_window.py:1080
+msgid "🎭 AI Mask"
+msgstr "🎭 AI 掩码"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+msgid "AI-Assisted Pixel Mask (SAM)"
+msgstr "AI 辅助像素掩码 (SAM)"
+
+#: ..\ui\annotation_toolbar.py:87 ..\ui\annotation_toolbar.py:613
+msgid "Annotation Tools"
+msgstr "标注工具"
+
+#: ..\ui\annotation_toolbar.py:114 ..\ui\main_window.py:584
+msgid "Tool: Select"
+msgstr "工具：选取"
+
+#: ..\ui\annotation_toolbar.py:121 ..\ui\annotation_toolbar.py:457
+msgid "Hint: Right-click for options"
+msgstr "提示：右键点击显示选项"
+
+#: ..\ui\annotation_toolbar.py:137 ..\ui\annotation_toolbar.py:614
+msgid "Tools"
+msgstr "工具"
+
+#: ..\ui\annotation_toolbar.py:167 ..\ui\annotation_toolbar.py:615
+msgid "AI Assist"
+msgstr "AI 助手"
+
+#: ..\ui\annotation_toolbar.py:187
+msgid "Model:"
+msgstr "模型："
+
+#: ..\ui\annotation_toolbar.py:214 ..\ui\annotation_toolbar.py:616
+msgid "Actions"
+msgstr "操作"
+
+#: ..\ui\annotation_toolbar.py:246 ..\ui\annotation_toolbar.py:617
+#: ..\ui\main_window.py:546
+msgid "View"
+msgstr "视图"
+
+#: ..\ui\annotation_toolbar.py:406
+msgid "Tool Help"
+msgstr "工具帮助"
+
+#: ..\ui\annotation_toolbar.py:414
+msgid "Toolbar Settings"
+msgstr "工具栏设置"
+
+#: ..\ui\annotation_toolbar.py:415
+msgid "Hotkey Help"
+msgstr "快捷键帮助"
+
+#: ..\ui\annotation_toolbar.py:416
+msgid "About Annotation Tools"
+msgstr "关于标注工具"
+
+#: ..\ui\annotation_toolbar.py:437
+msgid "Select/Edit"
+msgstr "选取/编辑"
+
+#: ..\ui\annotation_toolbar.py:438 ..\ui\main_window.py:530
+#: ..\ui\main_window.py:1073
+msgid "Polygon"
+msgstr "多边形"
+
+#: ..\ui\annotation_toolbar.py:439 ..\ui\main_window.py:1077
+msgid "Rotated Rect"
+msgstr "旋转矩形"
+
+#: ..\ui\annotation_toolbar.py:440 ..\ui\main_window.py:529
+#: ..\ui\main_window.py:1072
+msgid "Rectangle"
+msgstr "矩形"
+
+#: ..\ui\annotation_toolbar.py:441 ..\ui\main_window.py:531
+#: ..\ui\main_window.py:1074
+msgid "Circle"
+msgstr "圆形"
+
+#: ..\ui\annotation_toolbar.py:442 ..\ui\main_window.py:532
+#: ..\ui\main_window.py:1075
+msgid "Annulus"
+msgstr "圆环"
+
+#: ..\ui\annotation_toolbar.py:446 ..\ui\main_window.py:1082
+msgid "Tool: {}"
+msgstr "工具：{}"
+
+#: ..\ui\annotation_toolbar.py:449
+msgid "Hint: Click to select/edit an annotation"
+msgstr "提示：点击以选取/编辑标注"
+
+#: ..\ui\annotation_toolbar.py:450
+msgid "Hint: Click to add vertex, double-click or right-click to finish"
+msgstr "提示：点击添加顶点，双击或右键完成"
+
+#: ..\ui\annotation_toolbar.py:451
+msgid "Hint: Drag to create rotated rectangle"
+msgstr "提示：拖拽以创建旋转矩形"
+
+#: ..\ui\annotation_toolbar.py:452
+msgid "Hint: Drag to create standard rectangle"
+msgstr "提示：拖拽以创建矩形"
+
+#: ..\ui\annotation_toolbar.py:453
+msgid "Hint: Drag to create circle"
+msgstr "提示：拖拽以创建圆形"
+
+#: ..\ui\annotation_toolbar.py:454
+msgid "Hint: Drag to create annulus"
+msgstr "提示：拖拽以创建圆环"
+
+#: ..\ui\annotation_toolbar.py:570
+msgid "🔄 Update"
+msgstr "🔄 更新"
+
+#: ..\ui\annotation_toolbar.py:571
+msgid "Update selected object (Enter)"
+msgstr "更新所选对象 (Enter)"
+
+#: ..\ui\export_dialog.py:23
+msgid "Batch Export"
+msgstr "批量导出"
+
+#: ..\ui\export_dialog.py:34
+msgid "Export {} images to selected format."
+msgstr "将 {} 张图像导出为选定格式。"
+
+#: ..\ui\export_dialog.py:38 ..\ui\export_dialog.py:145
+msgid "Export Format"
+msgstr "导出格式"
+
+#: ..\ui\export_dialog.py:40 ..\ui\export_dialog.py:148
+msgid "YOLO Segmentation (Polygon)"
+msgstr "YOLO 分割 (多边形)"
+
+#: ..\ui\export_dialog.py:41
+msgid "YOLO Detection (BBox)"
+msgstr "YOLO 检测 (边界框)"
+
+#: ..\ui\export_dialog.py:42 ..\ui\export_dialog.py:149
+msgid "YOLO OBB (Rotated Rect)"
+msgstr "YOLO OBB (旋转矩形)"
+
+#: ..\ui\export_dialog.py:43
+msgid "MS COCO (Standard, Index=1)"
+msgstr "MS COCO (标准, 索引=1)"
+
+#: ..\ui\export_dialog.py:44
+msgid "MS COCO (Custom, Index=0)"
+msgstr "MS COCO (自定义, 索引=0)"
+
+#: ..\ui\export_dialog.py:45 ..\ui\export_dialog.py:151
+msgid "Pascal VOC 2012 (XML)"
+msgstr "Pascal VOC 2012 (XML)"
+
+#: ..\ui\export_dialog.py:46 ..\ui\export_dialog.py:152
+msgid "CSV (Generic table)"
+msgstr "CSV (通用表格)"
+
+#: ..\ui\export_dialog.py:54
+msgid "Output Directory"
+msgstr "输出目录"
+
+#: ..\ui\export_dialog.py:61
+msgid "Start Export"
+msgstr "开始导出"
+
+#: ..\ui\export_dialog.py:62 ..\ui\main_window.py:1366
+#: ..\ui\main_window.py:1792 ..\ui\settings_dialog.py:73
+#: ..\ui\settings_dialog.py:131
+msgid "Cancel"
+msgstr "取消"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:328
+msgid "Please select an output directory"
+msgstr "请选择输出目录"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:315
+#: ..\ui\export_dialog.py:328 ..\ui\main_window.py:937
+#: ..\ui\main_window.py:940 ..\ui\main_window.py:974 ..\ui\main_window.py:1005
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+#: ..\ui\main_window.py:1347 ..\ui\main_window.py:1390
+#: ..\ui\main_window.py:1408 ..\ui\main_window.py:1411
+#: ..\ui\main_window.py:1440 ..\ui\main_window.py:1627
+#: ..\ui\main_window.py:1756 ..\ui\main_window.py:1775
+#: ..\ui\main_window.py:1954 ..\ui\main_window.py:2236
+msgid "Error"
+msgstr "错误"
+
+#: ..\ui\export_dialog.py:80
+msgid "Exporting..."
+msgstr "导出中..."
+
+#: ..\ui\export_dialog.py:81
+msgid "Processing images"
+msgstr "正在处理图像"
+
+#: ..\ui\export_dialog.py:93
+msgid ""
+"Batch Export Complete!\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"批量导出完成！\n"
+"成功导出 {}/{} 張图片。"
+
+#: ..\ui\export_dialog.py:94
+msgid "Finished"
+msgstr "已完成"
+
+#: ..\ui\export_dialog.py:104
+msgid "Dataset Export (Split)"
+msgstr "数据集导出 (分割)"
+
+#: ..\ui\export_dialog.py:147
+msgid "YOLO Detection (Bounding Box)"
+msgstr "YOLO 检测 (边界框)"
+
+#: ..\ui\export_dialog.py:150
+msgid "MS COCO (JSON)"
+msgstr "MS COCO (JSON)"
+
+#: ..\ui\export_dialog.py:170
+msgid "Dataset Splitting"
+msgstr "数据集分割"
+
+#: ..\ui\export_dialog.py:173
+msgid "Honor Manual Status (fixed in File List)"
+msgstr "尊重手动状态 (在文件列表中固定)"
+
+#: ..\ui\export_dialog.py:181
+msgid "Train (%):"
+msgstr "训练集 (%):"
+
+#: ..\ui\export_dialog.py:188
+msgid "Val (%):"
+msgstr "验证集 (%):"
+
+#: ..\ui\export_dialog.py:195
+msgid "Test (%):"
+msgstr "测试集 (%):"
+
+#: ..\ui\export_dialog.py:206
+msgid "Distribution Preview"
+msgstr "分布预览"
+
+#: ..\ui\export_dialog.py:207
+msgid "Analyzing..."
+msgstr "分析中..."
+
+#: ..\ui\export_dialog.py:212
+msgid "Format Specific Options"
+msgstr "特定格式选项"
+
+#: ..\ui\export_dialog.py:215
+msgid "Category Index Start:"
+msgstr "类别索引起始值："
+
+#: ..\ui\export_dialog.py:226
+msgid "Output Settings"
+msgstr "输出设置"
+
+#: ..\ui\export_dialog.py:228
+msgid "Copy Image Files (create standalone dataset)"
+msgstr "复制图像文件 (创建独立数据集)"
+
+#: ..\ui\export_dialog.py:233
+msgid "Output Dir:"
+msgstr "输出目录："
+
+#: ..\ui\export_dialog.py:315
+msgid "Train and Val ratios must be greater than 0%"
+msgstr "训练与验证集的比例必须大于 0%"
+
+#: ..\ui\export_dialog.py:322
+msgid ""
+"Note: Ratios sum to {}%. The application will treat them as weights but it's"
+" recommended to sum to 100%."
+msgstr "注意：比例总和为 {}%。程序将视其为权重，但建议总和为 100%。"
+
+#: ..\ui\export_dialog.py:323
+msgid "Warning"
+msgstr "警告"
+
+#: ..\ui\i18n.py:156
+msgid "Switch to {}"
+msgstr "切换到 {}"
+
+#: ..\ui\image_display_panel.py:333
+msgid "ROI Complete: Right-click image or use Toolbar/Enter to save"
+msgstr "ROI 完成：右键点击图像或使用工具栏/Enter 保存"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Select Category:"
+msgstr "选择分类："
+
+#: ..\ui\image_display_panel.py:342
+msgid "Category"
+msgstr "分类"
+
+#: ..\ui\image_display_panel.py:546 ..\ui\image_display_panel.py:655
+msgid "Drawing Label: {}"
+msgstr "正在绘制标签：{}"
+
+#: ..\ui\image_display_panel.py:613 ..\ui\image_display_panel.py:653
+msgid ""
+"AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
+msgstr "AI 模式已启用：左键（绿色）新增，右键（红色）排除。"
+
+#: ..\ui\image_display_panel.py:719
+msgid "Editing {}. Shape locked. Press Enter to update."
+msgstr "编辑 {}。形状已锁定。按 Enter 更新。"
+
+#: ..\ui\image_display_panel.py:778
+msgid "AI: First point must be a positive prompt (Left-click)."
+msgstr "AI：第一个点必须是正向提示（左键点击）。"
+
+#: ..\ui\image_display_panel.py:914
+msgid "🤖 Preparing AI Model: {}... (Downloading if needed)"
+msgstr "🤖 正在准备 AI 模型：{}... (必要时下载)"
+
+#: ..\ui\image_display_panel.py:923
+msgid "❌ AI Model initialization failed."
+msgstr "❌ AI 模型初始化失败。"
+
+#: ..\ui\image_display_panel.py:930
+msgid "🧠 AI Embedding... (Wait)"
+msgstr "🧠 AI 嵌入计算中... (请稍候)"
+
+#: ..\ui\image_display_panel.py:954
+msgid "AI Active: {} positive, {} negative prompts."
+msgstr "AI 已启用：{} 个正向、{} 个负向提示点。"
+
+#: ..\ui\image_display_panel.py:983
+msgid "AI Annotation added."
+msgstr "已添加 AI 标注。"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Complete Annotation"
+msgstr "完成标注"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Update Object"
+msgstr "更新对象"
+
+#: ..\ui\image_display_panel.py:1040
+msgid "Cancel Drawing"
+msgstr "取消绘制"
+
+#: ..\ui\image_display_panel.py:1061
+msgid "Select Overlapping Object"
+msgstr "选择重叠对象"
+
+#: ..\ui\image_display_panel.py:1069
+msgid "Bring to Front"
+msgstr "置于顶层"
+
+#: ..\ui\image_display_panel.py:1072
+msgid "Send to Back"
+msgstr "置于底层"
+
+#: ..\ui\image_display_panel.py:1076
+msgid "Delete Object"
+msgstr "删除对象"
+
+#: ..\ui\image_display_panel.py:1084
+msgid "Create Rectangle"
+msgstr "创建矩形"
+
+#: ..\ui\image_display_panel.py:1087
+msgid "Create Rotated Rect"
+msgstr "创建旋转矩形"
+
+#: ..\ui\image_display_panel.py:1090
+msgid "Create Circle"
+msgstr "创建圆形"
+
+#: ..\ui\image_display_panel.py:1093
+msgid "Create Annulus"
+msgstr "创建环形 (圆环)"
+
+#: ..\ui\image_display_panel.py:1096
+msgid "Create Polygon"
+msgstr "创建多边形"
+
+#: ..\ui\image_display_panel.py:1102
+msgid "Zoom to Fit"
+msgstr "缩放至适配"
+
+#: ..\ui\image_display_panel.py:1105
+msgid "Full Screen"
+msgstr "全屏"
+
+#: ..\ui\image_display_panel.py:1119
+msgid "Moved object to top layer"
+msgstr "已将对象移至顶层"
+
+#: ..\ui\image_display_panel.py:1125
+msgid "Moved object to bottom layer"
+msgstr "已将对象移至底层"
+
+#: ..\ui\image_display_panel.py:1200
+msgid "Error: Invalid ROI size"
+msgstr "错误：无效的 ROI 尺寸"
+
+#: ..\ui\image_display_panel.py:1207
+msgid "Updated: {}"
+msgstr "已更新：{}"
+
+#: ..\ui\image_display_panel.py:1216
+msgid "Added: {}"
+msgstr "已添加：{}"
+
+#: ..\ui\image_display_panel.py:1250
+msgid "Drawing/Edit cancelled"
+msgstr "绘制/编辑已取消"
+
+#: ..\ui\main_window.py:330 ..\ui\main_window.py:730
+msgid "Label List"
+msgstr "标签列表"
+
+#: ..\ui\main_window.py:378
+msgid "Label set to: {}"
+msgstr "标签设为：{}"
+
+#: ..\ui\main_window.py:386 ..\ui\main_window.py:732
+msgid "Annotation List"
+msgstr "标注列表"
+
+#: ..\ui\main_window.py:400 ..\ui\main_window.py:739
+msgid "ID"
+msgstr "编号"
+
+#: ..\ui\main_window.py:401 ..\ui\main_window.py:743
+msgid "Label"
+msgstr "标签"
+
+#: ..\ui\main_window.py:402 ..\ui\main_window.py:747
+msgid "Type"
+msgstr "类型"
+
+#: ..\ui\main_window.py:403 ..\ui\main_window.py:751
+msgid "Vis"
+msgstr "可见"
+
+#: ..\ui\main_window.py:414 ..\ui\main_window.py:525 ..\ui\main_window.py:769
+msgid "Edit"
+msgstr "编辑"
+
+#: ..\ui\main_window.py:415 ..\ui\main_window.py:771
+msgid "Delete"
+msgstr "删除"
+
+#: ..\ui\main_window.py:416 ..\ui\main_window.py:773
+msgid "Visibility"
+msgstr "可见性"
+
+#: ..\ui\main_window.py:443 ..\ui\main_window.py:734
+msgid "File List"
+msgstr "文件列表"
+
+#: ..\ui\main_window.py:457 ..\ui\main_window.py:756
+msgid "Filename"
+msgstr "文件名"
+
+#: ..\ui\main_window.py:458 ..\ui\main_window.py:760
+msgid "Count"
+msgstr "数量"
+
+#: ..\ui\main_window.py:459 ..\ui\main_window.py:764
+msgid "Status"
+msgstr "状态"
+
+#: ..\ui\main_window.py:470 ..\ui\main_window.py:775
+msgid "Prev"
+msgstr "上一张"
+
+#: ..\ui\main_window.py:471 ..\ui\main_window.py:777
+msgid "Next"
+msgstr "下一张"
+
+#: ..\ui\main_window.py:499
+msgid "Open Image"
+msgstr "打开图像"
+
+#: ..\ui\main_window.py:500
+msgid "Open Folder"
+msgstr "打开文件夹"
+
+#: ..\ui\main_window.py:502
+msgid "Save"
+msgstr "保存"
+
+#: ..\ui\main_window.py:503
+msgid "Save As..."
+msgstr "另存为..."
+
+#: ..\ui\main_window.py:505
+msgid "Exit"
+msgstr "退出"
+
+#: ..\ui\main_window.py:507
+msgid "File"
+msgstr "文件"
+
+#: ..\ui\main_window.py:511
+msgid "Save Labels to Project Folder"
+msgstr "将标签保存至项目文件夹"
+
+#: ..\ui\main_window.py:512
+msgid "Reload Labels from Project"
+msgstr "从项目重新加载标签"
+
+#: ..\ui\main_window.py:514
+msgid "Manage Categories..."
+msgstr "管理分类..."
+
+#: ..\ui\main_window.py:514
+msgid "Open category manager dialog"
+msgstr "打开分类管理对话框"
+
+#: ..\ui\main_window.py:516
+msgid "Project"
+msgstr "项目"
+
+#: ..\ui\main_window.py:520
+msgid "Undo"
+msgstr "撤销"
+
+#: ..\ui\main_window.py:521
+msgid "Redo"
+msgstr "重做"
+
+#: ..\ui\main_window.py:523
+msgid "Delete Annotation"
+msgstr "删除标注"
+
+#: ..\ui\main_window.py:533 ..\ui\main_window.py:1076
+msgid "Point"
+msgstr "点"
+
+#: ..\ui\main_window.py:535
+msgid "Select Tool"
+msgstr "选择工具"
+
+#: ..\ui\main_window.py:537
+msgid "Annotate"
+msgstr "标注"
+
+#: ..\ui\main_window.py:542
+msgid "Zoom In"
+msgstr "放大"
+
+#: ..\ui\main_window.py:543
+msgid "Zoom Out"
+msgstr "缩小"
+
+#: ..\ui\main_window.py:544
+msgid "Fit Window"
+msgstr "适应窗口"
+
+#: ..\ui\main_window.py:550
+msgid "Batch Export..."
+msgstr "批量导出..."
+
+#: ..\ui\main_window.py:551
+msgid "Export Dataset (Split)..."
+msgstr "导出数据集 (分割)..."
+
+#: ..\ui\main_window.py:553
+msgid "Supported Formats"
+msgstr "支持格式"
+
+#: ..\ui\main_window.py:555
+msgid "Export"
+msgstr "导出"
+
+#: ..\ui\main_window.py:559
+msgid "Settings..."
+msgstr "设置..."
+
+#: ..\ui\main_window.py:561 ..\ui\settings_dialog.py:19
+#: ..\ui\settings_dialog.py:90
+msgid "Settings"
+msgstr "设置"
+
+#: ..\ui\main_window.py:565
+msgid "About"
+msgstr "关于"
+
+#: ..\ui\main_window.py:567
+msgid "Help"
+msgstr "帮助"
+
+#: ..\ui\main_window.py:583
+msgid "Ready"
+msgstr "就绪"
+
+#: ..\ui\main_window.py:585
+msgid "Count: 0"
+msgstr "数量：0"
+
+#: ..\ui\main_window.py:716
+msgid "Language changed to {}. Interface elements have been updated."
+msgstr "语言已更改为 {}。界面元素已更新。"
+
+#: ..\ui\main_window.py:717
+msgid "Language Changed"
+msgstr "语言已更改"
+
+#: ..\ui\main_window.py:914
+msgid "Select Image File"
+msgstr "选择图像文件"
+
+#: ..\ui\main_window.py:915
+msgid "Image Files"
+msgstr "图像文件"
+
+#: ..\ui\main_window.py:915
+msgid "All Files"
+msgstr "所有文件"
+
+#: ..\ui\main_window.py:930
+msgid "Opened: {}"
+msgstr "已打开：{}"
+
+#: ..\ui\main_window.py:937
+msgid "Cannot load image: {}"
+msgstr "无法加载图像：{}"
+
+#: ..\ui\main_window.py:940
+msgid "Image Panel not initialized"
+msgstr "图像面板尚未初始化"
+
+#: ..\ui\main_window.py:950
+msgid "Select Folder containing images"
+msgstr "选择包含图像的文件夹"
+
+#: ..\ui\main_window.py:972
+msgid "Annotations Saved (Base64: {})"
+msgstr "标注已保存 (Base64: {})"
+
+#: ..\ui\main_window.py:974
+msgid "Failed to save annotations"
+msgstr "保存标注失败"
+
+#: ..\ui\main_window.py:976
+msgid "No current image"
+msgstr "当前无图像"
+
+#: ..\ui\main_window.py:976 ..\ui\main_window.py:1332
+#: ..\ui\main_window.py:1398 ..\ui\main_window.py:1419
+#: ..\ui\main_window.py:1604 ..\ui\main_window.py:1763
+msgid "Hint"
+msgstr "提示"
+
+#: ..\ui\main_window.py:1003
+msgid "Annotations saved as... (Base64: {})"
+msgstr "标注已另存为... (Base64: {})"
+
+#: ..\ui\main_window.py:1005
+msgid "Save failed"
+msgstr "保存失败"
+
+#: ..\ui\main_window.py:1064
+msgid "AI Mode: UI locked. Use Enter/Esc to finish."
+msgstr "AI模式：界面已锁定。使用 Enter / Esc 结束。"
+
+#: ..\ui\main_window.py:1066
+msgid "UI Unlocked"
+msgstr "界面已解锁"
+
+#: ..\ui\main_window.py:1078
+msgid "Select"
+msgstr "选择"
+
+#: ..\ui\main_window.py:1107
+msgid "added"
+msgstr "已添加"
+
+#: ..\ui\main_window.py:1108
+msgid "deleted"
+msgstr "已删除"
+
+#: ..\ui\main_window.py:1109
+msgid "updated"
+msgstr "已更新"
+
+#: ..\ui\main_window.py:1110
+msgid "loaded"
+msgstr "已加载"
+
+#: ..\ui\main_window.py:1111
+msgid "undone"
+msgstr "已撤销"
+
+#: ..\ui\main_window.py:1112
+msgid "redone"
+msgstr "已重做"
+
+#: ..\ui\main_window.py:1114 ..\ui\main_window.py:1429
+#: ..\ui\main_window.py:1437
+msgid "Annotation {}"
+msgstr "标注 {}"
+
+#: ..\ui\main_window.py:1259 ..\ui\main_window.py:1273
+msgid "Switched to image {}"
+msgstr "已切换到图像 {}"
+
+#: ..\ui\main_window.py:1261
+msgid "Already at the first image"
+msgstr "已经是第一张图像"
+
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+msgid "Failed to switch image: {}"
+msgstr "切换图像失败：{}"
+
+#: ..\ui\main_window.py:1275
+msgid "Already at the last image"
+msgstr "已经是最后一张图像"
+
+#: ..\ui\main_window.py:1277
+msgid "No images loaded"
+msgstr "未加载图像"
+
+#: ..\ui\main_window.py:1332
+msgid "Please select an annotation to edit"
+msgstr "请选择要编辑的标注"
+
+#: ..\ui\main_window.py:1347
+msgid "Selected annotation not found"
+msgstr "找不到所选标注"
+
+#: ..\ui\main_window.py:1351
+msgid "Edit Annotation"
+msgstr "编辑标注"
+
+#: ..\ui\main_window.py:1355
+msgid "Category:"
+msgstr "分类："
+
+#: ..\ui\main_window.py:1365 ..\ui\settings_dialog.py:72
+#: ..\ui\settings_dialog.py:130
+msgid "OK"
+msgstr "确定"
+
+#: ..\ui\main_window.py:1385
+msgid "Label updated to: {}"
+msgstr "标签已更新为：{}"
+
+#: ..\ui\main_window.py:1390
+msgid "Failed to edit annotation: {}"
+msgstr "编辑标注失败：{}"
+
+#: ..\ui\main_window.py:1398
+msgid "Please select an annotation to delete"
+msgstr "请选择要删除的标注"
+
+#: ..\ui\main_window.py:1401
+msgid "Are you sure you want to delete the selected annotation?"
+msgstr "确定要删除所选标注吗？"
+
+#: ..\ui\main_window.py:1401
+msgid "Confirm"
+msgstr "确认"
+
+#: ..\ui\main_window.py:1406
+msgid "Annotation Deleted"
+msgstr "标注已删除"
+
+#: ..\ui\main_window.py:1408
+msgid "Failed to delete annotation"
+msgstr "删除标注失败"
+
+#: ..\ui\main_window.py:1411
+msgid "Failed to delete annotation: {}"
+msgstr "删除标注失败：{}"
+
+#: ..\ui\main_window.py:1419
+msgid "Please select an annotation to toggle visibility"
+msgstr "请选择要切换可见性的标注"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Shown"
+msgstr "显示"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Hidden"
+msgstr "隐藏"
+
+#: ..\ui\main_window.py:1440
+msgid "Failed to toggle visibility: {}"
+msgstr "切换可见性失败：{}"
+
+#: ..\ui\main_window.py:1578
+msgid "Enabled"
+msgstr "已启用"
+
+#: ..\ui\main_window.py:1578
+msgid "Disabled"
+msgstr "已禁用"
+
+#: ..\ui\main_window.py:1579
+msgid "Base64 Embedding: {}"
+msgstr "Base64 嵌入：{}"
+
+#: ..\ui\main_window.py:1604
+msgid ""
+"No image files found in folder\n"
+"{}"
+msgstr ""
+"文件夹中未找到图片文件\n"
+"{}"
+
+#: ..\ui\main_window.py:1623
+msgid "Loaded folder: {} ({} images)"
+msgstr "已加载文件夹：{} ({} 张图像)"
+
+#: ..\ui\main_window.py:1627
+msgid "Failed to load folder: {}"
+msgstr "加载文件夹失败：{}"
+
+#: ..\ui\main_window.py:1713
+msgid "None"
+msgstr "无"
+
+#: ..\ui\main_window.py:1732
+msgid "Add Category..."
+msgstr "添加分类..."
+
+#: ..\ui\main_window.py:1733
+msgid "Edit Category..."
+msgstr "编辑分类..."
+
+#: ..\ui\main_window.py:1734
+msgid "Delete Selected Category"
+msgstr "删除所选分类"
+
+#: ..\ui\main_window.py:1745
+msgid "Add Category"
+msgstr "添加分类"
+
+#: ..\ui\main_window.py:1754
+msgid "Category added: {}"
+msgstr "分类已添加：{}"
+
+#: ..\ui\main_window.py:1756
+msgid "Category '{}' already exists"
+msgstr "分类 '{}' 已存在"
+
+#: ..\ui\main_window.py:1763
+msgid "Please select a category to edit"
+msgstr "请选择要编辑的分类"
+
+#: ..\ui\main_window.py:1767
+msgid "Edit Category"
+msgstr "编辑分类"
+
+#: ..\ui\main_window.py:1775
+msgid "Category name cannot be empty"
+msgstr "分类名称不能为空"
+
+#: ..\ui\main_window.py:1784
+msgid ""
+"You are renaming category '{}' to '{}'.\n"
+"\n"
+"Do you want to update all existing annotation files in this folder?\n"
+"\n"
+"Yes: Update ALL files in folder\n"
+"No: Update only the category list\n"
+"Cancel: Abort changes"
+msgstr ""
+"您正在将类别「{}」重命名为「{}」。\n"
+"\n"
+"是否要更新此文件夹中所有的标注文件？\n"
+"\n"
+"是：更新文件夹中所有文件\n"
+"否：仅更新类别列表\n"
+"取消：放弃变更"
+
+#: ..\ui\main_window.py:1790
+msgid "Rename Confirmation"
+msgstr "重命名确认"
+
+#: ..\ui\main_window.py:1792
+msgid "Update All"
+msgstr "全部更新"
+
+#: ..\ui\main_window.py:1792
+msgid "List Only"
+msgstr "仅列表"
+
+#: ..\ui\main_window.py:1804
+msgid "Renamed '{}' to '{}' in {} files"
+msgstr "已在 {} 个文件中将 '{}' 重命名为 '{}'"
+
+#: ..\ui\main_window.py:1806
+msgid "Renamed '{}' to '{}' in list only"
+msgstr "仅在列表中将 '{}' 重命名为 '{}'"
+
+#: ..\ui\main_window.py:1809
+msgid "Updated color for Category: {}"
+msgstr "已更新分类 {} 的颜色"
+
+#: ..\ui\main_window.py:1875
+msgid "Are you sure you want to delete category '{}'?"
+msgstr "确定要删除分类 '{}' 吗？"
+
+#: ..\ui\main_window.py:1876
+msgid "Confirm Delete"
+msgstr "确认删除"
+
+#: ..\ui\main_window.py:1879
+msgid "Category deleted: {}"
+msgstr "分类已删除：{}"
+
+#: ..\ui\main_window.py:1881
+msgid "Cannot delete default category '{}'"
+msgstr "无法删除默认分类 '{}'"
+
+#: ..\ui\main_window.py:1882
+msgid "Constraint"
+msgstr "限制"
+
+#: ..\ui\main_window.py:1904
+msgid "Delete Annotation File"
+msgstr "删除标注文件"
+
+#: ..\ui\main_window.py:1923
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\n"
+"This action cannot be undone."
+msgstr ""
+"您确定要删除「{}」的标注文件吗？\n"
+"此动作无法复原。"
+
+#: ..\ui\main_window.py:1924
+msgid "Confirm Deletion"
+msgstr "确认删除"
+
+#: ..\ui\main_window.py:1950
+msgid "Deleted annotation file for: {}"
+msgstr "已删除标注文件：{}"
+
+#: ..\ui\main_window.py:1954
+msgid "Failed to delete annotation file: {}"
+msgstr "删除标注文件失败：{}"
+
+#: ..\ui\main_window.py:2168
+msgid "Categories updated"
+msgstr "分类已更新"
+
+#: ..\ui\main_window.py:2201
+msgid "No images loaded to export"
+msgstr "没有加载可导出的图像"
+
+#: ..\ui\main_window.py:2201
+msgid "Information"
+msgstr "信息"
+
+#: ..\ui\main_window.py:2210
+msgid "Generating Dataset..."
+msgstr "正在生成数据集..."
+
+#: ..\ui\main_window.py:2211
+msgid "Processing splitting and export formats"
+msgstr "正在处理分割和导出格式"
+
+#: ..\ui\main_window.py:2231
+msgid ""
+"Dataset Export Complete!\n"
+"Target: {}\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"数据集导出完成！\n"
+"目标：{}\n"
+"成功导出 {}/{} 張图片。"
+
+#: ..\ui\main_window.py:2233
+msgid "Success"
+msgstr "成功"
+
+#: ..\ui\main_window.py:2251
+msgid "Supported Export Formats:"
+msgstr "支持的导出格式："
+
+#: ..\ui\main_window.py:2257
+msgid "Features:"
+msgstr "主要功能："
+
+#: ..\ui\main_window.py:2263
+msgid "Export Format Info"
+msgstr "导出格式信息"
+
+#: ..\ui\main_window.py:2271
+msgid ""
+"A professional computer vision annotation tool.\n"
+"\n"
+"Key Features:\n"
+"• Advanced Export: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• Integrated AI: SAM, SAM2, EfficientSAM, and various detection models.\n"
+"• Cross-platform support with industrial-grade precision.\n"
+"\n"
+"Designed for professional computer vision research and dataset preparation."
+msgstr ""
+"一款专业的计算机视觉标注工具。\n"
+"\n"
+"核心特色：\n"
+"• 进阶导出：YOLO (Detect/Seg/OBB)、MS COCO、Pascal VOC 2012、CSV。\n"
+"• 整合 AI：SAM、SAM2、EfficientSAM 以及多种检测模型。\n"
+"• 具备工业级精度的跨平台支持。\n"
+"\n"
+"专为专业计算机视觉研究与数据集准备而设计。"
+
+#: ..\ui\theme_manager.py:35
+msgid "Dark (Default)"
+msgstr "深色 (默认)"
+
+#: ..\ui\theme_manager.py:48
+msgid "Light (VS)"
+msgstr "浅色 (VS)"
+
+#: ..\ui\theme_manager.py:61
+msgid "Visual Studio Blue"
+msgstr "Visual Studio 蓝色"
+
+#: ..\ui\theme_manager.py:74
+msgid "Monokai"
+msgstr "Monokai"
+
+#: ..\ui\settings_dialog.py:50 ..\ui\settings_dialog.py:93
+msgid "Language"
+msgstr "语言"
+
+#: ..\ui\settings_dialog.py:54 ..\ui\settings_dialog.py:94
+msgid "Theme"
+msgstr "主题"
+
+#: ..\ui\settings_dialog.py:58 ..\ui\settings_dialog.py:95
+msgid "User Settings"
+msgstr "用户设置"
+
+#: ..\ui\settings_dialog.py:62 ..\ui\settings_dialog.py:96
+msgid "Annotation"
+msgstr "标注"
+
+#: ..\ui\settings_dialog.py:66 ..\ui\settings_dialog.py:97
+msgid "AI Annotation"
+msgstr "AI 标注"
+
+#: ..\ui\settings_dialog.py:74 ..\ui\settings_dialog.py:132
+msgid "Apply"
+msgstr "应用"
+
+#: ..\ui\settings_dialog.py:100 ..\ui\settings_dialog.py:170
+msgid "Language Selection"
+msgstr "语言选择"
+
+#: ..\ui\settings_dialog.py:101 ..\ui\settings_dialog.py:199
+msgid "UI Appearance"
+msgstr "外观界面"
+
+#: ..\ui\settings_dialog.py:102 ..\ui\settings_dialog.py:234
+msgid "Annotator Information"
+msgstr "标注人员信息"
+
+#: ..\ui\settings_dialog.py:103 ..\ui\settings_dialog.py:274
+msgid "LabelMe Storage Format"
+msgstr "LabelMe 存储格式"
+
+#: ..\ui\settings_dialog.py:104 ..\ui\settings_dialog.py:289
+msgid "Attribute Panel"
+msgstr "属性面板"
+
+#: ..\ui\settings_dialog.py:105 ..\ui\settings_dialog.py:318
+msgid "AI Assisted Labeling Settings"
+msgstr "AI 辅助标注设置"
+
+#: ..\ui\settings_dialog.py:108 ..\ui\settings_dialog.py:186
+msgid "Select Interface Language:"
+msgstr "选择界面语言："
+
+#: ..\ui\settings_dialog.py:109 ..\ui\settings_dialog.py:209
+msgid "Color Theme:"
+msgstr "色彩主题："
+
+#: ..\ui\settings_dialog.py:110 ..\ui\settings_dialog.py:218
+msgid "Font Size:"
+msgstr "字体大小："
+
+#: ..\ui\settings_dialog.py:112 ..\ui\settings_dialog.py:237
+msgid "Enable User Information (Save to JSON)"
+msgstr "启用用户信息 (保存至 JSON)"
+
+#: ..\ui\settings_dialog.py:113 ..\ui\settings_dialog.py:244
+msgid "Name:"
+msgstr "姓名："
+
+#: ..\ui\settings_dialog.py:114 ..\ui\settings_dialog.py:251
+msgid "Quality Score (0-100):"
+msgstr "质量评分 (0-100)："
+
+#: ..\ui\settings_dialog.py:115 ..\ui\settings_dialog.py:260
+msgid "Note: User info will only be added to JSON when enabled above."
+msgstr "注：用户信息仅在上方启用时才会加入 JSON。"
+
+#: ..\ui\settings_dialog.py:117 ..\ui\settings_dialog.py:276
+msgid "Embed Image Data (Base64) in JSON"
+msgstr "在 JSON 中嵌入图像数据 (Base64)"
+
+#: ..\ui\settings_dialog.py:118 ..\ui\settings_dialog.py:281
+msgid "Note: Enabling this will significantly increase JSON file size."
+msgstr "注：启用此项将大幅增加 JSON 文件大小。"
+
+#: ..\ui\settings_dialog.py:119 ..\ui\settings_dialog.py:291
+msgid "Enable Attribute Panel (show below annotation list)"
+msgstr "启用属性面板 (显示在标注列表下方)"
+
+#: ..\ui\settings_dialog.py:120 ..\ui\settings_dialog.py:296
+msgid "Default Flags:"
+msgstr "默认标记 (Flags)："
+
+#: ..\ui\settings_dialog.py:121 ..\ui\settings_dialog.py:305
+msgid "Comma-separated flag names, e.g.: occluded, truncated, difficult"
+msgstr "以逗号分隔，例如：occluded, truncated, difficult"
+
+#: ..\ui\settings_dialog.py:123 ..\ui\settings_dialog.py:321
+msgid "AI Model Directory:"
+msgstr "AI 模型目录："
+
+#: ..\ui\settings_dialog.py:124 ..\ui\settings_dialog.py:331
+msgid "Enable Continuous Inference (Real-time)"
+msgstr "启用连续推理 (实时)"
+
+#: ..\ui\settings_dialog.py:125 ..\ui\settings_dialog.py:337
+msgid "Inference Interval (ms):"
+msgstr "推理间隔 (ms)："
+
+#: ..\ui\settings_dialog.py:126 ..\ui\settings_dialog.py:346
+msgid "Auto-simplify Polygon (0.004 Tolerance)"
+msgstr "自动简化多边形 (0.004 容差)"
+
+#: ..\ui\settings_dialog.py:127 ..\ui\settings_dialog.py:350
+msgid "Denoise Mask (Filter small fragments)"
+msgstr "掩码降噪 (过滤细碎区域)"
+
+msgid "+ Add"
+msgstr "+ 新增"
+
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\\nThis action "
+"cannot be undone."
+msgstr "您确定要删除「{}」的标注文件吗？\\n此动作无法复原。"
+
+msgid "Attributes"
+msgstr "属性"
+
+msgid "Automated directory structure generation"
+msgstr "自动产生目录结构"
+
+msgid "Batch Export Complete!\\nSuccessfully exported {}/{} images."
+msgstr "批量导出完成！\\n成功导出 {}/{} 張图片。"
+
+msgid "Batch export to directory"
+msgstr "批量导出至目录"
+
+msgid "Create line annotation (L)"
+msgstr "创建线段标注 (L)"
+
+msgid "Custom Attributes:"
+msgstr "自定义属性："
+
+msgid ""
+"Dataset Export Complete!\\nTarget: {}\\nSuccessfully exported {}/{} images."
+msgstr "数据集导出完成！\\n目标：{}\\n成功导出 {}/{} 張图片。"
+
+msgid "Dataset splitting (Train/Val/Test)"
+msgstr "数据集分割 (Train/Val/Test)"
+
+msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
+msgstr "检测 (BBox)、分割 (Polygon) 以及 OBB (旋转矩形)"
+
+msgid "Edit Label"
+msgstr "编辑标签"
+
+msgid "Flags:"
+msgstr "标记 (Flags)："
+
+msgid "Generic coordinate table for custom analysis"
+msgstr "用于自定义分析的通用坐标表"
+
+msgid "Hint: Drag to create line"
+msgstr "提示：拖曳以创建线段"
+
+msgid "Image Annotation Tool"
+msgstr "图像标注工具"
+
+msgid "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
+msgstr "工业标准 JSON，可配置索引 Index=0 (自定义) 或 1 (标准)"
+
+msgid "Info"
+msgstr "信息"
+
+msgid "Line"
+msgstr "线段"
+
+msgid "No annotation file found for this image."
+msgstr "找不到此图片的标注文件。"
+
+msgid "No image files found in folder\\n{}"
+msgstr "文件夹中未找到图片文件\\n{}"
+
+msgid "Preview of split distribution"
+msgstr "分割分布预览"
+
+msgid "Select an annotation to edit attributes"
+msgstr "选取标注以编辑属性"
+
+msgid "Standardized to VOC 2012 XML with 1-based pixel precision"
+msgstr "标准化为 1 基准像素精度的 VOC 2012 XML"
+
+msgid "Test"
+msgstr "测试集 (Test)"
+
+msgid "Total Images"
+msgstr "图片总数"
+
+msgid "Train"
+msgstr "训练集 (Train)"
+
+msgid "Transcription:"
+msgstr "转录 (Transcription)："
+
+msgid "Unknown"
+msgstr "未知"
+
+msgid "Valid"
+msgstr "验证集 (Val)"
+
+msgid "📏 Line"
+msgstr "📏 线段"

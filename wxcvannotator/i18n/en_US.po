@@ -1,0 +1,1383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 23:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "🎯 Select"
+msgstr "🎯 Select"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "Select or edit annotations (S)"
+msgstr "Select or edit annotations (S)"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "🔷 Polygon"
+msgstr "🔷 Polygon"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "Create polygon annotation (P)"
+msgstr "Create polygon annotation (P)"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "📐 Rotated Rect"
+msgstr "📐 Rotated Rect"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "Create rotated rectangle (R)"
+msgstr "Create rotated rectangle (R)"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "⬛ Rectangle"
+msgstr "⬛ Rectangle"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "Create rectangle annotation"
+msgstr "Create rectangle annotation"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "⭕ Circle"
+msgstr "⭕ Circle"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "Create circle annotation"
+msgstr "Create circle annotation"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "🍩 Annulus"
+msgstr "🍩 Annulus"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "Create annulus annotation"
+msgstr "Create annulus annotation"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:574
+#: ..\ui\annotation_toolbar.py:595
+msgid "➕ Add"
+msgstr "➕ Add"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:575
+#: ..\ui\annotation_toolbar.py:595
+msgid "Add object to list (Enter)"
+msgstr "Add object to list (Enter)"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "🚫 Cancel"
+msgstr "🚫 Cancel"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "Cancel current drawing (Esc)"
+msgstr "Cancel current drawing (Esc)"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "↩️ Undo"
+msgstr "↩️ Undo"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "Undo operation (Ctrl+Z)"
+msgstr "Undo operation (Ctrl+Z)"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "↪️ Redo"
+msgstr "↪️ Redo"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "Redo operation (Ctrl+Y)"
+msgstr "Redo operation (Ctrl+Y)"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "🔍 Zoom In"
+msgstr "🔍 Zoom In"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "Zoom in view"
+msgstr "Zoom in view"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "🔎 Zoom Out"
+msgstr "🔎 Zoom Out"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "Zoom out view"
+msgstr "Zoom out view"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "🖼️ Fit View"
+msgstr "🖼️ Fit View"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "Fit image to window"
+msgstr "Fit image to window"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+#: ..\ui\main_window.py:1079
+msgid "🤖 AI Polygon"
+msgstr "🤖 AI Polygon"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+msgid "AI-Assisted Polygon (SAM)"
+msgstr "AI-Assisted Polygon (SAM)"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+#: ..\ui\main_window.py:1080
+msgid "🎭 AI Mask"
+msgstr "🎭 AI Mask"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+msgid "AI-Assisted Pixel Mask (SAM)"
+msgstr "AI-Assisted Pixel Mask (SAM)"
+
+#: ..\ui\annotation_toolbar.py:87 ..\ui\annotation_toolbar.py:613
+msgid "Annotation Tools"
+msgstr "Annotation Tools"
+
+#: ..\ui\annotation_toolbar.py:114 ..\ui\main_window.py:584
+msgid "Tool: Select"
+msgstr "Tool: Select"
+
+#: ..\ui\annotation_toolbar.py:121 ..\ui\annotation_toolbar.py:457
+msgid "Hint: Right-click for options"
+msgstr "Hint: Right-click for options"
+
+#: ..\ui\annotation_toolbar.py:137 ..\ui\annotation_toolbar.py:614
+msgid "Tools"
+msgstr "Tools"
+
+#: ..\ui\annotation_toolbar.py:167 ..\ui\annotation_toolbar.py:615
+msgid "AI Assist"
+msgstr "AI Assist"
+
+#: ..\ui\annotation_toolbar.py:187
+msgid "Model:"
+msgstr "Model:"
+
+#: ..\ui\annotation_toolbar.py:214 ..\ui\annotation_toolbar.py:616
+msgid "Actions"
+msgstr "Actions"
+
+#: ..\ui\annotation_toolbar.py:246 ..\ui\annotation_toolbar.py:617
+#: ..\ui\main_window.py:546
+msgid "View"
+msgstr "View"
+
+#: ..\ui\annotation_toolbar.py:406
+msgid "Tool Help"
+msgstr "Tool Help"
+
+#: ..\ui\annotation_toolbar.py:414
+msgid "Toolbar Settings"
+msgstr "Toolbar Settings"
+
+#: ..\ui\annotation_toolbar.py:415
+msgid "Hotkey Help"
+msgstr "Hotkey Help"
+
+#: ..\ui\annotation_toolbar.py:416
+msgid "About Annotation Tools"
+msgstr "About Annotation Tools"
+
+#: ..\ui\annotation_toolbar.py:437
+msgid "Select/Edit"
+msgstr "Select/Edit"
+
+#: ..\ui\annotation_toolbar.py:438 ..\ui\main_window.py:530
+#: ..\ui\main_window.py:1073
+msgid "Polygon"
+msgstr "Polygon"
+
+#: ..\ui\annotation_toolbar.py:439 ..\ui\main_window.py:1077
+msgid "Rotated Rect"
+msgstr "Rotated Rect"
+
+#: ..\ui\annotation_toolbar.py:440 ..\ui\main_window.py:529
+#: ..\ui\main_window.py:1072
+msgid "Rectangle"
+msgstr "Rectangle"
+
+#: ..\ui\annotation_toolbar.py:441 ..\ui\main_window.py:531
+#: ..\ui\main_window.py:1074
+msgid "Circle"
+msgstr "Circle"
+
+#: ..\ui\annotation_toolbar.py:442 ..\ui\main_window.py:532
+#: ..\ui\main_window.py:1075
+msgid "Annulus"
+msgstr "Annulus"
+
+#: ..\ui\annotation_toolbar.py:446 ..\ui\main_window.py:1082
+msgid "Tool: {}"
+msgstr "Tool: {}"
+
+#: ..\ui\annotation_toolbar.py:449
+msgid "Hint: Click to select/edit an annotation"
+msgstr "Hint: Click to select/edit an annotation"
+
+#: ..\ui\annotation_toolbar.py:450
+msgid "Hint: Click to add vertex, double-click or right-click to finish"
+msgstr "Hint: Click to add vertex, double-click or right-click to finish"
+
+#: ..\ui\annotation_toolbar.py:451
+msgid "Hint: Drag to create rotated rectangle"
+msgstr "Hint: Drag to create rotated rectangle"
+
+#: ..\ui\annotation_toolbar.py:452
+msgid "Hint: Drag to create standard rectangle"
+msgstr "Hint: Drag to create standard rectangle"
+
+#: ..\ui\annotation_toolbar.py:453
+msgid "Hint: Drag to create circle"
+msgstr "Hint: Drag to create circle"
+
+#: ..\ui\annotation_toolbar.py:454
+msgid "Hint: Drag to create annulus"
+msgstr "Hint: Drag to create annulus"
+
+#: ..\ui\annotation_toolbar.py:570
+msgid "🔄 Update"
+msgstr "🔄 Update"
+
+#: ..\ui\annotation_toolbar.py:571
+msgid "Update selected object (Enter)"
+msgstr "Update selected object (Enter)"
+
+#: ..\ui\export_dialog.py:23
+msgid "Batch Export"
+msgstr "Batch Export"
+
+#: ..\ui\export_dialog.py:34
+msgid "Export {} images to selected format."
+msgstr "Export {} images to selected format."
+
+#: ..\ui\export_dialog.py:38 ..\ui\export_dialog.py:145
+msgid "Export Format"
+msgstr "Export Format"
+
+#: ..\ui\export_dialog.py:40 ..\ui\export_dialog.py:148
+msgid "YOLO Segmentation (Polygon)"
+msgstr "YOLO Segmentation (Polygon)"
+
+#: ..\ui\export_dialog.py:41
+msgid "YOLO Detection (BBox)"
+msgstr "YOLO Detection (BBox)"
+
+#: ..\ui\export_dialog.py:42 ..\ui\export_dialog.py:149
+msgid "YOLO OBB (Rotated Rect)"
+msgstr "YOLO OBB (Rotated Rect)"
+
+#: ..\ui\export_dialog.py:43
+msgid "MS COCO (Standard, Index=1)"
+msgstr "MS COCO (Standard, Index=1)"
+
+#: ..\ui\export_dialog.py:44
+msgid "MS COCO (Custom, Index=0)"
+msgstr "MS COCO (Custom, Index=0)"
+
+#: ..\ui\export_dialog.py:45 ..\ui\export_dialog.py:151
+msgid "Pascal VOC 2012 (XML)"
+msgstr "Pascal VOC 2012 (XML)"
+
+#: ..\ui\export_dialog.py:46 ..\ui\export_dialog.py:152
+msgid "CSV (Generic table)"
+msgstr "CSV (Generic table)"
+
+#: ..\ui\export_dialog.py:54
+msgid "Output Directory"
+msgstr "Output Directory"
+
+#: ..\ui\export_dialog.py:61
+msgid "Start Export"
+msgstr "Start Export"
+
+#: ..\ui\export_dialog.py:62 ..\ui\main_window.py:1366
+#: ..\ui\main_window.py:1792 ..\ui\settings_dialog.py:73
+#: ..\ui\settings_dialog.py:131
+msgid "Cancel"
+msgstr "Cancel"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:328
+msgid "Please select an output directory"
+msgstr "Please select an output directory"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:315
+#: ..\ui\export_dialog.py:328 ..\ui\main_window.py:937
+#: ..\ui\main_window.py:940 ..\ui\main_window.py:974 ..\ui\main_window.py:1005
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+#: ..\ui\main_window.py:1347 ..\ui\main_window.py:1390
+#: ..\ui\main_window.py:1408 ..\ui\main_window.py:1411
+#: ..\ui\main_window.py:1440 ..\ui\main_window.py:1627
+#: ..\ui\main_window.py:1756 ..\ui\main_window.py:1775
+#: ..\ui\main_window.py:1954 ..\ui\main_window.py:2236
+msgid "Error"
+msgstr "Error"
+
+#: ..\ui\export_dialog.py:80
+msgid "Exporting..."
+msgstr "Exporting..."
+
+#: ..\ui\export_dialog.py:81
+msgid "Processing images"
+msgstr "Processing images"
+
+#: ..\ui\export_dialog.py:93
+msgid ""
+"Batch Export Complete!\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"Batch Export Complete!\n"
+"Successfully exported {}/{} images."
+
+#: ..\ui\export_dialog.py:94
+msgid "Finished"
+msgstr "Finished"
+
+#: ..\ui\export_dialog.py:104
+msgid "Dataset Export (Split)"
+msgstr "Dataset Export (Split)"
+
+#: ..\ui\export_dialog.py:147
+msgid "YOLO Detection (Bounding Box)"
+msgstr "YOLO Detection (Bounding Box)"
+
+#: ..\ui\export_dialog.py:150
+msgid "MS COCO (JSON)"
+msgstr "MS COCO (JSON)"
+
+#: ..\ui\export_dialog.py:170
+msgid "Dataset Splitting"
+msgstr "Dataset Splitting"
+
+#: ..\ui\export_dialog.py:173
+msgid "Honor Manual Status (fixed in File List)"
+msgstr "Honor Manual Status (fixed in File List)"
+
+#: ..\ui\export_dialog.py:181
+msgid "Train (%):"
+msgstr "Train (%):"
+
+#: ..\ui\export_dialog.py:188
+msgid "Val (%):"
+msgstr "Val (%):"
+
+#: ..\ui\export_dialog.py:195
+msgid "Test (%):"
+msgstr "Test (%):"
+
+#: ..\ui\export_dialog.py:206
+msgid "Distribution Preview"
+msgstr "Distribution Preview"
+
+#: ..\ui\export_dialog.py:207
+msgid "Analyzing..."
+msgstr "Analyzing..."
+
+#: ..\ui\export_dialog.py:212
+msgid "Format Specific Options"
+msgstr "Format Specific Options"
+
+#: ..\ui\export_dialog.py:215
+msgid "Category Index Start:"
+msgstr "Category Index Start:"
+
+#: ..\ui\export_dialog.py:226
+msgid "Output Settings"
+msgstr "Output Settings"
+
+#: ..\ui\export_dialog.py:228
+msgid "Copy Image Files (create standalone dataset)"
+msgstr "Copy Image Files (create standalone dataset)"
+
+#: ..\ui\export_dialog.py:233
+msgid "Output Dir:"
+msgstr "Output Dir:"
+
+#: ..\ui\export_dialog.py:315
+msgid "Train and Val ratios must be greater than 0%"
+msgstr "Train and Val ratios must be greater than 0%"
+
+#: ..\ui\export_dialog.py:322
+msgid ""
+"Note: Ratios sum to {}%. The application will treat them as weights but it's"
+" recommended to sum to 100%."
+msgstr ""
+"Note: Ratios sum to {}%. The application will treat them as weights but it's"
+" recommended to sum to 100%."
+
+#: ..\ui\export_dialog.py:323
+msgid "Warning"
+msgstr "Warning"
+
+#: ..\ui\i18n.py:156
+msgid "Switch to {}"
+msgstr "Switch to {}"
+
+#: ..\ui\image_display_panel.py:333
+msgid "ROI Complete: Right-click image or use Toolbar/Enter to save"
+msgstr "ROI Complete: Right-click image or use Toolbar/Enter to save"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Select Category:"
+msgstr "Select Category:"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Category"
+msgstr "Category"
+
+#: ..\ui\image_display_panel.py:546 ..\ui\image_display_panel.py:655
+msgid "Drawing Label: {}"
+msgstr "Drawing Label: {}"
+
+#: ..\ui\image_display_panel.py:613 ..\ui\image_display_panel.py:653
+msgid ""
+"AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
+msgstr ""
+"AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
+
+#: ..\ui\image_display_panel.py:719
+msgid "Editing {}. Shape locked. Press Enter to update."
+msgstr "Editing {}. Shape locked. Press Enter to update."
+
+#: ..\ui\image_display_panel.py:778
+msgid "AI: First point must be a positive prompt (Left-click)."
+msgstr "AI: First point must be a positive prompt (Left-click)."
+
+#: ..\ui\image_display_panel.py:914
+msgid "🤖 Preparing AI Model: {}... (Downloading if needed)"
+msgstr "🤖 Preparing AI Model: {}... (Downloading if needed)"
+
+#: ..\ui\image_display_panel.py:923
+msgid "❌ AI Model initialization failed."
+msgstr "❌ AI Model initialization failed."
+
+#: ..\ui\image_display_panel.py:930
+msgid "🧠 AI Embedding... (Wait)"
+msgstr "🧠 AI Embedding... (Wait)"
+
+#: ..\ui\image_display_panel.py:954
+msgid "AI Active: {} positive, {} negative prompts."
+msgstr "AI Active: {} positive, {} negative prompts."
+
+#: ..\ui\image_display_panel.py:983
+msgid "AI Annotation added."
+msgstr "AI Annotation added."
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Complete Annotation"
+msgstr "Complete Annotation"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Update Object"
+msgstr "Update Object"
+
+#: ..\ui\image_display_panel.py:1040
+msgid "Cancel Drawing"
+msgstr "Cancel Drawing"
+
+#: ..\ui\image_display_panel.py:1061
+msgid "Select Overlapping Object"
+msgstr "Select Overlapping Object"
+
+#: ..\ui\image_display_panel.py:1069
+msgid "Bring to Front"
+msgstr "Bring to Front"
+
+#: ..\ui\image_display_panel.py:1072
+msgid "Send to Back"
+msgstr "Send to Back"
+
+#: ..\ui\image_display_panel.py:1076
+msgid "Delete Object"
+msgstr "Delete Object"
+
+#: ..\ui\image_display_panel.py:1084
+msgid "Create Rectangle"
+msgstr "Create Rectangle"
+
+#: ..\ui\image_display_panel.py:1087
+msgid "Create Rotated Rect"
+msgstr "Create Rotated Rect"
+
+#: ..\ui\image_display_panel.py:1090
+msgid "Create Circle"
+msgstr "Create Circle"
+
+#: ..\ui\image_display_panel.py:1093
+msgid "Create Annulus"
+msgstr "Create Annulus"
+
+#: ..\ui\image_display_panel.py:1096
+msgid "Create Polygon"
+msgstr "Create Polygon"
+
+#: ..\ui\image_display_panel.py:1102
+msgid "Zoom to Fit"
+msgstr "Zoom to Fit"
+
+#: ..\ui\image_display_panel.py:1105
+msgid "Full Screen"
+msgstr "Full Screen"
+
+#: ..\ui\image_display_panel.py:1119
+msgid "Moved object to top layer"
+msgstr "Moved object to top layer"
+
+#: ..\ui\image_display_panel.py:1125
+msgid "Moved object to bottom layer"
+msgstr "Moved object to bottom layer"
+
+#: ..\ui\image_display_panel.py:1200
+msgid "Error: Invalid ROI size"
+msgstr "Error: Invalid ROI size"
+
+#: ..\ui\image_display_panel.py:1207
+msgid "Updated: {}"
+msgstr "Updated: {}"
+
+#: ..\ui\image_display_panel.py:1216
+msgid "Added: {}"
+msgstr "Added: {}"
+
+#: ..\ui\image_display_panel.py:1250
+msgid "Drawing/Edit cancelled"
+msgstr "Drawing/Edit cancelled"
+
+#: ..\ui\main_window.py:330 ..\ui\main_window.py:730
+msgid "Label List"
+msgstr "Label List"
+
+#: ..\ui\main_window.py:378
+msgid "Label set to: {}"
+msgstr "Label set to: {}"
+
+#: ..\ui\main_window.py:386 ..\ui\main_window.py:732
+msgid "Annotation List"
+msgstr "Annotation List"
+
+#: ..\ui\main_window.py:400 ..\ui\main_window.py:739
+msgid "ID"
+msgstr "ID"
+
+#: ..\ui\main_window.py:401 ..\ui\main_window.py:743
+msgid "Label"
+msgstr "Label"
+
+#: ..\ui\main_window.py:402 ..\ui\main_window.py:747
+msgid "Type"
+msgstr "Type"
+
+#: ..\ui\main_window.py:403 ..\ui\main_window.py:751
+msgid "Vis"
+msgstr "Vis"
+
+#: ..\ui\main_window.py:414 ..\ui\main_window.py:525 ..\ui\main_window.py:769
+msgid "Edit"
+msgstr "Edit"
+
+#: ..\ui\main_window.py:415 ..\ui\main_window.py:771
+msgid "Delete"
+msgstr "Delete"
+
+#: ..\ui\main_window.py:416 ..\ui\main_window.py:773
+msgid "Visibility"
+msgstr "Visibility"
+
+#: ..\ui\main_window.py:443 ..\ui\main_window.py:734
+msgid "File List"
+msgstr "File List"
+
+#: ..\ui\main_window.py:457 ..\ui\main_window.py:756
+msgid "Filename"
+msgstr "Filename"
+
+#: ..\ui\main_window.py:458 ..\ui\main_window.py:760
+msgid "Count"
+msgstr "Count"
+
+#: ..\ui\main_window.py:459 ..\ui\main_window.py:764
+msgid "Status"
+msgstr "Status"
+
+#: ..\ui\main_window.py:470 ..\ui\main_window.py:775
+msgid "Prev"
+msgstr "Prev"
+
+#: ..\ui\main_window.py:471 ..\ui\main_window.py:777
+msgid "Next"
+msgstr "Next"
+
+#: ..\ui\main_window.py:499
+msgid "Open Image"
+msgstr "Open Image"
+
+#: ..\ui\main_window.py:500
+msgid "Open Folder"
+msgstr "Open Folder"
+
+#: ..\ui\main_window.py:502
+msgid "Save"
+msgstr "Save"
+
+#: ..\ui\main_window.py:503
+msgid "Save As..."
+msgstr "Save As..."
+
+#: ..\ui\main_window.py:505
+msgid "Exit"
+msgstr "Exit"
+
+#: ..\ui\main_window.py:507
+msgid "File"
+msgstr "File"
+
+#: ..\ui\main_window.py:511
+msgid "Save Labels to Project Folder"
+msgstr "Save Labels to Project Folder"
+
+#: ..\ui\main_window.py:512
+msgid "Reload Labels from Project"
+msgstr "Reload Labels from Project"
+
+#: ..\ui\main_window.py:514
+msgid "Manage Categories..."
+msgstr "Manage Categories..."
+
+#: ..\ui\main_window.py:514
+msgid "Open category manager dialog"
+msgstr "Open category manager dialog"
+
+#: ..\ui\main_window.py:516
+msgid "Project"
+msgstr "Project"
+
+#: ..\ui\main_window.py:520
+msgid "Undo"
+msgstr "Undo"
+
+#: ..\ui\main_window.py:521
+msgid "Redo"
+msgstr "Redo"
+
+#: ..\ui\main_window.py:523
+msgid "Delete Annotation"
+msgstr "Delete Annotation"
+
+#: ..\ui\main_window.py:533 ..\ui\main_window.py:1076
+msgid "Point"
+msgstr "Point"
+
+#: ..\ui\main_window.py:535
+msgid "Select Tool"
+msgstr "Select Tool"
+
+#: ..\ui\main_window.py:537
+msgid "Annotate"
+msgstr "Annotate"
+
+#: ..\ui\main_window.py:542
+msgid "Zoom In"
+msgstr "Zoom In"
+
+#: ..\ui\main_window.py:543
+msgid "Zoom Out"
+msgstr "Zoom Out"
+
+#: ..\ui\main_window.py:544
+msgid "Fit Window"
+msgstr "Fit Window"
+
+#: ..\ui\main_window.py:550
+msgid "Batch Export..."
+msgstr "Batch Export..."
+
+#: ..\ui\main_window.py:551
+msgid "Export Dataset (Split)..."
+msgstr "Export Dataset (Split)..."
+
+#: ..\ui\main_window.py:553
+msgid "Supported Formats"
+msgstr "Supported Formats"
+
+#: ..\ui\main_window.py:555
+msgid "Export"
+msgstr "Export"
+
+#: ..\ui\main_window.py:559
+msgid "Settings..."
+msgstr "Settings..."
+
+#: ..\ui\main_window.py:561 ..\ui\settings_dialog.py:19
+#: ..\ui\settings_dialog.py:90
+msgid "Settings"
+msgstr "Settings"
+
+#: ..\ui\main_window.py:565
+msgid "About"
+msgstr "About"
+
+#: ..\ui\main_window.py:567
+msgid "Help"
+msgstr "Help"
+
+#: ..\ui\main_window.py:583
+msgid "Ready"
+msgstr "Ready"
+
+#: ..\ui\main_window.py:585
+msgid "Count: 0"
+msgstr "Count: 0"
+
+#: ..\ui\main_window.py:716
+msgid "Language changed to {}. Interface elements have been updated."
+msgstr "Language changed to {}. Interface elements have been updated."
+
+#: ..\ui\main_window.py:717
+msgid "Language Changed"
+msgstr "Language Changed"
+
+#: ..\ui\main_window.py:914
+msgid "Select Image File"
+msgstr "Select Image File"
+
+#: ..\ui\main_window.py:915
+msgid "Image Files"
+msgstr "Image Files"
+
+#: ..\ui\main_window.py:915
+msgid "All Files"
+msgstr "All Files"
+
+#: ..\ui\main_window.py:930
+msgid "Opened: {}"
+msgstr "Opened: {}"
+
+#: ..\ui\main_window.py:937
+msgid "Cannot load image: {}"
+msgstr "Cannot load image: {}"
+
+#: ..\ui\main_window.py:940
+msgid "Image Panel not initialized"
+msgstr "Image Panel not initialized"
+
+#: ..\ui\main_window.py:950
+msgid "Select Folder containing images"
+msgstr "Select Folder containing images"
+
+#: ..\ui\main_window.py:972
+msgid "Annotations Saved (Base64: {})"
+msgstr "Annotations Saved (Base64: {})"
+
+#: ..\ui\main_window.py:974
+msgid "Failed to save annotations"
+msgstr "Failed to save annotations"
+
+#: ..\ui\main_window.py:976
+msgid "No current image"
+msgstr "No current image"
+
+#: ..\ui\main_window.py:976 ..\ui\main_window.py:1332
+#: ..\ui\main_window.py:1398 ..\ui\main_window.py:1419
+#: ..\ui\main_window.py:1604 ..\ui\main_window.py:1763
+msgid "Hint"
+msgstr "Hint"
+
+#: ..\ui\main_window.py:1003
+msgid "Annotations saved as... (Base64: {})"
+msgstr "Annotations saved as... (Base64: {})"
+
+#: ..\ui\main_window.py:1005
+msgid "Save failed"
+msgstr "Save failed"
+
+#: ..\ui\main_window.py:1064
+msgid "AI Mode: UI locked. Use Enter/Esc to finish."
+msgstr "AI Mode: UI locked. Use Enter/Esc to finish."
+
+#: ..\ui\main_window.py:1066
+msgid "UI Unlocked"
+msgstr "UI Unlocked"
+
+#: ..\ui\main_window.py:1078
+msgid "Select"
+msgstr "Select"
+
+#: ..\ui\main_window.py:1107
+msgid "added"
+msgstr "added"
+
+#: ..\ui\main_window.py:1108
+msgid "deleted"
+msgstr "deleted"
+
+#: ..\ui\main_window.py:1109
+msgid "updated"
+msgstr "updated"
+
+#: ..\ui\main_window.py:1110
+msgid "loaded"
+msgstr "loaded"
+
+#: ..\ui\main_window.py:1111
+msgid "undone"
+msgstr "undone"
+
+#: ..\ui\main_window.py:1112
+msgid "redone"
+msgstr "redone"
+
+#: ..\ui\main_window.py:1114 ..\ui\main_window.py:1429
+#: ..\ui\main_window.py:1437
+msgid "Annotation {}"
+msgstr "Annotation {}"
+
+#: ..\ui\main_window.py:1259 ..\ui\main_window.py:1273
+msgid "Switched to image {}"
+msgstr "Switched to image {}"
+
+#: ..\ui\main_window.py:1261
+msgid "Already at the first image"
+msgstr "Already at the first image"
+
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+msgid "Failed to switch image: {}"
+msgstr "Failed to switch image: {}"
+
+#: ..\ui\main_window.py:1275
+msgid "Already at the last image"
+msgstr "Already at the last image"
+
+#: ..\ui\main_window.py:1277
+msgid "No images loaded"
+msgstr "No images loaded"
+
+#: ..\ui\main_window.py:1332
+msgid "Please select an annotation to edit"
+msgstr "Please select an annotation to edit"
+
+#: ..\ui\main_window.py:1347
+msgid "Selected annotation not found"
+msgstr "Selected annotation not found"
+
+#: ..\ui\main_window.py:1351
+msgid "Edit Annotation"
+msgstr "Edit Annotation"
+
+#: ..\ui\main_window.py:1355
+msgid "Category:"
+msgstr "Category:"
+
+#: ..\ui\main_window.py:1365 ..\ui\settings_dialog.py:72
+#: ..\ui\settings_dialog.py:130
+msgid "OK"
+msgstr "OK"
+
+#: ..\ui\main_window.py:1385
+msgid "Label updated to: {}"
+msgstr "Label updated to: {}"
+
+#: ..\ui\main_window.py:1390
+msgid "Failed to edit annotation: {}"
+msgstr "Failed to edit annotation: {}"
+
+#: ..\ui\main_window.py:1398
+msgid "Please select an annotation to delete"
+msgstr "Please select an annotation to delete"
+
+#: ..\ui\main_window.py:1401
+msgid "Are you sure you want to delete the selected annotation?"
+msgstr "Are you sure you want to delete the selected annotation?"
+
+#: ..\ui\main_window.py:1401
+msgid "Confirm"
+msgstr "Confirm"
+
+#: ..\ui\main_window.py:1406
+msgid "Annotation Deleted"
+msgstr "Annotation Deleted"
+
+#: ..\ui\main_window.py:1408
+msgid "Failed to delete annotation"
+msgstr "Failed to delete annotation"
+
+#: ..\ui\main_window.py:1411
+msgid "Failed to delete annotation: {}"
+msgstr "Failed to delete annotation: {}"
+
+#: ..\ui\main_window.py:1419
+msgid "Please select an annotation to toggle visibility"
+msgstr "Please select an annotation to toggle visibility"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Shown"
+msgstr "Shown"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Hidden"
+msgstr "Hidden"
+
+#: ..\ui\main_window.py:1440
+msgid "Failed to toggle visibility: {}"
+msgstr "Failed to toggle visibility: {}"
+
+#: ..\ui\main_window.py:1578
+msgid "Enabled"
+msgstr "Enabled"
+
+#: ..\ui\main_window.py:1578
+msgid "Disabled"
+msgstr "Disabled"
+
+#: ..\ui\main_window.py:1579
+msgid "Base64 Embedding: {}"
+msgstr "Base64 Embedding: {}"
+
+#: ..\ui\main_window.py:1604
+msgid ""
+"No image files found in folder\n"
+"{}"
+msgstr ""
+"No image files found in folder\n"
+"{}"
+
+#: ..\ui\main_window.py:1623
+msgid "Loaded folder: {} ({} images)"
+msgstr "Loaded folder: {} ({} images)"
+
+#: ..\ui\main_window.py:1627
+msgid "Failed to load folder: {}"
+msgstr "Failed to load folder: {}"
+
+#: ..\ui\main_window.py:1713
+msgid "None"
+msgstr "None"
+
+#: ..\ui\main_window.py:1732
+msgid "Add Category..."
+msgstr "Add Category..."
+
+#: ..\ui\main_window.py:1733
+msgid "Edit Category..."
+msgstr "Edit Category..."
+
+#: ..\ui\main_window.py:1734
+msgid "Delete Selected Category"
+msgstr "Delete Selected Category"
+
+#: ..\ui\main_window.py:1745
+msgid "Add Category"
+msgstr "Add Category"
+
+#: ..\ui\main_window.py:1754
+msgid "Category added: {}"
+msgstr "Category added: {}"
+
+#: ..\ui\main_window.py:1756
+msgid "Category '{}' already exists"
+msgstr "Category '{}' already exists"
+
+#: ..\ui\main_window.py:1763
+msgid "Please select a category to edit"
+msgstr "Please select a category to edit"
+
+#: ..\ui\main_window.py:1767
+msgid "Edit Category"
+msgstr "Edit Category"
+
+#: ..\ui\main_window.py:1775
+msgid "Category name cannot be empty"
+msgstr "Category name cannot be empty"
+
+#: ..\ui\main_window.py:1784
+msgid ""
+"You are renaming category '{}' to '{}'.\n"
+"\n"
+"Do you want to update all existing annotation files in this folder?\n"
+"\n"
+"Yes: Update ALL files in folder\n"
+"No: Update only the category list\n"
+"Cancel: Abort changes"
+msgstr ""
+"You are renaming category '{}' to '{}'.\n"
+"\n"
+"Do you want to update all existing annotation files in this folder?\n"
+"\n"
+"Yes: Update ALL files in folder\n"
+"No: Update only the category list\n"
+"Cancel: Abort changes"
+
+#: ..\ui\main_window.py:1790
+msgid "Rename Confirmation"
+msgstr "Rename Confirmation"
+
+#: ..\ui\main_window.py:1792
+msgid "Update All"
+msgstr "Update All"
+
+#: ..\ui\main_window.py:1792
+msgid "List Only"
+msgstr "List Only"
+
+#: ..\ui\main_window.py:1804
+msgid "Renamed '{}' to '{}' in {} files"
+msgstr "Renamed '{}' to '{}' in {} files"
+
+#: ..\ui\main_window.py:1806
+msgid "Renamed '{}' to '{}' in list only"
+msgstr "Renamed '{}' to '{}' in list only"
+
+#: ..\ui\main_window.py:1809
+msgid "Updated color for Category: {}"
+msgstr "Updated color for Category: {}"
+
+#: ..\ui\main_window.py:1875
+msgid "Are you sure you want to delete category '{}'?"
+msgstr "Are you sure you want to delete category '{}'?"
+
+#: ..\ui\main_window.py:1876
+msgid "Confirm Delete"
+msgstr "Confirm Delete"
+
+#: ..\ui\main_window.py:1879
+msgid "Category deleted: {}"
+msgstr "Category deleted: {}"
+
+#: ..\ui\main_window.py:1881
+msgid "Cannot delete default category '{}'"
+msgstr "Cannot delete default category '{}'"
+
+#: ..\ui\main_window.py:1882
+msgid "Constraint"
+msgstr "Constraint"
+
+#: ..\ui\main_window.py:1904
+msgid "Delete Annotation File"
+msgstr "Delete Annotation File"
+
+#: ..\ui\main_window.py:1923
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\n"
+"This action cannot be undone."
+msgstr ""
+"Are you sure you want to delete the annotation file for '{}'?\n"
+"This action cannot be undone."
+
+#: ..\ui\main_window.py:1924
+msgid "Confirm Deletion"
+msgstr "Confirm Deletion"
+
+#: ..\ui\main_window.py:1950
+msgid "Deleted annotation file for: {}"
+msgstr "Deleted annotation file for: {}"
+
+#: ..\ui\main_window.py:1954
+msgid "Failed to delete annotation file: {}"
+msgstr "Failed to delete annotation file: {}"
+
+#: ..\ui\main_window.py:2168
+msgid "Categories updated"
+msgstr "Categories updated"
+
+#: ..\ui\main_window.py:2201
+msgid "No images loaded to export"
+msgstr "No images loaded to export"
+
+#: ..\ui\main_window.py:2201
+msgid "Information"
+msgstr "Information"
+
+#: ..\ui\main_window.py:2210
+msgid "Generating Dataset..."
+msgstr "Generating Dataset..."
+
+#: ..\ui\main_window.py:2211
+msgid "Processing splitting and export formats"
+msgstr "Processing splitting and export formats"
+
+#: ..\ui\main_window.py:2231
+msgid ""
+"Dataset Export Complete!\n"
+"Target: {}\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"Dataset Export Complete!\n"
+"Target: {}\n"
+"Successfully exported {}/{} images."
+
+#: ..\ui\main_window.py:2233
+msgid "Success"
+msgstr "Success"
+
+#: ..\ui\main_window.py:2251
+msgid "Supported Export Formats:"
+msgstr "Supported Export Formats:"
+
+#: ..\ui\main_window.py:2257
+msgid "Features:"
+msgstr "Features:"
+
+#: ..\ui\main_window.py:2263
+msgid "Export Format Info"
+msgstr "Export Format Info"
+
+#: ..\ui\main_window.py:2271
+msgid ""
+"A professional computer vision annotation tool.\n"
+"\n"
+"Key Features:\n"
+"• Advanced Export: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• Integrated AI: SAM, SAM2, EfficientSAM, and various detection models.\n"
+"• Cross-platform support with industrial-grade precision.\n"
+"\n"
+"Designed for professional computer vision research and dataset preparation."
+msgstr ""
+"A professional computer vision annotation tool.\n"
+"\n"
+"Key Features:\n"
+"• Advanced Export: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• Integrated AI: SAM, SAM2, EfficientSAM, and various detection models.\n"
+"• Cross-platform support with industrial-grade precision.\n"
+"\n"
+"Designed for professional computer vision research and dataset preparation."
+
+#: ..\ui\theme_manager.py:35
+msgid "Dark (Default)"
+msgstr "Dark (Default)"
+
+#: ..\ui\theme_manager.py:48
+msgid "Light (VS)"
+msgstr "Light (VS)"
+
+#: ..\ui\theme_manager.py:61
+msgid "Visual Studio Blue"
+msgstr "Visual Studio Blue"
+
+#: ..\ui\theme_manager.py:74
+msgid "Monokai"
+msgstr "Monokai"
+
+#: ..\ui\settings_dialog.py:50 ..\ui\settings_dialog.py:93
+msgid "Language"
+msgstr "Language"
+
+#: ..\ui\settings_dialog.py:54 ..\ui\settings_dialog.py:94
+msgid "Theme"
+msgstr "Theme"
+
+#: ..\ui\settings_dialog.py:58 ..\ui\settings_dialog.py:95
+msgid "User Settings"
+msgstr "User Settings"
+
+#: ..\ui\settings_dialog.py:62 ..\ui\settings_dialog.py:96
+msgid "Annotation"
+msgstr "Annotation"
+
+#: ..\ui\settings_dialog.py:66 ..\ui\settings_dialog.py:97
+msgid "AI Annotation"
+msgstr "AI Annotation"
+
+#: ..\ui\settings_dialog.py:74 ..\ui\settings_dialog.py:132
+msgid "Apply"
+msgstr "Apply"
+
+#: ..\ui\settings_dialog.py:100 ..\ui\settings_dialog.py:170
+msgid "Language Selection"
+msgstr "Language Selection"
+
+#: ..\ui\settings_dialog.py:101 ..\ui\settings_dialog.py:199
+msgid "UI Appearance"
+msgstr "UI Appearance"
+
+#: ..\ui\settings_dialog.py:102 ..\ui\settings_dialog.py:234
+msgid "Annotator Information"
+msgstr "Annotator Information"
+
+#: ..\ui\settings_dialog.py:103 ..\ui\settings_dialog.py:274
+msgid "LabelMe Storage Format"
+msgstr "LabelMe Storage Format"
+
+#: ..\ui\settings_dialog.py:104 ..\ui\settings_dialog.py:289
+msgid "Attribute Panel"
+msgstr "Attribute Panel"
+
+#: ..\ui\settings_dialog.py:105 ..\ui\settings_dialog.py:318
+msgid "AI Assisted Labeling Settings"
+msgstr "AI Assisted Labeling Settings"
+
+#: ..\ui\settings_dialog.py:108 ..\ui\settings_dialog.py:186
+msgid "Select Interface Language:"
+msgstr "Select Interface Language:"
+
+#: ..\ui\settings_dialog.py:109 ..\ui\settings_dialog.py:209
+msgid "Color Theme:"
+msgstr "Color Theme:"
+
+#: ..\ui\settings_dialog.py:110 ..\ui\settings_dialog.py:218
+msgid "Font Size:"
+msgstr "Font Size:"
+
+#: ..\ui\settings_dialog.py:112 ..\ui\settings_dialog.py:237
+msgid "Enable User Information (Save to JSON)"
+msgstr "Enable User Information (Save to JSON)"
+
+#: ..\ui\settings_dialog.py:113 ..\ui\settings_dialog.py:244
+msgid "Name:"
+msgstr "Name:"
+
+#: ..\ui\settings_dialog.py:114 ..\ui\settings_dialog.py:251
+msgid "Quality Score (0-100):"
+msgstr "Quality Score (0-100):"
+
+#: ..\ui\settings_dialog.py:115 ..\ui\settings_dialog.py:260
+msgid "Note: User info will only be added to JSON when enabled above."
+msgstr "Note: User info will only be added to JSON when enabled above."
+
+#: ..\ui\settings_dialog.py:117 ..\ui\settings_dialog.py:276
+msgid "Embed Image Data (Base64) in JSON"
+msgstr "Embed Image Data (Base64) in JSON"
+
+#: ..\ui\settings_dialog.py:118 ..\ui\settings_dialog.py:281
+msgid "Note: Enabling this will significantly increase JSON file size."
+msgstr "Note: Enabling this will significantly increase JSON file size."
+
+#: ..\ui\settings_dialog.py:119 ..\ui\settings_dialog.py:291
+msgid "Enable Attribute Panel (show below annotation list)"
+msgstr "Enable Attribute Panel (show below annotation list)"
+
+#: ..\ui\settings_dialog.py:120 ..\ui\settings_dialog.py:296
+msgid "Default Flags:"
+msgstr "Default Flags:"
+
+#: ..\ui\settings_dialog.py:121 ..\ui\settings_dialog.py:305
+msgid "Comma-separated flag names, e.g.: occluded, truncated, difficult"
+msgstr "Comma-separated flag names, e.g.: occluded, truncated, difficult"
+
+#: ..\ui\settings_dialog.py:123 ..\ui\settings_dialog.py:321
+msgid "AI Model Directory:"
+msgstr "AI Model Directory:"
+
+#: ..\ui\settings_dialog.py:124 ..\ui\settings_dialog.py:331
+msgid "Enable Continuous Inference (Real-time)"
+msgstr "Enable Continuous Inference (Real-time)"
+
+#: ..\ui\settings_dialog.py:125 ..\ui\settings_dialog.py:337
+msgid "Inference Interval (ms):"
+msgstr "Inference Interval (ms):"
+
+#: ..\ui\settings_dialog.py:126 ..\ui\settings_dialog.py:346
+msgid "Auto-simplify Polygon (0.004 Tolerance)"
+msgstr "Auto-simplify Polygon (0.004 Tolerance)"
+
+#: ..\ui\settings_dialog.py:127 ..\ui\settings_dialog.py:350
+msgid "Denoise Mask (Filter small fragments)"
+msgstr "Denoise Mask (Filter small fragments)"
+
+msgid "+ Add"
+msgstr "+ Add"
+
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\\nThis action "
+"cannot be undone."
+msgstr ""
+"Are you sure you want to delete the annotation file for '{}'?\\nThis action "
+"cannot be undone."
+
+msgid "Attributes"
+msgstr "Attributes"
+
+msgid "Automated directory structure generation"
+msgstr "Automated directory structure generation"
+
+msgid "Batch Export Complete!\\nSuccessfully exported {}/{} images."
+msgstr "Batch Export Complete!\\nSuccessfully exported {}/{} images."
+
+msgid "Batch export to directory"
+msgstr "Batch export to directory"
+
+msgid "Create line annotation (L)"
+msgstr "Create line annotation (L)"
+
+msgid "Custom Attributes:"
+msgstr "Custom Attributes:"
+
+msgid ""
+"Dataset Export Complete!\\nTarget: {}\\nSuccessfully exported {}/{} images."
+msgstr ""
+"Dataset Export Complete!\\nTarget: {}\\nSuccessfully exported {}/{} images."
+
+msgid "Dataset splitting (Train/Val/Test)"
+msgstr "Dataset splitting (Train/Val/Test)"
+
+msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
+msgstr "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
+
+msgid "Edit Label"
+msgstr "Edit Label"
+
+msgid "Flags:"
+msgstr "Flags:"
+
+msgid "Generic coordinate table for custom analysis"
+msgstr "Generic coordinate table for custom analysis"
+
+msgid "Hint: Drag to create line"
+msgstr "Hint: Drag to create line"
+
+msgid "Image Annotation Tool"
+msgstr "Image Annotation Tool"
+
+msgid "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
+msgstr "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Line"
+msgstr "Line"
+
+msgid "No annotation file found for this image."
+msgstr "No annotation file found for this image."
+
+msgid "No image files found in folder\\n{}"
+msgstr "No image files found in folder\\n{}"
+
+msgid "Preview of split distribution"
+msgstr "Preview of split distribution"
+
+msgid "Select an annotation to edit attributes"
+msgstr "Select an annotation to edit attributes"
+
+msgid "Standardized to VOC 2012 XML with 1-based pixel precision"
+msgstr "Standardized to VOC 2012 XML with 1-based pixel precision"
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Total Images"
+msgstr "Total Images"
+
+msgid "Train"
+msgstr "Train"
+
+msgid "Transcription:"
+msgstr "Transcription:"
+
+msgid "Unknown"
+msgstr "Unknown"
+
+msgid "Valid"
+msgstr "Valid"
+
+msgid "📏 Line"
+msgstr "📏 Line"

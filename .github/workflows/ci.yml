@@ -1,0 +1,94 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  # ─────────────────────────────────────────────
+  # Job 1: Build the wheel (only once, on Linux)
+  # py3-none-any = pure Python, one wheel for all platforms
+  # ─────────────────────────────────────────────
+  build:
+    name: Build wheel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build
+        run: pip install build
+
+      - name: Build wheel
+        run: python -m build --wheel
+
+      - name: Upload wheel artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheel
+          path: dist/*.whl
+
+  # ─────────────────────────────────────────────
+  # Job 2: Verify install on all platforms
+  #
+  # Matrix mirrors the wxCvModule release matrix:
+  #   Windows  : 3.8 – 3.14
+  #   Linux    : 3.8 – 3.13
+  #   macOS    : 3.9 – 3.13  (arm64 only; no 3.8 wheel)
+  #
+  # Installs with --no-deps to skip wxcvmodule
+  # (C++ wheel not available in CI; app runs in
+  #  mock mode which is the expected behaviour
+  #  when wxCvModule is absent)
+  # ─────────────────────────────────────────────
+  verify:
+    name: Verify (${{ matrix.os }}, py${{ matrix.python-version }})
+    needs: build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
+        exclude:
+          # wxCvModule has no macOS wheel for Python 3.8
+          - os: macos-latest
+            python-version: "3.8"
+        include:
+          # wxCvModule provides a Windows wheel for Python 3.14
+          - os: windows-latest
+            python-version: "3.14"
+
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Download wheel
+        uses: actions/download-artifact@v4
+        with:
+          name: wheel
+          path: dist/
+
+      - name: Install wheel (skip C++ deps — mock mode)
+        run: pip install --no-index --find-links dist wxcvannotator --no-deps
+
+      - name: Verify version
+        run: python -c "import wxcvannotator; print('wxcvannotator ' + wxcvannotator.__version__ + ' OK')"
+
+      - name: Verify package data (config, i18n, assets)
+        run: |
+          python -c "
+          import os, wxcvannotator
+          pkg = os.path.dirname(wxcvannotator.__file__)
+          cfg = os.path.join(pkg, 'config', 'settings.default.json')
+          assert os.path.isfile(cfg), 'Missing: ' + cfg
+          mo = os.path.join(pkg, 'i18n', 'translations', 'en_US', 'LC_MESSAGES', 'wxCvAnnotator.mo')
+          assert os.path.isfile(mo), 'Missing: ' + mo
+          print('Package data OK')
+          "

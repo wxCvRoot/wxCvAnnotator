@@ -1,0 +1,1386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 23:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "🎯 Select"
+msgstr "🎯 선택"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "Select or edit annotations (S)"
+msgstr "어노테이션 선택 또는 편집 (S)"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "🔷 Polygon"
+msgstr "🔷 다각형"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "Create polygon annotation (P)"
+msgstr "다각형 어노테이션 생성 (P)"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "📐 Rotated Rect"
+msgstr "📐 회전된 사각형"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "Create rotated rectangle (R)"
+msgstr "회전된 사각형 생성 (R)"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "⬛ Rectangle"
+msgstr "⬛ 사각형"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "Create rectangle annotation"
+msgstr "사각형 어노테이션 생성"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "⭕ Circle"
+msgstr "⭕ 원형"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "Create circle annotation"
+msgstr "원형 어노테이션 생성"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "🍩 Annulus"
+msgstr "🍩 원형 링"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "Create annulus annotation"
+msgstr "원형 링 어노테이션 생성"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:574
+#: ..\ui\annotation_toolbar.py:595
+msgid "➕ Add"
+msgstr "➕ 추가"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:575
+#: ..\ui\annotation_toolbar.py:595
+msgid "Add object to list (Enter)"
+msgstr "목록에 개체 추가 (Enter)"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "🚫 Cancel"
+msgstr "🚫 취소"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "Cancel current drawing (Esc)"
+msgstr "현재 그리기 취소 (Esc)"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "↩️ Undo"
+msgstr "↩️ 실행 취소"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "Undo operation (Ctrl+Z)"
+msgstr "작업 실행 취소 (Ctrl+Z)"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "↪️ Redo"
+msgstr "↪️ 다시 실행"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "Redo operation (Ctrl+Y)"
+msgstr "작업 다시 실행 (Ctrl+Y)"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "🔍 Zoom In"
+msgstr "🔍 확대"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "Zoom in view"
+msgstr "보기 확대"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "🔎 Zoom Out"
+msgstr "🔎 축소"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "Zoom out view"
+msgstr "보기 축소"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "🖼️ Fit View"
+msgstr "🖼️ 전체 보기"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "Fit image to window"
+msgstr "이미지를 창에 맞춤"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+#: ..\ui\main_window.py:1079
+msgid "🤖 AI Polygon"
+msgstr "🤖 AI 다각형"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+msgid "AI-Assisted Polygon (SAM)"
+msgstr "AI 지원 다각형 (SAM)"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+#: ..\ui\main_window.py:1080
+msgid "🎭 AI Mask"
+msgstr "🎭 AI 마스크"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+msgid "AI-Assisted Pixel Mask (SAM)"
+msgstr "AI 지원 픽셀 마스크 (SAM)"
+
+#: ..\ui\annotation_toolbar.py:87 ..\ui\annotation_toolbar.py:613
+msgid "Annotation Tools"
+msgstr "어노테이션 도구"
+
+#: ..\ui\annotation_toolbar.py:114 ..\ui\main_window.py:584
+msgid "Tool: Select"
+msgstr "도구: 선택"
+
+#: ..\ui\annotation_toolbar.py:121 ..\ui\annotation_toolbar.py:457
+msgid "Hint: Right-click for options"
+msgstr "힌트: 옵션을 보려면 마우스 오른쪽 버튼 클릭"
+
+#: ..\ui\annotation_toolbar.py:137 ..\ui\annotation_toolbar.py:614
+msgid "Tools"
+msgstr "도구"
+
+#: ..\ui\annotation_toolbar.py:167 ..\ui\annotation_toolbar.py:615
+msgid "AI Assist"
+msgstr "AI 지원"
+
+#: ..\ui\annotation_toolbar.py:187
+msgid "Model:"
+msgstr "모델:"
+
+#: ..\ui\annotation_toolbar.py:214 ..\ui\annotation_toolbar.py:616
+msgid "Actions"
+msgstr "작업"
+
+#: ..\ui\annotation_toolbar.py:246 ..\ui\annotation_toolbar.py:617
+#: ..\ui\main_window.py:546
+msgid "View"
+msgstr "보기"
+
+#: ..\ui\annotation_toolbar.py:406
+msgid "Tool Help"
+msgstr "도구 도움말"
+
+#: ..\ui\annotation_toolbar.py:414
+msgid "Toolbar Settings"
+msgstr "도구 모음 설정"
+
+#: ..\ui\annotation_toolbar.py:415
+msgid "Hotkey Help"
+msgstr "단축키 도움말"
+
+#: ..\ui\annotation_toolbar.py:416
+msgid "About Annotation Tools"
+msgstr "어노테이션 도구 정보"
+
+#: ..\ui\annotation_toolbar.py:437
+msgid "Select/Edit"
+msgstr "선택/편집"
+
+#: ..\ui\annotation_toolbar.py:438 ..\ui\main_window.py:530
+#: ..\ui\main_window.py:1073
+msgid "Polygon"
+msgstr "다각형"
+
+#: ..\ui\annotation_toolbar.py:439 ..\ui\main_window.py:1077
+msgid "Rotated Rect"
+msgstr "회전된 사각형"
+
+#: ..\ui\annotation_toolbar.py:440 ..\ui\main_window.py:529
+#: ..\ui\main_window.py:1072
+msgid "Rectangle"
+msgstr "사각형"
+
+#: ..\ui\annotation_toolbar.py:441 ..\ui\main_window.py:531
+#: ..\ui\main_window.py:1074
+msgid "Circle"
+msgstr "원형"
+
+#: ..\ui\annotation_toolbar.py:442 ..\ui\main_window.py:532
+#: ..\ui\main_window.py:1075
+msgid "Annulus"
+msgstr "원형 링"
+
+#: ..\ui\annotation_toolbar.py:446 ..\ui\main_window.py:1082
+msgid "Tool: {}"
+msgstr "도구: {}"
+
+#: ..\ui\annotation_toolbar.py:449
+msgid "Hint: Click to select/edit an annotation"
+msgstr "힌트: 어노테이션을 선택/편집하려면 클릭"
+
+#: ..\ui\annotation_toolbar.py:450
+msgid "Hint: Click to add vertex, double-click or right-click to finish"
+msgstr "힌트: 클릭하여 꼭지점 추가, 더블 클릭 또는 우클릭으로 완료"
+
+#: ..\ui\annotation_toolbar.py:451
+msgid "Hint: Drag to create rotated rectangle"
+msgstr "힌트: 회전된 사각형을 만들려면 드래그"
+
+#: ..\ui\annotation_toolbar.py:452
+msgid "Hint: Drag to create standard rectangle"
+msgstr "힌트: 표준 사각형을 만들려면 드래그"
+
+#: ..\ui\annotation_toolbar.py:453
+msgid "Hint: Drag to create circle"
+msgstr "힌트: 원형을 만들려면 드래그"
+
+#: ..\ui\annotation_toolbar.py:454
+msgid "Hint: Drag to create annulus"
+msgstr "힌트: 원형 링을 만들려면 드래그"
+
+#: ..\ui\annotation_toolbar.py:570
+msgid "🔄 Update"
+msgstr "🔄 업데이트"
+
+#: ..\ui\annotation_toolbar.py:571
+msgid "Update selected object (Enter)"
+msgstr "선택된 개체 업데이트 (Enter)"
+
+#: ..\ui\export_dialog.py:23
+msgid "Batch Export"
+msgstr "일괄 내보내기"
+
+#: ..\ui\export_dialog.py:34
+msgid "Export {} images to selected format."
+msgstr "{}개의 이미지를 선택한 형식으로 내보냅니다."
+
+#: ..\ui\export_dialog.py:38 ..\ui\export_dialog.py:145
+msgid "Export Format"
+msgstr "내보내기 형식"
+
+#: ..\ui\export_dialog.py:40 ..\ui\export_dialog.py:148
+msgid "YOLO Segmentation (Polygon)"
+msgstr "YOLO 세그멘테이션 (다각형)"
+
+#: ..\ui\export_dialog.py:41
+msgid "YOLO Detection (BBox)"
+msgstr "YOLO 탐지 (경계 상자)"
+
+#: ..\ui\export_dialog.py:42 ..\ui\export_dialog.py:149
+msgid "YOLO OBB (Rotated Rect)"
+msgstr "YOLO OBB (회전된 사각형)"
+
+#: ..\ui\export_dialog.py:43
+msgid "MS COCO (Standard, Index=1)"
+msgstr "MS COCO (표준, 인덱스=1)"
+
+#: ..\ui\export_dialog.py:44
+msgid "MS COCO (Custom, Index=0)"
+msgstr "MS COCO (사용자 정의, 인덱스=0)"
+
+#: ..\ui\export_dialog.py:45 ..\ui\export_dialog.py:151
+msgid "Pascal VOC 2012 (XML)"
+msgstr "Pascal VOC 2012 (XML)"
+
+#: ..\ui\export_dialog.py:46 ..\ui\export_dialog.py:152
+msgid "CSV (Generic table)"
+msgstr "CSV (일반 테이블)"
+
+#: ..\ui\export_dialog.py:54
+msgid "Output Directory"
+msgstr "출력 디렉토리"
+
+#: ..\ui\export_dialog.py:61
+msgid "Start Export"
+msgstr "내보내기 시작"
+
+#: ..\ui\export_dialog.py:62 ..\ui\main_window.py:1366
+#: ..\ui\main_window.py:1792 ..\ui\settings_dialog.py:73
+#: ..\ui\settings_dialog.py:131
+msgid "Cancel"
+msgstr "취소"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:328
+msgid "Please select an output directory"
+msgstr "출력 디렉토리를 선택하십시오"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:315
+#: ..\ui\export_dialog.py:328 ..\ui\main_window.py:937
+#: ..\ui\main_window.py:940 ..\ui\main_window.py:974 ..\ui\main_window.py:1005
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+#: ..\ui\main_window.py:1347 ..\ui\main_window.py:1390
+#: ..\ui\main_window.py:1408 ..\ui\main_window.py:1411
+#: ..\ui\main_window.py:1440 ..\ui\main_window.py:1627
+#: ..\ui\main_window.py:1756 ..\ui\main_window.py:1775
+#: ..\ui\main_window.py:1954 ..\ui\main_window.py:2236
+msgid "Error"
+msgstr "오류"
+
+#: ..\ui\export_dialog.py:80
+msgid "Exporting..."
+msgstr "내보내는 중..."
+
+#: ..\ui\export_dialog.py:81
+msgid "Processing images"
+msgstr "이미지 처리 중"
+
+#: ..\ui\export_dialog.py:93
+msgid ""
+"Batch Export Complete!\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"일괄 내보내기 완료!\n"
+"{}/{} 개의 이미지를 성공적으로 내보냈습니다."
+
+#: ..\ui\export_dialog.py:94
+msgid "Finished"
+msgstr "완료"
+
+#: ..\ui\export_dialog.py:104
+msgid "Dataset Export (Split)"
+msgstr "데이터세트 내보내기 (분할)"
+
+#: ..\ui\export_dialog.py:147
+msgid "YOLO Detection (Bounding Box)"
+msgstr "YOLO 탐지 (경계 상자)"
+
+#: ..\ui\export_dialog.py:150
+msgid "MS COCO (JSON)"
+msgstr "MS COCO (JSON)"
+
+#: ..\ui\export_dialog.py:170
+msgid "Dataset Splitting"
+msgstr "데이터세트 분할"
+
+#: ..\ui\export_dialog.py:173
+msgid "Honor Manual Status (fixed in File List)"
+msgstr "수동 상태 존중 (파일 목록에서 고정됨)"
+
+#: ..\ui\export_dialog.py:181
+msgid "Train (%):"
+msgstr "훈련 (%):"
+
+#: ..\ui\export_dialog.py:188
+msgid "Val (%):"
+msgstr "검증 (%):"
+
+#: ..\ui\export_dialog.py:195
+msgid "Test (%):"
+msgstr "테스트 (%):"
+
+#: ..\ui\export_dialog.py:206
+msgid "Distribution Preview"
+msgstr "분포 미리보기"
+
+#: ..\ui\export_dialog.py:207
+msgid "Analyzing..."
+msgstr "분석 중..."
+
+#: ..\ui\export_dialog.py:212
+msgid "Format Specific Options"
+msgstr "형식별 옵션"
+
+#: ..\ui\export_dialog.py:215
+msgid "Category Index Start:"
+msgstr "카테고리 인덱스 시작:"
+
+#: ..\ui\export_dialog.py:226
+msgid "Output Settings"
+msgstr "출력 설정"
+
+#: ..\ui\export_dialog.py:228
+msgid "Copy Image Files (create standalone dataset)"
+msgstr "이미지 파일 복사 (독립형 데이터세트 생성)"
+
+#: ..\ui\export_dialog.py:233
+msgid "Output Dir:"
+msgstr "출력 디렉토리:"
+
+#: ..\ui\export_dialog.py:315
+msgid "Train and Val ratios must be greater than 0%"
+msgstr "훈련 및 검증 비율은 0%보다 커야 합니다"
+
+#: ..\ui\export_dialog.py:322
+msgid ""
+"Note: Ratios sum to {}%. The application will treat them as weights but it's"
+" recommended to sum to 100%."
+msgstr "참고: 비율의 합이 {}%입니다. 애플리케이션은 이를 가중치로 처리하지만 합계를 100%로 맞추는 것을 권장합니다."
+
+#: ..\ui\export_dialog.py:323
+msgid "Warning"
+msgstr "경고"
+
+#: ..\ui\i18n.py:156
+msgid "Switch to {}"
+msgstr "{}로 전환"
+
+#: ..\ui\image_display_panel.py:333
+msgid "ROI Complete: Right-click image or use Toolbar/Enter to save"
+msgstr "ROI 완료: 이미지 우클릭 또는 도구 모음/Enter를 사용하여 저장"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Select Category:"
+msgstr "카테고리 선택:"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Category"
+msgstr "카테고리"
+
+#: ..\ui\image_display_panel.py:546 ..\ui\image_display_panel.py:655
+msgid "Drawing Label: {}"
+msgstr "라벨 그리기: {}"
+
+#: ..\ui\image_display_panel.py:613 ..\ui\image_display_panel.py:653
+msgid ""
+"AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
+msgstr "AI 모드 활성: 왼쪽 클릭(초록)으로 추가, 오른쪽 클릭(빨강)으로 제외."
+
+#: ..\ui\image_display_panel.py:719
+msgid "Editing {}. Shape locked. Press Enter to update."
+msgstr "{} 편집 중. 모양이 고정됨. 업데이트하려면 Enter를 누르십시오."
+
+#: ..\ui\image_display_panel.py:778
+msgid "AI: First point must be a positive prompt (Left-click)."
+msgstr "AI: 첫 번째 포인트는 긍정적 프롬프트(왼쪽 클릭)여야 합니다."
+
+#: ..\ui\image_display_panel.py:914
+msgid "🤖 Preparing AI Model: {}... (Downloading if needed)"
+msgstr "🤖 AI 모델 준비 중: {}... (필요한 경우 다운로드 중)"
+
+#: ..\ui\image_display_panel.py:923
+msgid "❌ AI Model initialization failed."
+msgstr "❌ AI 모델 초기화 실패."
+
+#: ..\ui\image_display_panel.py:930
+msgid "🧠 AI Embedding... (Wait)"
+msgstr "🧠 AI 임베딩 중... (대기)"
+
+#: ..\ui\image_display_panel.py:954
+msgid "AI Active: {} positive, {} negative prompts."
+msgstr "AI 활성: {}개의 긍정적, {}개의 부정적 프롬프트."
+
+#: ..\ui\image_display_panel.py:983
+msgid "AI Annotation added."
+msgstr "AI 어노테이션이 추가되었습니다."
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Complete Annotation"
+msgstr "어노테이션 완료"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Update Object"
+msgstr "개체 업데이트"
+
+#: ..\ui\image_display_panel.py:1040
+msgid "Cancel Drawing"
+msgstr "그리기 취소"
+
+#: ..\ui\image_display_panel.py:1061
+msgid "Select Overlapping Object"
+msgstr "겹치는 개체 선택"
+
+#: ..\ui\image_display_panel.py:1069
+msgid "Bring to Front"
+msgstr "맨 앞으로 가져오기"
+
+#: ..\ui\image_display_panel.py:1072
+msgid "Send to Back"
+msgstr "맨 뒤로 보내기"
+
+#: ..\ui\image_display_panel.py:1076
+msgid "Delete Object"
+msgstr "개체 삭제"
+
+#: ..\ui\image_display_panel.py:1084
+msgid "Create Rectangle"
+msgstr "사각형 생성"
+
+#: ..\ui\image_display_panel.py:1087
+msgid "Create Rotated Rect"
+msgstr "회전된 사각형 생성"
+
+#: ..\ui\image_display_panel.py:1090
+msgid "Create Circle"
+msgstr "원형 생성"
+
+#: ..\ui\image_display_panel.py:1093
+msgid "Create Annulus"
+msgstr "원형 링 생성"
+
+#: ..\ui\image_display_panel.py:1096
+msgid "Create Polygon"
+msgstr "다각형 생성"
+
+#: ..\ui\image_display_panel.py:1102
+msgid "Zoom to Fit"
+msgstr "창에 맞춤 확대/축소"
+
+#: ..\ui\image_display_panel.py:1105
+msgid "Full Screen"
+msgstr "전체 화면"
+
+#: ..\ui\image_display_panel.py:1119
+msgid "Moved object to top layer"
+msgstr "개체를 맨 위 레이어로 이동했습니다"
+
+#: ..\ui\image_display_panel.py:1125
+msgid "Moved object to bottom layer"
+msgstr "개체를 맨 아래 레이어로 이동했습니다"
+
+#: ..\ui\image_display_panel.py:1200
+msgid "Error: Invalid ROI size"
+msgstr "오류: 잘못된 ROI 크기"
+
+#: ..\ui\image_display_panel.py:1207
+msgid "Updated: {}"
+msgstr "업데이트됨: {}"
+
+#: ..\ui\image_display_panel.py:1216
+msgid "Added: {}"
+msgstr "추가됨: {}"
+
+#: ..\ui\image_display_panel.py:1250
+msgid "Drawing/Edit cancelled"
+msgstr "그리기/편집이 취소되었습니다"
+
+#: ..\ui\main_window.py:330 ..\ui\main_window.py:730
+msgid "Label List"
+msgstr "라벨 목록"
+
+#: ..\ui\main_window.py:378
+msgid "Label set to: {}"
+msgstr "라벨이 {}로 설정됨"
+
+#: ..\ui\main_window.py:386 ..\ui\main_window.py:732
+msgid "Annotation List"
+msgstr "어노테이션 목록"
+
+#: ..\ui\main_window.py:400 ..\ui\main_window.py:739
+msgid "ID"
+msgstr "ID"
+
+#: ..\ui\main_window.py:401 ..\ui\main_window.py:743
+msgid "Label"
+msgstr "라벨"
+
+#: ..\ui\main_window.py:402 ..\ui\main_window.py:747
+msgid "Type"
+msgstr "유형"
+
+#: ..\ui\main_window.py:403 ..\ui\main_window.py:751
+msgid "Vis"
+msgstr "표시"
+
+#: ..\ui\main_window.py:414 ..\ui\main_window.py:525 ..\ui\main_window.py:769
+msgid "Edit"
+msgstr "편집"
+
+#: ..\ui\main_window.py:415 ..\ui\main_window.py:771
+msgid "Delete"
+msgstr "삭제"
+
+#: ..\ui\main_window.py:416 ..\ui\main_window.py:773
+msgid "Visibility"
+msgstr "표시 여부"
+
+#: ..\ui\main_window.py:443 ..\ui\main_window.py:734
+msgid "File List"
+msgstr "파일 목록"
+
+#: ..\ui\main_window.py:457 ..\ui\main_window.py:756
+msgid "Filename"
+msgstr "파일명"
+
+#: ..\ui\main_window.py:458 ..\ui\main_window.py:760
+msgid "Count"
+msgstr "개수"
+
+#: ..\ui\main_window.py:459 ..\ui\main_window.py:764
+msgid "Status"
+msgstr "상태"
+
+#: ..\ui\main_window.py:470 ..\ui\main_window.py:775
+msgid "Prev"
+msgstr "이전"
+
+#: ..\ui\main_window.py:471 ..\ui\main_window.py:777
+msgid "Next"
+msgstr "다음"
+
+#: ..\ui\main_window.py:499
+msgid "Open Image"
+msgstr "이미지 열기"
+
+#: ..\ui\main_window.py:500
+msgid "Open Folder"
+msgstr "폴더 열기"
+
+#: ..\ui\main_window.py:502
+msgid "Save"
+msgstr "저장"
+
+#: ..\ui\main_window.py:503
+msgid "Save As..."
+msgstr "다른 이름으로 저장..."
+
+#: ..\ui\main_window.py:505
+msgid "Exit"
+msgstr "종료"
+
+#: ..\ui\main_window.py:507
+msgid "File"
+msgstr "파일"
+
+#: ..\ui\main_window.py:511
+msgid "Save Labels to Project Folder"
+msgstr "라벨을 프로젝트 폴더에 저장"
+
+#: ..\ui\main_window.py:512
+msgid "Reload Labels from Project"
+msgstr "프로젝트에서 라벨 다시 로드"
+
+#: ..\ui\main_window.py:514
+msgid "Manage Categories..."
+msgstr "카테고리 관리..."
+
+#: ..\ui\main_window.py:514
+msgid "Open category manager dialog"
+msgstr "카테고리 관리자 대화 상자 열기"
+
+#: ..\ui\main_window.py:516
+msgid "Project"
+msgstr "프로젝트"
+
+#: ..\ui\main_window.py:520
+msgid "Undo"
+msgstr "실행 취소"
+
+#: ..\ui\main_window.py:521
+msgid "Redo"
+msgstr "다시 실행"
+
+#: ..\ui\main_window.py:523
+msgid "Delete Annotation"
+msgstr "어노테이션 삭제"
+
+#: ..\ui\main_window.py:533 ..\ui\main_window.py:1076
+msgid "Point"
+msgstr "점"
+
+#: ..\ui\main_window.py:535
+msgid "Select Tool"
+msgstr "선택 도구"
+
+#: ..\ui\main_window.py:537
+msgid "Annotate"
+msgstr "어노테이트"
+
+#: ..\ui\main_window.py:542
+msgid "Zoom In"
+msgstr "확대"
+
+#: ..\ui\main_window.py:543
+msgid "Zoom Out"
+msgstr "축소"
+
+#: ..\ui\main_window.py:544
+msgid "Fit Window"
+msgstr "창에 맞춤"
+
+#: ..\ui\main_window.py:550
+msgid "Batch Export..."
+msgstr "일괄 내보내기..."
+
+#: ..\ui\main_window.py:551
+msgid "Export Dataset (Split)..."
+msgstr "데이터세트 내보내기 (분할)..."
+
+#: ..\ui\main_window.py:553
+msgid "Supported Formats"
+msgstr "지원 형식"
+
+#: ..\ui\main_window.py:555
+msgid "Export"
+msgstr "내보내기"
+
+#: ..\ui\main_window.py:559
+msgid "Settings..."
+msgstr "설정..."
+
+#: ..\ui\main_window.py:561 ..\ui\settings_dialog.py:19
+#: ..\ui\settings_dialog.py:90
+msgid "Settings"
+msgstr "설정"
+
+#: ..\ui\main_window.py:565
+msgid "About"
+msgstr "정보"
+
+#: ..\ui\main_window.py:567
+msgid "Help"
+msgstr "도움말"
+
+#: ..\ui\main_window.py:583
+msgid "Ready"
+msgstr "준비됨"
+
+#: ..\ui\main_window.py:585
+msgid "Count: 0"
+msgstr "개수: 0"
+
+#: ..\ui\main_window.py:716
+msgid "Language changed to {}. Interface elements have been updated."
+msgstr "언어가 {}로 변경되었습니다. 인터페이스 요소가 업데이트되었습니다."
+
+#: ..\ui\main_window.py:717
+msgid "Language Changed"
+msgstr "언어 변경됨"
+
+#: ..\ui\main_window.py:914
+msgid "Select Image File"
+msgstr "이미지 파일 선택"
+
+#: ..\ui\main_window.py:915
+msgid "Image Files"
+msgstr "이미지 파일"
+
+#: ..\ui\main_window.py:915
+msgid "All Files"
+msgstr "모든 파일"
+
+#: ..\ui\main_window.py:930
+msgid "Opened: {}"
+msgstr "열림: {}"
+
+#: ..\ui\main_window.py:937
+msgid "Cannot load image: {}"
+msgstr "이미지를 로드할 수 없음: {}"
+
+#: ..\ui\main_window.py:940
+msgid "Image Panel not initialized"
+msgstr "이미지 패널이 초기화되지 않음"
+
+#: ..\ui\main_window.py:950
+msgid "Select Folder containing images"
+msgstr "이미지가 포함된 폴더 선택"
+
+#: ..\ui\main_window.py:972
+msgid "Annotations Saved (Base64: {})"
+msgstr "어노테이션 저장됨 (Base64: {})"
+
+#: ..\ui\main_window.py:974
+msgid "Failed to save annotations"
+msgstr "어노테이션 저장 실패"
+
+#: ..\ui\main_window.py:976
+msgid "No current image"
+msgstr "현재 이미지 없음"
+
+#: ..\ui\main_window.py:976 ..\ui\main_window.py:1332
+#: ..\ui\main_window.py:1398 ..\ui\main_window.py:1419
+#: ..\ui\main_window.py:1604 ..\ui\main_window.py:1763
+msgid "Hint"
+msgstr "힌트"
+
+#: ..\ui\main_window.py:1003
+msgid "Annotations saved as... (Base64: {})"
+msgstr "어노테이션이 다른 이름으로 저장됨... (Base64: {})"
+
+#: ..\ui\main_window.py:1005
+msgid "Save failed"
+msgstr "저장 실패"
+
+#: ..\ui\main_window.py:1064
+msgid "AI Mode: UI locked. Use Enter/Esc to finish."
+msgstr "AI 모드: UI 고정됨. 완료하려면 Enter/Esc를 사용하십시오."
+
+#: ..\ui\main_window.py:1066
+msgid "UI Unlocked"
+msgstr "UI 고정 해제됨"
+
+#: ..\ui\main_window.py:1078
+msgid "Select"
+msgstr "선택"
+
+#: ..\ui\main_window.py:1107
+msgid "added"
+msgstr "추가됨"
+
+#: ..\ui\main_window.py:1108
+msgid "deleted"
+msgstr "삭제됨"
+
+#: ..\ui\main_window.py:1109
+msgid "updated"
+msgstr "업데이트됨"
+
+#: ..\ui\main_window.py:1110
+msgid "loaded"
+msgstr "로드됨"
+
+#: ..\ui\main_window.py:1111
+msgid "undone"
+msgstr "실행 취소됨"
+
+#: ..\ui\main_window.py:1112
+msgid "redone"
+msgstr "다시 실행됨"
+
+#: ..\ui\main_window.py:1114 ..\ui\main_window.py:1429
+#: ..\ui\main_window.py:1437
+msgid "Annotation {}"
+msgstr "어노테이션 {}"
+
+#: ..\ui\main_window.py:1259 ..\ui\main_window.py:1273
+msgid "Switched to image {}"
+msgstr "이미지 {}로 전환됨"
+
+#: ..\ui\main_window.py:1261
+msgid "Already at the first image"
+msgstr "이미 첫 번째 이미지입니다"
+
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+msgid "Failed to switch image: {}"
+msgstr "이미지 전환 실패: {}"
+
+#: ..\ui\main_window.py:1275
+msgid "Already at the last image"
+msgstr "이미 마지막 이미지입니다"
+
+#: ..\ui\main_window.py:1277
+msgid "No images loaded"
+msgstr "로드된 이미지 없음"
+
+#: ..\ui\main_window.py:1332
+msgid "Please select an annotation to edit"
+msgstr "편집할 어노테이션을 선택하십시오"
+
+#: ..\ui\main_window.py:1347
+msgid "Selected annotation not found"
+msgstr "선택한 어노테이션을 찾을 수 없음"
+
+#: ..\ui\main_window.py:1351
+msgid "Edit Annotation"
+msgstr "어노테이션 편집"
+
+#: ..\ui\main_window.py:1355
+msgid "Category:"
+msgstr "카테고리:"
+
+#: ..\ui\main_window.py:1365 ..\ui\settings_dialog.py:72
+#: ..\ui\settings_dialog.py:130
+msgid "OK"
+msgstr "확인"
+
+#: ..\ui\main_window.py:1385
+msgid "Label updated to: {}"
+msgstr "라벨이 {}로 업데이트됨"
+
+#: ..\ui\main_window.py:1390
+msgid "Failed to edit annotation: {}"
+msgstr "어노테이션 편집 실패: {}"
+
+#: ..\ui\main_window.py:1398
+msgid "Please select an annotation to delete"
+msgstr "삭제할 어노테이션을 선택하십시오"
+
+#: ..\ui\main_window.py:1401
+msgid "Are you sure you want to delete the selected annotation?"
+msgstr "선택한 어노테이션을 삭제하시겠습니까?"
+
+#: ..\ui\main_window.py:1401
+msgid "Confirm"
+msgstr "확인"
+
+#: ..\ui\main_window.py:1406
+msgid "Annotation Deleted"
+msgstr "어노테이션 삭제됨"
+
+#: ..\ui\main_window.py:1408
+msgid "Failed to delete annotation"
+msgstr "어노테이션 삭제 실패"
+
+#: ..\ui\main_window.py:1411
+msgid "Failed to delete annotation: {}"
+msgstr "어노테이션 삭제 실패: {}"
+
+#: ..\ui\main_window.py:1419
+msgid "Please select an annotation to toggle visibility"
+msgstr "표시 여부를 전환할 어노테이션을 선택하십시오"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Shown"
+msgstr "표시됨"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Hidden"
+msgstr "숨김"
+
+#: ..\ui\main_window.py:1440
+msgid "Failed to toggle visibility: {}"
+msgstr "표시 여부 전환 실패: {}"
+
+#: ..\ui\main_window.py:1578
+msgid "Enabled"
+msgstr "활성화됨"
+
+#: ..\ui\main_window.py:1578
+msgid "Disabled"
+msgstr "비활성화됨"
+
+#: ..\ui\main_window.py:1579
+msgid "Base64 Embedding: {}"
+msgstr "Base64 임베딩: {}"
+
+#: ..\ui\main_window.py:1604
+msgid ""
+"No image files found in folder\n"
+"{}"
+msgstr ""
+"폴더에서 이미지 파일을 찾을 수 없습니다\n"
+"{}"
+
+#: ..\ui\main_window.py:1623
+msgid "Loaded folder: {} ({} images)"
+msgstr "폴더 로드됨: {} ({}개의 이미지)"
+
+#: ..\ui\main_window.py:1627
+msgid "Failed to load folder: {}"
+msgstr "폴더 로드 실패: {}"
+
+#: ..\ui\main_window.py:1713
+msgid "None"
+msgstr "없음"
+
+#: ..\ui\main_window.py:1732
+msgid "Add Category..."
+msgstr "카테고리 추가..."
+
+#: ..\ui\main_window.py:1733
+msgid "Edit Category..."
+msgstr "카테고리 편집..."
+
+#: ..\ui\main_window.py:1734
+msgid "Delete Selected Category"
+msgstr "선택한 카테고리 삭제"
+
+#: ..\ui\main_window.py:1745
+msgid "Add Category"
+msgstr "카테고리 추가"
+
+#: ..\ui\main_window.py:1754
+msgid "Category added: {}"
+msgstr "카테고리 추가됨: {}"
+
+#: ..\ui\main_window.py:1756
+msgid "Category '{}' already exists"
+msgstr "카테고리 '{}'이(가) 이미 존재합니다"
+
+#: ..\ui\main_window.py:1763
+msgid "Please select a category to edit"
+msgstr "편집할 카테고리를 선택하십시오"
+
+#: ..\ui\main_window.py:1767
+msgid "Edit Category"
+msgstr "카테고리 편집"
+
+#: ..\ui\main_window.py:1775
+msgid "Category name cannot be empty"
+msgstr "카테고리 이름은 비어 있을 수 없습니다"
+
+#: ..\ui\main_window.py:1784
+msgid ""
+"You are renaming category '{}' to '{}'.\n"
+"\n"
+"Do you want to update all existing annotation files in this folder?\n"
+"\n"
+"Yes: Update ALL files in folder\n"
+"No: Update only the category list\n"
+"Cancel: Abort changes"
+msgstr ""
+"카테고리 '{}'를 '{}'로 변경하려고 합니다.\n"
+"\n"
+"이 폴더의 모든 기존 어노테이션 파일을 업데이트하시겠습니까?\n"
+"\n"
+"예: 폴더의 모든 파일 업데이트\n"
+"아니요: 카테고리 목록만 업데이트\n"
+"취소: 변경 취소"
+
+#: ..\ui\main_window.py:1790
+msgid "Rename Confirmation"
+msgstr "이름 변경 확인"
+
+#: ..\ui\main_window.py:1792
+msgid "Update All"
+msgstr "모두 업데이트"
+
+#: ..\ui\main_window.py:1792
+msgid "List Only"
+msgstr "목록만"
+
+#: ..\ui\main_window.py:1804
+msgid "Renamed '{}' to '{}' in {} files"
+msgstr "{}개의 파일에서 '{}'을(를) '{}'(으)로 변경했습니다"
+
+#: ..\ui\main_window.py:1806
+msgid "Renamed '{}' to '{}' in list only"
+msgstr "목록에서만 '{}'을(를) '{}'(으)로 변경했습니다"
+
+#: ..\ui\main_window.py:1809
+msgid "Updated color for Category: {}"
+msgstr "카테고리 {}의 색상이 업데이트되었습니다"
+
+#: ..\ui\main_window.py:1875
+msgid "Are you sure you want to delete category '{}'?"
+msgstr "카테고리 '{}'을(를) 삭제하시겠습니까?"
+
+#: ..\ui\main_window.py:1876
+msgid "Confirm Delete"
+msgstr "삭제 확인"
+
+#: ..\ui\main_window.py:1879
+msgid "Category deleted: {}"
+msgstr "카테고리 삭제됨: {}"
+
+#: ..\ui\main_window.py:1881
+msgid "Cannot delete default category '{}'"
+msgstr "기본 카테고리 '{}'은(는) 삭제할 수 없습니다"
+
+#: ..\ui\main_window.py:1882
+msgid "Constraint"
+msgstr "제약 조건"
+
+#: ..\ui\main_window.py:1904
+msgid "Delete Annotation File"
+msgstr "어노테이션 파일 삭제"
+
+#: ..\ui\main_window.py:1923
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\n"
+"This action cannot be undone."
+msgstr ""
+"'{}'의 어노테이션 파일을 삭제하시겠습니까?\n"
+"이 작업은 취소할 수 없습니다."
+
+#: ..\ui\main_window.py:1924
+msgid "Confirm Deletion"
+msgstr "삭제 확인"
+
+#: ..\ui\main_window.py:1950
+msgid "Deleted annotation file for: {}"
+msgstr "{}에 대한 어노테이션 파일을 삭제했습니다"
+
+#: ..\ui\main_window.py:1954
+msgid "Failed to delete annotation file: {}"
+msgstr "어노테이션 파일 삭제 실패: {}"
+
+#: ..\ui\main_window.py:2168
+msgid "Categories updated"
+msgstr "카테고리가 업데이트되었습니다"
+
+#: ..\ui\main_window.py:2201
+msgid "No images loaded to export"
+msgstr "내보낼 이미지가 로드되지 않았습니다"
+
+#: ..\ui\main_window.py:2201
+msgid "Information"
+msgstr "정보"
+
+#: ..\ui\main_window.py:2210
+msgid "Generating Dataset..."
+msgstr "데이터세트 생성 중..."
+
+#: ..\ui\main_window.py:2211
+msgid "Processing splitting and export formats"
+msgstr "분할 및 내보내기 형식을 처리 중입니다"
+
+#: ..\ui\main_window.py:2231
+msgid ""
+"Dataset Export Complete!\n"
+"Target: {}\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"데이터셋 내보내기 완료!\n"
+"대상: {}\n"
+"{}/{} 개의 이미지를 성공적으로 내보냈습니다."
+
+#: ..\ui\main_window.py:2233
+msgid "Success"
+msgstr "성공"
+
+#: ..\ui\main_window.py:2251
+msgid "Supported Export Formats:"
+msgstr "지원되는 내보내기 형식:"
+
+#: ..\ui\main_window.py:2257
+msgid "Features:"
+msgstr "주요 기능:"
+
+#: ..\ui\main_window.py:2263
+msgid "Export Format Info"
+msgstr "내보내기 형식 정보"
+
+#: ..\ui\main_window.py:2271
+msgid ""
+"A professional computer vision annotation tool.\n"
+"\n"
+"Key Features:\n"
+"• Advanced Export: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• Integrated AI: SAM, SAM2, EfficientSAM, and various detection models.\n"
+"• Cross-platform support with industrial-grade precision.\n"
+"\n"
+"Designed for professional computer vision research and dataset preparation."
+msgstr ""
+"전문적인 컴퓨터 비전 주석 도구입니다.\n"
+"\n"
+"주요 기능:\n"
+"• 고급 내보내기: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• 통합 AI: SAM, SAM2, EfficientSAM 및 다양한 감지 모델.\n"
+"• 산업 등급의 정밀도를 갖춘 교차 플랫폼 지원.\n"
+"\n"
+"전문적인 컴퓨터 비전 연구 및 데이터셋 준비를 위해 설계되었습니다。"
+
+#: ..\ui\theme_manager.py:35
+msgid "Dark (Default)"
+msgstr "어두움 (기본)"
+
+#: ..\ui\theme_manager.py:48
+msgid "Light (VS)"
+msgstr "밝음 (VS)"
+
+#: ..\ui\theme_manager.py:61
+msgid "Visual Studio Blue"
+msgstr "Visual Studio 파란색"
+
+#: ..\ui\theme_manager.py:74
+msgid "Monokai"
+msgstr "Monokai"
+
+#: ..\ui\settings_dialog.py:50 ..\ui\settings_dialog.py:93
+msgid "Language"
+msgstr "언어"
+
+#: ..\ui\settings_dialog.py:54 ..\ui\settings_dialog.py:94
+msgid "Theme"
+msgstr "테마"
+
+#: ..\ui\settings_dialog.py:58 ..\ui\settings_dialog.py:95
+msgid "User Settings"
+msgstr "사용자 설정"
+
+#: ..\ui\settings_dialog.py:62 ..\ui\settings_dialog.py:96
+msgid "Annotation"
+msgstr "주석"
+
+#: ..\ui\settings_dialog.py:66 ..\ui\settings_dialog.py:97
+msgid "AI Annotation"
+msgstr "어노테이션이 삭제되었습니다"
+
+#: ..\ui\settings_dialog.py:74 ..\ui\settings_dialog.py:132
+msgid "Apply"
+msgstr "적용"
+
+#: ..\ui\settings_dialog.py:100 ..\ui\settings_dialog.py:170
+msgid "Language Selection"
+msgstr "언어 선택"
+
+#: ..\ui\settings_dialog.py:101 ..\ui\settings_dialog.py:199
+msgid "UI Appearance"
+msgstr "UI 모양"
+
+#: ..\ui\settings_dialog.py:102 ..\ui\settings_dialog.py:234
+msgid "Annotator Information"
+msgstr "어노테이터 정보"
+
+#: ..\ui\settings_dialog.py:103 ..\ui\settings_dialog.py:274
+msgid "LabelMe Storage Format"
+msgstr "LabelMe 저장 형식"
+
+#: ..\ui\settings_dialog.py:104 ..\ui\settings_dialog.py:289
+msgid "Attribute Panel"
+msgstr "속성 패널"
+
+#: ..\ui\settings_dialog.py:105 ..\ui\settings_dialog.py:318
+msgid "AI Assisted Labeling Settings"
+msgstr "AI 보조 라벨링 설정"
+
+#: ..\ui\settings_dialog.py:108 ..\ui\settings_dialog.py:186
+msgid "Select Interface Language:"
+msgstr "인터페이스 언어 선택:"
+
+#: ..\ui\settings_dialog.py:109 ..\ui\settings_dialog.py:209
+msgid "Color Theme:"
+msgstr "색상 테마:"
+
+#: ..\ui\settings_dialog.py:110 ..\ui\settings_dialog.py:218
+msgid "Font Size:"
+msgstr "글꼴 크기:"
+
+#: ..\ui\settings_dialog.py:112 ..\ui\settings_dialog.py:237
+msgid "Enable User Information (Save to JSON)"
+msgstr "사용자 정보 활성화 (JSON에 저장)"
+
+#: ..\ui\settings_dialog.py:113 ..\ui\settings_dialog.py:244
+msgid "Name:"
+msgstr "이름:"
+
+#: ..\ui\settings_dialog.py:114 ..\ui\settings_dialog.py:251
+msgid "Quality Score (0-100):"
+msgstr "품질 점수 (0-100):"
+
+#: ..\ui\settings_dialog.py:115 ..\ui\settings_dialog.py:260
+msgid "Note: User info will only be added to JSON when enabled above."
+msgstr "참고: 사용자 정보는 위에서 활성화된 경우에만 JSON에 추가됩니다。"
+
+#: ..\ui\settings_dialog.py:117 ..\ui\settings_dialog.py:276
+msgid "Embed Image Data (Base64) in JSON"
+msgstr "JSON에 이미지 데이터 포함 (Base64)"
+
+#: ..\ui\settings_dialog.py:118 ..\ui\settings_dialog.py:281
+msgid "Note: Enabling this will significantly increase JSON file size."
+msgstr "참고: 이 기능을 활성화하면 JSON 파일 크기가 크게 증가합니다。"
+
+#: ..\ui\settings_dialog.py:119 ..\ui\settings_dialog.py:291
+msgid "Enable Attribute Panel (show below annotation list)"
+msgstr "속성 패널 활성화 (어노테이션 목록 아래에 표시)"
+
+#: ..\ui\settings_dialog.py:120 ..\ui\settings_dialog.py:296
+msgid "Default Flags:"
+msgstr "기본 플래그:"
+
+#: ..\ui\settings_dialog.py:121 ..\ui\settings_dialog.py:305
+msgid "Comma-separated flag names, e.g.: occluded, truncated, difficult"
+msgstr "쉼표로 구분된 플래그 이름, 예: occluded, truncated, difficult"
+
+#: ..\ui\settings_dialog.py:123 ..\ui\settings_dialog.py:321
+msgid "AI Model Directory:"
+msgstr "AI 모델 디렉토리:"
+
+#: ..\ui\settings_dialog.py:124 ..\ui\settings_dialog.py:331
+msgid "Enable Continuous Inference (Real-time)"
+msgstr "연속 추론 활성화 (실시간)"
+
+#: ..\ui\settings_dialog.py:125 ..\ui\settings_dialog.py:337
+msgid "Inference Interval (ms):"
+msgstr "추론 간격 (ms):"
+
+#: ..\ui\settings_dialog.py:126 ..\ui\settings_dialog.py:346
+msgid "Auto-simplify Polygon (0.004 Tolerance)"
+msgstr "폴리곤 자동 단순화 (0.004 허용 오차)"
+
+#: ..\ui\settings_dialog.py:127 ..\ui\settings_dialog.py:350
+msgid "Denoise Mask (Filter small fragments)"
+msgstr "마스크 노이즈 제거 (작은 파편 필터링)"
+
+msgid "+ Add"
+msgstr "+ 추가"
+
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\\nThis action "
+"cannot be undone."
+msgstr ""
+"정말로 '{}'의 어노테이션 파일을 삭제하시겠습니까?\n"
+"이 작업은 취소할 수 없습니다。"
+
+msgid "Attributes"
+msgstr "속성"
+
+msgid "Automated directory structure generation"
+msgstr "자동 디렉토리 구조 생성"
+
+msgid "Batch Export Complete!\\nSuccessfully exported {}/{} images."
+msgstr ""
+"일괄 내보내기 완료!\n"
+"{}/{} 개의 이미지를 성공적으로 내보냈습니다。"
+
+msgid "Batch export to directory"
+msgstr "디렉토리로 일괄 내보내기"
+
+msgid "Create line annotation (L)"
+msgstr "라인 어노테이션 생성 (L)"
+
+msgid "Custom Attributes:"
+msgstr "사용자 지정 속성:"
+
+msgid ""
+"Dataset Export Complete!\\nTarget: {}\\nSuccessfully exported {}/{} images."
+msgstr ""
+"데이터셋 내보내기 완료!\n"
+"대상: {}\n"
+"{}/{} 개의 이미지를 성공적으로 내보냈습니다。"
+
+msgid "Dataset splitting (Train/Val/Test)"
+msgstr "데이터셋 분할 (Train/Val/Test)"
+
+msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
+msgstr "탐지 (BBox), 세분화 (Polygon) 및 OBB (회전 사각형)"
+
+msgid "Edit Label"
+msgstr "라벨 편집"
+
+msgid "Flags:"
+msgstr "플래그:"
+
+msgid "Generic coordinate table for custom analysis"
+msgstr "사용자 지정 분석을 위한 범용 좌표 테이블"
+
+msgid "Hint: Drag to create line"
+msgstr "힌트: 드래그하여 라인 생성"
+
+msgid "Image Annotation Tool"
+msgstr "이미지 어노테이션 도구"
+
+msgid "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
+msgstr "업계 표준 JSON, 인덱스 0(사용자 지정) 또는 1(표준)로 구성 가능"
+
+msgid "Info"
+msgstr "정보"
+
+msgid "Line"
+msgstr "라인"
+
+msgid "No annotation file found for this image."
+msgstr "이 이미지의 어노테이션 파일을 찾을 수 없습니다。"
+
+msgid "No image files found in folder\\n{}"
+msgstr ""
+"폴더에서 이미지 파일을 찾을 수 없습니다\n"
+"{}"
+
+msgid "Preview of split distribution"
+msgstr "분할 분포 미리보기"
+
+msgid "Select an annotation to edit attributes"
+msgstr "속성을 편집할 어노테이션 선택"
+
+msgid "Standardized to VOC 2012 XML with 1-based pixel precision"
+msgstr "1-기반 픽셀 정밀도를 갖춘 VOC 2012 XML로 표준화"
+
+msgid "Test"
+msgstr "테스트"
+
+msgid "Total Images"
+msgstr "총 이미지"
+
+msgid "Train"
+msgstr "학습"
+
+msgid "Transcription:"
+msgstr "전사:"
+
+msgid "Unknown"
+msgstr "알 수 없음"
+
+msgid "Valid"
+msgstr "검증"
+
+msgid "📏 Line"
+msgstr "📏 라인"

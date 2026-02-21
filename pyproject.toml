@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wxcvannotator"
+version = "0.1.0"
+description = "Professional computer vision annotation tool with AI assistance"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache-2.0"}
+authors = [
+  {name = "wxCvRoot", email = "karatow2022@outlook.com"},
+]
+keywords = ["computer-vision", "annotation", "labeling", "ai", "segment-anything", "wxpython", "opencv"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "wxPython>=4.2.0",
+    "numpy>=1.24.0",
+    "opencv-python>=4.8.0",
+    "PyYAML>=6.0.0",
+    "requests>=2.31.0",
+    "wxcvmodule>=0.1.0",
+]
+
+[project.optional-dependencies]
+ai = [
+    "onnxruntime>=1.15.0",
+]
+ai-gpu = [
+    "onnxruntime-gpu>=1.15.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/wxCvRoot/wxCvAnnotator"
+Repository = "https://github.com/wxCvRoot/wxCvAnnotator"
+Issues = "https://github.com/wxCvRoot/wxCvAnnotator/issues"
+Documentation = "https://github.com/wxCvRoot/wxCvAnnotator/blob/main/README.md"
+
+[project.scripts]
+wxcv-annotator = "wxcvannotator.main:main"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wxcvannotator*"]
+
+[tool.setuptools.package-data]
+wxcvannotator = [
+    "config/settings.default.json",
+    "config/default_labels.json",
+    "config/wxCvAnnotator.yaml",
+    "i18n/translations/**/*.mo",
+    "i18n/translations/**/*.json",
+    "assets/**/*",
+]

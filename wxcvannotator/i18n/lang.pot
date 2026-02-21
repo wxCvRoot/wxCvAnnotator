@@ -1,0 +1,980 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2026-02-21 08:03\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "+ Add"
+msgstr ""
+
+msgid "AI Active: {} positive, {} negative prompts."
+msgstr ""
+
+msgid "AI Annotation"
+msgstr ""
+
+msgid "AI Annotation added."
+msgstr ""
+
+msgid "AI Assist"
+msgstr ""
+
+msgid "AI Assisted Labeling Settings"
+msgstr ""
+
+msgid ""
+"AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
+msgstr ""
+
+msgid "AI Mode: UI locked. Use Enter/Esc to finish."
+msgstr ""
+
+msgid "AI Model Directory:"
+msgstr ""
+
+msgid "AI-Assisted Pixel Mask (SAM)"
+msgstr ""
+
+msgid "AI-Assisted Polygon (SAM)"
+msgstr ""
+
+msgid "AI: First point must be a positive prompt (Left-click)."
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "About Annotation Tools"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Add Category"
+msgstr ""
+
+msgid "Add Category..."
+msgstr ""
+
+msgid "Add object to list (Enter)"
+msgstr ""
+
+msgid "Added: {}"
+msgstr ""
+
+msgid "All Files"
+msgstr ""
+
+msgid "Already at the first image"
+msgstr ""
+
+msgid "Already at the last image"
+msgstr ""
+
+msgid "Analyzing..."
+msgstr ""
+
+msgid "Annotate"
+msgstr ""
+
+msgid "Annotation"
+msgstr ""
+
+msgid "Annotation Deleted"
+msgstr ""
+
+msgid "Annotation List"
+msgstr ""
+
+msgid "Annotation Tools"
+msgstr ""
+
+msgid "Annotation {}"
+msgstr ""
+
+msgid "Annotations Saved (Base64: {})"
+msgstr ""
+
+msgid "Annotations saved as... (Base64: {})"
+msgstr ""
+
+msgid "Annotator Information"
+msgstr ""
+
+msgid "Annulus"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "Are you sure you want to delete category '{}'?"
+msgstr ""
+
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\\nThis action "
+"cannot be undone."
+msgstr ""
+
+msgid "Are you sure you want to delete the selected annotation?"
+msgstr ""
+
+msgid "Attribute Panel"
+msgstr ""
+
+msgid "Attributes"
+msgstr ""
+
+msgid "Auto-simplify Polygon (0.004 Tolerance)"
+msgstr ""
+
+msgid "Automated directory structure generation"
+msgstr ""
+
+msgid "Base64 Embedding: {}"
+msgstr ""
+
+msgid "Batch Export"
+msgstr ""
+
+msgid "Batch Export Complete!\\nSuccessfully exported {}/{} images."
+msgstr ""
+
+msgid "Batch Export..."
+msgstr ""
+
+msgid "Batch export to directory"
+msgstr ""
+
+msgid "Bring to Front"
+msgstr ""
+
+msgid "CSV (Generic table)"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancel Drawing"
+msgstr ""
+
+msgid "Cancel current drawing (Esc)"
+msgstr ""
+
+msgid "Cannot delete default category '{}'"
+msgstr ""
+
+msgid "Cannot load image: {}"
+msgstr ""
+
+msgid "Categories updated"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Category '{}' already exists"
+msgstr ""
+
+msgid "Category Index Start:"
+msgstr ""
+
+msgid "Category added: {}"
+msgstr ""
+
+msgid "Category deleted: {}"
+msgstr ""
+
+msgid "Category name cannot be empty"
+msgstr ""
+
+msgid "Category:"
+msgstr ""
+
+msgid "Circle"
+msgstr ""
+
+msgid "Color Theme:"
+msgstr ""
+
+msgid "Comma-separated flag names, e.g.: occluded, truncated, difficult"
+msgstr ""
+
+msgid "Complete Annotation"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "Confirm Delete"
+msgstr ""
+
+msgid "Confirm Deletion"
+msgstr ""
+
+msgid "Constraint"
+msgstr ""
+
+msgid "Copy Image Files (create standalone dataset)"
+msgstr ""
+
+msgid "Count"
+msgstr ""
+
+msgid "Count: 0"
+msgstr ""
+
+msgid "Create Annulus"
+msgstr ""
+
+msgid "Create Circle"
+msgstr ""
+
+msgid "Create Polygon"
+msgstr ""
+
+msgid "Create Rectangle"
+msgstr ""
+
+msgid "Create Rotated Rect"
+msgstr ""
+
+msgid "Create annulus annotation"
+msgstr ""
+
+msgid "Create circle annotation"
+msgstr ""
+
+msgid "Create line annotation (L)"
+msgstr ""
+
+msgid "Create polygon annotation (P)"
+msgstr ""
+
+msgid "Create rectangle annotation"
+msgstr ""
+
+msgid "Create rotated rectangle (R)"
+msgstr ""
+
+msgid "Custom Attributes:"
+msgstr ""
+
+msgid "Dark (Default)"
+msgstr ""
+
+msgid "Dataset Export (Split)"
+msgstr ""
+
+msgid ""
+"Dataset Export Complete!\\nTarget: {}\\nSuccessfully exported {}/{} images."
+msgstr ""
+
+msgid "Dataset Splitting"
+msgstr ""
+
+msgid "Dataset splitting (Train/Val/Test)"
+msgstr ""
+
+msgid "Default Flags:"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete Annotation"
+msgstr ""
+
+msgid "Delete Annotation File"
+msgstr ""
+
+msgid "Delete Object"
+msgstr ""
+
+msgid "Delete Selected Category"
+msgstr ""
+
+msgid "Deleted annotation file for: {}"
+msgstr ""
+
+msgid "Denoise Mask (Filter small fragments)"
+msgstr ""
+
+msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Distribution Preview"
+msgstr ""
+
+msgid "Drawing Label: {}"
+msgstr ""
+
+msgid "Drawing/Edit cancelled"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Annotation"
+msgstr ""
+
+msgid "Edit Category"
+msgstr ""
+
+msgid "Edit Category..."
+msgstr ""
+
+msgid "Edit Label"
+msgstr ""
+
+msgid "Editing {}. Shape locked. Press Enter to update."
+msgstr ""
+
+msgid "Embed Image Data (Base64) in JSON"
+msgstr ""
+
+msgid "Enable Attribute Panel (show below annotation list)"
+msgstr ""
+
+msgid "Enable Continuous Inference (Real-time)"
+msgstr ""
+
+msgid "Enable User Information (Save to JSON)"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Error: Invalid ROI size"
+msgstr ""
+
+msgid "Exit"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Export Dataset (Split)..."
+msgstr ""
+
+msgid "Export Format"
+msgstr ""
+
+msgid "Export Format Info"
+msgstr ""
+
+msgid "Export {} images to selected format."
+msgstr ""
+
+msgid "Exporting..."
+msgstr ""
+
+msgid "Failed to delete annotation"
+msgstr ""
+
+msgid "Failed to delete annotation file: {}"
+msgstr ""
+
+msgid "Failed to delete annotation: {}"
+msgstr ""
+
+msgid "Failed to edit annotation: {}"
+msgstr ""
+
+msgid "Failed to load folder: {}"
+msgstr ""
+
+msgid "Failed to save annotations"
+msgstr ""
+
+msgid "Failed to switch image: {}"
+msgstr ""
+
+msgid "Failed to toggle visibility: {}"
+msgstr ""
+
+msgid "Features:"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "File List"
+msgstr ""
+
+msgid "Filename"
+msgstr ""
+
+msgid "Finished"
+msgstr ""
+
+msgid "Fit Window"
+msgstr ""
+
+msgid "Fit image to window"
+msgstr ""
+
+msgid "Flags:"
+msgstr ""
+
+msgid "Font Size:"
+msgstr ""
+
+msgid "Format Specific Options"
+msgstr ""
+
+msgid "Full Screen"
+msgstr ""
+
+msgid "Generating Dataset..."
+msgstr ""
+
+msgid "Generic coordinate table for custom analysis"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Hidden"
+msgstr ""
+
+msgid "Hint"
+msgstr ""
+
+msgid "Hint: Click to add vertex, double-click or right-click to finish"
+msgstr ""
+
+msgid "Hint: Click to select/edit an annotation"
+msgstr ""
+
+msgid "Hint: Drag to create annulus"
+msgstr ""
+
+msgid "Hint: Drag to create circle"
+msgstr ""
+
+msgid "Hint: Drag to create line"
+msgstr ""
+
+msgid "Hint: Drag to create rotated rectangle"
+msgstr ""
+
+msgid "Hint: Drag to create standard rectangle"
+msgstr ""
+
+msgid "Hint: Right-click for options"
+msgstr ""
+
+msgid "Honor Manual Status (fixed in File List)"
+msgstr ""
+
+msgid "Hotkey Help"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Image Annotation Tool"
+msgstr ""
+
+msgid "Image Files"
+msgstr ""
+
+msgid "Image Panel not initialized"
+msgstr ""
+
+msgid "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
+msgstr ""
+
+msgid "Inference Interval (ms):"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Information"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Label List"
+msgstr ""
+
+msgid "Label set to: {}"
+msgstr ""
+
+msgid "Label updated to: {}"
+msgstr ""
+
+msgid "LabelMe Storage Format"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Language Changed"
+msgstr ""
+
+msgid "Language Selection"
+msgstr ""
+
+msgid "Language changed to {}. Interface elements have been updated."
+msgstr ""
+
+msgid "Light (VS)"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "List Only"
+msgstr ""
+
+msgid "Loaded folder: {} ({} images)"
+msgstr ""
+
+msgid "MS COCO (Custom, Index=0)"
+msgstr ""
+
+msgid "MS COCO (JSON)"
+msgstr ""
+
+msgid "MS COCO (Standard, Index=1)"
+msgstr ""
+
+msgid "Manage Categories..."
+msgstr ""
+
+msgid "Model:"
+msgstr ""
+
+msgid "Monokai"
+msgstr ""
+
+msgid "Moved object to bottom layer"
+msgstr ""
+
+msgid "Moved object to top layer"
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "No annotation file found for this image."
+msgstr ""
+
+msgid "No current image"
+msgstr ""
+
+msgid "No image files found in folder\\n{}"
+msgstr ""
+
+msgid "No images loaded"
+msgstr ""
+
+msgid "No images loaded to export"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Note: Enabling this will significantly increase JSON file size."
+msgstr ""
+
+msgid ""
+"Note: Ratios sum to {}%. The application will treat them as weights but it's"
+" recommended to sum to 100%."
+msgstr ""
+
+msgid "Note: User info will only be added to JSON when enabled above."
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Open Folder"
+msgstr ""
+
+msgid "Open Image"
+msgstr ""
+
+msgid "Open category manager dialog"
+msgstr ""
+
+msgid "Opened: {}"
+msgstr ""
+
+msgid "Output Dir:"
+msgstr ""
+
+msgid "Output Directory"
+msgstr ""
+
+msgid "Output Settings"
+msgstr ""
+
+msgid "Pascal VOC 2012 (XML)"
+msgstr ""
+
+msgid "Please select a category to edit"
+msgstr ""
+
+msgid "Please select an annotation to delete"
+msgstr ""
+
+msgid "Please select an annotation to edit"
+msgstr ""
+
+msgid "Please select an annotation to toggle visibility"
+msgstr ""
+
+msgid "Please select an output directory"
+msgstr ""
+
+msgid "Point"
+msgstr ""
+
+msgid "Polygon"
+msgstr ""
+
+msgid "Prev"
+msgstr ""
+
+msgid "Preview of split distribution"
+msgstr ""
+
+msgid "Processing images"
+msgstr ""
+
+msgid "Processing splitting and export formats"
+msgstr ""
+
+msgid "Project"
+msgstr ""
+
+msgid "Quality Score (0-100):"
+msgstr ""
+
+msgid "ROI Complete: Right-click image or use Toolbar/Enter to save"
+msgstr ""
+
+msgid "Ready"
+msgstr ""
+
+msgid "Rectangle"
+msgstr ""
+
+msgid "Redo"
+msgstr ""
+
+msgid "Redo operation (Ctrl+Y)"
+msgstr ""
+
+msgid "Reload Labels from Project"
+msgstr ""
+
+msgid "Rename Confirmation"
+msgstr ""
+
+msgid "Renamed '{}' to '{}' in list only"
+msgstr ""
+
+msgid "Renamed '{}' to '{}' in {} files"
+msgstr ""
+
+msgid "Rotated Rect"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save As..."
+msgstr ""
+
+msgid "Save Labels to Project Folder"
+msgstr ""
+
+msgid "Save failed"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Select Category:"
+msgstr ""
+
+msgid "Select Folder containing images"
+msgstr ""
+
+msgid "Select Image File"
+msgstr ""
+
+msgid "Select Interface Language:"
+msgstr ""
+
+msgid "Select Overlapping Object"
+msgstr ""
+
+msgid "Select Tool"
+msgstr ""
+
+msgid "Select an annotation to edit attributes"
+msgstr ""
+
+msgid "Select or edit annotations (S)"
+msgstr ""
+
+msgid "Select/Edit"
+msgstr ""
+
+msgid "Selected annotation not found"
+msgstr ""
+
+msgid "Send to Back"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Settings..."
+msgstr ""
+
+msgid "Shown"
+msgstr ""
+
+msgid "Standardized to VOC 2012 XML with 1-based pixel precision"
+msgstr ""
+
+msgid "Start Export"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Success"
+msgstr ""
+
+msgid "Supported Export Formats:"
+msgstr ""
+
+msgid "Supported Formats"
+msgstr ""
+
+msgid "Switch to {}"
+msgstr ""
+
+msgid "Switched to image {}"
+msgstr ""
+
+msgid "Test"
+msgstr ""
+
+msgid "Test (%):"
+msgstr ""
+
+msgid "Theme"
+msgstr ""
+
+msgid "Tool Help"
+msgstr ""
+
+msgid "Tool: Select"
+msgstr ""
+
+msgid "Tool: {}"
+msgstr ""
+
+msgid "Toolbar Settings"
+msgstr ""
+
+msgid "Tools"
+msgstr ""
+
+msgid "Total Images"
+msgstr ""
+
+msgid "Train"
+msgstr ""
+
+msgid "Train (%):"
+msgstr ""
+
+msgid "Train and Val ratios must be greater than 0%"
+msgstr ""
+
+msgid "Transcription:"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "UI Appearance"
+msgstr ""
+
+msgid "UI Unlocked"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Undo operation (Ctrl+Z)"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Update All"
+msgstr ""
+
+msgid "Update Object"
+msgstr ""
+
+msgid "Update selected object (Enter)"
+msgstr ""
+
+msgid "Updated color for Category: {}"
+msgstr ""
+
+msgid "Updated: {}"
+msgstr ""
+
+msgid "User Settings"
+msgstr ""
+
+msgid "Val (%):"
+msgstr ""
+
+msgid "Valid"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Vis"
+msgstr ""
+
+msgid "Visibility"
+msgstr ""
+
+msgid "Visual Studio Blue"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "YOLO Detection (BBox)"
+msgstr ""
+
+msgid "YOLO Detection (Bounding Box)"
+msgstr ""
+
+msgid "YOLO OBB (Rotated Rect)"
+msgstr ""
+
+msgid "YOLO Segmentation (Polygon)"
+msgstr ""
+
+msgid "Zoom In"
+msgstr ""
+
+msgid "Zoom Out"
+msgstr ""
+
+msgid "Zoom in view"
+msgstr ""
+
+msgid "Zoom out view"
+msgstr ""
+
+msgid "Zoom to Fit"
+msgstr ""
+
+msgid "added"
+msgstr ""
+
+msgid "deleted"
+msgstr ""
+
+msgid "loaded"
+msgstr ""
+
+msgid "redone"
+msgstr ""
+
+msgid "undone"
+msgstr ""
+
+msgid "updated"
+msgstr ""
+
+msgid "↩️ Undo"
+msgstr ""
+
+msgid "↪️ Redo"
+msgstr ""
+
+msgid "❌ AI Model initialization failed."
+msgstr ""
+
+msgid "➕ Add"
+msgstr ""
+
+msgid "⬛ Rectangle"
+msgstr ""
+
+msgid "⭕ Circle"
+msgstr ""
+
+msgid "🍩 Annulus"
+msgstr ""
+
+msgid "🎭 AI Mask"
+msgstr ""
+
+msgid "🎯 Select"
+msgstr ""
+
+msgid "📏 Line"
+msgstr ""
+
+msgid "📐 Rotated Rect"
+msgstr ""
+
+msgid "🔄 Update"
+msgstr ""
+
+msgid "🔍 Zoom In"
+msgstr ""
+
+msgid "🔎 Zoom Out"
+msgstr ""
+
+msgid "🔷 Polygon"
+msgstr ""
+
+msgid "🖼️ Fit View"
+msgstr ""
+
+msgid "🚫 Cancel"
+msgstr ""
+
+msgid "🤖 AI Polygon"
+msgstr ""
+
+msgid "🤖 Preparing AI Model: {}... (Downloading if needed)"
+msgstr ""
+
+msgid "🧠 AI Embedding... (Wait)"
+msgstr ""

@@ -1,0 +1,1384 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 23:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar_SA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "🎯 Select"
+msgstr "🎯 تحديد"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "Select or edit annotations (S)"
+msgstr "اختيار أو تعديل التعليقات (S)"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "🔷 Polygon"
+msgstr "🔷 مضلع"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "Create polygon annotation (P)"
+msgstr "إنشاء تعليق مضلع (P)"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "📐 Rotated Rect"
+msgstr "📐 مستطيل مدوّر"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "Create rotated rectangle (R)"
+msgstr "إنشاء مستطيل مدور (R)"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "⬛ Rectangle"
+msgstr "⬛ مستطيل"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "Create rectangle annotation"
+msgstr "إنشاء تعليق مستطيل"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "⭕ Circle"
+msgstr "⭕ دائرة"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "Create circle annotation"
+msgstr "إنشاء تعليق دائرة"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "🍩 Annulus"
+msgstr "🍩 حلقة"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "Create annulus annotation"
+msgstr "إنشاء تعليق حلقة"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:574
+#: ..\ui\annotation_toolbar.py:595
+msgid "➕ Add"
+msgstr "➕ إضافة"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:575
+#: ..\ui\annotation_toolbar.py:595
+msgid "Add object to list (Enter)"
+msgstr "إضافة كائن للقائمة (Enter)"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "🚫 Cancel"
+msgstr "🚫 إلغاء"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "Cancel current drawing (Esc)"
+msgstr "إلغاء الرسم الحالي (Esc)"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "↩️ Undo"
+msgstr "↩️ تراجع"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "Undo operation (Ctrl+Z)"
+msgstr "تراجع (Ctrl+Z)"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "↪️ Redo"
+msgstr "↪️ إعادة"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "Redo operation (Ctrl+Y)"
+msgstr "إعادة (Ctrl+Y)"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "🔍 Zoom In"
+msgstr "🔍 تكبير"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "Zoom in view"
+msgstr "تكبير العرض"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "🔎 Zoom Out"
+msgstr "🔎 تصغير"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "Zoom out view"
+msgstr "تصغير العرض"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "🖼️ Fit View"
+msgstr "🖼️ ملاءمة العرض"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "Fit image to window"
+msgstr "ملاءمة الصورة للنافذة"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+#: ..\ui\main_window.py:1079
+msgid "🤖 AI Polygon"
+msgstr "🤖 مضلع بالذكاء الاصطناعي"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+msgid "AI-Assisted Polygon (SAM)"
+msgstr "مضلع بمساعدة الذكاء الاصطناعي (SAM)"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+#: ..\ui\main_window.py:1080
+msgid "🎭 AI Mask"
+msgstr "🎭 قناع الذكاء الاصطناعي"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+msgid "AI-Assisted Pixel Mask (SAM)"
+msgstr "قناع بكسل بمساعدة الذكاء الاصطناعي (SAM)"
+
+#: ..\ui\annotation_toolbar.py:87 ..\ui\annotation_toolbar.py:613
+msgid "Annotation Tools"
+msgstr "أدوات التعليق التوضيحي"
+
+#: ..\ui\annotation_toolbar.py:114 ..\ui\main_window.py:584
+msgid "Tool: Select"
+msgstr "الأداة: تحديد"
+
+#: ..\ui\annotation_toolbar.py:121 ..\ui\annotation_toolbar.py:457
+msgid "Hint: Right-click for options"
+msgstr "تلميح: انقر بزر الفأرة الأيمن للخيارات"
+
+#: ..\ui\annotation_toolbar.py:137 ..\ui\annotation_toolbar.py:614
+msgid "Tools"
+msgstr "الأدوات"
+
+#: ..\ui\annotation_toolbar.py:167 ..\ui\annotation_toolbar.py:615
+msgid "AI Assist"
+msgstr "مساعدة الذكاء الاصطناعي"
+
+#: ..\ui\annotation_toolbar.py:187
+msgid "Model:"
+msgstr "النموذج:"
+
+#: ..\ui\annotation_toolbar.py:214 ..\ui\annotation_toolbar.py:616
+msgid "Actions"
+msgstr "الإجراءات"
+
+#: ..\ui\annotation_toolbar.py:246 ..\ui\annotation_toolbar.py:617
+#: ..\ui\main_window.py:546
+msgid "View"
+msgstr "عرض"
+
+#: ..\ui\annotation_toolbar.py:406
+msgid "Tool Help"
+msgstr "تعليمات الأداة"
+
+#: ..\ui\annotation_toolbar.py:414
+msgid "Toolbar Settings"
+msgstr "إعدادات شريط الأدوات"
+
+#: ..\ui\annotation_toolbar.py:415
+msgid "Hotkey Help"
+msgstr "تعليمات مفاتيح الاختصار"
+
+#: ..\ui\annotation_toolbar.py:416
+msgid "About Annotation Tools"
+msgstr "حول أدوات التعليق التوضيحي"
+
+#: ..\ui\annotation_toolbar.py:437
+msgid "Select/Edit"
+msgstr "تحديد/تعديل"
+
+#: ..\ui\annotation_toolbar.py:438 ..\ui\main_window.py:530
+#: ..\ui\main_window.py:1073
+msgid "Polygon"
+msgstr "مضلع"
+
+#: ..\ui\annotation_toolbar.py:439 ..\ui\main_window.py:1077
+msgid "Rotated Rect"
+msgstr "مستطيل مدور"
+
+#: ..\ui\annotation_toolbar.py:440 ..\ui\main_window.py:529
+#: ..\ui\main_window.py:1072
+msgid "Rectangle"
+msgstr "مستطيل"
+
+#: ..\ui\annotation_toolbar.py:441 ..\ui\main_window.py:531
+#: ..\ui\main_window.py:1074
+msgid "Circle"
+msgstr "دائرة"
+
+#: ..\ui\annotation_toolbar.py:442 ..\ui\main_window.py:532
+#: ..\ui\main_window.py:1075
+msgid "Annulus"
+msgstr "حلقة"
+
+#: ..\ui\annotation_toolbar.py:446 ..\ui\main_window.py:1082
+msgid "Tool: {}"
+msgstr "الأداة: {}"
+
+#: ..\ui\annotation_toolbar.py:449
+msgid "Hint: Click to select/edit an annotation"
+msgstr "تلميح: انقر لتحديد/تعديل تعليق توضيحي"
+
+#: ..\ui\annotation_toolbar.py:450
+msgid "Hint: Click to add vertex, double-click or right-click to finish"
+msgstr "تلميح: انقر لإضافة رأس، انقر نقراً مزدوجاً أو بزر الأيمن للإنهاء"
+
+#: ..\ui\annotation_toolbar.py:451
+msgid "Hint: Drag to create rotated rectangle"
+msgstr "تلميح: اسحب لإنشاء مستطيل مدوّر"
+
+#: ..\ui\annotation_toolbar.py:452
+msgid "Hint: Drag to create standard rectangle"
+msgstr "تلميح: اسحب لإنشاء مستطيل"
+
+#: ..\ui\annotation_toolbar.py:453
+msgid "Hint: Drag to create circle"
+msgstr "تلميح: اسحب لإنشاء دائرة"
+
+#: ..\ui\annotation_toolbar.py:454
+msgid "Hint: Drag to create annulus"
+msgstr "تلميح: اسحب لإنشاء حلقة"
+
+#: ..\ui\annotation_toolbar.py:570
+msgid "🔄 Update"
+msgstr "🔄 تحديث"
+
+#: ..\ui\annotation_toolbar.py:571
+msgid "Update selected object (Enter)"
+msgstr "تحديث الكائن المحدد (Enter)"
+
+#: ..\ui\export_dialog.py:23
+msgid "Batch Export"
+msgstr "تصدير دفعي"
+
+#: ..\ui\export_dialog.py:34
+msgid "Export {} images to selected format."
+msgstr "تصدير {} صورة بالتنسيق المحدد."
+
+#: ..\ui\export_dialog.py:38 ..\ui\export_dialog.py:145
+msgid "Export Format"
+msgstr "تنسيق التصدير"
+
+#: ..\ui\export_dialog.py:40 ..\ui\export_dialog.py:148
+msgid "YOLO Segmentation (Polygon)"
+msgstr "تجزئة YOLO (مضلع)"
+
+#: ..\ui\export_dialog.py:41
+msgid "YOLO Detection (BBox)"
+msgstr "كشف YOLO (BBox)"
+
+#: ..\ui\export_dialog.py:42 ..\ui\export_dialog.py:149
+msgid "YOLO OBB (Rotated Rect)"
+msgstr "YOLO OBB (مستطيل مدوّر)"
+
+#: ..\ui\export_dialog.py:43
+msgid "MS COCO (Standard, Index=1)"
+msgstr "MS COCO (قياسي، Index=1)"
+
+#: ..\ui\export_dialog.py:44
+msgid "MS COCO (Custom, Index=0)"
+msgstr "MS COCO (مخصص، Index=0)"
+
+#: ..\ui\export_dialog.py:45 ..\ui\export_dialog.py:151
+msgid "Pascal VOC 2012 (XML)"
+msgstr "Pascal VOC 2012 (XML)"
+
+#: ..\ui\export_dialog.py:46 ..\ui\export_dialog.py:152
+msgid "CSV (Generic table)"
+msgstr "CSV (جدول عام)"
+
+#: ..\ui\export_dialog.py:54
+msgid "Output Directory"
+msgstr "دليل المخرجات"
+
+#: ..\ui\export_dialog.py:61
+msgid "Start Export"
+msgstr "بدء التصدير"
+
+#: ..\ui\export_dialog.py:62 ..\ui\main_window.py:1366
+#: ..\ui\main_window.py:1792 ..\ui\settings_dialog.py:73
+#: ..\ui\settings_dialog.py:131
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:328
+msgid "Please select an output directory"
+msgstr "الرجاء تحديد دليل الإخراج"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:315
+#: ..\ui\export_dialog.py:328 ..\ui\main_window.py:937
+#: ..\ui\main_window.py:940 ..\ui\main_window.py:974 ..\ui\main_window.py:1005
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+#: ..\ui\main_window.py:1347 ..\ui\main_window.py:1390
+#: ..\ui\main_window.py:1408 ..\ui\main_window.py:1411
+#: ..\ui\main_window.py:1440 ..\ui\main_window.py:1627
+#: ..\ui\main_window.py:1756 ..\ui\main_window.py:1775
+#: ..\ui\main_window.py:1954 ..\ui\main_window.py:2236
+msgid "Error"
+msgstr "خطأ"
+
+#: ..\ui\export_dialog.py:80
+msgid "Exporting..."
+msgstr "جار التصدير..."
+
+#: ..\ui\export_dialog.py:81
+msgid "Processing images"
+msgstr "جارٍ معالجة الصور"
+
+#: ..\ui\export_dialog.py:93
+msgid ""
+"Batch Export Complete!\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"اكتمل التصدير الدفعي!\n"
+"تم تصدير {}/{} صورة بنجاح."
+
+#: ..\ui\export_dialog.py:94
+msgid "Finished"
+msgstr "انتهى"
+
+#: ..\ui\export_dialog.py:104
+msgid "Dataset Export (Split)"
+msgstr "تصدير مجموعة البيانات (تقسيم)"
+
+#: ..\ui\export_dialog.py:147
+msgid "YOLO Detection (Bounding Box)"
+msgstr "كشف YOLO (مربع الإحاطة)"
+
+#: ..\ui\export_dialog.py:150
+msgid "MS COCO (JSON)"
+msgstr "MS COCO (JSON)"
+
+#: ..\ui\export_dialog.py:170
+msgid "Dataset Splitting"
+msgstr "تقسيم البيانات"
+
+#: ..\ui\export_dialog.py:173
+msgid "Honor Manual Status (fixed in File List)"
+msgstr "احترام الحالة اليدوية (ثابتة في قائمة الملفات)"
+
+#: ..\ui\export_dialog.py:181
+msgid "Train (%):"
+msgstr "تدريب (%):"
+
+#: ..\ui\export_dialog.py:188
+msgid "Val (%):"
+msgstr "تحقق (%):"
+
+#: ..\ui\export_dialog.py:195
+msgid "Test (%):"
+msgstr "اختبار (%):"
+
+#: ..\ui\export_dialog.py:206
+msgid "Distribution Preview"
+msgstr "معاينة التوزيع"
+
+#: ..\ui\export_dialog.py:207
+msgid "Analyzing..."
+msgstr "جار التحليل..."
+
+#: ..\ui\export_dialog.py:212
+msgid "Format Specific Options"
+msgstr "خيارات خاصة بالتنسيق"
+
+#: ..\ui\export_dialog.py:215
+msgid "Category Index Start:"
+msgstr "بداية فهرس الفئة:"
+
+#: ..\ui\export_dialog.py:226
+msgid "Output Settings"
+msgstr "إعدادات الإخراج"
+
+#: ..\ui\export_dialog.py:228
+msgid "Copy Image Files (create standalone dataset)"
+msgstr "نسخ ملفات الصور (إنشاء مجموعة بيانات مستقلة)"
+
+#: ..\ui\export_dialog.py:233
+msgid "Output Dir:"
+msgstr "مجلد الإخراج:"
+
+#: ..\ui\export_dialog.py:315
+msgid "Train and Val ratios must be greater than 0%"
+msgstr "يجب أن تكون نسب التدريب والتحقق أكبر من 0٪"
+
+#: ..\ui\export_dialog.py:322
+msgid ""
+"Note: Ratios sum to {}%. The application will treat them as weights but it's"
+" recommended to sum to 100%."
+msgstr ""
+"ملاحظة: مجموع النسب {}٪. سيعاملها التطبيق كأوزان، لكن يُنصح بأن يكون المجموع"
+" 100٪."
+
+#: ..\ui\export_dialog.py:323
+msgid "Warning"
+msgstr "تحذير"
+
+#: ..\ui\i18n.py:156
+msgid "Switch to {}"
+msgstr "التبديل إلى {}"
+
+#: ..\ui\image_display_panel.py:333
+msgid "ROI Complete: Right-click image or use Toolbar/Enter to save"
+msgstr ""
+"اكتملت ROI: انقر بزر الأيمن على الصورة أو استخدم شريط الأدوات/Enter للحفظ"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Select Category:"
+msgstr "تحديد الفئة:"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Category"
+msgstr "الفئة"
+
+#: ..\ui\image_display_panel.py:546 ..\ui\image_display_panel.py:655
+msgid "Drawing Label: {}"
+msgstr "ملصق الرسم: {}"
+
+#: ..\ui\image_display_panel.py:613 ..\ui\image_display_panel.py:653
+msgid ""
+"AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
+msgstr ""
+"وضع الذكاء الاصطناعي نشط: انقر يساراً (أخضر) للإضافة، يميناً (أحمر) "
+"للاستثناء."
+
+#: ..\ui\image_display_panel.py:719
+msgid "Editing {}. Shape locked. Press Enter to update."
+msgstr "تعديل {}. الشكل مقفل. اضغط Enter للتحديث."
+
+#: ..\ui\image_display_panel.py:778
+msgid "AI: First point must be a positive prompt (Left-click)."
+msgstr "الذكاء الاصطناعي: يجب أن تكون النقطة الأولى نقطة إيجابية (نقرة يسرى)."
+
+#: ..\ui\image_display_panel.py:914
+msgid "🤖 Preparing AI Model: {}... (Downloading if needed)"
+msgstr "🤖 تجهيز نموذج الذكاء الاصطناعي: {}... (التنزيل عند الحاجة)"
+
+#: ..\ui\image_display_panel.py:923
+msgid "❌ AI Model initialization failed."
+msgstr "❌ فشل تهيئة نموذج الذكاء الاصطناعي."
+
+#: ..\ui\image_display_panel.py:930
+msgid "🧠 AI Embedding... (Wait)"
+msgstr "🧠 الذكاء الاصطناعي يعالج... (انتظر)"
+
+#: ..\ui\image_display_panel.py:954
+msgid "AI Active: {} positive, {} negative prompts."
+msgstr "الذكاء الاصطناعي نشط: {} نقطة إيجابية، {} نقطة سلبية."
+
+#: ..\ui\image_display_panel.py:983
+msgid "AI Annotation added."
+msgstr "تمت إضافة تعليق توضيحي بالذكاء الاصطناعي."
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Complete Annotation"
+msgstr "الشرح الكامل"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Update Object"
+msgstr "تحديث الكائن"
+
+#: ..\ui\image_display_panel.py:1040
+msgid "Cancel Drawing"
+msgstr "إلغاء الرسم"
+
+#: ..\ui\image_display_panel.py:1061
+msgid "Select Overlapping Object"
+msgstr "تحديد كائن متداخل"
+
+#: ..\ui\image_display_panel.py:1069
+msgid "Bring to Front"
+msgstr "إحضار للأمام"
+
+#: ..\ui\image_display_panel.py:1072
+msgid "Send to Back"
+msgstr "إرسال للخلف"
+
+#: ..\ui\image_display_panel.py:1076
+msgid "Delete Object"
+msgstr "حذف الكائن"
+
+#: ..\ui\image_display_panel.py:1084
+msgid "Create Rectangle"
+msgstr "إنشاء مستطيل"
+
+#: ..\ui\image_display_panel.py:1087
+msgid "Create Rotated Rect"
+msgstr "إنشاء مستطيل مدوّر"
+
+#: ..\ui\image_display_panel.py:1090
+msgid "Create Circle"
+msgstr "إنشاء دائرة"
+
+#: ..\ui\image_display_panel.py:1093
+msgid "Create Annulus"
+msgstr "إنشاء حلقة"
+
+#: ..\ui\image_display_panel.py:1096
+msgid "Create Polygon"
+msgstr "إنشاء مضلع"
+
+#: ..\ui\image_display_panel.py:1102
+msgid "Zoom to Fit"
+msgstr "تكبير للملاءمة"
+
+#: ..\ui\image_display_panel.py:1105
+msgid "Full Screen"
+msgstr "شاشة كاملة"
+
+#: ..\ui\image_display_panel.py:1119
+msgid "Moved object to top layer"
+msgstr "تم نقل الكائن للطبقة العليا"
+
+#: ..\ui\image_display_panel.py:1125
+msgid "Moved object to bottom layer"
+msgstr "تم نقل الكائن للطبقة السفلى"
+
+#: ..\ui\image_display_panel.py:1200
+msgid "Error: Invalid ROI size"
+msgstr "خطأ: حجم ROI غير صالح"
+
+#: ..\ui\image_display_panel.py:1207
+msgid "Updated: {}"
+msgstr "تم التحديث: {}"
+
+#: ..\ui\image_display_panel.py:1216
+msgid "Added: {}"
+msgstr "تمت الإضافة: {}"
+
+#: ..\ui\image_display_panel.py:1250
+msgid "Drawing/Edit cancelled"
+msgstr "تم إلغاء الرسم/التعديل"
+
+#: ..\ui\main_window.py:330 ..\ui\main_window.py:730
+msgid "Label List"
+msgstr "قائمة الملصقات"
+
+#: ..\ui\main_window.py:378
+msgid "Label set to: {}"
+msgstr "تم تعيين الملصق: {}"
+
+#: ..\ui\main_window.py:386 ..\ui\main_window.py:732
+msgid "Annotation List"
+msgstr "قائمة التعليقات التوضيحية"
+
+#: ..\ui\main_window.py:400 ..\ui\main_window.py:739
+msgid "ID"
+msgstr "معرف"
+
+#: ..\ui\main_window.py:401 ..\ui\main_window.py:743
+msgid "Label"
+msgstr "ملصق"
+
+#: ..\ui\main_window.py:402 ..\ui\main_window.py:747
+msgid "Type"
+msgstr "نوع"
+
+#: ..\ui\main_window.py:403 ..\ui\main_window.py:751
+msgid "Vis"
+msgstr "رؤية"
+
+#: ..\ui\main_window.py:414 ..\ui\main_window.py:525 ..\ui\main_window.py:769
+msgid "Edit"
+msgstr "تعديل"
+
+#: ..\ui\main_window.py:415 ..\ui\main_window.py:771
+msgid "Delete"
+msgstr "حذف"
+
+#: ..\ui\main_window.py:416 ..\ui\main_window.py:773
+msgid "Visibility"
+msgstr "الرؤية"
+
+#: ..\ui\main_window.py:443 ..\ui\main_window.py:734
+msgid "File List"
+msgstr "قائمة الملفات"
+
+#: ..\ui\main_window.py:457 ..\ui\main_window.py:756
+msgid "Filename"
+msgstr "اسم الملف"
+
+#: ..\ui\main_window.py:458 ..\ui\main_window.py:760
+msgid "Count"
+msgstr "العدد"
+
+#: ..\ui\main_window.py:459 ..\ui\main_window.py:764
+msgid "Status"
+msgstr "الحالة"
+
+#: ..\ui\main_window.py:470 ..\ui\main_window.py:775
+msgid "Prev"
+msgstr "السابق"
+
+#: ..\ui\main_window.py:471 ..\ui\main_window.py:777
+msgid "Next"
+msgstr "التالي"
+
+#: ..\ui\main_window.py:499
+msgid "Open Image"
+msgstr "فتح صورة"
+
+#: ..\ui\main_window.py:500
+msgid "Open Folder"
+msgstr "فتح مجلد"
+
+#: ..\ui\main_window.py:502
+msgid "Save"
+msgstr "حفظ"
+
+#: ..\ui\main_window.py:503
+msgid "Save As..."
+msgstr "حفظ باسم..."
+
+#: ..\ui\main_window.py:505
+msgid "Exit"
+msgstr "خروج"
+
+#: ..\ui\main_window.py:507
+msgid "File"
+msgstr "ملف"
+
+#: ..\ui\main_window.py:511
+msgid "Save Labels to Project Folder"
+msgstr "حفظ الملصقات في مجلد المشروع"
+
+#: ..\ui\main_window.py:512
+msgid "Reload Labels from Project"
+msgstr "إعادة تحميل الملصقات من المشروع"
+
+#: ..\ui\main_window.py:514
+msgid "Manage Categories..."
+msgstr "إدارة الفئات..."
+
+#: ..\ui\main_window.py:514
+msgid "Open category manager dialog"
+msgstr "فتح نافذة إدارة الفئات"
+
+#: ..\ui\main_window.py:516
+msgid "Project"
+msgstr "مشروع"
+
+#: ..\ui\main_window.py:520
+msgid "Undo"
+msgstr "تراجع"
+
+#: ..\ui\main_window.py:521
+msgid "Redo"
+msgstr "إعادة"
+
+#: ..\ui\main_window.py:523
+msgid "Delete Annotation"
+msgstr "حذف التعليق"
+
+#: ..\ui\main_window.py:533 ..\ui\main_window.py:1076
+msgid "Point"
+msgstr "نقطة"
+
+#: ..\ui\main_window.py:535
+msgid "Select Tool"
+msgstr "تحديد الأداة"
+
+#: ..\ui\main_window.py:537
+msgid "Annotate"
+msgstr "تعليق توضيحي"
+
+#: ..\ui\main_window.py:542
+msgid "Zoom In"
+msgstr "تكبير"
+
+#: ..\ui\main_window.py:543
+msgid "Zoom Out"
+msgstr "تصغير"
+
+#: ..\ui\main_window.py:544
+msgid "Fit Window"
+msgstr "ملاءمة النافذة"
+
+#: ..\ui\main_window.py:550
+msgid "Batch Export..."
+msgstr "تصدير دفعي..."
+
+#: ..\ui\main_window.py:551
+msgid "Export Dataset (Split)..."
+msgstr "تصدير مجموعة البيانات (تقسيم)..."
+
+#: ..\ui\main_window.py:553
+msgid "Supported Formats"
+msgstr "التنسيقات المدعومة"
+
+#: ..\ui\main_window.py:555
+msgid "Export"
+msgstr "تصدير"
+
+#: ..\ui\main_window.py:559
+msgid "Settings..."
+msgstr "الإعدادات..."
+
+#: ..\ui\main_window.py:561 ..\ui\settings_dialog.py:19
+#: ..\ui\settings_dialog.py:90
+msgid "Settings"
+msgstr "إعدادات"
+
+#: ..\ui\main_window.py:565
+msgid "About"
+msgstr "حول"
+
+#: ..\ui\main_window.py:567
+msgid "Help"
+msgstr "مساعدة"
+
+#: ..\ui\main_window.py:583
+msgid "Ready"
+msgstr "جاهز"
+
+#: ..\ui\main_window.py:585
+msgid "Count: 0"
+msgstr "العدد: 0"
+
+#: ..\ui\main_window.py:716
+msgid "Language changed to {}. Interface elements have been updated."
+msgstr "تم تغيير اللغة إلى {}. تم تحديث عناصر الواجهة."
+
+#: ..\ui\main_window.py:717
+msgid "Language Changed"
+msgstr "تم تغيير اللغة"
+
+#: ..\ui\main_window.py:914
+msgid "Select Image File"
+msgstr "تحديد ملف صورة"
+
+#: ..\ui\main_window.py:915
+msgid "Image Files"
+msgstr "ملفات الصور"
+
+#: ..\ui\main_window.py:915
+msgid "All Files"
+msgstr "جميع الملفات"
+
+#: ..\ui\main_window.py:930
+msgid "Opened: {}"
+msgstr "تم الفتح: {}"
+
+#: ..\ui\main_window.py:937
+msgid "Cannot load image: {}"
+msgstr "تعذر تحميل الصورة: {}"
+
+#: ..\ui\main_window.py:940
+msgid "Image Panel not initialized"
+msgstr "لوحة الصورة غير مهيأة"
+
+#: ..\ui\main_window.py:950
+msgid "Select Folder containing images"
+msgstr "اختر المجلد الذي يحتوي على الصور"
+
+#: ..\ui\main_window.py:972
+msgid "Annotations Saved (Base64: {})"
+msgstr "تم حفظ التعليقات التوضيحية (Base64: {})"
+
+#: ..\ui\main_window.py:974
+msgid "Failed to save annotations"
+msgstr "فشل حفظ التعليقات التوضيحية"
+
+#: ..\ui\main_window.py:976
+msgid "No current image"
+msgstr "لا توجد صورة حالية"
+
+#: ..\ui\main_window.py:976 ..\ui\main_window.py:1332
+#: ..\ui\main_window.py:1398 ..\ui\main_window.py:1419
+#: ..\ui\main_window.py:1604 ..\ui\main_window.py:1763
+msgid "Hint"
+msgstr "تلميح"
+
+#: ..\ui\main_window.py:1003
+msgid "Annotations saved as... (Base64: {})"
+msgstr "تم حفظ التعليقات التوضيحية كـ... (Base64: {})"
+
+#: ..\ui\main_window.py:1005
+msgid "Save failed"
+msgstr "فشل الحفظ"
+
+#: ..\ui\main_window.py:1064
+msgid "AI Mode: UI locked. Use Enter/Esc to finish."
+msgstr "وضع الذكاء الاصطناعي: الواجهة مقفلة. استخدم Enter/Esc للإنهاء."
+
+#: ..\ui\main_window.py:1066
+msgid "UI Unlocked"
+msgstr "تم فتح قفل واجهة المستخدم"
+
+#: ..\ui\main_window.py:1078
+msgid "Select"
+msgstr "تحديد"
+
+#: ..\ui\main_window.py:1107
+msgid "added"
+msgstr "تمت الإضافة"
+
+#: ..\ui\main_window.py:1108
+msgid "deleted"
+msgstr "تم الحذف"
+
+#: ..\ui\main_window.py:1109
+msgid "updated"
+msgstr "تم التحديث"
+
+#: ..\ui\main_window.py:1110
+msgid "loaded"
+msgstr "تم التحميل"
+
+#: ..\ui\main_window.py:1111
+msgid "undone"
+msgstr "تم التراجع"
+
+#: ..\ui\main_window.py:1112
+msgid "redone"
+msgstr "تمت الإعادة"
+
+#: ..\ui\main_window.py:1114 ..\ui\main_window.py:1429
+#: ..\ui\main_window.py:1437
+msgid "Annotation {}"
+msgstr "تعليق توضيحي {}"
+
+#: ..\ui\main_window.py:1259 ..\ui\main_window.py:1273
+msgid "Switched to image {}"
+msgstr "تم التبديل إلى الصورة {}"
+
+#: ..\ui\main_window.py:1261
+msgid "Already at the first image"
+msgstr "أنت بالفعل في الصورة الأولى"
+
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+msgid "Failed to switch image: {}"
+msgstr "فشل التبديل إلى الصورة: {}"
+
+#: ..\ui\main_window.py:1275
+msgid "Already at the last image"
+msgstr "أنت بالفعل في الصورة الأخيرة"
+
+#: ..\ui\main_window.py:1277
+msgid "No images loaded"
+msgstr "لا توجد صور محملة"
+
+#: ..\ui\main_window.py:1332
+msgid "Please select an annotation to edit"
+msgstr "الرجاء تحديد تعليق توضيحي للتعديل"
+
+#: ..\ui\main_window.py:1347
+msgid "Selected annotation not found"
+msgstr "التعليق التوضيحي المحدد غير موجود"
+
+#: ..\ui\main_window.py:1351
+msgid "Edit Annotation"
+msgstr "تعديل التعليق التوضيحي"
+
+#: ..\ui\main_window.py:1355
+msgid "Category:"
+msgstr "الفئة:"
+
+#: ..\ui\main_window.py:1365 ..\ui\settings_dialog.py:72
+#: ..\ui\settings_dialog.py:130
+msgid "OK"
+msgstr "موافق"
+
+#: ..\ui\main_window.py:1385
+msgid "Label updated to: {}"
+msgstr "تم تحديث الملصق إلى: {}"
+
+#: ..\ui\main_window.py:1390
+msgid "Failed to edit annotation: {}"
+msgstr "فشل تعديل التعليق التوضيحي: {}"
+
+#: ..\ui\main_window.py:1398
+msgid "Please select an annotation to delete"
+msgstr "يرجى اختيار تعليق لحذفه"
+
+#: ..\ui\main_window.py:1401
+msgid "Are you sure you want to delete the selected annotation?"
+msgstr "هل أنت متأكد أنك تريد حذف التعليق المختار"
+
+#: ..\ui\main_window.py:1401
+msgid "Confirm"
+msgstr "تأكيد"
+
+#: ..\ui\main_window.py:1406
+msgid "Annotation Deleted"
+msgstr "تم حذف التعليق"
+
+#: ..\ui\main_window.py:1408
+msgid "Failed to delete annotation"
+msgstr "فشل حذف التعليق"
+
+#: ..\ui\main_window.py:1411
+msgid "Failed to delete annotation: {}"
+msgstr "فشل حذف التعليق التوضيحي: {}"
+
+#: ..\ui\main_window.py:1419
+msgid "Please select an annotation to toggle visibility"
+msgstr "الرجاء تحديد تعليق توضيحي لتبديل الرؤية"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Shown"
+msgstr "معروض"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Hidden"
+msgstr "مخفي"
+
+#: ..\ui\main_window.py:1440
+msgid "Failed to toggle visibility: {}"
+msgstr "فشل تبديل الرؤية: {}"
+
+#: ..\ui\main_window.py:1578
+msgid "Enabled"
+msgstr "ممكن"
+
+#: ..\ui\main_window.py:1578
+msgid "Disabled"
+msgstr "معطل"
+
+#: ..\ui\main_window.py:1579
+msgid "Base64 Embedding: {}"
+msgstr "تضمين Base64: {}"
+
+#: ..\ui\main_window.py:1604
+msgid ""
+"No image files found in folder\n"
+"{}"
+msgstr ""
+"لا توجد ملفات صور في المجلد\n"
+"{}"
+
+#: ..\ui\main_window.py:1623
+msgid "Loaded folder: {} ({} images)"
+msgstr "تم تحميل المجلد: {} ({} صورة)"
+
+#: ..\ui\main_window.py:1627
+msgid "Failed to load folder: {}"
+msgstr "فشل تحميل المجلد: {}"
+
+#: ..\ui\main_window.py:1713
+msgid "None"
+msgstr "لا شيء"
+
+#: ..\ui\main_window.py:1732
+msgid "Add Category..."
+msgstr "إضافة فئة..."
+
+#: ..\ui\main_window.py:1733
+msgid "Edit Category..."
+msgstr "تعديل الفئة..."
+
+#: ..\ui\main_window.py:1734
+msgid "Delete Selected Category"
+msgstr "حذف الفئة المختارة"
+
+#: ..\ui\main_window.py:1745
+msgid "Add Category"
+msgstr "إضافة فئة"
+
+#: ..\ui\main_window.py:1754
+msgid "Category added: {}"
+msgstr "تمت إضافة الفئة: {}"
+
+#: ..\ui\main_window.py:1756
+msgid "Category '{}' already exists"
+msgstr "الفئة '{}' موجودة بالفعل"
+
+#: ..\ui\main_window.py:1763
+msgid "Please select a category to edit"
+msgstr "يرجى اختيار فئة لتعديلها"
+
+#: ..\ui\main_window.py:1767
+msgid "Edit Category"
+msgstr "تعديل الفئة"
+
+#: ..\ui\main_window.py:1775
+msgid "Category name cannot be empty"
+msgstr "لا يمكن أن يكون اسم الفئة فارغاً"
+
+#: ..\ui\main_window.py:1784
+msgid ""
+"You are renaming category '{}' to '{}'.\n"
+"\n"
+"Do you want to update all existing annotation files in this folder?\n"
+"\n"
+"Yes: Update ALL files in folder\n"
+"No: Update only the category list\n"
+"Cancel: Abort changes"
+msgstr ""
+"أنت تعيد تسمية الفئة '{}' إلى '{}'.\n"
+"\n"
+"هل تريد تحديث جميع ملفات التعليقات التوضيحية في هذا المجلد؟\n"
+"\n"
+"نعم: تحديث جميع الملفات في المجلد\n"
+"لا: تحديث قائمة الفئات فقط\n"
+"إلغاء: إلغاء التغييرات"
+
+#: ..\ui\main_window.py:1790
+msgid "Rename Confirmation"
+msgstr "تأكيد إعادة التسمية"
+
+#: ..\ui\main_window.py:1792
+msgid "Update All"
+msgstr "تحديث الكل"
+
+#: ..\ui\main_window.py:1792
+msgid "List Only"
+msgstr "القائمة فقط"
+
+#: ..\ui\main_window.py:1804
+msgid "Renamed '{}' to '{}' in {} files"
+msgstr "تمت إعادة تسمية '{}' إلى '{}' في {} ملفات"
+
+#: ..\ui\main_window.py:1806
+msgid "Renamed '{}' to '{}' in list only"
+msgstr "تمت إعادة تسمية '{}' إلى '{}' في القائمة فقط"
+
+#: ..\ui\main_window.py:1809
+msgid "Updated color for Category: {}"
+msgstr "تم تحديث اللون للفئة: {}"
+
+#: ..\ui\main_window.py:1875
+msgid "Are you sure you want to delete category '{}'?"
+msgstr "هل أنت متأكد أنك تريد حذف الفئة '{}'"
+
+#: ..\ui\main_window.py:1876
+msgid "Confirm Delete"
+msgstr "تأكيد الحذف"
+
+#: ..\ui\main_window.py:1879
+msgid "Category deleted: {}"
+msgstr "تم حذف الفئة: {}"
+
+#: ..\ui\main_window.py:1881
+msgid "Cannot delete default category '{}'"
+msgstr "لا يمكن حذف الفئة الافتراضية '{}'"
+
+#: ..\ui\main_window.py:1882
+msgid "Constraint"
+msgstr "قيد"
+
+#: ..\ui\main_window.py:1904
+msgid "Delete Annotation File"
+msgstr "حذف ملف التعليقات التوضيحية"
+
+#: ..\ui\main_window.py:1923
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\n"
+"This action cannot be undone."
+msgstr ""
+"هل أنت متأكد من حذف ملف التعليقات التوضيحية لـ '{}'؟\n"
+"لا يمكن التراجع عن هذا الإجراء."
+
+#: ..\ui\main_window.py:1924
+msgid "Confirm Deletion"
+msgstr "تأكيد عملية الحذف"
+
+#: ..\ui\main_window.py:1950
+msgid "Deleted annotation file for: {}"
+msgstr "تم حذف ملف التعليقات لـ: {}"
+
+#: ..\ui\main_window.py:1954
+msgid "Failed to delete annotation file: {}"
+msgstr "فشل حذف ملف التعليقات: {}"
+
+#: ..\ui\main_window.py:2168
+msgid "Categories updated"
+msgstr "تم تحديث الفئات"
+
+#: ..\ui\main_window.py:2201
+msgid "No images loaded to export"
+msgstr "لا توجد صور محملة للتصدير"
+
+#: ..\ui\main_window.py:2201
+msgid "Information"
+msgstr "معلومات"
+
+#: ..\ui\main_window.py:2210
+msgid "Generating Dataset..."
+msgstr "جار إنشاء مجموعة البيانات..."
+
+#: ..\ui\main_window.py:2211
+msgid "Processing splitting and export formats"
+msgstr "معالجة التقسيم وتنسيقات التصدير"
+
+#: ..\ui\main_window.py:2231
+msgid ""
+"Dataset Export Complete!\n"
+"Target: {}\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"اكتمل تصدير مجموعة البيانات!\n"
+"الهدف: {}\n"
+"تم تصدير {}/{} صورة بنجاح."
+
+#: ..\ui\main_window.py:2233
+msgid "Success"
+msgstr "نجاح"
+
+#: ..\ui\main_window.py:2251
+msgid "Supported Export Formats:"
+msgstr "تنسيقات التصدير المدعومة:"
+
+#: ..\ui\main_window.py:2257
+msgid "Features:"
+msgstr "الميزات:"
+
+#: ..\ui\main_window.py:2263
+msgid "Export Format Info"
+msgstr "معلومات تنسيق التصدير"
+
+#: ..\ui\main_window.py:2271
+msgid ""
+"A professional computer vision annotation tool.\n"
+"\n"
+"Key Features:\n"
+"• Advanced Export: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• Integrated AI: SAM, SAM2, EfficientSAM, and various detection models.\n"
+"• Cross-platform support with industrial-grade precision.\n"
+"\n"
+"Designed for professional computer vision research and dataset preparation."
+msgstr ""
+"أداة تعليق توضيحي احترافية لرؤية الحاسوب.\n"
+"\n"
+"الميزات الرئيسية:\n"
+"• تصدير متقدم: YOLO (كشف/تجزئة/OBB)، MS COCO، Pascal VOC 2012، CSV.\n"
+"• ذكاء اصطناعي متكامل: SAM، SAM2، EfficientSAM ونماذج كشف متنوعة.\n"
+"• دعم متعدد المنصات بدقة صناعية.\n"
+"\n"
+"مصمم للبحث الاحترافي في رؤية الحاسوب وإعداد مجموعات البيانات."
+
+#: ..\ui\theme_manager.py:35
+msgid "Dark (Default)"
+msgstr "داكن (افتراضي)"
+
+#: ..\ui\theme_manager.py:48
+msgid "Light (VS)"
+msgstr "فاتح (VS)"
+
+#: ..\ui\theme_manager.py:61
+msgid "Visual Studio Blue"
+msgstr "أزرق فيجوال ستوديو"
+
+#: ..\ui\theme_manager.py:74
+msgid "Monokai"
+msgstr "Monokai"
+
+#: ..\ui\settings_dialog.py:50 ..\ui\settings_dialog.py:93
+msgid "Language"
+msgstr "اللغة"
+
+#: ..\ui\settings_dialog.py:54 ..\ui\settings_dialog.py:94
+msgid "Theme"
+msgstr "السمة"
+
+#: ..\ui\settings_dialog.py:58 ..\ui\settings_dialog.py:95
+msgid "User Settings"
+msgstr "إعدادات المستخدم"
+
+#: ..\ui\settings_dialog.py:62 ..\ui\settings_dialog.py:96
+msgid "Annotation"
+msgstr "تعليق"
+
+#: ..\ui\settings_dialog.py:66 ..\ui\settings_dialog.py:97
+msgid "AI Annotation"
+msgstr "تعليق توضيحي بالذكاء الاصطناعي"
+
+#: ..\ui\settings_dialog.py:74 ..\ui\settings_dialog.py:132
+msgid "Apply"
+msgstr "تطبيق"
+
+#: ..\ui\settings_dialog.py:100 ..\ui\settings_dialog.py:170
+msgid "Language Selection"
+msgstr "اختيار اللغة"
+
+#: ..\ui\settings_dialog.py:101 ..\ui\settings_dialog.py:199
+msgid "UI Appearance"
+msgstr "مظهر الواجهة"
+
+#: ..\ui\settings_dialog.py:102 ..\ui\settings_dialog.py:234
+msgid "Annotator Information"
+msgstr "معلومات المصنف"
+
+#: ..\ui\settings_dialog.py:103 ..\ui\settings_dialog.py:274
+msgid "LabelMe Storage Format"
+msgstr "تنسيق تخزين LabelMe"
+
+#: ..\ui\settings_dialog.py:104 ..\ui\settings_dialog.py:289
+msgid "Attribute Panel"
+msgstr "لوحة السمات"
+
+#: ..\ui\settings_dialog.py:105 ..\ui\settings_dialog.py:318
+msgid "AI Assisted Labeling Settings"
+msgstr "إعدادات الوسم بمساعدة الذكاء الاصطناعي"
+
+#: ..\ui\settings_dialog.py:108 ..\ui\settings_dialog.py:186
+msgid "Select Interface Language:"
+msgstr "اختر لغة الواجهة:"
+
+#: ..\ui\settings_dialog.py:109 ..\ui\settings_dialog.py:209
+msgid "Color Theme:"
+msgstr "سمة الألوان:"
+
+#: ..\ui\settings_dialog.py:110 ..\ui\settings_dialog.py:218
+msgid "Font Size:"
+msgstr "حجم الخط:"
+
+#: ..\ui\settings_dialog.py:112 ..\ui\settings_dialog.py:237
+msgid "Enable User Information (Save to JSON)"
+msgstr "تمكين معلومات المستخدم (حفظ في JSON)"
+
+#: ..\ui\settings_dialog.py:113 ..\ui\settings_dialog.py:244
+msgid "Name:"
+msgstr "الاسم:"
+
+#: ..\ui\settings_dialog.py:114 ..\ui\settings_dialog.py:251
+msgid "Quality Score (0-100):"
+msgstr "درجة الجودة (0-100):"
+
+#: ..\ui\settings_dialog.py:115 ..\ui\settings_dialog.py:260
+msgid "Note: User info will only be added to JSON when enabled above."
+msgstr "ملاحظة: ستُضاف معلومات المستخدم إلى JSON فقط عند تفعيلها أعلاه."
+
+#: ..\ui\settings_dialog.py:117 ..\ui\settings_dialog.py:276
+msgid "Embed Image Data (Base64) in JSON"
+msgstr "تضمين بيانات الصورة (Base64) في JSON"
+
+#: ..\ui\settings_dialog.py:118 ..\ui\settings_dialog.py:281
+msgid "Note: Enabling this will significantly increase JSON file size."
+msgstr "ملاحظة: سيؤدي تفعيل هذا الخيار إلى زيادة كبيرة في حجم ملف JSON."
+
+#: ..\ui\settings_dialog.py:119 ..\ui\settings_dialog.py:291
+msgid "Enable Attribute Panel (show below annotation list)"
+msgstr "تفعيل لوحة السمات (عرضها أسفل قائمة التعليقات التوضيحية)"
+
+#: ..\ui\settings_dialog.py:120 ..\ui\settings_dialog.py:296
+msgid "Default Flags:"
+msgstr "الأعلام الافتراضية:"
+
+#: ..\ui\settings_dialog.py:121 ..\ui\settings_dialog.py:305
+msgid "Comma-separated flag names, e.g.: occluded, truncated, difficult"
+msgstr "أسماء العلامات مفصولة بفاصلة مثل: محجوب مقطوع صعب"
+
+#: ..\ui\settings_dialog.py:123 ..\ui\settings_dialog.py:321
+msgid "AI Model Directory:"
+msgstr "مجلد نماذج الذكاء الاصطناعي:"
+
+#: ..\ui\settings_dialog.py:124 ..\ui\settings_dialog.py:331
+msgid "Enable Continuous Inference (Real-time)"
+msgstr "تفعيل الاستنتاج المستمر (الوقت الفعلي)"
+
+#: ..\ui\settings_dialog.py:125 ..\ui\settings_dialog.py:337
+msgid "Inference Interval (ms):"
+msgstr "فاصل الاستنتاج (ms):"
+
+#: ..\ui\settings_dialog.py:126 ..\ui\settings_dialog.py:346
+msgid "Auto-simplify Polygon (0.004 Tolerance)"
+msgstr "تبسيط المضلع تلقائيًا (تفاوت 0.004)"
+
+#: ..\ui\settings_dialog.py:127 ..\ui\settings_dialog.py:350
+msgid "Denoise Mask (Filter small fragments)"
+msgstr "إزالة ضوضاء القناع (تصفية الشظايا الصغيرة)"
+
+msgid "+ Add"
+msgstr "+ إضافة"
+
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\\nThis action "
+"cannot be undone."
+msgstr ""
+"هل أنت متأكد من حذف ملف التعليقات التوضيحية لـ '{}'؟\\nلا يمكن التراجع عن "
+"هذا الإجراء."
+
+msgid "Attributes"
+msgstr "الخصائص"
+
+msgid "Automated directory structure generation"
+msgstr "إنشاء هيكل المجلد تلقائيًا"
+
+msgid "Batch Export Complete!\\nSuccessfully exported {}/{} images."
+msgstr "اكتمل التصدير الدفعي!\\nتم تصدير {}/{} صورة بنجاح."
+
+msgid "Batch export to directory"
+msgstr "تصدير دفعي إلى مجلد"
+
+msgid "Create line annotation (L)"
+msgstr "إنشاء تعليق توضيحي خط (L)"
+
+msgid "Custom Attributes:"
+msgstr "السمات المخصصة:"
+
+msgid ""
+"Dataset Export Complete!\\nTarget: {}\\nSuccessfully exported {}/{} images."
+msgstr "اكتمل تصدير مجموعة البيانات!\\nالهدف: {}\\nتم تصدير {}/{} صورة بنجاح."
+
+msgid "Dataset splitting (Train/Val/Test)"
+msgstr "تقسيم مجموعة البيانات (تدريب/تحقق/اختبار)"
+
+msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
+msgstr "الكشف (BBox)، التجزئة (المضلع) و OBB (المستطيل المدوّر)"
+
+msgid "Edit Label"
+msgstr "تعديل الملصق"
+
+msgid "Flags:"
+msgstr "الأعلام:"
+
+msgid "Generic coordinate table for custom analysis"
+msgstr "جدول إحداثيات عام للتحليل المخصص"
+
+msgid "Hint: Drag to create line"
+msgstr "تلميح: اسحب لإنشاء خط"
+
+msgid "Image Annotation Tool"
+msgstr "أداة تعليق توضيحي للصور"
+
+msgid "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
+msgstr "JSON معياري صناعي، قابل للتهيئة Index=0 (مخصص) أو 1 (قياسي)"
+
+msgid "Info"
+msgstr "معلومات"
+
+msgid "Line"
+msgstr "خط"
+
+msgid "No annotation file found for this image."
+msgstr "لم يُعثر على ملف تعليقات توضيحية لهذه الصورة."
+
+msgid "No image files found in folder\\n{}"
+msgstr "لا توجد ملفات صور في المجلد\\n{}"
+
+msgid "Preview of split distribution"
+msgstr "معاينة توزيع التقسيم"
+
+msgid "Select an annotation to edit attributes"
+msgstr "حدد تعليقاً توضيحياً لتعديل السمات"
+
+msgid "Standardized to VOC 2012 XML with 1-based pixel precision"
+msgstr "موحد لـ VOC 2012 XML بدقة بكسل مبنية على 1"
+
+msgid "Test"
+msgstr "اختبار"
+
+msgid "Total Images"
+msgstr "إجمالي الصور"
+
+msgid "Train"
+msgstr "تدريب"
+
+msgid "Transcription:"
+msgstr "النسخ:"
+
+msgid "Unknown"
+msgstr "غير معروف"
+
+msgid "Valid"
+msgstr "تحقق"
+
+msgid "📏 Line"
+msgstr "📏 خط"

@@ -1,0 +1,9 @@
+{
+    "categories": {
+        "defect": "#FF0000",
+        "dent": "#00FF00",
+        "scratch": "#0000FF"
+    },
+    "order": ["defect", "dent", "scratch"],
+    "recent": []
+}

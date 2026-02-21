@@ -1,0 +1,22 @@
+{
+    "last_folder": "",
+    "embed_base64": false,
+    "canvas_bg_color": "#808080",
+    "language": "en",
+    "recent_folders": [],
+    "annotator_name": "",
+    "annotator_quality": 100.0,
+    "save_user_info": true,
+    "ai_model_path": "models",
+    "ai_continuous_inference": false,
+    "ai_inference_throttle_ms": 100,
+    "ai_auto_simplify_polygon": true,
+    "ai_denoise_mask": true,
+    "ai_polygon_tolerance": 0.004,
+    "enable_attribute_panel": true,
+    "default_flags": [
+        "occluded",
+        "truncated",
+        "difficult"
+    ]
+}

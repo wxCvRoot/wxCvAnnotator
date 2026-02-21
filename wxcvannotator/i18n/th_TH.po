@@ -1,0 +1,1383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 23:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: th_TH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "🎯 Select"
+msgstr "🎯 เลือก"
+
+#: ..\ui\annotation_toolbar.py:33 ..\ui\annotation_toolbar.py:586
+msgid "Select or edit annotations (S)"
+msgstr "เลือกหรือแก้ไขคำอธิบายประกอบ (S)"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "🔷 Polygon"
+msgstr "🔷 พหุเหลี่ยม"
+
+#: ..\ui\annotation_toolbar.py:34 ..\ui\annotation_toolbar.py:587
+msgid "Create polygon annotation (P)"
+msgstr "สร้างคำอธิบายประกอบรูปหลายเหลี่ยม (P)"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "📐 Rotated Rect"
+msgstr "📐 สี่เหลี่ยมหมุน"
+
+#: ..\ui\annotation_toolbar.py:35 ..\ui\annotation_toolbar.py:588
+msgid "Create rotated rectangle (R)"
+msgstr "สร้างสี่เหลี่ยมผืนผ้าหมุน (R)"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "⬛ Rectangle"
+msgstr "⬛ สี่เหลี่ยมผืนผ้า"
+
+#: ..\ui\annotation_toolbar.py:36 ..\ui\annotation_toolbar.py:589
+msgid "Create rectangle annotation"
+msgstr "สร้างคำอธิบายประกอบสี่เหลี่ยมผืนผ้า"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "⭕ Circle"
+msgstr "⭕ วงกลม"
+
+#: ..\ui\annotation_toolbar.py:37 ..\ui\annotation_toolbar.py:590
+msgid "Create circle annotation"
+msgstr "สร้างคำอธิบายประกอบวงกลม"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "🍩 Annulus"
+msgstr "🍩 วงแหวน"
+
+#: ..\ui\annotation_toolbar.py:38 ..\ui\annotation_toolbar.py:591
+msgid "Create annulus annotation"
+msgstr "สร้างคำอธิบายประกอบวงแหวน"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:574
+#: ..\ui\annotation_toolbar.py:595
+msgid "➕ Add"
+msgstr "➕ เพิ่ม"
+
+#: ..\ui\annotation_toolbar.py:42 ..\ui\annotation_toolbar.py:575
+#: ..\ui\annotation_toolbar.py:595
+msgid "Add object to list (Enter)"
+msgstr "เพิ่มวัตถุลงในรายการ (Enter)"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "🚫 Cancel"
+msgstr "🚫 ยกเลิก"
+
+#: ..\ui\annotation_toolbar.py:43 ..\ui\annotation_toolbar.py:596
+msgid "Cancel current drawing (Esc)"
+msgstr "ยกเลิกการวาดปัจจุบัน (Esc)"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "↩️ Undo"
+msgstr "↩️ เลิกทำ"
+
+#: ..\ui\annotation_toolbar.py:44 ..\ui\annotation_toolbar.py:597
+msgid "Undo operation (Ctrl+Z)"
+msgstr "เลิกทำ (Ctrl+Z)"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "↪️ Redo"
+msgstr "↪️ ทำซ้ำ"
+
+#: ..\ui\annotation_toolbar.py:45 ..\ui\annotation_toolbar.py:598
+msgid "Redo operation (Ctrl+Y)"
+msgstr "ทำซ้ำ (Ctrl+Y)"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "🔍 Zoom In"
+msgstr "🔍 ขยาย"
+
+#: ..\ui\annotation_toolbar.py:49 ..\ui\annotation_toolbar.py:602
+msgid "Zoom in view"
+msgstr "ขยายภาพ"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "🔎 Zoom Out"
+msgstr "🔎 ย่อ"
+
+#: ..\ui\annotation_toolbar.py:50 ..\ui\annotation_toolbar.py:603
+msgid "Zoom out view"
+msgstr "ย่อภาพ"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "🖼️ Fit View"
+msgstr "🖼️ พอดีหน้าจอ"
+
+#: ..\ui\annotation_toolbar.py:51 ..\ui\annotation_toolbar.py:604
+msgid "Fit image to window"
+msgstr "ปรับภาพให้พอดีหน้าต่าง"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+#: ..\ui\main_window.py:1079
+msgid "🤖 AI Polygon"
+msgstr "🤖 AI รูปหลายเหลี่ยม"
+
+#: ..\ui\annotation_toolbar.py:55 ..\ui\annotation_toolbar.py:608
+msgid "AI-Assisted Polygon (SAM)"
+msgstr "รูปหลายเหลี่ยมด้วย AI (SAM)"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+#: ..\ui\main_window.py:1080
+msgid "🎭 AI Mask"
+msgstr "🎭 AI หน้ากาก"
+
+#: ..\ui\annotation_toolbar.py:56 ..\ui\annotation_toolbar.py:609
+msgid "AI-Assisted Pixel Mask (SAM)"
+msgstr "มาสก์พิกเซลด้วย AI (SAM)"
+
+#: ..\ui\annotation_toolbar.py:87 ..\ui\annotation_toolbar.py:613
+msgid "Annotation Tools"
+msgstr "เครื่องมือการทำคำอธิบายประกอบ"
+
+#: ..\ui\annotation_toolbar.py:114 ..\ui\main_window.py:584
+msgid "Tool: Select"
+msgstr "เครื่องมือ: เลือก"
+
+#: ..\ui\annotation_toolbar.py:121 ..\ui\annotation_toolbar.py:457
+msgid "Hint: Right-click for options"
+msgstr "คำแนะนำ: คลิกขวาเพื่อดูตัวเลือก"
+
+#: ..\ui\annotation_toolbar.py:137 ..\ui\annotation_toolbar.py:614
+msgid "Tools"
+msgstr "เครื่องมือ"
+
+#: ..\ui\annotation_toolbar.py:167 ..\ui\annotation_toolbar.py:615
+msgid "AI Assist"
+msgstr "ตัวช่วย AI"
+
+#: ..\ui\annotation_toolbar.py:187
+msgid "Model:"
+msgstr "โมเดล:"
+
+#: ..\ui\annotation_toolbar.py:214 ..\ui\annotation_toolbar.py:616
+msgid "Actions"
+msgstr "การดำเนินการ"
+
+#: ..\ui\annotation_toolbar.py:246 ..\ui\annotation_toolbar.py:617
+#: ..\ui\main_window.py:546
+msgid "View"
+msgstr "มุมมอง"
+
+#: ..\ui\annotation_toolbar.py:406
+msgid "Tool Help"
+msgstr "ความช่วยเหลือเครื่องมือ"
+
+#: ..\ui\annotation_toolbar.py:414
+msgid "Toolbar Settings"
+msgstr "ตั้งค่าแถบเครื่องมือ"
+
+#: ..\ui\annotation_toolbar.py:415
+msgid "Hotkey Help"
+msgstr "ความช่วยเหลือปุ่มลัด"
+
+#: ..\ui\annotation_toolbar.py:416
+msgid "About Annotation Tools"
+msgstr "เกี่ยวกับเครื่องมือคำอธิบาย"
+
+#: ..\ui\annotation_toolbar.py:437
+msgid "Select/Edit"
+msgstr "เลือก/แก้ไข"
+
+#: ..\ui\annotation_toolbar.py:438 ..\ui\main_window.py:530
+#: ..\ui\main_window.py:1073
+msgid "Polygon"
+msgstr "รูปหลายเหลี่ยม"
+
+#: ..\ui\annotation_toolbar.py:439 ..\ui\main_window.py:1077
+msgid "Rotated Rect"
+msgstr "สี่เหลี่ยมหมุน"
+
+#: ..\ui\annotation_toolbar.py:440 ..\ui\main_window.py:529
+#: ..\ui\main_window.py:1072
+msgid "Rectangle"
+msgstr "สี่เหลี่ยมผืนผ้า"
+
+#: ..\ui\annotation_toolbar.py:441 ..\ui\main_window.py:531
+#: ..\ui\main_window.py:1074
+msgid "Circle"
+msgstr "วงกลม"
+
+#: ..\ui\annotation_toolbar.py:442 ..\ui\main_window.py:532
+#: ..\ui\main_window.py:1075
+msgid "Annulus"
+msgstr "วงแหวน"
+
+#: ..\ui\annotation_toolbar.py:446 ..\ui\main_window.py:1082
+msgid "Tool: {}"
+msgstr "เครื่องมือ: {}"
+
+#: ..\ui\annotation_toolbar.py:449
+msgid "Hint: Click to select/edit an annotation"
+msgstr "คำแนะนำ: คลิกเพื่อเลือก/แก้ไขคำอธิบาย"
+
+#: ..\ui\annotation_toolbar.py:450
+msgid "Hint: Click to add vertex, double-click or right-click to finish"
+msgstr "คำแนะนำ: คลิกเพื่อเพิ่มจุด, ดับเบิลคลิกหรือคลิกขวาเพื่อเสร็จสิ้น"
+
+#: ..\ui\annotation_toolbar.py:451
+msgid "Hint: Drag to create rotated rectangle"
+msgstr "คำแนะนำ: ลากเพื่อสร้างสี่เหลี่ยมหมุน"
+
+#: ..\ui\annotation_toolbar.py:452
+msgid "Hint: Drag to create standard rectangle"
+msgstr "คำแนะนำ: ลากเพื่อสร้างสี่เหลี่ยมผืนผ้า"
+
+#: ..\ui\annotation_toolbar.py:453
+msgid "Hint: Drag to create circle"
+msgstr "คำแนะนำ: ลากเพื่อสร้างวงกลม"
+
+#: ..\ui\annotation_toolbar.py:454
+msgid "Hint: Drag to create annulus"
+msgstr "คำแนะนำ: ลากเพื่อสร้างวงแหวน"
+
+#: ..\ui\annotation_toolbar.py:570
+msgid "🔄 Update"
+msgstr "🔄 อัปเดต"
+
+#: ..\ui\annotation_toolbar.py:571
+msgid "Update selected object (Enter)"
+msgstr "อัปเดตออบเจกต์ที่เลือก (Enter)"
+
+#: ..\ui\export_dialog.py:23
+msgid "Batch Export"
+msgstr "ส่งออกเป็นชุด"
+
+#: ..\ui\export_dialog.py:34
+msgid "Export {} images to selected format."
+msgstr "ส่งออก {} ภาพไปยังรูปแบบที่เลือก"
+
+#: ..\ui\export_dialog.py:38 ..\ui\export_dialog.py:145
+msgid "Export Format"
+msgstr "รูปแบบส่งออก"
+
+#: ..\ui\export_dialog.py:40 ..\ui\export_dialog.py:148
+msgid "YOLO Segmentation (Polygon)"
+msgstr "YOLO การแบ่งส่วน (รูปหลายเหลี่ยม)"
+
+#: ..\ui\export_dialog.py:41
+msgid "YOLO Detection (BBox)"
+msgstr "YOLO การตรวจจับ (BBox)"
+
+#: ..\ui\export_dialog.py:42 ..\ui\export_dialog.py:149
+msgid "YOLO OBB (Rotated Rect)"
+msgstr "YOLO OBB (สี่เหลี่ยมหมุน)"
+
+#: ..\ui\export_dialog.py:43
+msgid "MS COCO (Standard, Index=1)"
+msgstr "MS COCO (มาตรฐาน, Index=1)"
+
+#: ..\ui\export_dialog.py:44
+msgid "MS COCO (Custom, Index=0)"
+msgstr "MS COCO (กำหนดเอง, Index=0)"
+
+#: ..\ui\export_dialog.py:45 ..\ui\export_dialog.py:151
+msgid "Pascal VOC 2012 (XML)"
+msgstr "Pascal VOC 2012 (XML)"
+
+#: ..\ui\export_dialog.py:46 ..\ui\export_dialog.py:152
+msgid "CSV (Generic table)"
+msgstr "CSV (ตารางทั่วไป)"
+
+#: ..\ui\export_dialog.py:54
+msgid "Output Directory"
+msgstr "โฟลเดอร์ส่งออก"
+
+#: ..\ui\export_dialog.py:61
+msgid "Start Export"
+msgstr "เริ่มส่งออก"
+
+#: ..\ui\export_dialog.py:62 ..\ui\main_window.py:1366
+#: ..\ui\main_window.py:1792 ..\ui\settings_dialog.py:73
+#: ..\ui\settings_dialog.py:131
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:328
+msgid "Please select an output directory"
+msgstr "กรุณาเลือกโฟลเดอร์ส่งออก"
+
+#: ..\ui\export_dialog.py:75 ..\ui\export_dialog.py:315
+#: ..\ui\export_dialog.py:328 ..\ui\main_window.py:937
+#: ..\ui\main_window.py:940 ..\ui\main_window.py:974 ..\ui\main_window.py:1005
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+#: ..\ui\main_window.py:1347 ..\ui\main_window.py:1390
+#: ..\ui\main_window.py:1408 ..\ui\main_window.py:1411
+#: ..\ui\main_window.py:1440 ..\ui\main_window.py:1627
+#: ..\ui\main_window.py:1756 ..\ui\main_window.py:1775
+#: ..\ui\main_window.py:1954 ..\ui\main_window.py:2236
+msgid "Error"
+msgstr "ข้อผิดพลาด"
+
+#: ..\ui\export_dialog.py:80
+msgid "Exporting..."
+msgstr "กำลังส่งออก..."
+
+#: ..\ui\export_dialog.py:81
+msgid "Processing images"
+msgstr "กำลังประมวลผลภาพ"
+
+#: ..\ui\export_dialog.py:93
+msgid ""
+"Batch Export Complete!\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"ส่งออกเป็นชุดสำเร็จ!\n"
+"ส่งออกสำเร็จ {}/{} ภาพ"
+
+#: ..\ui\export_dialog.py:94
+msgid "Finished"
+msgstr "เสร็จสิ้น"
+
+#: ..\ui\export_dialog.py:104
+msgid "Dataset Export (Split)"
+msgstr "ส่งออกชุดข้อมูล (แบ่งชุด)"
+
+#: ..\ui\export_dialog.py:147
+msgid "YOLO Detection (Bounding Box)"
+msgstr "YOLO การตรวจจับ (Bounding Box)"
+
+#: ..\ui\export_dialog.py:150
+msgid "MS COCO (JSON)"
+msgstr "MS COCO (JSON)"
+
+#: ..\ui\export_dialog.py:170
+msgid "Dataset Splitting"
+msgstr "การแบ่งชุดข้อมูล"
+
+#: ..\ui\export_dialog.py:173
+msgid "Honor Manual Status (fixed in File List)"
+msgstr "ใช้สถานะที่กำหนดเอง (คงที่ในรายการไฟล์)"
+
+#: ..\ui\export_dialog.py:181
+msgid "Train (%):"
+msgstr "ฝึก (%):"
+
+#: ..\ui\export_dialog.py:188
+msgid "Val (%):"
+msgstr "ตรวจสอบ (%):"
+
+#: ..\ui\export_dialog.py:195
+msgid "Test (%):"
+msgstr "ทดสอบ (%):"
+
+#: ..\ui\export_dialog.py:206
+msgid "Distribution Preview"
+msgstr "ดูตัวอย่างการกระจาย"
+
+#: ..\ui\export_dialog.py:207
+msgid "Analyzing..."
+msgstr "กำลังวิเคราะห์..."
+
+#: ..\ui\export_dialog.py:212
+msgid "Format Specific Options"
+msgstr "ตัวเลือกเฉพาะรูปแบบ"
+
+#: ..\ui\export_dialog.py:215
+msgid "Category Index Start:"
+msgstr "ดัชนีหมวดหมู่เริ่มต้น:"
+
+#: ..\ui\export_dialog.py:226
+msgid "Output Settings"
+msgstr "การตั้งค่าส่งออก"
+
+#: ..\ui\export_dialog.py:228
+msgid "Copy Image Files (create standalone dataset)"
+msgstr "คัดลอกไฟล์ภาพ (สร้างชุดข้อมูลอิสระ)"
+
+#: ..\ui\export_dialog.py:233
+msgid "Output Dir:"
+msgstr "โฟลเดอร์ส่งออก:"
+
+#: ..\ui\export_dialog.py:315
+msgid "Train and Val ratios must be greater than 0%"
+msgstr "สัดส่วนฝึกและตรวจสอบต้องมากกว่า 0%"
+
+#: ..\ui\export_dialog.py:322
+msgid ""
+"Note: Ratios sum to {}%. The application will treat them as weights but it's"
+" recommended to sum to 100%."
+msgstr ""
+"หมายเหตุ: ผลรวมสัดส่วนคือ {}% แอปพลิเคชันจะใช้เป็นน้ำหนัก แต่แนะนำให้รวมเป็น"
+" 100%"
+
+#: ..\ui\export_dialog.py:323
+msgid "Warning"
+msgstr "คำเตือน"
+
+#: ..\ui\i18n.py:156
+msgid "Switch to {}"
+msgstr "เปลี่ยนเป็น {}"
+
+#: ..\ui\image_display_panel.py:333
+msgid "ROI Complete: Right-click image or use Toolbar/Enter to save"
+msgstr "ROI สมบูรณ์: คลิกขวาที่ภาพหรือใช้แถบเครื่องมือ/Enter เพื่อบันทึก"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Select Category:"
+msgstr "เลือกหมวดหมู่:"
+
+#: ..\ui\image_display_panel.py:342
+msgid "Category"
+msgstr "หมวดหมู่"
+
+#: ..\ui\image_display_panel.py:546 ..\ui\image_display_panel.py:655
+msgid "Drawing Label: {}"
+msgstr "ป้ายกำกับที่กำลังวาด: {}"
+
+#: ..\ui\image_display_panel.py:613 ..\ui\image_display_panel.py:653
+msgid ""
+"AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
+msgstr ""
+"โหมด AI ทำงาน: คลิกซ้าย (สีเขียว) เพื่อเพิ่ม, คลิกขวา (สีแดง) เพื่อยกเว้น"
+
+#: ..\ui\image_display_panel.py:719
+msgid "Editing {}. Shape locked. Press Enter to update."
+msgstr "กำลังแก้ไข {} รูปร่างถูกล็อก กด Enter เพื่ออัปเดต"
+
+#: ..\ui\image_display_panel.py:778
+msgid "AI: First point must be a positive prompt (Left-click)."
+msgstr "AI: จุดแรกต้องเป็น prompt เชิงบวก (คลิกซ้าย)"
+
+#: ..\ui\image_display_panel.py:914
+msgid "🤖 Preparing AI Model: {}... (Downloading if needed)"
+msgstr "🤖 กำลังเตรียมโมเดล AI: {}... (กำลังดาวน์โหลดหากจำเป็น)"
+
+#: ..\ui\image_display_panel.py:923
+msgid "❌ AI Model initialization failed."
+msgstr "❌ การเริ่มต้นโมเดล AI ล้มเหลว"
+
+#: ..\ui\image_display_panel.py:930
+msgid "🧠 AI Embedding... (Wait)"
+msgstr "🧠 AI กำลังประมวลผล... (กรุณารอ)"
+
+#: ..\ui\image_display_panel.py:954
+msgid "AI Active: {} positive, {} negative prompts."
+msgstr "AI ทำงาน: {} prompt เชิงบวก, {} prompt เชิงลบ"
+
+#: ..\ui\image_display_panel.py:983
+msgid "AI Annotation added."
+msgstr "เพิ่มคำอธิบาย AI แล้ว"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Complete Annotation"
+msgstr "คำอธิบายสมบูรณ์"
+
+#: ..\ui\image_display_panel.py:1036
+msgid "Update Object"
+msgstr "อัปเดตออบเจกต์"
+
+#: ..\ui\image_display_panel.py:1040
+msgid "Cancel Drawing"
+msgstr "ยกเลิกการวาด"
+
+#: ..\ui\image_display_panel.py:1061
+msgid "Select Overlapping Object"
+msgstr "เลือกออบเจกต์ที่ทับซ้อน"
+
+#: ..\ui\image_display_panel.py:1069
+msgid "Bring to Front"
+msgstr "นำขึ้นมาด้านหน้า"
+
+#: ..\ui\image_display_panel.py:1072
+msgid "Send to Back"
+msgstr "ส่งไปด้านหลัง"
+
+#: ..\ui\image_display_panel.py:1076
+msgid "Delete Object"
+msgstr "ลบออบเจกต์"
+
+#: ..\ui\image_display_panel.py:1084
+msgid "Create Rectangle"
+msgstr "สร้างสี่เหลี่ยมผืนผ้า"
+
+#: ..\ui\image_display_panel.py:1087
+msgid "Create Rotated Rect"
+msgstr "สร้างสี่เหลี่ยมหมุน"
+
+#: ..\ui\image_display_panel.py:1090
+msgid "Create Circle"
+msgstr "สร้างวงกลม"
+
+#: ..\ui\image_display_panel.py:1093
+msgid "Create Annulus"
+msgstr "สร้างวงแหวน"
+
+#: ..\ui\image_display_panel.py:1096
+msgid "Create Polygon"
+msgstr "สร้างรูปหลายเหลี่ยม"
+
+#: ..\ui\image_display_panel.py:1102
+msgid "Zoom to Fit"
+msgstr "ย่อ/ขยายให้พอดี"
+
+#: ..\ui\image_display_panel.py:1105
+msgid "Full Screen"
+msgstr "เต็มหน้าจอ"
+
+#: ..\ui\image_display_panel.py:1119
+msgid "Moved object to top layer"
+msgstr "ย้ายออบเจกต์ไปเลเยอร์บนสุดแล้ว"
+
+#: ..\ui\image_display_panel.py:1125
+msgid "Moved object to bottom layer"
+msgstr "ย้ายออบเจกต์ไปเลเยอร์ล่างสุดแล้ว"
+
+#: ..\ui\image_display_panel.py:1200
+msgid "Error: Invalid ROI size"
+msgstr "ข้อผิดพลาด: ขนาด ROI ไม่ถูกต้อง"
+
+#: ..\ui\image_display_panel.py:1207
+msgid "Updated: {}"
+msgstr "อัปเดตแล้ว: {}"
+
+#: ..\ui\image_display_panel.py:1216
+msgid "Added: {}"
+msgstr "เพิ่มแล้ว: {}"
+
+#: ..\ui\image_display_panel.py:1250
+msgid "Drawing/Edit cancelled"
+msgstr "ยกเลิกการวาด/แก้ไขแล้ว"
+
+#: ..\ui\main_window.py:330 ..\ui\main_window.py:730
+msgid "Label List"
+msgstr "รายการป้ายกำกับ"
+
+#: ..\ui\main_window.py:378
+msgid "Label set to: {}"
+msgstr "ตั้งป้ายกำกับเป็น: {}"
+
+#: ..\ui\main_window.py:386 ..\ui\main_window.py:732
+msgid "Annotation List"
+msgstr "รายการคำอธิบาย"
+
+#: ..\ui\main_window.py:400 ..\ui\main_window.py:739
+msgid "ID"
+msgstr "ไอด"
+
+#: ..\ui\main_window.py:401 ..\ui\main_window.py:743
+msgid "Label"
+msgstr "ปายกำกบ"
+
+#: ..\ui\main_window.py:402 ..\ui\main_window.py:747
+msgid "Type"
+msgstr "ประเภท"
+
+#: ..\ui\main_window.py:403 ..\ui\main_window.py:751
+msgid "Vis"
+msgstr "มองเห็น"
+
+#: ..\ui\main_window.py:414 ..\ui\main_window.py:525 ..\ui\main_window.py:769
+msgid "Edit"
+msgstr "แก้ไข"
+
+#: ..\ui\main_window.py:415 ..\ui\main_window.py:771
+msgid "Delete"
+msgstr "ลบ"
+
+#: ..\ui\main_window.py:416 ..\ui\main_window.py:773
+msgid "Visibility"
+msgstr "การมองเห็น"
+
+#: ..\ui\main_window.py:443 ..\ui\main_window.py:734
+msgid "File List"
+msgstr "รายการไฟล์"
+
+#: ..\ui\main_window.py:457 ..\ui\main_window.py:756
+msgid "Filename"
+msgstr "ชื่อไฟล์"
+
+#: ..\ui\main_window.py:458 ..\ui\main_window.py:760
+msgid "Count"
+msgstr "จำนวน"
+
+#: ..\ui\main_window.py:459 ..\ui\main_window.py:764
+msgid "Status"
+msgstr "สถานะ"
+
+#: ..\ui\main_window.py:470 ..\ui\main_window.py:775
+msgid "Prev"
+msgstr "ก่อนหน้า"
+
+#: ..\ui\main_window.py:471 ..\ui\main_window.py:777
+msgid "Next"
+msgstr "ถัดไป"
+
+#: ..\ui\main_window.py:499
+msgid "Open Image"
+msgstr "เปิดรูปภาพ"
+
+#: ..\ui\main_window.py:500
+msgid "Open Folder"
+msgstr "เปิดโฟลเดอร์"
+
+#: ..\ui\main_window.py:502
+msgid "Save"
+msgstr "บันทึก"
+
+#: ..\ui\main_window.py:503
+msgid "Save As..."
+msgstr "บันทึกเป็น..."
+
+#: ..\ui\main_window.py:505
+msgid "Exit"
+msgstr "ออก"
+
+#: ..\ui\main_window.py:507
+msgid "File"
+msgstr "ไฟล์"
+
+#: ..\ui\main_window.py:511
+msgid "Save Labels to Project Folder"
+msgstr "บันทึกป้ายกำกับไปยังโฟลเดอร์โปรเจกต์"
+
+#: ..\ui\main_window.py:512
+msgid "Reload Labels from Project"
+msgstr "โหลดป้ายกำกับจากโปรเจกต์ใหม่"
+
+#: ..\ui\main_window.py:514
+msgid "Manage Categories..."
+msgstr "จัดการหมวดหมู่..."
+
+#: ..\ui\main_window.py:514
+msgid "Open category manager dialog"
+msgstr "เปิดกล่องโต้ตอบจัดการหมวดหมู่"
+
+#: ..\ui\main_window.py:516
+msgid "Project"
+msgstr "โปรเจกต์"
+
+#: ..\ui\main_window.py:520
+msgid "Undo"
+msgstr "เลิกทำ"
+
+#: ..\ui\main_window.py:521
+msgid "Redo"
+msgstr "ทำซ้ำ"
+
+#: ..\ui\main_window.py:523
+msgid "Delete Annotation"
+msgstr "ลบคำอธิบาย"
+
+#: ..\ui\main_window.py:533 ..\ui\main_window.py:1076
+msgid "Point"
+msgstr "จุด"
+
+#: ..\ui\main_window.py:535
+msgid "Select Tool"
+msgstr "เลือกเครื่องมือ"
+
+#: ..\ui\main_window.py:537
+msgid "Annotate"
+msgstr "คำอธิบาย"
+
+#: ..\ui\main_window.py:542
+msgid "Zoom In"
+msgstr "ขยาย"
+
+#: ..\ui\main_window.py:543
+msgid "Zoom Out"
+msgstr "ย่อ"
+
+#: ..\ui\main_window.py:544
+msgid "Fit Window"
+msgstr "พอดีหน้าต่าง"
+
+#: ..\ui\main_window.py:550
+msgid "Batch Export..."
+msgstr "ส่งออกเป็นชุด..."
+
+#: ..\ui\main_window.py:551
+msgid "Export Dataset (Split)..."
+msgstr "ส่งออกชุดข้อมูล (แบ่งชุด)..."
+
+#: ..\ui\main_window.py:553
+msgid "Supported Formats"
+msgstr "รูปแบบที่รองรับ"
+
+#: ..\ui\main_window.py:555
+msgid "Export"
+msgstr "ส่งออก"
+
+#: ..\ui\main_window.py:559
+msgid "Settings..."
+msgstr "การตั้งค่า..."
+
+#: ..\ui\main_window.py:561 ..\ui\settings_dialog.py:19
+#: ..\ui\settings_dialog.py:90
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+#: ..\ui\main_window.py:565
+msgid "About"
+msgstr "เกี่ยวกับ"
+
+#: ..\ui\main_window.py:567
+msgid "Help"
+msgstr "ความช่วยเหลือ"
+
+#: ..\ui\main_window.py:583
+msgid "Ready"
+msgstr "พร้อม"
+
+#: ..\ui\main_window.py:585
+msgid "Count: 0"
+msgstr "จำนวน: 0"
+
+#: ..\ui\main_window.py:716
+msgid "Language changed to {}. Interface elements have been updated."
+msgstr "เปลี่ยนภาษาเป็น {} แล้ว องค์ประกอบอินเทอร์เฟซได้รับการอัปเดตแล้ว"
+
+#: ..\ui\main_window.py:717
+msgid "Language Changed"
+msgstr "เปลี่ยนภาษาแล้ว"
+
+#: ..\ui\main_window.py:914
+msgid "Select Image File"
+msgstr "เลือกไฟล์ภาพ"
+
+#: ..\ui\main_window.py:915
+msgid "Image Files"
+msgstr "ไฟล์ภาพ"
+
+#: ..\ui\main_window.py:915
+msgid "All Files"
+msgstr "ไฟล์ทั้งหมด"
+
+#: ..\ui\main_window.py:930
+msgid "Opened: {}"
+msgstr "เปิดแล้ว: {}"
+
+#: ..\ui\main_window.py:937
+msgid "Cannot load image: {}"
+msgstr "ไม่สามารถโหลดภาพ: {}"
+
+#: ..\ui\main_window.py:940
+msgid "Image Panel not initialized"
+msgstr "แผงภาพยังไม่ได้เริ่มต้น"
+
+#: ..\ui\main_window.py:950
+msgid "Select Folder containing images"
+msgstr "เลือกโฟลเดอร์ที่มีภาพ"
+
+#: ..\ui\main_window.py:972
+msgid "Annotations Saved (Base64: {})"
+msgstr "บันทึกคำอธิบายแล้ว (Base64: {})"
+
+#: ..\ui\main_window.py:974
+msgid "Failed to save annotations"
+msgstr "บันทึกคำอธิบายล้มเหลว"
+
+#: ..\ui\main_window.py:976
+msgid "No current image"
+msgstr "ไม่มีภาพปัจจุบัน"
+
+#: ..\ui\main_window.py:976 ..\ui\main_window.py:1332
+#: ..\ui\main_window.py:1398 ..\ui\main_window.py:1419
+#: ..\ui\main_window.py:1604 ..\ui\main_window.py:1763
+msgid "Hint"
+msgstr "คำแนะนำ"
+
+#: ..\ui\main_window.py:1003
+msgid "Annotations saved as... (Base64: {})"
+msgstr "บันทึกคำอธิบายเป็น... (Base64: {})"
+
+#: ..\ui\main_window.py:1005
+msgid "Save failed"
+msgstr "บันทึกล้มเหลว"
+
+#: ..\ui\main_window.py:1064
+msgid "AI Mode: UI locked. Use Enter/Esc to finish."
+msgstr "โหมด AI: UI ถูกล็อก กด Enter/Esc เพื่อเสร็จสิ้น"
+
+#: ..\ui\main_window.py:1066
+msgid "UI Unlocked"
+msgstr "UI ถูกปลดล็อกแล้ว"
+
+#: ..\ui\main_window.py:1078
+msgid "Select"
+msgstr "เลือก"
+
+#: ..\ui\main_window.py:1107
+msgid "added"
+msgstr "เพิ่มแล้ว"
+
+#: ..\ui\main_window.py:1108
+msgid "deleted"
+msgstr "ลบแล้ว"
+
+#: ..\ui\main_window.py:1109
+msgid "updated"
+msgstr "อัปเดตแล้ว"
+
+#: ..\ui\main_window.py:1110
+msgid "loaded"
+msgstr "โหลดแล้ว"
+
+#: ..\ui\main_window.py:1111
+msgid "undone"
+msgstr "เลิกทำแล้ว"
+
+#: ..\ui\main_window.py:1112
+msgid "redone"
+msgstr "ทำซ้ำแล้ว"
+
+#: ..\ui\main_window.py:1114 ..\ui\main_window.py:1429
+#: ..\ui\main_window.py:1437
+msgid "Annotation {}"
+msgstr "คำอธิบาย {}"
+
+#: ..\ui\main_window.py:1259 ..\ui\main_window.py:1273
+msgid "Switched to image {}"
+msgstr "เปลี่ยนเป็นภาพ {} แล้ว"
+
+#: ..\ui\main_window.py:1261
+msgid "Already at the first image"
+msgstr "อยู่ที่ภาพแรกแล้ว"
+
+#: ..\ui\main_window.py:1263 ..\ui\main_window.py:1279
+msgid "Failed to switch image: {}"
+msgstr "เปลี่ยนภาพล้มเหลว: {}"
+
+#: ..\ui\main_window.py:1275
+msgid "Already at the last image"
+msgstr "อยู่ที่ภาพสุดท้ายแล้ว"
+
+#: ..\ui\main_window.py:1277
+msgid "No images loaded"
+msgstr "ยังไม่ได้โหลดภาพ"
+
+#: ..\ui\main_window.py:1332
+msgid "Please select an annotation to edit"
+msgstr "กรุณาเลือกคำอธิบายที่ต้องการแก้ไข"
+
+#: ..\ui\main_window.py:1347
+msgid "Selected annotation not found"
+msgstr "ไม่พบคำอธิบายที่เลือก"
+
+#: ..\ui\main_window.py:1351
+msgid "Edit Annotation"
+msgstr "แก้ไขคำอธิบาย"
+
+#: ..\ui\main_window.py:1355
+msgid "Category:"
+msgstr "หมวดหมู่:"
+
+#: ..\ui\main_window.py:1365 ..\ui\settings_dialog.py:72
+#: ..\ui\settings_dialog.py:130
+msgid "OK"
+msgstr "ตกลง"
+
+#: ..\ui\main_window.py:1385
+msgid "Label updated to: {}"
+msgstr "อัปเดตป้ายกำกับเป็น: {}"
+
+#: ..\ui\main_window.py:1390
+msgid "Failed to edit annotation: {}"
+msgstr "แก้ไขคำอธิบายล้มเหลว: {}"
+
+#: ..\ui\main_window.py:1398
+msgid "Please select an annotation to delete"
+msgstr "กรุณาเลือกคำอธิบายที่ต้องการลบ"
+
+#: ..\ui\main_window.py:1401
+msgid "Are you sure you want to delete the selected annotation?"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบคำอธิบายที่เลือก?"
+
+#: ..\ui\main_window.py:1401
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#: ..\ui\main_window.py:1406
+msgid "Annotation Deleted"
+msgstr "ลบคำอธิบายแล้ว"
+
+#: ..\ui\main_window.py:1408
+msgid "Failed to delete annotation"
+msgstr "ลบคำอธิบายล้มเหลว"
+
+#: ..\ui\main_window.py:1411
+msgid "Failed to delete annotation: {}"
+msgstr "ลบคำอธิบายล้มเหลว: {}"
+
+#: ..\ui\main_window.py:1419
+msgid "Please select an annotation to toggle visibility"
+msgstr "กรุณาเลือกคำอธิบายเพื่อสลับการมองเห็น"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Shown"
+msgstr "แสดง"
+
+#: ..\ui\main_window.py:1428 ..\ui\main_window.py:1436
+msgid "Hidden"
+msgstr "ซ่อน"
+
+#: ..\ui\main_window.py:1440
+msgid "Failed to toggle visibility: {}"
+msgstr "สลับการมองเห็นล้มเหลว: {}"
+
+#: ..\ui\main_window.py:1578
+msgid "Enabled"
+msgstr "เปิดใช้งาน"
+
+#: ..\ui\main_window.py:1578
+msgid "Disabled"
+msgstr "ปิดใช้งาน"
+
+#: ..\ui\main_window.py:1579
+msgid "Base64 Embedding: {}"
+msgstr "การฝัง Base64: {}"
+
+#: ..\ui\main_window.py:1604
+msgid ""
+"No image files found in folder\n"
+"{}"
+msgstr ""
+"ไม่พบไฟล์ภาพในโฟลเดอร์\n"
+"{}"
+
+#: ..\ui\main_window.py:1623
+msgid "Loaded folder: {} ({} images)"
+msgstr "โหลดโฟลเดอร์แล้ว: {} ({} ภาพ)"
+
+#: ..\ui\main_window.py:1627
+msgid "Failed to load folder: {}"
+msgstr "โหลดโฟลเดอร์ล้มเหลว: {}"
+
+#: ..\ui\main_window.py:1713
+msgid "None"
+msgstr "ไม่มี"
+
+#: ..\ui\main_window.py:1732
+msgid "Add Category..."
+msgstr "เพิ่มหมวดหมู่..."
+
+#: ..\ui\main_window.py:1733
+msgid "Edit Category..."
+msgstr "แก้ไขหมวดหมู่..."
+
+#: ..\ui\main_window.py:1734
+msgid "Delete Selected Category"
+msgstr "ลบหมวดหมู่ที่เลือก"
+
+#: ..\ui\main_window.py:1745
+msgid "Add Category"
+msgstr "เพิ่มหมวดหมู่"
+
+#: ..\ui\main_window.py:1754
+msgid "Category added: {}"
+msgstr "เพิ่มหมวดหมู่แล้ว: {}"
+
+#: ..\ui\main_window.py:1756
+msgid "Category '{}' already exists"
+msgstr "หมวดหมู่ '{}' มีอยู่แล้ว"
+
+#: ..\ui\main_window.py:1763
+msgid "Please select a category to edit"
+msgstr "กรุณาเลือกหมวดหมู่ที่ต้องการแก้ไข"
+
+#: ..\ui\main_window.py:1767
+msgid "Edit Category"
+msgstr "แก้ไขหมวดหมู่"
+
+#: ..\ui\main_window.py:1775
+msgid "Category name cannot be empty"
+msgstr "ชื่อหมวดหมู่ไม่สามารถเว้นว่างได้"
+
+#: ..\ui\main_window.py:1784
+msgid ""
+"You are renaming category '{}' to '{}'.\n"
+"\n"
+"Do you want to update all existing annotation files in this folder?\n"
+"\n"
+"Yes: Update ALL files in folder\n"
+"No: Update only the category list\n"
+"Cancel: Abort changes"
+msgstr ""
+"คุณกำลังเปลี่ยนชื่อหมวดหมู่ '{}' เป็น '{}'\n"
+"\n"
+"คุณต้องการอัปเดตไฟล์คำอธิบายทั้งหมดในโฟลเดอร์นี้หรือไม่?\n"
+"\n"
+"ใช่: อัปเดตไฟล์ทั้งหมดในโฟลเดอร์\n"
+"ไม่: อัปเดตเฉพาะรายการหมวดหมู่\n"
+"ยกเลิก: ยกเลิกการเปลี่ยนแปลง"
+
+#: ..\ui\main_window.py:1790
+msgid "Rename Confirmation"
+msgstr "ยืนยันการเปลี่ยนชื่อ"
+
+#: ..\ui\main_window.py:1792
+msgid "Update All"
+msgstr "อัปเดตทั้งหมด"
+
+#: ..\ui\main_window.py:1792
+msgid "List Only"
+msgstr "เฉพาะรายการ"
+
+#: ..\ui\main_window.py:1804
+msgid "Renamed '{}' to '{}' in {} files"
+msgstr "เปลี่ยนชื่อ '{}' เป็น '{}' ใน {} ไฟล์แล้ว"
+
+#: ..\ui\main_window.py:1806
+msgid "Renamed '{}' to '{}' in list only"
+msgstr "เปลี่ยนชื่อ '{}' เป็น '{}' เฉพาะในรายการแล้ว"
+
+#: ..\ui\main_window.py:1809
+msgid "Updated color for Category: {}"
+msgstr "อัปเดตสีสำหรับหมวดหมู่แล้ว: {}"
+
+#: ..\ui\main_window.py:1875
+msgid "Are you sure you want to delete category '{}'?"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบหมวดหมู่ '{}'?"
+
+#: ..\ui\main_window.py:1876
+msgid "Confirm Delete"
+msgstr "ยืนยันการลบ"
+
+#: ..\ui\main_window.py:1879
+msgid "Category deleted: {}"
+msgstr "ลบหมวดหมู่แล้ว: {}"
+
+#: ..\ui\main_window.py:1881
+msgid "Cannot delete default category '{}'"
+msgstr "ไม่สามารถลบหมวดหมู่เริ่มต้น '{}'"
+
+#: ..\ui\main_window.py:1882
+msgid "Constraint"
+msgstr "ข้อจำกัด"
+
+#: ..\ui\main_window.py:1904
+msgid "Delete Annotation File"
+msgstr "ลบไฟล์คำอธิบาย"
+
+#: ..\ui\main_window.py:1923
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\n"
+"This action cannot be undone."
+msgstr ""
+"คุณแน่ใจหรือไม่ว่าต้องการลบไฟล์คำอธิบายสำหรับ '{}'?\n"
+"การดำเนินการนี้ไม่สามารถเลิกทำได้"
+
+#: ..\ui\main_window.py:1924
+msgid "Confirm Deletion"
+msgstr "ยืนยันการลบ"
+
+#: ..\ui\main_window.py:1950
+msgid "Deleted annotation file for: {}"
+msgstr "ลบไฟล์คำอธิบายสำหรับ: {} แล้ว"
+
+#: ..\ui\main_window.py:1954
+msgid "Failed to delete annotation file: {}"
+msgstr "ลบไฟล์คำอธิบายล้มเหลว: {}"
+
+#: ..\ui\main_window.py:2168
+msgid "Categories updated"
+msgstr "อัปเดตหมวดหมู่แล้ว"
+
+#: ..\ui\main_window.py:2201
+msgid "No images loaded to export"
+msgstr "ยังไม่ได้โหลดภาพสำหรับส่งออก"
+
+#: ..\ui\main_window.py:2201
+msgid "Information"
+msgstr "ข้อมูล"
+
+#: ..\ui\main_window.py:2210
+msgid "Generating Dataset..."
+msgstr "กำลังสร้างชุดข้อมูล..."
+
+#: ..\ui\main_window.py:2211
+msgid "Processing splitting and export formats"
+msgstr "กำลังประมวลผลการแบ่งชุดและรูปแบบส่งออก"
+
+#: ..\ui\main_window.py:2231
+msgid ""
+"Dataset Export Complete!\n"
+"Target: {}\n"
+"Successfully exported {}/{} images."
+msgstr ""
+"ส่งออกชุดข้อมูลสำเร็จ!\n"
+"ปลายทาง: {}\n"
+"ส่งออกสำเร็จ {}/{} ภาพ"
+
+#: ..\ui\main_window.py:2233
+msgid "Success"
+msgstr "สำเร็จ"
+
+#: ..\ui\main_window.py:2251
+msgid "Supported Export Formats:"
+msgstr "รูปแบบส่งออกที่รองรับ:"
+
+#: ..\ui\main_window.py:2257
+msgid "Features:"
+msgstr "คุณสมบัติ:"
+
+#: ..\ui\main_window.py:2263
+msgid "Export Format Info"
+msgstr "ข้อมูลรูปแบบส่งออก"
+
+#: ..\ui\main_window.py:2271
+msgid ""
+"A professional computer vision annotation tool.\n"
+"\n"
+"Key Features:\n"
+"• Advanced Export: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV.\n"
+"• Integrated AI: SAM, SAM2, EfficientSAM, and various detection models.\n"
+"• Cross-platform support with industrial-grade precision.\n"
+"\n"
+"Designed for professional computer vision research and dataset preparation."
+msgstr ""
+"เครื่องมือคำอธิบายภาพ Computer Vision ระดับมืออาชีพ\n"
+"\n"
+"คุณสมบัติหลัก:\n"
+"• ส่งออกขั้นสูง: YOLO (Detect/Seg/OBB), MS COCO, Pascal VOC 2012, CSV\n"
+"• AI ในตัว: SAM, SAM2, EfficientSAM และโมเดลตรวจจับหลากหลาย\n"
+"• รองรับหลายแพลตฟอร์มด้วยความแม่นยำระดับอุตสาหกรรม\n"
+"\n"
+"ออกแบบสำหรับการวิจัย Computer Vision และการเตรียมชุดข้อมูลระดับมืออาชีพ"
+
+#: ..\ui\theme_manager.py:35
+msgid "Dark (Default)"
+msgstr "มืด (ค่าเริ่มต้น)"
+
+#: ..\ui\theme_manager.py:48
+msgid "Light (VS)"
+msgstr "สว่าง (VS)"
+
+#: ..\ui\theme_manager.py:61
+msgid "Visual Studio Blue"
+msgstr "Visual Studio สีน้ำเงิน"
+
+#: ..\ui\theme_manager.py:74
+msgid "Monokai"
+msgstr "Monokai"
+
+#: ..\ui\settings_dialog.py:50 ..\ui\settings_dialog.py:93
+msgid "Language"
+msgstr "ภาษา"
+
+#: ..\ui\settings_dialog.py:54 ..\ui\settings_dialog.py:94
+msgid "Theme"
+msgstr "ธีม"
+
+#: ..\ui\settings_dialog.py:58 ..\ui\settings_dialog.py:95
+msgid "User Settings"
+msgstr "การตั้งค่าผู้ใช้"
+
+#: ..\ui\settings_dialog.py:62 ..\ui\settings_dialog.py:96
+msgid "Annotation"
+msgstr "คำอธิบาย"
+
+#: ..\ui\settings_dialog.py:66 ..\ui\settings_dialog.py:97
+msgid "AI Annotation"
+msgstr "คำอธิบาย AI"
+
+#: ..\ui\settings_dialog.py:74 ..\ui\settings_dialog.py:132
+msgid "Apply"
+msgstr "ใช้งาน"
+
+#: ..\ui\settings_dialog.py:100 ..\ui\settings_dialog.py:170
+msgid "Language Selection"
+msgstr "การเลือกภาษา"
+
+#: ..\ui\settings_dialog.py:101 ..\ui\settings_dialog.py:199
+msgid "UI Appearance"
+msgstr "รูปลักษณ์ UI"
+
+#: ..\ui\settings_dialog.py:102 ..\ui\settings_dialog.py:234
+msgid "Annotator Information"
+msgstr "ข้อมูลผู้คำอธิบาย"
+
+#: ..\ui\settings_dialog.py:103 ..\ui\settings_dialog.py:274
+msgid "LabelMe Storage Format"
+msgstr "รูปแบบจัดเก็บ LabelMe"
+
+#: ..\ui\settings_dialog.py:104 ..\ui\settings_dialog.py:289
+msgid "Attribute Panel"
+msgstr "แผงคุณสมบัติ"
+
+#: ..\ui\settings_dialog.py:105 ..\ui\settings_dialog.py:318
+msgid "AI Assisted Labeling Settings"
+msgstr "การตั้งค่าการติดป้ายด้วย AI"
+
+#: ..\ui\settings_dialog.py:108 ..\ui\settings_dialog.py:186
+msgid "Select Interface Language:"
+msgstr "เลือกภาษาอินเทอร์เฟซ:"
+
+#: ..\ui\settings_dialog.py:109 ..\ui\settings_dialog.py:209
+msgid "Color Theme:"
+msgstr "ธีมสี:"
+
+#: ..\ui\settings_dialog.py:110 ..\ui\settings_dialog.py:218
+msgid "Font Size:"
+msgstr "ขนาดตัวอักษร:"
+
+#: ..\ui\settings_dialog.py:112 ..\ui\settings_dialog.py:237
+msgid "Enable User Information (Save to JSON)"
+msgstr "เปิดใช้ข้อมูลผู้ใช้ (บันทึกลง JSON)"
+
+#: ..\ui\settings_dialog.py:113 ..\ui\settings_dialog.py:244
+msgid "Name:"
+msgstr "ชื่อ:"
+
+#: ..\ui\settings_dialog.py:114 ..\ui\settings_dialog.py:251
+msgid "Quality Score (0-100):"
+msgstr "คะแนนคุณภาพ (0-100):"
+
+#: ..\ui\settings_dialog.py:115 ..\ui\settings_dialog.py:260
+msgid "Note: User info will only be added to JSON when enabled above."
+msgstr "หมายเหตุ: ข้อมูลผู้ใช้จะถูกเพิ่มลง JSON เฉพาะเมื่อเปิดใช้งานด้านบน"
+
+#: ..\ui\settings_dialog.py:117 ..\ui\settings_dialog.py:276
+msgid "Embed Image Data (Base64) in JSON"
+msgstr "ฝังข้อมูลภาพ (Base64) ใน JSON"
+
+#: ..\ui\settings_dialog.py:118 ..\ui\settings_dialog.py:281
+msgid "Note: Enabling this will significantly increase JSON file size."
+msgstr "หมายเหตุ: การเปิดใช้งานนี้จะเพิ่มขนาดไฟล์ JSON อย่างมาก"
+
+#: ..\ui\settings_dialog.py:119 ..\ui\settings_dialog.py:291
+msgid "Enable Attribute Panel (show below annotation list)"
+msgstr "เปิดใช้แผงคุณสมบัติ (แสดงด้านล่างรายการคำอธิบาย)"
+
+#: ..\ui\settings_dialog.py:120 ..\ui\settings_dialog.py:296
+msgid "Default Flags:"
+msgstr "แฟล็กเริ่มต้น:"
+
+#: ..\ui\settings_dialog.py:121 ..\ui\settings_dialog.py:305
+msgid "Comma-separated flag names, e.g.: occluded, truncated, difficult"
+msgstr "ชื่อแฟล็กคั่นด้วยจุลภาค เช่น: บดบัง, ถูกตัด, ยาก"
+
+#: ..\ui\settings_dialog.py:123 ..\ui\settings_dialog.py:321
+msgid "AI Model Directory:"
+msgstr "โฟลเดอร์โมเดล AI:"
+
+#: ..\ui\settings_dialog.py:124 ..\ui\settings_dialog.py:331
+msgid "Enable Continuous Inference (Real-time)"
+msgstr "เปิดใช้การอนุมานต่อเนื่อง (เรียลไทม์)"
+
+#: ..\ui\settings_dialog.py:125 ..\ui\settings_dialog.py:337
+msgid "Inference Interval (ms):"
+msgstr "ช่วงเวลาการอนุมาน (ms):"
+
+#: ..\ui\settings_dialog.py:126 ..\ui\settings_dialog.py:346
+msgid "Auto-simplify Polygon (0.004 Tolerance)"
+msgstr "ทำให้รูปหลายเหลี่ยมเรียบง่ายอัตโนมัติ (ความคลาดเคลื่อน 0.004)"
+
+#: ..\ui\settings_dialog.py:127 ..\ui\settings_dialog.py:350
+msgid "Denoise Mask (Filter small fragments)"
+msgstr "ลดสัญญาณรบกวนมาสก์ (กรองชิ้นส่วนเล็ก)"
+
+msgid "+ Add"
+msgstr "+ เพิ่ม"
+
+msgid ""
+"Are you sure you want to delete the annotation file for '{}'?\\nThis action "
+"cannot be undone."
+msgstr ""
+"คุณแน่ใจหรือไม่ว่าต้องการลบไฟล์คำอธิบายสำหรับ "
+"'{}'?\\nการดำเนินการนี้ไม่สามารถเลิกทำได้"
+
+msgid "Attributes"
+msgstr "คุณสมบัติ"
+
+msgid "Automated directory structure generation"
+msgstr "การสร้างโครงสร้างโฟลเดอร์อัตโนมัติ"
+
+msgid "Batch Export Complete!\\nSuccessfully exported {}/{} images."
+msgstr "ส่งออกเป็นชุดสำเร็จ!\\nส่งออกสำเร็จ {}/{} ภาพ"
+
+msgid "Batch export to directory"
+msgstr "ส่งออกเป็นชุดไปยังโฟลเดอร์"
+
+msgid "Create line annotation (L)"
+msgstr "สร้างคำอธิบายเส้น (L)"
+
+msgid "Custom Attributes:"
+msgstr "คุณสมบัติกำหนดเอง:"
+
+msgid ""
+"Dataset Export Complete!\\nTarget: {}\\nSuccessfully exported {}/{} images."
+msgstr "ส่งออกชุดข้อมูลสำเร็จ!\\nปลายทาง: {}\\nส่งออกสำเร็จ {}/{} ภาพ"
+
+msgid "Dataset splitting (Train/Val/Test)"
+msgstr "การแบ่งชุดข้อมูล (ฝึก/ตรวจสอบ/ทดสอบ)"
+
+msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
+msgstr ""
+"การตรวจจับ (BBox), การแบ่งส่วน (รูปหลายเหลี่ยม) และ OBB (สี่เหลี่ยมหมุน)"
+
+msgid "Edit Label"
+msgstr "แก้ไขป้ายกำกับ"
+
+msgid "Flags:"
+msgstr "แฟล็ก:"
+
+msgid "Generic coordinate table for custom analysis"
+msgstr "ตารางพิกัดทั่วไปสำหรับการวิเคราะห์แบบกำหนดเอง"
+
+msgid "Hint: Drag to create line"
+msgstr "คำแนะนำ: ลากเพื่อสร้างเส้น"
+
+msgid "Image Annotation Tool"
+msgstr "เครื่องมือคำอธิบายภาพ"
+
+msgid "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
+msgstr "JSON มาตรฐานอุตสาหกรรม ปรับแต่ง Index=0 (กำหนดเอง) หรือ 1 (มาตรฐาน)"
+
+msgid "Info"
+msgstr "ข้อมูล"
+
+msgid "Line"
+msgstr "เส้น"
+
+msgid "No annotation file found for this image."
+msgstr "ไม่พบไฟล์คำอธิบายสำหรับภาพนี้"
+
+msgid "No image files found in folder\\n{}"
+msgstr "ไม่พบไฟล์ภาพในโฟลเดอร์\\n{}"
+
+msgid "Preview of split distribution"
+msgstr "ดูตัวอย่างการกระจายการแบ่ง"
+
+msgid "Select an annotation to edit attributes"
+msgstr "เลือกคำอธิบายเพื่อแก้ไขคุณสมบัติ"
+
+msgid "Standardized to VOC 2012 XML with 1-based pixel precision"
+msgstr "มาตรฐาน VOC 2012 XML พร้อมความแม่นยำพิกเซลแบบ 1-based"
+
+msgid "Test"
+msgstr "ทดสอบ"
+
+msgid "Total Images"
+msgstr "ภาพทั้งหมด"
+
+msgid "Train"
+msgstr "ฝึก"
+
+msgid "Transcription:"
+msgstr "การถอดความ:"
+
+msgid "Unknown"
+msgstr "ไม่ทราบ"
+
+msgid "Valid"
+msgstr "ตรวจสอบ"
+
+msgid "📏 Line"
+msgstr "📏 เส้น"

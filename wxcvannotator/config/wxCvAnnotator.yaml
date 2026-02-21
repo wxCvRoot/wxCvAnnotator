@@ -1,0 +1,70 @@
+project:
+  name: "wxCvAnnotator"
+  description: "基於 wxPython 與 wxCvModule (C++ OpenCV 引擎) 的跨平台高性能圖像標註工具。"
+  venv_path: "/home/albert/Develop/Python/acvdlm-venv"
+  domain: "python"
+  base_framework: "wxPython"
+  core_engine: "wxCvModule (pybind11)"
+  working_dir: "tasks/wxCvAnnotator"
+
+roles:
+  mode: "Full_Scale"
+  squad:
+    - Architect: "設計整體系統架構、I18n 框架與插件系統。"
+    - Coder: "實作核心邏輯、wxPython UI 以及與 wxCvROIAdvPanel 的整合。"
+    - Auditor: "審查代碼質量，確保符合 'money' 專案規範，並檢查 I18n 標籤。"
+    - Tester: "進行 UI 測試、功能驗證與跨平台路徑檢查。"
+    - I18n_Specialist: "管理翻譯文件 (中、英、日)，確保 UI 佈局能自適應不同文字長度。"
+
+i18n:
+  languages: ["en_US", "zh_TW", "ja_JP"]
+  method: "gettext"
+  default: "zh_TW"
+
+phases:
+  - Phase 0: "環境準備與隔離 (Environment Preparation)"
+    tasks:
+      - "若不存在，則建立目錄 'tasks/wxCvAnnotator'。"
+      - "將必要的函式庫 (wxCvModule.so/pyd 及其依賴) 複製到 'tasks/wxCvAnnotator/lib'。"
+      - "在 'tasks/wxCvAnnotator/requests.md' 建立功能缺失追蹤表。"
+      - "將參考材料或 Labelme 範例複製到 'tasks/wxCvAnnotator/refs'。"
+
+  - Phase 1: "基礎架構與 UI 骨架 (Infrastructure)"
+    tasks:
+      - "在 'tasks/wxCvAnnotator' 內初始化專案結構。"
+      - "使用 wxPython 建立主視窗，包含 Ribbon 或 ToolBar 介面 (參考 Labelme/LabelStudio)。"
+      - "實作 I18n 管理器與基礎語言切換邏輯。"
+      - "整合 local 目錄下的 wxCvModule，驗證面板嵌入功能。"
+
+  - Phase 2: "標註引擎與交互邏輯 (Annotation)"
+    tasks:
+      - "將 wxCvROIAdvPanel 的 ROI 模式 (多邊形、矩形、圓形等) 對接到 UI 選單。"
+      - "在專案目錄內實作「畫布 (Canvas)」邏輯：縮放、平移與命中測試。"
+      - "開發標籤列表側邊欄 (Label List) 與標籤編輯對話框。"
+
+  - Phase 3: "數據管理與相容性 (Data Management)"
+    tasks:
+      - "實作與 Labelme 相容的 JSON 讀取與存檔功能。"
+      - "支援以目錄為基礎的專案載入 (檔案列表)。"
+      - "實作自動存檔功能與 Undo/Redo (命令模式)。"
+
+  - Phase 4: "多工具收斂與進階特性 (Advanced Features)"
+    tasks:
+      - "實作 YOLO、COCO 與 Pascal VOC 的匯出插件。"
+      - "利用 local 的 wxCvEngine 加入圖像增強濾鏡 (亮度/對比度調整)。"
+      - "優化 UI 美學：現代化圖示、深色模式支援與平滑過渡效果。"
+
+  - Phase 5: "最終驗證與文檔 (Verification)"
+    tasks:
+      - "在專案資料夾內完成中/英/日文的使用者手冊 (Markdown)。"
+      - "進行壓力測試 (大圖標註、多物件標註) 與最終規範檢查。"
+
+constraints:
+  - "嚴格隔離：所有開發活動必須限制在 'tasks/wxCvAnnotator/' 目錄內。"
+  - "禁止污染：嚴禁修改根目錄或其他專案資料夾的文件。"
+  - "資料參考：AI 代理人僅可「讀取」/home/albert/Develop/Cpp/wxCvPanel 文件作為參考。"
+  - "需求紀錄：任何功能缺失或新需求必須記錄於 'tasks/wxCvAnnotator/requests.md'。"
+  - "資源在地化：下載的參考資料必須存放在 'tasks/wxCvAnnotator/refs/'。"
+  - "禁止安裝：嚴禁執行 pip install，必須使用現有的 acvdlm-venv。"
+  - "跨平台安全：所有路徑操作必須使用 pathlib。"
+  - "模組化設計：嚴格分離 UI、邏輯 (Logic) 與國際化 (I18n)。"
