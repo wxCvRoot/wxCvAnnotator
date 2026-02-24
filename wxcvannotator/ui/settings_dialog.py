@@ -160,15 +160,18 @@ class SettingsDialog(wx.Dialog):
 
         # Fix sidebar width — SetMinSize reserves space in the sizer;
         # SetColumnWidth prevents the ListCtrl from collapsing the column.
-        # On macOS the column isn't ready until the dialog is actually shown
-        # (EVT_SHOW), so we defer it there.  On Windows/Linux it can be set
+        # On macOS and Linux, the column isn't ready until the dialog is actually shown
+        # (EVT_SHOW), so we defer it there. On Windows it can be set
         # immediately after AddPage.
         lv = self.listbook.GetListView()
         lv.SetMinSize((160, -1))
-        if platform.system() == 'Darwin':
-            self.Bind(wx.EVT_SHOW, self._on_first_show)
+        if platform.system() == 'Windows':
+            try:
+                lv.SetColumnWidth(0, 155)
+            except Exception:
+                pass
         else:
-            lv.SetColumnWidth(0, 155)
+            self.Bind(wx.EVT_SHOW, self._on_first_show)
         
         main_sizer.Add(self.listbook, 1, wx.EXPAND | wx.ALL, 10)
         
@@ -194,13 +197,13 @@ class SettingsDialog(wx.Dialog):
         self.btn_ok.Bind(wx.EVT_BUTTON, self._on_ok)
         
     def _on_first_show(self, event):
-        """macOS: finalize UI after the dialog is first rendered.
+        """macOS/Linux: finalize UI after the dialog is first rendered.
 
         On macOS, native controls (NSButton, NSPopUpButton, etc.) override
         colours set during __init__ when they first paint.  EVT_SHOW fires
         after the native render pass, so re-applying the theme here ensures
         our custom colours win.  The Listbook column also isn't ready until
-        this point, so we set its width here too.
+        this point on macOS and Linux, so we set its width here too.
         """
         event.Skip()
         if not event.IsShown():
