@@ -11,29 +11,35 @@ import argparse
 import wx
 from pathlib import Path
 
-# Initialize settings early to get language
-from .utils.settings_manager import SettingsManager
-settings = SettingsManager()
-saved_lang = settings.get("language", "en_US")
-
-# Initialize i18n early so _() is available globally
-from .ui.i18n import get_i18n_manager
-get_i18n_manager(default_lang=saved_lang)
-
 from . import __version__
-from .ui.main_window import WxCvAnnotatorMainWindow
 
 
 def main():
     """Main function"""
     print(f"=== wxCvAnnotator {__version__} Starting ===")
-    print("Redesigned annotation tool interface")
-    print("Designed based on LabelMe mode, integrated with wxCvROIAdvPanel")
-    print("Key features: onCrop event handling, annotation data management")
     print()
 
     try:
-        # Parse command line arguments
+        # Pre-parse --lang before i18n initialization so it takes effect immediately
+        pre_parser = argparse.ArgumentParser(add_help=False)
+        pre_parser.add_argument("--lang", default=None)
+        pre_args, _ = pre_parser.parse_known_args()
+
+        # Initialize settings early to get language
+        from .utils.settings_manager import SettingsManager
+        settings = SettingsManager()
+        saved_lang = settings.get("language", "en_US")
+
+        # --lang on CLI overrides saved setting (session-only, does not persist)
+        effective_lang = pre_args.lang if pre_args.lang else saved_lang
+
+        # Initialize i18n early so _() is available globally
+        from .ui.i18n import get_i18n_manager
+        get_i18n_manager(default_lang=effective_lang)
+
+        from .ui.main_window import WxCvAnnotatorMainWindow
+
+        # Full argument parsing
         parser = argparse.ArgumentParser(description=f"wxCvAnnotator {__version__} - Image Annotation Tool")
         parser.add_argument("filename", nargs="?", help="Image file or directory path")
         parser.add_argument("--labels", help="Comma-separated list of labels or path to label file")
@@ -41,6 +47,21 @@ def main():
         parser.add_argument("--embed", action="store_true", help="Force embed image data in JSON (wxCvAnnotator option)")
         parser.add_argument("--output", help="Output directory for annotations")
         parser.add_argument("--config", help="Custom settings.json path")
+        parser.add_argument(
+            "--lang",
+            metavar="LANG",
+            help=(
+                "Override display language for this session (does not change saved setting). "
+                "Examples: en_US, zh_TW, zh_CN, ja_JP, ko_KR, fr_FR, de_DE, es_ES, ru_RU, ar_SA, "
+                "it_IT, nl_NL, pt_BR, th_TH, tr_TR, vi_VN, fa_IR"
+            ),
+        )
+        parser.add_argument(
+            "--no-help",
+            action="store_true",
+            dest="no_help",
+            help="Hide Help menu from menu bar and set app title to 'Annotation Tool'",
+        )
 
         args = parser.parse_args()
 
@@ -62,7 +83,8 @@ def main():
             nodata=args.nodata,
             embed=args.embed,
             output=args.output,
-            config_path=args.config
+            config_path=args.config,
+            no_help=args.no_help,
         )
 
         # Show window
@@ -71,6 +93,8 @@ def main():
         print("✓ Main window created successfully")
         if args.filename:
             print(f"✓ Target path: {args.filename}")
+        if args.lang:
+            print(f"✓ Language override: {args.lang}")
 
         # Enter main loop
         app.MainLoop()

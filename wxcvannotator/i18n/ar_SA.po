@@ -1382,3 +1382,193 @@ msgstr "تحقق"
 
 msgid "📏 Line"
 msgstr "📏 خط"
+
+msgid "AI Mask annotation added."
+msgstr "تمت إضافة تعليق قناع AI."
+
+msgid "Backend:"
+msgstr "الخلفية:"
+
+msgid "Category '{}' not found"
+msgstr "الفئة '{}' غير موجودة"
+
+msgid "Create Annotations"
+msgstr "إنشاء تعليقات توضيحية"
+
+msgid "Deselect All"
+msgstr "إلغاء تحديد الكل"
+
+msgid "Edit Label Classes"
+msgstr "تعديل فئات التسمية"
+
+msgid "No OCR backends available"
+msgstr "لا تتوفر خلفيات OCR"
+
+msgid "No image loaded"
+msgstr "لم يتم تحميل أي صورة"
+
+msgid "OCR"
+msgstr "التعرف البصري على الحروف"
+
+msgid "OCR Full Image"
+msgstr "OCR للصورة الكاملة"
+
+msgid "OCR Full: cancelled"
+msgstr "OCR الكامل: أُلغي"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "OCR الكامل: تم إنشاء {} تعليق(تعليقات)"
+
+msgid "OCR Full: no results selected"
+msgstr "OCR الكامل: لم يتم تحديد نتائج"
+
+msgid "OCR Full: no text detected"
+msgstr "OCR الكامل: لم يتم اكتشاف نص"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "نتائج OCR — تم اكتشاف {} منطقة (مناطق)"
+
+msgid "OCR Transcribe"
+msgstr "نسخ OCR"
+
+msgid "OCR service not available"
+msgstr "خدمة OCR غير متوفرة"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "تشغيل OCR على الصورة بأكملها وإنشاء تعليقات نصية"
+
+msgid "Running full-image OCR ({})..."
+msgstr "جاري تشغيل OCR للصورة الكاملة ({})..."
+
+msgid "Select All"
+msgstr "تحديد الكل"
+
+msgid "{} backend(s) available"
+msgstr "يتوفر {} خلفية(ات)"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 OCR للصورة الكاملة"
+
+msgid "+ Add Category"
+msgstr "+ إضافة فئة"
+
+msgid "Category name:"
+msgstr "اسم الفئة:"
+
+msgid "Delete category"
+msgstr "حذف الفئة"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "فشل تحميل الإعداد المسبق:\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "فشل حفظ الإعداد المسبق:\\n{}"
+
+msgid "Label Classes"
+msgstr "فئات التسمية"
+
+msgid "Labels"
+msgstr "التسميات"
+
+msgid "Load"
+msgstr "حمولة"
+
+msgid "Move down"
+msgstr "تحرك للأسفل"
+
+msgid "Move up"
+msgstr "تحرك للأعلى"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "الاسم المحدد مسبقًا (سيتم حفظه باسم user_<name>.json):"
+
+msgid "Preset:"
+msgstr "الإعداد المسبق:"
+
+msgid "Reset to Default"
+msgstr "إعادة التعيين إلى الافتراضي"
+
+msgid "Save As"
+msgstr "حفظ باسم"
+
+msgid "Save Preset As"
+msgstr "حفظ الإعداد المسبق باسم"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+"\\u24d8 YOLO: يؤثر تغيير ترتيب الفئات على فهرس الفئة (يتطلب إعادة التصدير "
+"وإعادة التدريب)"
+
+msgid "AI Models"
+msgstr "نماذج الذكاء الاصطناعي"
+
+msgid "AI Segmentation Models"
+msgstr "نماذج تجزئة الذكاء الاصطناعي"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+"تتم إزالة النماذج المخفية من القائمة المنسدلة لشريط الأدوات. يتم عرض النماذج"
+" الجديدة بشكل افتراضي."
+
+msgid "OCR Backends"
+msgstr "الواجهات الخلفية للتعرف الضوئي على الحروف (OCR)."
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "صور عامة دقة أفضل من Sam (shubham0204 ONNX)"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "صور عامة، كائنات \\u226510% من الإطار؛ سريع (زينوفا ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr "صور عالية الدقة، وأشياء صغيرة؛ استنتاج الدقة الأصلية"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr "أشياء صغيرة عالية الدقة؛ دقة متوافقة مع LabelMe"
+
+msgid "Model Selection Guide:"
+msgstr "دليل اختيار النموذج:"
+
+msgid "First run may take longer to load the model."
+msgstr "قد يستغرق التشغيل الأول وقتًا أطول لتحميل النموذج."
+
+msgid "Preparing OCR engine ({})..."
+msgstr "تحضير محرك OCR ({}) ..."
+
+msgid "AI segmentation"
+msgstr "تقسيم الذكاء الاصطناعي"
+
+msgid "No AI models were loaded"
+msgstr "لم يتم تحميل أي نماذج ذكاء اصطناعي"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr ""
+"إلغاء تحميل نماذج تقسيم الذكاء الاصطناعي و OCR من الذاكرة لتحرير GPU/RAM"
+
+msgid "Unloaded: {}"
+msgstr "تم إلغاء التحميل: {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 تحرير ذاكرة الذكاء الاصطناعي"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"ملاحظة: عند عدم التحديد، يتم كتابة ملفات JSON فقط إذا كانت هناك تسميات "
+"توضيحية أو تم تعيين حالة مجموعة البيانات (train/val/test)."
+
+msgid "Save Behavior"
+msgstr "سلوك الحفظ"
+
+msgid "Save annotation file for unannotated images"
+msgstr "حفظ ملف التسمية التوضيحية للصور غير المصنفة"
+
+msgid "Set Status: {}"
+msgstr "تعيين الحالة: {}"
+
+msgid "Show in Explorer"
+msgstr "إظهار في المستكشف"

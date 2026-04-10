@@ -1404,3 +1404,196 @@ msgstr "Valide"
 
 msgid "📏 Line"
 msgstr "📏 Ligne"
+
+msgid "AI Mask annotation added."
+msgstr "Annotation de masque IA ajoutée."
+
+msgid "Backend:"
+msgstr "Backend :"
+
+msgid "Category '{}' not found"
+msgstr "Catégorie '{}' introuvable"
+
+msgid "Create Annotations"
+msgstr "Créer des annotations"
+
+msgid "Deselect All"
+msgstr "Tout désélectionner"
+
+msgid "Edit Label Classes"
+msgstr "Modifier les classes d'étiquettes"
+
+msgid "No OCR backends available"
+msgstr "Aucun backend OCR disponible"
+
+msgid "No image loaded"
+msgstr "Aucune image chargée"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "OCR sur toute l'image"
+
+msgid "OCR Full: cancelled"
+msgstr "OCR complet : annulé"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "OCR complet : {} annotation(s) créée(s)"
+
+msgid "OCR Full: no results selected"
+msgstr "OCR complet : aucun résultat sélectionné"
+
+msgid "OCR Full: no text detected"
+msgstr "OCR complet : aucun texte détecté"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "Résultats OCR — {} région(s) détectée(s)"
+
+msgid "OCR Transcribe"
+msgstr "Transcrire l'OCR"
+
+msgid "OCR service not available"
+msgstr "Service OCR indisponible"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "Exécuter l'OCR sur toute l'image et créer des annotations de texte"
+
+msgid "Running full-image OCR ({})..."
+msgstr "Exécution de l'OCR sur toute l'image ({})..."
+
+msgid "Select All"
+msgstr "Tout sélectionner"
+
+msgid "{} backend(s) available"
+msgstr "{} backend(s) disponible(s)"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 OCR sur toute l'image"
+
+msgid "+ Add Category"
+msgstr "+ Ajouter une catégorie"
+
+msgid "Category name:"
+msgstr "Nom de la catégorie :"
+
+msgid "Delete category"
+msgstr "Supprimer la catégorie"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "Échec du chargement du préréglage :\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "Échec de l'enregistrement du préréglage :\\n{}"
+
+msgid "Label Classes"
+msgstr "Classes d'étiquettes"
+
+msgid "Labels"
+msgstr "Étiquettes"
+
+msgid "Load"
+msgstr "Charger"
+
+msgid "Move down"
+msgstr "Descendre"
+
+msgid "Move up"
+msgstr "Monter"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "Nom du préréglage (sera enregistré sous user_<name>.json) :"
+
+msgid "Preset:"
+msgstr "Préréglage :"
+
+msgid "Reset to Default"
+msgstr "Réinitialiser aux valeurs par défaut"
+
+msgid "Save As"
+msgstr "Enregistrer sous"
+
+msgid "Save Preset As"
+msgstr "Enregistrer le préréglage sous"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+"\\u24d8 YOLO : la modification de l'ordre des catégories affecte l'index de "
+"classe (nécessite une réexportation et un recyclage)"
+
+msgid "AI Models"
+msgstr "Modèles d'IA"
+
+msgid "AI Segmentation Models"
+msgstr "Modèles de segmentation de l'IA"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+"Les modèles masqués sont supprimés de la liste déroulante de la barre "
+"d'outils. Les nouveaux modèles sont affichés par défaut."
+
+msgid "OCR Backends"
+msgstr "Backends OCR"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "Images générales, meilleure précision que Sam (shubham0204 ONNX)"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "Images générales, objets \\u226510 % du cadre ; rapide (Xenova ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr ""
+"Images haute résolution, petits objets ; inférence en résolution native"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr "Petits objets haute résolution ; Précision compatible avec LabelMe"
+
+msgid "Model Selection Guide:"
+msgstr "Guide de sélection du modèle :"
+
+msgid "First run may take longer to load the model."
+msgstr ""
+"Le premier lancement peut prendre plus de temps pour charger le modèle."
+
+msgid "Preparing OCR engine ({})..."
+msgstr "Préparation du moteur OCR ({}) ..."
+
+msgid "AI segmentation"
+msgstr "Segmentation IA"
+
+msgid "No AI models were loaded"
+msgstr "Aucun modèle IA n'a été chargé"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr ""
+"Décharger les modèles de segmentation IA et OCR de la mémoire pour libérer "
+"le GPU/RAM"
+
+msgid "Unloaded: {}"
+msgstr "Déchargé : {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 Libérer la mémoire IA"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"Note : Si décoché, les fichiers JSON ne sont écrits que s'il y a des "
+"annotations ou si un statut de jeu de données (train/val/test) est défini."
+
+msgid "Save Behavior"
+msgstr "Comportement d'enregistrement"
+
+msgid "Save annotation file for unannotated images"
+msgstr "Enregistrer le fichier d'annotation pour les images non annotées"
+
+msgid "Set Status: {}"
+msgstr "Définir le statut : {}"
+
+msgid "Show in Explorer"
+msgstr "Afficher dans l'explorateur"

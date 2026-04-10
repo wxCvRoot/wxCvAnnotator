@@ -19,6 +19,18 @@ try:
 except ImportError:
     ort = None
 
+try:
+    import skimage.measure as _skimage_measure
+except ImportError:
+    _skimage_measure = None
+
+try:
+    import osam.apis as _osam_apis
+    import osam.types as _osam_types
+except ImportError:
+    _osam_apis = None
+    _osam_types = None
+
 class AIService:
     """AI Inference Service Wrapper with multi-family support (SAM, SAM2, EfficientSAM)"""
     
@@ -129,7 +141,23 @@ class AIService:
                 "url": "https://huggingface.co/yunyangx/EfficientSAM/resolve/main/efficientsam_s_decoder.onnx"
             },
             "description": "EfficientSAM S - High accuracy Efficient model."
-        }
+        },
+        # SAM 2.1 via osam backend (LabelMe-compatible, auto-downloads to ~/.cache/osam/)
+        "Sam2.1(speed)": {
+            "family": "osam",
+            "osam_model_name": "sam2:small",
+            "description": "SAM 2.1 Small via osam — fast, high-res capable."
+        },
+        "Sam2.1(balanced)": {
+            "family": "osam",
+            "osam_model_name": "sam2:latest",
+            "description": "SAM 2.1 Base+ via osam — recommended for high-res images with small objects."
+        },
+        "Sam2.1(accuracy)": {
+            "family": "osam",
+            "osam_model_name": "sam2:large",
+            "description": "SAM 2.1 Large via osam — maximum accuracy."
+        },
     }
 
     def __init__(self, model_dir: str = "models"):
@@ -156,6 +184,11 @@ class AIService:
         self.input_size = (1024, 1024)
         self.last_image = None # Cache for model switching
 
+        # osam state (SAM 2.1 via osam backend)
+        self.osam_model = None
+        self._osam_model_name = None
+        self.osam_embedding = None
+
     def initialize(self, model_name: str = "Sam(balanced)") -> bool:
         """Initialize AI service with a specific model"""
         print(f"🤖 Real AI Initialization: {model_name}...")
@@ -171,7 +204,29 @@ class AIService:
         self.current_model_name = model_name
         model_info = self.MODEL_REGISTRY[model_name]
         self.current_family = model_info.get("family", "sam")
-        
+
+        # osam family: managed by osam package (auto-downloads to ~/.cache/osam/)
+        if self.current_family == "osam":
+            if _osam_apis is None:
+                print("❌ osam not installed. Run: pip install osam")
+                return False
+            osam_name = model_info["osam_model_name"]
+            model_cls = next(
+                (m for m in _osam_apis.registered_model_types if m.name == osam_name), None
+            )
+            if model_cls is None:
+                print(f"❌ osam model '{osam_name}' not found in registry.")
+                return False
+            print(f"📥 Loading osam model '{osam_name}' (auto-downloads if missing)...")
+            self.osam_model = model_cls()
+            self._osam_model_name = osam_name
+            self.is_ready = True
+            if self.last_image is not None:
+                print("🔄 Model switched, re-calculating embeddings...")
+                self.set_image(self.last_image)
+            print(f"✅ AI Service Ready: {model_name} (Family: osam)")
+            return True
+
         # 1. Ensure all parts are downloaded
         if not self._download_all_parts(model_info):
             return False
@@ -252,12 +307,61 @@ class AIService:
             print(f"❌ Failed to load sessions: {e}\n{traceback.format_exc()}")
             return False
 
+    @property
+    def is_loaded(self) -> bool:
+        """True if a model is currently loaded in memory."""
+        if self.current_family == "osam":
+            return self.osam_model is not None
+        return self.encoder_session is not None
+
+    def unload(self) -> None:
+        """Release all loaded AI segmentation model sessions from memory."""
+        self.encoder_session = None
+        self.decoder_session = None
+        self.osam_model = None
+        self._osam_model_name = None
+        self.image_embedding = None
+        self.image_pos_embedding = None
+        self.high_res_feats = None
+        self.osam_embedding = None
+        self.last_image = None
+        self.is_ready = False
+        self.current_model_name = None
+        self.current_family = None
+        try:
+            import onnxruntime as _ort_cleanup  # noqa: F401
+            # ONNX sessions freed by setting to None above
+        except ImportError:
+            pass
+        print("🗑 AI segmentation model unloaded.")
+
     def is_embedding_ready(self) -> bool:
         """Check if image embedding is precomputed"""
+        if self.current_family == "osam":
+            return self.osam_embedding is not None
         return self.image_embedding is not None
 
     def set_image(self, image: np.ndarray):
         """Precompute image embeddings for the current image"""
+        if self.current_family == "osam":
+            if self.osam_model is None:
+                print("❌ osam model not loaded.")
+                return
+            print("🖼️ Preparing image for osam (Encoder)...")
+            self.last_image = image
+            self.original_size = image.shape[:2]
+            self.current_scale = 1.0
+            self.osam_embedding = None
+            rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            try:
+                self.osam_embedding = self.osam_model.encode_image(rgb)
+                self.is_ready = True
+                print("✅ osam image embedded.")
+            except Exception as e:
+                print(f"❌ osam encode_image failed: {e}")
+                self.is_ready = False
+            return
+
         if self.encoder_session is None:
             print("❌ Encoder not ready.")
             return
@@ -288,24 +392,24 @@ class AIService:
             new_h, new_w = int(h * self.current_scale), int(w * self.current_scale)
 
             resized = cv2.resize(image, (new_w, new_h), interpolation=cv2.INTER_AREA)
-            resized_rgb = cv2.cvtColor(resized, cv2.COLOR_BGR2RGB)
-
-            input_img = np.full((target_h, target_w, 3), 128, dtype=np.uint8)  # pad with gray
-            input_img[:new_h, :new_w, :] = resized_rgb
-
-            input_tensor = input_img.astype(np.float32)
+            resized_rgb = cv2.cvtColor(resized, cv2.COLOR_BGR2RGB).astype(np.float32)
 
             if self.current_family == "sam2":
-                # SAM 2: 0-1 range + ImageNet mean/std
-                input_tensor = input_tensor / 255.0
+                # SAM 2: normalize to [0,1] with ImageNet mean/std
                 mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
                 std = np.array([0.229, 0.224, 0.225], dtype=np.float32)
-                input_tensor = (input_tensor - mean) / std
+                normalized = (resized_rgb / 255.0 - mean) / std
             else:
                 # Standard SAM: (x - pixel_mean) / pixel_std (values in 0-255 range)
                 pixel_mean = np.array([123.675, 116.28, 103.53], dtype=np.float32)
                 pixel_std = np.array([58.395, 57.12, 57.375], dtype=np.float32)
-                input_tensor = (input_tensor - pixel_mean) / pixel_std
+                normalized = (resized_rgb - pixel_mean) / pixel_std
+
+            # Zero-pad in normalized space — padding area = 0.0, the model's neutral value.
+            # Padding BEFORE normalization (old approach) left non-zero artifacts in the
+            # padding region, causing the model to treat padding as image content.
+            input_tensor = np.zeros((target_h, target_w, 3), dtype=np.float32)
+            input_tensor[:new_h, :new_w, :] = normalized
 
             input_tensor = input_tensor.transpose(2, 0, 1).astype(np.float32)  # CHW
             input_tensor = np.expand_dims(input_tensor, axis=0)  # NCHW
@@ -416,6 +520,29 @@ class AIService:
 
         This is the shared backbone used by both predict_polygon and predict_mask.
         """
+        # osam family: handled separately from the ONNX pipeline
+        if self.current_family == "osam":
+            if self.osam_embedding is None or not prompts or _osam_types is None:
+                return None
+            try:
+                print("⚡ Running osam Mask Decoder...")
+                points = np.array([[p["pos"][0], p["pos"][1]] for p in prompts], dtype=np.float32)
+                labels = np.array([p["label"] for p in prompts], dtype=np.int32)
+                prompt = _osam_types.Prompt(points=points, point_labels=labels)
+                request = _osam_types.GenerateRequest(
+                    model=self._osam_model_name,
+                    image_embedding=self.osam_embedding,
+                    prompt=prompt,
+                )
+                response = self.osam_model.generate(request)
+                if not response.annotations or response.annotations[0].mask is None:
+                    return None
+                # osam mask is bool (H_orig, W_orig); convert to float for _project_mask
+                return response.annotations[0].mask.astype(np.float32)
+            except Exception as e:
+                print(f"❌ osam decoder failed: {e}")
+                return None
+
         if self.decoder_session is None or self.image_embedding is None or not prompts:
             return None
 
@@ -597,15 +724,42 @@ class AIService:
 
     def _mask_to_polygon(self, mask: np.ndarray, tolerance: float = 0.004,
                          denoise: bool = True) -> List[Tuple[float, float]]:
-        """Convert a raw model mask to a simplified polygon via contour extraction."""
+        """Convert a raw model mask to a simplified polygon via contour extraction.
+
+        Uses skimage marching-squares (same as LabelMe) when available, which produces
+        sub-pixel (.5) coordinates and avoids the integer-pixel staircase / jagged-teeth
+        artifact that cv2.findContours produces on binary masks.
+        """
         projected = self._project_mask(mask, denoise=denoise)
         h_orig, w_orig = self.original_size
 
-        contours, _ = cv2.findContours(projected, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        if not contours:
-            return []
+        if _skimage_measure is not None:
+            # --- skimage path (preferred, matches LabelMe exactly) ---
+            bool_mask = projected > 0
+            # pad_width=1 ensures the contour can be traced at mask edges
+            raw_contours = _skimage_measure.find_contours(np.pad(bool_mask, pad_width=1))
+            if not raw_contours:
+                return []
+            # Pick contour with longest perimeter (most points → largest object)
+            contour = max(raw_contours,
+                          key=lambda c: float(np.sum(np.linalg.norm(np.diff(c, axis=0), axis=1))))
+            # Adaptive RDP tolerance — based on contour's own extent (not image size)
+            tol = np.ptp(contour, axis=0).max() * tolerance
+            polygon = _skimage_measure.approximate_polygon(contour, tolerance=tol)
+            # Clip back to original mask bounds (handles pad offset)
+            polygon = np.clip(polygon, (0, 0), (h_orig - 1, w_orig - 1))
+            polygon = polygon[:-1]  # remove duplicate closing point
+            # skimage returns (row, col) = (y, x); convert to (x, y)
+            return [(float(p[1]), float(p[0])) for p in polygon]
 
-        main_contour = max(contours, key=cv2.contourArea)
-        epsilon = max(w_orig, h_orig) * tolerance
-        approx = cv2.approxPolyDP(main_contour, epsilon, True)
-        return [(float(p[0][0]), float(p[0][1])) for p in approx]
+        else:
+            # --- cv2 fallback (integer-pixel only, less smooth) ---
+            contours, _ = cv2.findContours(projected, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            if not contours:
+                return []
+            main_contour = max(contours, key=cv2.contourArea)
+            contour_pts = main_contour.reshape(-1, 2)
+            ptp = np.ptp(contour_pts, axis=0)
+            epsilon = float(ptp.max()) * tolerance
+            approx = cv2.approxPolyDP(main_contour, epsilon, True)
+            return [(float(p[0][0]), float(p[0][1])) for p in approx]

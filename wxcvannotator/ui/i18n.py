@@ -60,8 +60,8 @@ class I18nManager:
                     # Store discovery info (user_dir overrides builtin if same code)
                     discovered[lang_code] = (name, local_name, base_dir)
         
-        # Ensure en is always present if not found
-        if 'en' not in discovered:
+        # Ensure en is always present if no English variant found at all
+        if not any(k.startswith('en') for k in discovered):
             discovered['en'] = ('English', 'English', self.builtin_dir)
             
         self.supported_languages = discovered
@@ -124,8 +124,9 @@ class I18nManager:
         return self.current_language
     
     def get_language_list(self):
-        """Get supported languages list {code: (name, local_name)}"""
-        return {code: (info[0], info[1]) for code, info in self.supported_languages.items()}
+        """Get supported languages list {code: (name, local_name)}, sorted by English name."""
+        sorted_items = sorted(self.supported_languages.items(), key=lambda x: x[1][0])
+        return {code: (info[0], info[1]) for code, info in sorted_items}
     
     def get_language_display_name(self, lang_code=None):
         """Get language display name"""

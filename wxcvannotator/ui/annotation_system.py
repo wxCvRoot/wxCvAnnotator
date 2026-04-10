@@ -309,6 +309,12 @@ class AnnotationManager:
     def save_to_file(self, file_path: str, image_path: str = "", width: int = 0, height: int = 0, embed_data: bool = False, **kwargs) -> bool:
         """Save annotations to file (JSON) - LabelMe Compatible"""
         try:
+            # Skip saving if there are no annotations and no dataset status assigned,
+            # unless the caller explicitly requests saving empty files.
+            if kwargs.get("skip_if_empty", False):
+                has_status = self.current_status not in ("None", None, "")
+                if not self.annotations and not has_status:
+                    return True
             import base64
             
             # Prepare LabelMe compatible shapes
@@ -317,6 +323,7 @@ class AnnotationManager:
                 # Strategy: Hybrid Fallback
                 lm_type = "polygon"
                 lm_points = [[float(p[0]), float(p[1])] for p in ann.points]
+                lm_mask_b64 = None
                 
                 if ann.type == "circle" and len(ann.points) == 2:
                     lm_type = "circle"
@@ -333,13 +340,19 @@ class AnnotationManager:
                     if mask_arr is not None:
                         try:
                             import numpy as np
+                            import cv2
                             ys, xs = np.where(mask_arr > 0)
                             if len(xs) > 0:
                                 x1, y1 = int(xs.min()), int(ys.min())
                                 x2, y2 = int(xs.max()), int(ys.max())
                                 lm_points = [[float(x1), float(y1)], [float(x2), float(y2)]]
+                                # LabelMe stores mask cropped to bounding box
+                                mask_crop = mask_arr[y1:y2 + 1, x1:x2 + 1]
+                                ok, buf = cv2.imencode('.png', mask_crop)
+                                if ok:
+                                    lm_mask_b64 = base64.b64encode(buf.tobytes()).decode('ascii')
                         except Exception:
-                            pass
+                            lm_mask_b64 = None
                 elif ann.type == "annulus":
                     # Generate a "Keyhole" polygon for LabelMe to show a hollow ring
                     import math
@@ -386,6 +399,8 @@ class AnnotationManager:
                     "flags": ann.flags if ann.flags else {},
                     "attributes": ann.attributes if ann.attributes else {}
                 }
+                if lm_type == "mask" and lm_mask_b64:
+                    shape["mask"] = lm_mask_b64
                 shapes.append(shape)
 
             # Handle imageData (Base64)
@@ -471,6 +486,35 @@ class AnnotationManager:
                             annotation.annotation_type = "rectangle" # Normalize
                             annotation.attributes.update({"x": x, "y": y, "width": w, "height": h})
                             print(f"      * Rect calculated: x={x}, y={y}, w={w}, h={h}")
+                        elif stype == "mask" and "mask" in shape:
+                            # LabelMe mask: PNG base64 (cropped to bbox) → full-image numpy array
+                            try:
+                                import base64 as _b64
+                                import numpy as np
+                                import cv2
+                                png_bytes = _b64.b64decode(shape["mask"])
+                                crop = cv2.imdecode(np.frombuffer(png_bytes, np.uint8), cv2.IMREAD_GRAYSCALE)
+                                if crop is not None:
+                                    img_h = data.get("imageHeight", 0)
+                                    img_w = data.get("imageWidth", 0)
+                                    # Bbox top-left from points (LabelMe convention)
+                                    ox = int(points[0][0]) if len(points) >= 1 else 0
+                                    oy = int(points[0][1]) if len(points) >= 1 else 0
+                                    if img_h > 0 and img_w > 0:
+                                        full = np.zeros((img_h, img_w), dtype=np.uint8)
+                                        ch, cw = crop.shape
+                                        y2 = min(oy + ch, img_h)
+                                        x2 = min(ox + cw, img_w)
+                                        full[oy:y2, ox:x2] = (crop[:y2 - oy, :x2 - ox] > 0).astype(np.uint8) * 255
+                                        annotation.mask_data = full
+                                        annotation.mask_shape = full.shape
+                                    else:
+                                        # No image size info: store crop as-is
+                                        annotation.mask_data = (crop > 0).astype(np.uint8) * 255
+                                        annotation.mask_shape = crop.shape
+                                    print(f"      * LabelMe mask decoded: crop={crop.shape} → full={annotation.mask_shape}")
+                            except Exception as me:
+                                print(f"      ! Failed to decode LabelMe mask: {me}")
                         
                         if "attributes" in shape:
                             annotation.attributes.update(shape["attributes"])
@@ -691,9 +735,7 @@ class CategoryManager:
         return True
         
     def remove_category(self, name: str) -> bool:
-        """Remove category (if not default)"""
-        if name in DEFAULT_CATEGORY_COLORS:
-            return False
+        """Remove category."""
         if name in self.categories:
             del self.categories[name]
             if name in self.category_order:
@@ -766,31 +808,51 @@ class CategoryManager:
             "recent": self.recent_categories
         }
     
-    def import_categories(self, data: Dict[str, Any]):
-        """Import category configuration"""
+    def import_categories(self, data: Dict[str, Any], overwrite: bool = False):
+        """Import category configuration.
+
+        Args:
+            data: Category data dict (same format as export_categories).
+            overwrite: If True, replace all existing categories; if False, merge.
+        """
+        if overwrite:
+            self.categories = {}
+            self.category_order = []
+
         if "categories" in data:
-            # Merge categories, keeping defaults
             for name, color in data["categories"].items():
-                if name not in DEFAULT_CATEGORY_COLORS:
-                    self.categories[name] = color
-        
+                self.categories[name] = color
+
         if "order" in data:
-            # Update order, keeping existing
-            new_order = []
-            for name in data["order"]:
-                if name in self.categories:
-                    new_order.append(name)
-            
-            # Add missing
+            new_order = [name for name in data["order"] if name in self.categories]
+            # Append any that exist in categories but weren't in the order list
             for name in self.categories:
-                if name not in new_order and name not in DEFAULT_CATEGORY_COLORS:
+                if name not in new_order:
                     new_order.append(name)
-            
             self.category_order = new_order
-        
+        else:
+            # Ensure order is consistent with categories
+            for name in self.categories:
+                if name not in self.category_order:
+                    self.category_order.append(name)
+
         if "recent" in data:
             self.recent_categories = [name for name in data["recent"] if name in self.categories]
     
+    def clear_all(self):
+        """Clear all categories (empty list is valid)."""
+        self.categories = {}
+        self.category_order = []
+        self.recent_categories = []
+
+    def reorder(self, new_order: List[str]):
+        """Reorder categories. Names not in new_order are appended at end."""
+        valid = [n for n in new_order if n in self.categories]
+        for n in self.category_order:
+            if n not in valid:
+                valid.append(n)
+        self.category_order = valid
+
     def reset_to_default(self):
         """Reset to default categories"""
         self.categories = DEFAULT_CATEGORY_COLORS.copy()

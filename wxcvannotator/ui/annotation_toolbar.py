@@ -7,22 +7,36 @@ Contains all annotation tool buttons and operation controls.
 
 import wx
 import wx.lib.buttons as wxbuttons
+import wx.lib.scrolledpanel as SP
 import platform
 from typing import Optional, Callable, List, Dict, Tuple
 from .i18n import _
+from ..utils.ai_service import AIService
+
+try:
+    from ..utils.ocr_service import OCRService as _OCRService
+    _OCR_BACKENDS: List[str] = list(_OCRService.BACKEND_REGISTRY.keys())
+    _OCR_AVAILABLE: List[str] = _OCRService.available_backends()
+except Exception:
+    _OCRService = None  # type: ignore
+    _OCR_BACKENDS = []
+    _OCR_AVAILABLE = []
 
 # On macOS, native NSButton ignores SetForegroundColour/SetBackgroundColour.
 # Use GenButton (pure-Python drawn) there; keep native wx.Button elsewhere.
 _BTN_CLS = wxbuttons.GenButton if platform.system() == 'Darwin' else wx.Button
 
 
-class AnnotationToolbar(wx.Panel):
+class AnnotationToolbar(SP.ScrolledPanel):
     """Left Annotation Toolbar"""
-    
-    def __init__(self, parent):
+
+    def __init__(self, parent, settings_manager=None):
         """Initialize toolbar"""
         super().__init__(parent, wx.ID_ANY)
-        
+
+        # Settings reference (for persistence)
+        self._settings = settings_manager
+
         # Theme state
         self.theme_colors = None
         
@@ -63,17 +77,12 @@ class AnnotationToolbar(wx.Panel):
             "ai_mask": {"label": _("🎭 AI Mask"), "tooltip": _("AI-Assisted Pixel Mask (SAM)"), "id": "ai_mask"},
         }
         
-        self.AI_MODELS = [
-            "Sam(speed)",
-            "Sam(balanced)",
-            "Sam(accuracy)",
-            "Sam2(speed)",
-            "Sam2(balanced)",
-            "Sam2(accuracy)",
-            "EfficientSAM (speed)",
-            "EfficientSAM (accuracy)"
-        ]
-        
+        hidden_ai = self._settings.get("ai_models_hidden", []) if self._settings else []
+        hidden_ocr = self._settings.get("ocr_backends_hidden", []) if self._settings else []
+        self.AI_MODELS = [m for m in AIService.MODEL_REGISTRY.keys() if m not in hidden_ai]
+        self.OCR_BACKENDS = [b for b in _OCR_BACKENDS if b not in hidden_ocr]
+        self.OCR_AVAILABLE_BACKENDS = _OCR_AVAILABLE
+
         # Setup UI
         self._setup_ui()
         self._bind_events()
@@ -107,12 +116,10 @@ class AnnotationToolbar(wx.Panel):
         # Create categories
         self._create_tool_buttons(main_sizer)
         self._create_ai_buttons(main_sizer)
+        self._create_ocr_section(main_sizer)
         self._create_operation_buttons(main_sizer)
         self._create_view_buttons(main_sizer)
-        
-        # Spacer
-        main_sizer.AddStretchSpacer(1)
-        
+
         # Status display
         self.status_panel = wx.Panel(self, wx.ID_ANY)
         status_sizer = wx.BoxSizer(wx.VERTICAL)
@@ -133,10 +140,12 @@ class AnnotationToolbar(wx.Panel):
         status_sizer.Add(self.hint_label, 0, wx.ALL | wx.EXPAND, 2)
         
         self.status_panel.SetSizer(status_sizer)
+        self.status_panel.SetMinSize((1, -1))
         main_sizer.Add(self.status_panel, 0, wx.EXPAND | wx.ALL, 5)
         
         # Panel size
         self.SetMinSize(wx.Size(150, -1))
+        self.SetupScrolling(scroll_x=False, scroll_y=True)
     
     def _create_tool_buttons(self, parent_sizer):
         """Create tool buttons"""
@@ -160,6 +169,7 @@ class AnnotationToolbar(wx.Panel):
             tools_sizer.Add(button, 0, wx.EXPAND | wx.ALL, 1)
             self.selected_buttons[tool_key] = button
         
+        tools_panel.SetMinSize((1, -1))
         parent_sizer.Add(tools_panel, 0, wx.EXPAND | wx.ALL, 2)
     
     def _create_ai_buttons(self, parent_sizer):
@@ -199,15 +209,100 @@ class AnnotationToolbar(wx.Panel):
         ai_sizer.Add(model_label, 0, wx.LEFT | wx.TOP, 5)
         
         self.ai_model_selector = wx.ComboBox(
-            ai_panel, wx.ID_ANY, 
+            ai_panel, wx.ID_ANY,
             choices=self.AI_MODELS,
             style=wx.CB_READONLY
         )
-        self.ai_model_selector.SetSelection(0)
-        self.ai_model_selector.Enable(False) # Initial state disabled
+        self.ai_model_selector.SetMinSize((1, -1))  # Prevent content from forcing toolbar wider
+        # Restore saved selection
+        saved_ai = self._settings.get("ai_selected_model", "") if self._settings else ""
+        if saved_ai and saved_ai in self.AI_MODELS:
+            self.ai_model_selector.SetStringSelection(saved_ai)
+        elif self.AI_MODELS:
+            self.ai_model_selector.SetSelection(0)
+        self.ai_model_selector.Enable(False)  # Initial state disabled
+        # Model description shown as tooltip (avoids stretching toolbar width)
+        sel_model = self.ai_model_selector.GetStringSelection() or (self.AI_MODELS[0] if self.AI_MODELS else "")
+        first_desc = AIService.MODEL_REGISTRY.get(sel_model, {}).get("description", "")
+        if first_desc:
+            self.ai_model_selector.SetToolTip(first_desc)
         ai_sizer.Add(self.ai_model_selector, 0, wx.EXPAND | wx.ALL, 5)
-        
+
+        ai_panel.SetMinSize((1, -1))
         parent_sizer.Add(ai_panel, 0, wx.EXPAND | wx.ALL, 2)
+
+    def _create_ocr_section(self, parent_sizer):
+        """Create OCR backend selector section"""
+        # Divider
+        self.ocr_line = wx.StaticLine(self, wx.ID_ANY)
+        self.ocr_line.SetBackgroundColour(wx.Colour(80, 80, 80))
+        parent_sizer.Add(self.ocr_line, 0, wx.EXPAND | wx.ALL, 5)
+
+        # Header
+        self.ocr_title = wx.StaticText(self, wx.ID_ANY, _("OCR"))
+        self.ocr_title.SetForegroundColour(wx.Colour(200, 200, 200))
+        ocr_title_font = self.ocr_title.GetFont()
+        ocr_title_font.SetWeight(wx.FONTWEIGHT_BOLD)
+        self.ocr_title.SetFont(ocr_title_font)
+        parent_sizer.Add(self.ocr_title, 0, wx.ALL | wx.CENTER, 3)
+
+        # Container panel
+        self._ocr_panel = wx.Panel(self, wx.ID_ANY)
+        ocr_sizer = wx.BoxSizer(wx.VERTICAL)
+        self._ocr_panel.SetSizer(ocr_sizer)
+
+        # Backend label
+        backend_label = wx.StaticText(self._ocr_panel, wx.ID_ANY, _("Backend:"))
+        backend_label.SetForegroundColour(wx.Colour(180, 180, 180))
+        backend_font = backend_label.GetFont()
+        backend_font.SetPointSize(max(8, backend_font.GetPointSize() - 1))
+        backend_label.SetFont(backend_font)
+        ocr_sizer.Add(backend_label, 0, wx.LEFT | wx.TOP, 5)
+
+        # Backend selector ComboBox
+        self.ocr_backend_selector = wx.ComboBox(
+            self._ocr_panel, wx.ID_ANY,
+            choices=self.OCR_BACKENDS,
+            style=wx.CB_READONLY
+        )
+        self.ocr_backend_selector.SetMinSize((1, -1))  # Prevent content from forcing toolbar wider
+        # Restore saved selection
+        saved_ocr = self._settings.get("ocr_selected_backend", "") if self._settings else ""
+        if saved_ocr and saved_ocr in self.OCR_BACKENDS:
+            self.ocr_backend_selector.SetStringSelection(saved_ocr)
+        elif self.OCR_BACKENDS:
+            self.ocr_backend_selector.SetSelection(0)
+        self.ocr_backend_selector.Enable(bool(self.OCR_AVAILABLE_BACKENDS))
+        ocr_sizer.Add(self.ocr_backend_selector, 0, wx.EXPAND | wx.ALL, 5)
+
+        # Availability info shown as tooltip on the selector (avoids stretching toolbar width)
+        n_avail = len(self.OCR_AVAILABLE_BACKENDS)
+        avail_text = _("{} backend(s) available").format(n_avail) if n_avail \
+            else _("No OCR backends available")
+        self.ocr_backend_selector.SetToolTip(avail_text)
+
+        # "OCR Full Image" action button
+        self.ocr_full_btn = wx.Button(
+            self._ocr_panel, wx.ID_ANY, _("📄 OCR Full Image")
+        )
+        self.ocr_full_btn.SetToolTip(
+            _("Run OCR on the entire image and create text annotations")
+        )
+        self.ocr_full_btn.Enable(bool(self.OCR_AVAILABLE_BACKENDS))
+        ocr_sizer.Add(self.ocr_full_btn, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 5)
+
+        self._ocr_panel.SetMinSize((1, -1))
+        parent_sizer.Add(self._ocr_panel, 0, wx.EXPAND | wx.ALL, 2)
+
+        # "Free AI Memory" button — unloads both AI segmentation and OCR models
+        self.unload_ai_btn = wx.Button(self, wx.ID_ANY, _("🗑 Free AI Memory"))
+        self.unload_ai_btn.SetToolTip(
+            _("Unload AI segmentation and OCR models from memory to free GPU/RAM")
+        )
+        parent_sizer.Add(self.unload_ai_btn, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 5)
+
+        # Bind event
+        self.ocr_backend_selector.Bind(wx.EVT_COMBOBOX, self._on_ocr_backend_changed)
 
     def _create_operation_buttons(self, parent_sizer):
         """Create operation buttons"""
@@ -239,6 +334,7 @@ class AnnotationToolbar(wx.Panel):
             ops_sizer.Add(button, 0, wx.EXPAND | wx.ALL, 1)
             self.selected_buttons[op_key] = button
         
+        ops_panel.SetMinSize((1, -1))
         parent_sizer.Add(ops_panel, 0, wx.EXPAND | wx.ALL, 2)
 
     def _create_view_buttons(self, parent_sizer):
@@ -271,6 +367,7 @@ class AnnotationToolbar(wx.Panel):
             view_sizer.Add(button, 0, wx.EXPAND | wx.ALL, 1)
             self.selected_buttons[view_key] = button
         
+        view_panel.SetMinSize((1, -1))
         parent_sizer.Add(view_panel, 0, wx.EXPAND | wx.ALL, 2)
     
     def _create_tool_button(self, parent, label: str, tooltip: str, tool_key: str):
@@ -322,11 +419,17 @@ class AnnotationToolbar(wx.Panel):
         # AI Model selector event
         self.ai_model_selector.Bind(wx.EVT_COMBOBOX, self._on_ai_model_changed)
     
+    def _on_ocr_backend_changed(self, event):
+        """Handle OCR backend selection change (main_window hooks this)"""
+        backend = self.ocr_backend_selector.GetStringSelection()
+        print(f"OCR Backend changed: {backend}")
+
     def _on_ai_model_changed(self, event):
         """Handle AI model selection change"""
         model = self.ai_model_selector.GetStringSelection()
-        print(f"🤖 AI Model changed: {model}")
-        # Note: In a real implementation, this might trigger pre-loading
+        print(f"AI Model changed: {model}")
+        desc = AIService.MODEL_REGISTRY.get(model, {}).get("description", "")
+        self.ai_model_selector.SetToolTip(desc if desc else model)
     
     def _on_tool_clicked(self, tool_key: str):
         """Handle tool button click"""
@@ -481,11 +584,13 @@ class AnnotationToolbar(wx.Panel):
         self.title_text.SetForegroundColour(fg_main)
         self.header_line.SetBackgroundColour(divider)
         self.ai_line.SetBackgroundColour(divider)
+        self.ocr_line.SetBackgroundColour(divider)
         self.ops_line.SetBackgroundColour(divider)
         self.view_line.SetBackgroundColour(divider)
         
         self.tools_title.SetForegroundColour(fg_dim)
         self.ai_title.SetForegroundColour(fg_dim)
+        self.ocr_title.SetForegroundColour(fg_dim)
         self.ops_title.SetForegroundColour(fg_dim)
         self.view_title.SetForegroundColour(fg_dim)
         
@@ -507,6 +612,7 @@ class AnnotationToolbar(wx.Panel):
         header_font.SetPointSize(font_size)
         self.tools_title.SetFont(header_font)
         self.ai_title.SetFont(header_font)
+        self.ocr_title.SetFont(header_font)
         self.ops_title.SetFont(header_font)
         self.view_title.SetFont(header_font)
         
@@ -525,7 +631,8 @@ class AnnotationToolbar(wx.Panel):
         
         self.Refresh()
         self.Layout()
-        self.Parent.Layout() # Request parent layout update
+        self.FitInside()       # Recalculate scroll virtual size after font/content change
+        self.Parent.Layout()
     
     # Public API
     
@@ -551,6 +658,14 @@ class AnnotationToolbar(wx.Panel):
         if op_key in self.selected_buttons:
             self.selected_buttons[op_key].Enable(enabled)
     
+    def enable_ocr_section(self, enabled: bool = True):
+        """Enable or disable the OCR backend selector and action buttons."""
+        avail = enabled and bool(self.OCR_AVAILABLE_BACKENDS)
+        if hasattr(self, 'ocr_backend_selector'):
+            self.ocr_backend_selector.Enable(avail)
+        if hasattr(self, 'ocr_full_btn'):
+            self.ocr_full_btn.Enable(avail)
+
     def enable_ai_section(self, enabled: bool = True):
         """Enable or disable all AI-related buttons and selectors"""
         for ai_key in self.AI_CONFIG:
@@ -589,6 +704,39 @@ class AnnotationToolbar(wx.Panel):
                     button.SetBackgroundColour(wx.Colour(0, 122, 204))  # Blue accent
             button.Refresh()
 
+    def refresh_model_selectors(self):
+        """Rebuild AI and OCR dropdowns after hidden-list settings change."""
+        if not self._settings:
+            return
+        # --- AI models ---
+        hidden_ai = self._settings.get("ai_models_hidden", [])
+        new_ai = [m for m in AIService.MODEL_REGISTRY.keys() if m not in hidden_ai]
+        current_ai = self.ai_model_selector.GetStringSelection()
+        self.ai_model_selector.Clear()
+        for m in new_ai:
+            self.ai_model_selector.Append(m)
+        self.AI_MODELS = new_ai
+        if current_ai in new_ai:
+            self.ai_model_selector.SetStringSelection(current_ai)
+        elif new_ai:
+            self.ai_model_selector.SetSelection(0)
+        # Update tooltip for selected model
+        sel_model = self.ai_model_selector.GetStringSelection()
+        desc = AIService.MODEL_REGISTRY.get(sel_model, {}).get("description", "")
+        self.ai_model_selector.SetToolTip(desc if desc else sel_model)
+        # --- OCR backends ---
+        hidden_ocr = self._settings.get("ocr_backends_hidden", [])
+        new_ocr = [b for b in _OCR_BACKENDS if b not in hidden_ocr]
+        current_ocr = self.ocr_backend_selector.GetStringSelection()
+        self.ocr_backend_selector.Clear()
+        for b in new_ocr:
+            self.ocr_backend_selector.Append(b)
+        self.OCR_BACKENDS = new_ocr
+        if current_ocr in new_ocr:
+            self.ocr_backend_selector.SetStringSelection(current_ocr)
+        elif new_ocr:
+            self.ocr_backend_selector.SetSelection(0)
+
     def refresh_translations(self):
         """Update all text labels and tooltips for the current language"""
         # 1. Update configurations
@@ -624,8 +772,30 @@ class AnnotationToolbar(wx.Panel):
         self.title_text.SetLabel(_("Annotation Tools"))
         self.tools_title.SetLabel(_("Tools"))
         self.ai_title.SetLabel(_("AI Assist"))
+        self.ocr_title.SetLabel(_("OCR"))
         self.ops_title.SetLabel(_("Actions"))
         self.view_title.SetLabel(_("View"))
+
+        # Update OCR availability tooltip
+        if hasattr(self, 'ocr_backend_selector'):
+            n_avail = len(self.OCR_AVAILABLE_BACKENDS)
+            avail_text = _("{} backend(s) available").format(n_avail) if n_avail \
+                else _("No OCR backends available")
+            self.ocr_backend_selector.SetToolTip(avail_text)
+
+        # Update OCR Full Image button
+        if hasattr(self, 'ocr_full_btn'):
+            self.ocr_full_btn.SetLabel(_("📄 OCR Full Image"))
+            self.ocr_full_btn.SetToolTip(
+                _("Run OCR on the entire image and create text annotations")
+            )
+
+        # Update Free AI Memory button
+        if hasattr(self, 'unload_ai_btn'):
+            self.unload_ai_btn.SetLabel(_("🗑 Free AI Memory"))
+            self.unload_ai_btn.SetToolTip(
+                _("Unload AI segmentation and OCR models from memory to free GPU/RAM")
+            )
         
         # 3. Update all buttons
         for key, button in self.selected_buttons.items():

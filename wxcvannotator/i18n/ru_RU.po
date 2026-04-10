@@ -1391,3 +1391,196 @@ msgstr "Валидация"
 
 msgid "📏 Line"
 msgstr "📏 Линия"
+
+msgid "AI Mask annotation added."
+msgstr "Аннотация маски ИИ добавлена."
+
+msgid "Backend:"
+msgstr "Бэкенд:"
+
+msgid "Category '{}' not found"
+msgstr "Категория '{}' не найдена"
+
+msgid "Create Annotations"
+msgstr "Создать аннотации"
+
+msgid "Deselect All"
+msgstr "Снять выделение"
+
+msgid "Edit Label Classes"
+msgstr "Редактировать классы меток"
+
+msgid "No OCR backends available"
+msgstr "Нет доступных бэкендов OCR"
+
+msgid "No image loaded"
+msgstr "Изображение не загружено"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "OCR полного изображения"
+
+msgid "OCR Full: cancelled"
+msgstr "Полное OCR: отменено"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "Полное OCR: создано {} аннотаций"
+
+msgid "OCR Full: no results selected"
+msgstr "Полное OCR: результаты не выбраны"
+
+msgid "OCR Full: no text detected"
+msgstr "Полное OCR: текст не распознан"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "Результаты OCR — обнаружено {} региона(ов)"
+
+msgid "OCR Transcribe"
+msgstr "OCR Транскрибировать"
+
+msgid "OCR service not available"
+msgstr "Служба OCR недоступна"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "Запустить OCR для всего изображения и создать текстовые аннотации"
+
+msgid "Running full-image OCR ({})..."
+msgstr "Выполнение OCR полного изображения ({})..."
+
+msgid "Select All"
+msgstr "Выбрать все"
+
+msgid "{} backend(s) available"
+msgstr "Доступно бэкендов: {}"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 OCR полного изображения"
+
+msgid "+ Add Category"
+msgstr "+ Добавить категорию"
+
+msgid "Category name:"
+msgstr "Название категории:"
+
+msgid "Delete category"
+msgstr "Удалить категорию"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "Не удалось загрузить пресет:\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "Не удалось сохранить настройку:\\n{}"
+
+msgid "Label Classes"
+msgstr "Классы меток"
+
+msgid "Labels"
+msgstr "Этикетки"
+
+msgid "Load"
+msgstr "Нагрузка"
+
+msgid "Move down"
+msgstr "Двигаться вниз"
+
+msgid "Move up"
+msgstr "Вверх"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "Имя предустановки (будет сохранено как user_<имя>.json):"
+
+msgid "Preset:"
+msgstr "Предустановка:"
+
+msgid "Reset to Default"
+msgstr "Сбросить настройки по умолчанию"
+
+msgid "Save As"
+msgstr "Сохранить как"
+
+msgid "Save Preset As"
+msgstr "Сохранить предустановку как"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+"=8 YOLO: изменение порядка категорий влияет на индекс класса (требуется "
+"повторный экспорт и переобучение)"
+
+msgid "AI Models"
+msgstr "Модели искусственного интеллекта"
+
+msgid "AI Segmentation Models"
+msgstr "Модели сегментации ИИ"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+"Скрытые модели удаляются из раскрывающегося списка панели инструментов. "
+"Новые модели отображаются по умолчанию."
+
+msgid "OCR Backends"
+msgstr "Серверы оптического распознавания символов"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "Общие изображения, точность выше, чем у Сэма (shubham0204 ONNX)"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "Общие изображения, объекты \\u226510% кадра; быстро (Зенова ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr ""
+"Изображения в высоком разрешении, мелкие предметы; вывод в собственном "
+"разрешении"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr ""
+"Маленькие объекты в высоком разрешении; Точность, совместимая с LabelMe"
+
+msgid "Model Selection Guide:"
+msgstr "Руководство по выбору модели:"
+
+msgid "First run may take longer to load the model."
+msgstr "Первый запуск может занять больше времени для загрузки модели."
+
+msgid "Preparing OCR engine ({})..."
+msgstr "Подготовка движка OCR ({}) ..."
+
+msgid "AI segmentation"
+msgstr "Сегментация ИИ"
+
+msgid "No AI models were loaded"
+msgstr "Модели ИИ не загружены"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr ""
+"Выгрузить модели сегментации ИИ и OCR из памяти для освобождения GPU/RAM"
+
+msgid "Unloaded: {}"
+msgstr "Выгружено: {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 Освободить память ИИ"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"Примечание: если флажок снят, JSON-файлы записываются только при наличии "
+"аннотаций или установленном статусе набора данных (train/val/test)."
+
+msgid "Save Behavior"
+msgstr "Поведение при сохранении"
+
+msgid "Save annotation file for unannotated images"
+msgstr "Сохранять файл аннотаций для неразмеченных изображений"
+
+msgid "Set Status: {}"
+msgstr "Установить статус: {}"
+
+msgid "Show in Explorer"
+msgstr "Показать в проводнике"

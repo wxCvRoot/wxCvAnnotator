@@ -1182,7 +1182,7 @@ msgstr "注釈"
 
 #: ..\ui\settings_dialog.py:66 ..\ui\settings_dialog.py:97
 msgid "AI Annotation"
-msgstr "アノテーションが削除されました"
+msgstr "AI アノテーション"
 
 #: ..\ui\settings_dialog.py:74 ..\ui\settings_dialog.py:132
 msgid "Apply"
@@ -1384,3 +1384,188 @@ msgstr "検証"
 
 msgid "📏 Line"
 msgstr "📏 ライン"
+
+msgid "AI Mask annotation added."
+msgstr "AIマスクアノテーションが追加されました。"
+
+msgid "Backend:"
+msgstr "バックエンド："
+
+msgid "Category '{}' not found"
+msgstr "カテゴリ「{}」が見つかりません"
+
+msgid "Create Annotations"
+msgstr "アノテーションの作成"
+
+msgid "Deselect All"
+msgstr "すべての選択を解除"
+
+msgid "Edit Label Classes"
+msgstr "ラベルクラスの編集"
+
+msgid "No OCR backends available"
+msgstr "利用可能なOCRバックエンドがありません"
+
+msgid "No image loaded"
+msgstr "画像が読み込まれていません"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "画像全体のOCR"
+
+msgid "OCR Full: cancelled"
+msgstr "全体OCR：キャンセルされました"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "全体OCR：{}個のアノテーションが作成されました"
+
+msgid "OCR Full: no results selected"
+msgstr "全体OCR：結果が選択されていません"
+
+msgid "OCR Full: no text detected"
+msgstr "全体OCR：テキストが検出されませんでした"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "OCR結果 — {}個の領域が検出されました"
+
+msgid "OCR Transcribe"
+msgstr "OCR文字起こし"
+
+msgid "OCR service not available"
+msgstr "OCRサービスが利用できません"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "画像全体にOCRを実行し、テキストアノテーションを作成します"
+
+msgid "Running full-image OCR ({})..."
+msgstr "画像全体のOCRを実行中（{}）..."
+
+msgid "Select All"
+msgstr "すべて選択"
+
+msgid "{} backend(s) available"
+msgstr "{}個のバックエンドが利用可能です"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 画像全体のOCR"
+
+msgid "+ Add Category"
+msgstr "+ カテゴリを追加"
+
+msgid "Category name:"
+msgstr "カテゴリ名:"
+
+msgid "Delete category"
+msgstr "カテゴリの削除"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "プリセットのロードに失敗しました:\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "プリセットの保存に失敗しました:\\n{}"
+
+msgid "Label Classes"
+msgstr "ラベルクラス"
+
+msgid "Labels"
+msgstr "ラベル"
+
+msgid "Load"
+msgstr "負荷"
+
+msgid "Move down"
+msgstr "下に移動"
+
+msgid "Move up"
+msgstr "上に移動"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "プリセット名 (user_<name>.json として保存されます):"
+
+msgid "Preset:"
+msgstr "プリセット："
+
+msgid "Reset to Default"
+msgstr "デフォルトにリセット"
+
+msgid "Save As"
+msgstr "名前を付けて保存"
+
+msgid "Save Preset As"
+msgstr "プリセットに名前を付けて保存"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr "\\u24d8 YOLO: カテゴリの順序を変更するとクラス インデックスに影響します (再エクスポートと再トレーニングが必要です)"
+
+msgid "AI Models"
+msgstr "AIモデル"
+
+msgid "AI Segmentation Models"
+msgstr "AI セグメンテーション モデル"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr "非表示のモデルはツールバーのドロップダウンから削除されます。新しいモデルがデフォルトで表示されます。"
+
+msgid "OCR Backends"
+msgstr "OCRバックエンド"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "一般的な画像、Sam (shubham0204 ONNX) よりも精度が高い"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "一般的な画像、オブジェクト \\u226510% フレーム;高速 (Xenova ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr "高解像度の画像、小さなオブジェクト。ネイティブ解像度推論"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr "高解像度の小さなオブジェクト。 LabelMe 互換の精度"
+
+msgid "Model Selection Guide:"
+msgstr "モデル選択ガイド:"
+
+msgid "First run may take longer to load the model."
+msgstr "初回実行時はモデルの読み込みに時間がかかる場合があります。"
+
+msgid "Preparing OCR engine ({})..."
+msgstr "OCR エンジン ({}) を準備中..."
+
+msgid "AI segmentation"
+msgstr "AI セグメンテーション"
+
+msgid "No AI models were loaded"
+msgstr "AI モデルが読み込まれていません"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr "GPU/RAM を解放するために AI セグメンテーションと OCR モデルをメモリからアンロードします"
+
+msgid "Unloaded: {}"
+msgstr "アンロード済み: {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 AI メモリを解放"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"注意：チェックを外すと、アノテーションがある場合、またはデータセットの状態（train/val/test）が設定されている場合にのみ JSON "
+"ファイルが書き込まれます。"
+
+msgid "Save Behavior"
+msgstr "保存動作"
+
+msgid "Save annotation file for unannotated images"
+msgstr "未アノテーションの画像に対してアノテーションファイルを保存する"
+
+msgid "Set Status: {}"
+msgstr "ステータス設定: {}"
+
+msgid "Show in Explorer"
+msgstr "エクスプローラーで表示"

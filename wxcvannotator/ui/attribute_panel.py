@@ -64,11 +64,11 @@ class AttributePanel(wx.Panel):
 
         self.txt_transcription = wx.TextCtrl(
             self.scroll_panel, style=wx.TE_MULTILINE | wx.TE_PROCESS_ENTER,
-            size=(-1, 50)
+            size=(-1, 80)
         )
         self.txt_transcription.SetBackgroundColour(wx.Colour(40, 40, 43))
         self.txt_transcription.SetForegroundColour(wx.WHITE)
-        self.content_sizer.Add(self.txt_transcription, 0, wx.EXPAND | wx.ALL, 5)
+        self.content_sizer.Add(self.txt_transcription, 1, wx.EXPAND | wx.ALL, 5)
         self.txt_transcription.Bind(wx.EVT_KILL_FOCUS, self._on_transcription_changed)
 
         # --- Flags ---

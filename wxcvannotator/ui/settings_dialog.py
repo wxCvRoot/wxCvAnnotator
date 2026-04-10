@@ -11,6 +11,13 @@ import platform
 from typing import Dict, Any, List
 from .i18n import _, get_i18n_manager
 from .theme_manager import get_theme_manager
+from ..utils.ai_service import AIService
+
+try:
+    from ..utils.ocr_service import OCRService as _OCRService
+    _SETTINGS_OCR_BACKENDS: List[str] = list(_OCRService.BACKEND_REGISTRY.keys())
+except Exception:
+    _SETTINGS_OCR_BACKENDS: List[str] = []
 
 
 class _ThemedChoice(wx.Panel):
@@ -105,29 +112,35 @@ _BTN_CLS = wxbuttons.GenButton if platform.system() == 'Darwin' else wx.Button
 
 class SettingsDialog(wx.Dialog):
     """Categorized settings dialog using a Listbook layout."""
-    
-    def __init__(self, parent, settings_manager):
+
+    def __init__(self, parent, settings_manager, category_manager=None, initial_page=0):
         super().__init__(
-            parent, 
-            title=_("Settings"), 
+            parent,
+            title=_("Settings"),
             size=(700, 500),
             style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER
         )
-        
+
         self.settings_manager = settings_manager
         self.theme_manager = get_theme_manager()
-        
+        self.category_manager = category_manager
+        self.initial_page = initial_page
+        # Working copy of label data: list of [name, color_hex]
+        self._labels_data = []
+
         # Center on parent
         self.CenterOnParent()
-        
+
         # Apply theme colors to the dialog itself
         self.theme = self.theme_manager.get_current_theme()
         self.SetBackgroundColour(wx.Colour(self.theme.bg_main))
         self.SetForegroundColour(wx.Colour(self.theme.fg_main))
-        
+
         self._setup_ui()
         self._apply_current_theme()
         self._load_current_settings()
+        if self.initial_page:
+            self.listbook.SetSelection(self.initial_page)
         
     def _setup_ui(self):
         main_sizer = wx.BoxSizer(wx.VERTICAL)
@@ -157,6 +170,15 @@ class SettingsDialog(wx.Dialog):
         # 5. AI Panel
         self.ai_panel = self._create_ai_panel(self.listbook)
         self.listbook.AddPage(self.ai_panel, _("AI Annotation"))
+
+        # 6. AI Models visibility panel
+        self.models_panel = self._create_models_panel(self.listbook)
+        self.listbook.AddPage(self.models_panel, _("AI Models"))
+
+        # 7. Labels Panel
+        if self.category_manager is not None:
+            self.labels_panel = self._create_labels_panel(self.listbook)
+            self.listbook.AddPage(self.labels_panel, _("Labels"))
 
         # Fix sidebar width — SetMinSize reserves space in the sizer;
         # SetColumnWidth prevents the ListCtrl from collapsing the column.
@@ -226,15 +248,27 @@ class SettingsDialog(wx.Dialog):
         self.listbook.SetPageText(2, _("User Settings"))
         self.listbook.SetPageText(3, _("Annotation"))
         self.listbook.SetPageText(4, _("AI Annotation"))
+        self.listbook.SetPageText(5, _("AI Models"))
+        if self.listbook.GetPageCount() > 6:
+            self.listbook.SetPageText(6, _("Labels"))
         
         # Panel StaticBoxes
         self.lang_box.GetStaticBox().SetLabel(_("Language Selection"))
         self.theme_box.GetStaticBox().SetLabel(_("UI Appearance"))
         self.user_box.GetStaticBox().SetLabel(_("Annotator Information"))
+        self.save_box.GetStaticBox().SetLabel(_("Save Behavior"))
         self.anno_box.GetStaticBox().SetLabel(_("LabelMe Storage Format"))
         self.attr_box.GetStaticBox().SetLabel(_("Attribute Panel"))
         self.ai_box.GetStaticBox().SetLabel(_("AI Assisted Labeling Settings"))
-        
+        if hasattr(self, '_ai_seg_box'):
+            self._ai_seg_box.GetStaticBox().SetLabel(_("AI Segmentation Models"))
+        if hasattr(self, '_ocr_backends_box'):
+            self._ocr_backends_box.GetStaticBox().SetLabel(_("OCR Backends"))
+        if hasattr(self, '_lbl_models_hint'):
+            self._lbl_models_hint.SetLabel(
+                _("Hidden models are removed from the toolbar dropdown. New models are shown by default.")
+            )
+
         # Individual Labels/Checkboxes
         self.lbl_select_lang.SetLabel(_("Select Interface Language:"))
         self.lbl_color_theme.SetLabel(_("Color Theme:"))
@@ -244,6 +278,11 @@ class SettingsDialog(wx.Dialog):
         self.lbl_user_name.SetLabel(_("Name:"))
         self.lbl_user_quality.SetLabel(_("Quality Score (0-100):"))
         self.lbl_user_note.SetLabel(_("Note: User info will only be added to JSON when enabled above."))
+        self.chk_save_empty.SetLabel(_("Save annotation file for unannotated images"))
+        self.lbl_save_empty_note.SetLabel(
+            _("Note: When unchecked, JSON files are only written if there are annotations or a dataset status (train/val/test) is set.")
+        )
+        self.lbl_save_empty_note.Wrap(420)
         
         self.chk_embed.SetLabel(_("Embed Image Data (Base64) in JSON"))
         self.lbl_embed_note.SetLabel(_("Note: Enabling this will significantly increase JSON file size."))
@@ -256,7 +295,19 @@ class SettingsDialog(wx.Dialog):
         self.lbl_ai_interval.SetLabel(_("Inference Interval (ms):"))
         self.chk_auto_simplify.SetLabel(_("Auto-simplify Polygon (0.004 Tolerance)"))
         self.chk_denoise.SetLabel(_("Denoise Mask (Filter small fragments)"))
-        
+        self.lbl_model_guide.SetLabel(self._build_model_guide_text())
+
+        # Labels panel
+        if hasattr(self, 'labels_box'):
+            self.labels_box.GetStaticBox().SetLabel(_("Label Classes"))
+            self.lbl_preset.SetLabel(_("Preset:"))
+            self._btn_preset_load.SetLabel(_("Load"))
+            self._btn_preset_save.SetLabel(_("Save As"))
+            self._btn_add_cat.SetLabel(_("+ Add Category"))
+            self._btn_reset_labels.SetLabel(_("Reset to Default"))
+            self.lbl_yolo_note.SetLabel(
+                _("\u24d8  YOLO: changing category order affects class index (requires re-export & retrain)"))
+
         # Buttons
         self.btn_ok.SetLabel(_("OK"))
         self.btn_cancel.SetLabel(_("Cancel"))
@@ -392,8 +443,28 @@ class SettingsDialog(wx.Dialog):
         self.lbl_user_note.SetForegroundColour(wx.Colour(self.theme.fg_dim))
         self.lbl_user_note.SetFont(wx.Font(9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_ITALIC, wx.FONTWEIGHT_NORMAL))
         self.user_box.Add(self.lbl_user_note, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 10)
-        
-        panel.SetSizer(self.user_box)
+
+        # Save behavior section
+        self.save_box = wx.StaticBoxSizer(wx.VERTICAL, panel, _("Save Behavior"))
+
+        self.chk_save_empty = wx.CheckBox(panel, label=_("Save annotation file for unannotated images"))
+        self.chk_save_empty.SetForegroundColour(wx.Colour(self.theme.fg_main))
+        self.save_box.Add(self.chk_save_empty, 0, wx.ALL, 10)
+
+        self.lbl_save_empty_note = wx.StaticText(
+            panel,
+            label=_("Note: When unchecked, JSON files are only written if there are annotations or a dataset status (train/val/test) is set.")
+        )
+        self.lbl_save_empty_note.SetForegroundColour(wx.Colour(self.theme.fg_dim))
+        self.lbl_save_empty_note.SetFont(wx.Font(9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_ITALIC, wx.FONTWEIGHT_NORMAL))
+        self.lbl_save_empty_note.Wrap(420)
+        self.save_box.Add(self.lbl_save_empty_note, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 10)
+
+        main_sizer = wx.BoxSizer(wx.VERTICAL)
+        main_sizer.Add(self.user_box, 0, wx.EXPAND | wx.ALL, 5)
+        main_sizer.Add(self.save_box, 0, wx.EXPAND | wx.ALL, 5)
+
+        panel.SetSizer(main_sizer)
         return panel
         
     def _create_anno_panel(self, parent):
@@ -443,48 +514,441 @@ class SettingsDialog(wx.Dialog):
         panel.SetSizer(main_sizer)
         return panel
         
+    @staticmethod
+    def _build_model_guide_text() -> str:
+        """Build the translated model selection guide string."""
+        return "\n".join([
+            _("Model Selection Guide:"),
+            "  Sam \u2014 " + _("General images, objects \u226510% of frame; fast (Xenova ONNX)"),
+            "  Sam2 \u2014 " + _("General images, better accuracy than Sam (shubham0204 ONNX)"),
+            "  EfficientSAM \u2014 " + _("High-res images, small objects; native-res inference"),
+            "  Sam2.1 (osam) \u2014 " + _("High-res small objects; LabelMe-compatible accuracy"),
+        ])
+
     def _create_ai_panel(self, parent):
         panel = wx.Panel(parent)
         panel.SetBackgroundColour(wx.Colour(self.theme.bg_main))
-        self.ai_box = wx.StaticBoxSizer(wx.VERTICAL, panel, _("AI Assisted Labeling Settings"))
-        
+        outer = wx.BoxSizer(wx.VERTICAL)
+
+        # ScrolledWindow fills the whole tab
+        self._ai_scroll = wx.ScrolledWindow(panel, style=wx.VSCROLL)
+        self._ai_scroll.SetScrollRate(0, 20)
+        self._ai_scroll.SetBackgroundColour(wx.Colour(self.theme.bg_main))
+        self.ai_box = wx.StaticBoxSizer(wx.VERTICAL, self._ai_scroll, _("AI Assisted Labeling Settings"))
+
         # Model path
-        self.lbl_ai_model_dir = wx.StaticText(panel, label=_("AI Model Directory:"))
+        self.lbl_ai_model_dir = wx.StaticText(self._ai_scroll, label=_("AI Model Directory:"))
         self.ai_box.Add(self.lbl_ai_model_dir, 0, wx.TOP | wx.LEFT, 10)
-        self.ai_path_picker = wx.DirPickerCtrl(panel, style=wx.DIRP_DIR_MUST_EXIST | wx.DIRP_SMALL | wx.DIRP_USE_TEXTCTRL)
+        self.ai_path_picker = wx.DirPickerCtrl(self._ai_scroll, style=wx.DIRP_DIR_MUST_EXIST | wx.DIRP_SMALL | wx.DIRP_USE_TEXTCTRL)
         txt_ctrl = self.ai_path_picker.GetTextCtrl()
         if txt_ctrl:
             txt_ctrl.SetForegroundColour(wx.Colour(self.theme.fg_main))
             txt_ctrl.SetBackgroundColour(wx.Colour(self.theme.bg_list))
         self.ai_box.Add(self.ai_path_picker, 0, wx.EXPAND | wx.ALL, 10)
-        
+
         # Continuous Inference
-        self.chk_continuous = wx.CheckBox(panel, label=_("Enable Continuous Inference (Real-time)"))
+        self.chk_continuous = wx.CheckBox(self._ai_scroll, label=_("Enable Continuous Inference (Real-time)"))
         self.chk_continuous.SetForegroundColour(wx.Colour(self.theme.fg_main))
         self.ai_box.Add(self.chk_continuous, 0, wx.ALL, 10)
-        
+
         # Throttle
         throttle_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.lbl_ai_interval = wx.StaticText(panel, label=_("Inference Interval (ms):"))
+        self.lbl_ai_interval = wx.StaticText(self._ai_scroll, label=_("Inference Interval (ms):"))
         throttle_sizer.Add(self.lbl_ai_interval, 0, wx.ALIGN_CENTER_VERTICAL | wx.ALL, 5)
-        self.ai_throttle = wx.SpinCtrl(panel, value="100", min=10, max=5000)
+        self.ai_throttle = wx.SpinCtrl(self._ai_scroll, value="100", min=10, max=5000)
         self.ai_throttle.SetForegroundColour(wx.Colour(self.theme.fg_main))
         self.ai_throttle.SetBackgroundColour(wx.Colour(self.theme.bg_list))
         throttle_sizer.Add(self.ai_throttle, 0, wx.ALL, 5)
         self.ai_box.Add(throttle_sizer, 0, wx.LEFT, 5)
-        
+
         # Options
-        self.chk_auto_simplify = wx.CheckBox(panel, label=_("Auto-simplify Polygon (0.004 Tolerance)"))
+        self.chk_auto_simplify = wx.CheckBox(self._ai_scroll, label=_("Auto-simplify Polygon (0.004 Tolerance)"))
         self.chk_auto_simplify.SetForegroundColour(wx.Colour(self.theme.fg_main))
         self.ai_box.Add(self.chk_auto_simplify, 0, wx.ALL, 10)
-        
-        self.chk_denoise = wx.CheckBox(panel, label=_("Denoise Mask (Filter small fragments)"))
+
+        self.chk_denoise = wx.CheckBox(self._ai_scroll, label=_("Denoise Mask (Filter small fragments)"))
         self.chk_denoise.SetForegroundColour(wx.Colour(self.theme.fg_main))
         self.ai_box.Add(self.chk_denoise, 0, wx.ALL, 10)
-        
-        panel.SetSizer(self.ai_box)
+
+        # Model selection guide
+        self.lbl_model_guide = wx.StaticText(self._ai_scroll, label=self._build_model_guide_text())
+        self.lbl_model_guide.SetForegroundColour(wx.Colour(self.theme.fg_dim))
+        self.ai_box.Add(self.lbl_model_guide, 0, wx.ALL | wx.EXPAND, 10)
+
+        self._ai_scroll.SetSizer(self.ai_box)
+        self._ai_scroll.FitInside()
+        outer.Add(self._ai_scroll, 1, wx.EXPAND)
+        panel.SetSizer(outer)
         return panel
-        
+
+    # ------------------------------------------------------------------
+    # AI Models visibility panel (page 6)
+    # ------------------------------------------------------------------
+
+    def _create_models_panel(self, parent):
+        """Build the AI Models tab with checkboxes to show/hide models."""
+        panel = wx.Panel(parent)
+        panel.SetBackgroundColour(wx.Colour(self.theme.bg_main))
+        outer = wx.BoxSizer(wx.VERTICAL)
+
+        # ScrolledWindow fills the whole tab
+        self._models_scroll = wx.ScrolledWindow(panel, style=wx.VSCROLL)
+        self._models_scroll.SetScrollRate(0, 20)
+        self._models_scroll.SetBackgroundColour(wx.Colour(self.theme.bg_main))
+        scroll_sizer = wx.BoxSizer(wx.VERTICAL)
+
+        # --- AI Segmentation Models group ---
+        self._ai_seg_box = wx.StaticBoxSizer(wx.VERTICAL, self._models_scroll, _("AI Segmentation Models"))
+        sb = self._ai_seg_box.GetStaticBox()
+        sb.SetForegroundColour(wx.Colour(self.theme.fg_main))
+
+        self._ai_model_chks: Dict[str, wx.CheckBox] = {}
+        for name in AIService.MODEL_REGISTRY.keys():
+            chk = wx.CheckBox(self._models_scroll, label=name)
+            chk.SetForegroundColour(wx.Colour(self.theme.fg_main))
+            self._ai_model_chks[name] = chk
+            self._ai_seg_box.Add(chk, 0, wx.LEFT | wx.TOP, 8)
+
+        self._lbl_models_hint = wx.StaticText(
+            self._models_scroll,
+            label=_("Hidden models are removed from the toolbar dropdown. New models are shown by default.")
+        )
+        self._lbl_models_hint.SetForegroundColour(wx.Colour(self.theme.fg_dim))
+        hint_font = self._lbl_models_hint.GetFont()
+        hint_font.SetPointSize(max(7, hint_font.GetPointSize() - 1))
+        hint_font.SetStyle(wx.FONTSTYLE_ITALIC)
+        self._lbl_models_hint.SetFont(hint_font)
+        self._ai_seg_box.Add(self._lbl_models_hint, 0, wx.ALL | wx.EXPAND, 8)
+
+        scroll_sizer.Add(self._ai_seg_box, 0, wx.EXPAND | wx.ALL, 5)
+
+        # --- OCR Backends group ---
+        self._ocr_backends_box = wx.StaticBoxSizer(wx.VERTICAL, self._models_scroll, _("OCR Backends"))
+        sb2 = self._ocr_backends_box.GetStaticBox()
+        sb2.SetForegroundColour(wx.Colour(self.theme.fg_main))
+
+        self._ocr_backend_chks: Dict[str, wx.CheckBox] = {}
+        for name in _SETTINGS_OCR_BACKENDS:
+            chk = wx.CheckBox(self._models_scroll, label=name)
+            chk.SetForegroundColour(wx.Colour(self.theme.fg_main))
+            self._ocr_backend_chks[name] = chk
+            self._ocr_backends_box.Add(chk, 0, wx.LEFT | wx.TOP, 8)
+
+        if not _SETTINGS_OCR_BACKENDS:
+            lbl_no_ocr = wx.StaticText(self._models_scroll, label=_("No OCR backends available"))
+            lbl_no_ocr.SetForegroundColour(wx.Colour(self.theme.fg_dim))
+            self._ocr_backends_box.Add(lbl_no_ocr, 0, wx.ALL, 8)
+
+        self._ocr_backends_box.AddSpacer(4)
+        scroll_sizer.Add(self._ocr_backends_box, 0, wx.EXPAND | wx.ALL, 5)
+
+        self._models_scroll.SetSizer(scroll_sizer)
+        self._models_scroll.FitInside()
+        outer.Add(self._models_scroll, 1, wx.EXPAND)
+        panel.SetSizer(outer)
+        return panel
+
+    # ------------------------------------------------------------------
+    # Labels panel (page 7)
+    # ------------------------------------------------------------------
+
+    def _get_presets_dir(self):
+        """Return path to the presets directory (package config/presets)."""
+        import importlib.resources as pkg
+        try:
+            # Python 3.9+
+            ref = pkg.files("wxcvannotator") / "config" / "presets"
+            return str(ref)
+        except AttributeError:
+            pass
+        # Fallback: locate via __file__ of this module
+        here = os.path.dirname(os.path.abspath(__file__))
+        return os.path.join(here, "..", "config", "presets")
+
+    def _list_presets(self):
+        """Return list of (display_name, file_path) tuples sorted built-in first."""
+        presets_dir = self._get_presets_dir()
+        if not os.path.isdir(presets_dir):
+            return []
+        files = sorted(f for f in os.listdir(presets_dir) if f.endswith(".json"))
+        # built-in first (not user_*), then user_*
+        builtins = [f for f in files if not f.startswith("user_")]
+        user = [f for f in files if f.startswith("user_")]
+        result = []
+        for f in builtins + user:
+            name = os.path.splitext(f)[0].replace("_", " ").title()
+            if f.startswith("user_"):
+                name = f[5:f.rfind(".")].replace("_", " ") + " (user)"
+            result.append((name, os.path.join(presets_dir, f)))
+        return result
+
+    def _create_labels_panel(self, parent):
+        """Build the Labels tab UI."""
+        import json
+        panel = wx.Panel(parent)
+        panel.SetBackgroundColour(wx.Colour(self.theme.bg_main))
+        outer = wx.BoxSizer(wx.VERTICAL)
+
+        # --- StaticBox wrapper ---
+        self.labels_box = wx.StaticBoxSizer(wx.VERTICAL, panel, _("Label Classes"))
+        sb = self.labels_box.GetStaticBox()
+        sb.SetForegroundColour(wx.Colour(self.theme.fg_main))
+
+        # --- Preset row ---
+        preset_row = wx.BoxSizer(wx.HORIZONTAL)
+        self._preset_list = self._list_presets()
+        preset_names = [p[0] for p in self._preset_list]
+        self._preset_choice = _CHOICE_CLS(panel, choices=preset_names)
+        self._preset_choice.SetForegroundColour(wx.Colour(self.theme.fg_main))
+        self._preset_choice.SetBackgroundColour(wx.Colour(self.theme.bg_list))
+        if preset_names:
+            self._preset_choice.SetSelection(0)
+        _lbl_fg = wx.Colour(self.theme.fg_main)
+        _lbl_bg = wx.Colour(self.theme.bg_panel)
+        self._btn_preset_load = wxbuttons.GenButton(panel, wx.ID_ANY, _("Load"))
+        self._btn_preset_load.SetForegroundColour(_lbl_fg)
+        self._btn_preset_load.SetBackgroundColour(_lbl_bg)
+        self._btn_preset_save = wxbuttons.GenButton(panel, wx.ID_ANY, _("Save As"))
+        self._btn_preset_save.SetForegroundColour(_lbl_fg)
+        self._btn_preset_save.SetBackgroundColour(_lbl_bg)
+        self.lbl_preset = wx.StaticText(panel, label=_("Preset:"))
+        self.lbl_preset.SetForegroundColour(_lbl_fg)
+        preset_row.Add(self.lbl_preset, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
+        preset_row.Add(self._preset_choice, 1, wx.EXPAND | wx.RIGHT, 5)
+        preset_row.Add(self._btn_preset_load, 0, wx.RIGHT, 5)
+        preset_row.Add(self._btn_preset_save, 0)
+        self.labels_box.Add(preset_row, 0, wx.EXPAND | wx.ALL, 8)
+
+        # --- Scrolled category list ---
+        self._labels_scroll = wx.ScrolledWindow(panel, style=wx.VSCROLL)
+        self._labels_scroll.SetScrollRate(0, 20)
+        self._labels_scroll.SetMinSize((-1, 220))
+        self._labels_scroll.SetBackgroundColour(wx.Colour(self.theme.bg_panel))
+        self._labels_scroll_sizer = wx.BoxSizer(wx.VERTICAL)
+        self._labels_scroll.SetSizer(self._labels_scroll_sizer)
+        self.labels_box.Add(self._labels_scroll, 1, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
+
+        # --- Bottom row ---
+        bottom_row = wx.BoxSizer(wx.HORIZONTAL)
+        self._btn_add_cat = wxbuttons.GenButton(panel, wx.ID_ANY, _("+ Add Category"))
+        self._btn_add_cat.SetForegroundColour(_lbl_fg)
+        self._btn_add_cat.SetBackgroundColour(_lbl_bg)
+        self._btn_reset_labels = wxbuttons.GenButton(panel, wx.ID_ANY, _("Reset to Default"))
+        self._btn_reset_labels.SetForegroundColour(_lbl_fg)
+        self._btn_reset_labels.SetBackgroundColour(_lbl_bg)
+        bottom_row.Add(self._btn_add_cat, 0, wx.RIGHT, 5)
+        bottom_row.AddStretchSpacer()
+        bottom_row.Add(self._btn_reset_labels, 0)
+        self.labels_box.Add(bottom_row, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
+
+        # YOLO warning note
+        self.lbl_yolo_note = wx.StaticText(panel, label=
+            _("\u24d8  YOLO: changing category order affects class index (requires re-export & retrain)"))
+        self.lbl_yolo_note.SetForegroundColour(wx.Colour(self.theme.fg_dim))
+        yolo_font = self.lbl_yolo_note.GetFont()
+        yolo_font.SetPointSize(max(7, yolo_font.GetPointSize() - 1))
+        self.lbl_yolo_note.SetFont(yolo_font)
+        self.labels_box.Add(self.lbl_yolo_note, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
+
+        outer.Add(self.labels_box, 1, wx.EXPAND | wx.ALL, 5)
+        panel.SetSizer(outer)
+
+        # Initialise working copy from category_manager
+        self._labels_data = [
+            [name, self.category_manager.get_color(name)]
+            for name in self.category_manager.get_ordered_categories()
+        ]
+        self._rebuild_labels_ui()
+
+        # --- Events ---
+        self._btn_preset_load.Bind(wx.EVT_BUTTON, self._on_preset_load)
+        self._btn_preset_save.Bind(wx.EVT_BUTTON, self._on_preset_save)
+        self._btn_add_cat.Bind(wx.EVT_BUTTON, self._on_add_category)
+        self._btn_reset_labels.Bind(wx.EVT_BUTTON, self._on_reset_labels)
+
+        return panel
+
+    def _rebuild_labels_ui(self):
+        """Rebuild the scrolled category rows from self._labels_data."""
+        sizer = self._labels_scroll_sizer
+        sizer.Clear(delete_windows=True)
+
+        for idx, (name, color) in enumerate(self._labels_data):
+            row = self._make_category_row(self._labels_scroll, idx, name, color)
+            sizer.Add(row, 0, wx.EXPAND | wx.BOTTOM, 2)
+
+        self._labels_scroll.Layout()    # compute child sizes first
+        self._labels_scroll.FitInside()  # then set virtual size for scrollbar
+        self._labels_scroll.Refresh()
+
+    def _make_category_row(self, parent, idx, name, color):
+        """Build one category row: [color swatch] [name] [↑] [↓] [Delete]."""
+        row_panel = wx.Panel(parent)
+        row_panel.SetBackgroundColour(wx.Colour(self.theme.bg_panel))
+        row_sizer = wx.BoxSizer(wx.HORIZONTAL)
+
+        # Colour swatch
+        swatch = wx.Panel(row_panel, size=(24, 24))
+        try:
+            swatch.SetBackgroundColour(wx.Colour(color))
+        except Exception:
+            swatch.SetBackgroundColour(wx.Colour("#808080"))
+        swatch.SetMinSize((24, 24))
+        # Click swatch to change colour
+        swatch.Bind(wx.EVT_LEFT_DOWN, lambda e, i=idx, sw=swatch: self._on_pick_color(i, sw))
+        row_sizer.Add(swatch, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 4)
+
+        # Name text ctrl
+        name_ctrl = wx.TextCtrl(row_panel, value=name, style=wx.TE_PROCESS_ENTER)
+        name_ctrl.SetForegroundColour(wx.Colour(self.theme.fg_main))
+        name_ctrl.SetBackgroundColour(wx.Colour(self.theme.bg_list))
+        name_ctrl.Bind(wx.EVT_TEXT, lambda e, i=idx, tc=name_ctrl: self._on_name_changed(i, tc))
+        row_sizer.Add(name_ctrl, 1, wx.EXPAND | wx.RIGHT, 4)
+
+        bg = wx.Colour(self.theme.bg_panel)
+        fg = wx.Colour(self.theme.fg_main)
+
+        # Up button — GenButton always self-draws, so colours work on all platforms
+        btn_up = wxbuttons.GenButton(row_panel, wx.ID_ANY, "↑", size=(36, -1))
+        btn_up.SetForegroundColour(fg)
+        btn_up.SetBackgroundColour(bg)
+        btn_up.SetToolTip(_("Move up"))
+        btn_up.Bind(wx.EVT_BUTTON, lambda e, i=idx: self._on_move_up(i))
+        row_sizer.Add(btn_up, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 2)
+
+        # Down button
+        btn_dn = wxbuttons.GenButton(row_panel, wx.ID_ANY, "↓", size=(36, -1))
+        btn_dn.SetForegroundColour(fg)
+        btn_dn.SetBackgroundColour(bg)
+        btn_dn.SetToolTip(_("Move down"))
+        btn_dn.Bind(wx.EVT_BUTTON, lambda e, i=idx: self._on_move_down(i))
+        row_sizer.Add(btn_dn, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 2)
+
+        # Delete button
+        btn_del = wxbuttons.GenButton(row_panel, wx.ID_ANY, "✕", size=(36, -1))
+        btn_del.SetForegroundColour(wx.Colour("#FF6666"))
+        btn_del.SetBackgroundColour(bg)
+        btn_del.SetToolTip(_("Delete category"))
+        btn_del.Bind(wx.EVT_BUTTON, lambda e, i=idx: self._on_delete_category(i))
+        row_sizer.Add(btn_del, 0, wx.ALIGN_CENTER_VERTICAL)
+
+        row_panel.SetSizer(row_sizer)
+        return row_panel
+
+    # --- Label editing callbacks ---
+
+    def _on_pick_color(self, idx, swatch):
+        """Open colour dialog to change category colour."""
+        current_hex = self._labels_data[idx][1]
+        try:
+            init_col = wx.Colour(current_hex)
+        except Exception:
+            init_col = wx.Colour("#808080")
+        data = wx.ColourData()
+        data.SetColour(init_col)
+        dlg = wx.ColourDialog(self, data)
+        if dlg.ShowModal() == wx.ID_OK:
+            new_col = dlg.GetColourData().GetColour()
+            hex_col = "#{:02X}{:02X}{:02X}".format(new_col.Red(), new_col.Green(), new_col.Blue())
+            self._labels_data[idx][1] = hex_col
+            try:
+                swatch.SetBackgroundColour(new_col)
+                swatch.Refresh()
+            except Exception:
+                pass
+        dlg.Destroy()
+
+    def _on_name_changed(self, idx, ctrl):
+        self._labels_data[idx][0] = ctrl.GetValue()
+
+    def _on_move_up(self, idx):
+        if idx > 0:
+            self._labels_data[idx - 1], self._labels_data[idx] = \
+                self._labels_data[idx], self._labels_data[idx - 1]
+            self._rebuild_labels_ui()
+
+    def _on_move_down(self, idx):
+        if idx < len(self._labels_data) - 1:
+            self._labels_data[idx + 1], self._labels_data[idx] = \
+                self._labels_data[idx], self._labels_data[idx + 1]
+            self._rebuild_labels_ui()
+
+    def _on_delete_category(self, idx):
+        if 0 <= idx < len(self._labels_data):
+            del self._labels_data[idx]
+            self._rebuild_labels_ui()
+
+    def _on_add_category(self, event):
+        dlg = wx.TextEntryDialog(self, _("Category name:"), _("Add Category"), "")
+        if dlg.ShowModal() == wx.ID_OK:
+            name = dlg.GetValue().strip()
+            if name:
+                # Avoid duplicates
+                existing = [row[0] for row in self._labels_data]
+                if name not in existing:
+                    self._labels_data.append([name, "#808080"])
+                    self._rebuild_labels_ui()
+        dlg.Destroy()
+
+    def _on_reset_labels(self, event):
+        from .annotation_system import DEFAULT_CATEGORY_COLORS
+        self._labels_data = [
+            [name, color] for name, color in DEFAULT_CATEGORY_COLORS.items()
+        ]
+        self._rebuild_labels_ui()
+
+    def _on_preset_load(self, event):
+        import json
+        sel = self._preset_choice.GetSelection()
+        if sel < 0 or sel >= len(self._preset_list):
+            return
+        _, path = self._preset_list[sel]
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception as e:
+            wx.MessageBox(_("Failed to load preset:\n{}").format(e), _("Error"), wx.OK | wx.ICON_ERROR)
+            return
+        # Build new _labels_data from preset (overwrite)
+        cats = data.get("categories", {})
+        order = data.get("order", list(cats.keys()))
+        self._labels_data = [[name, cats.get(name, "#808080")] for name in order if name in cats]
+        self._rebuild_labels_ui()
+
+    def _on_preset_save(self, event):
+        import json
+        dlg = wx.TextEntryDialog(self, _("Preset name (will be saved as user_<name>.json):"),
+                                 _("Save Preset As"), "")
+        if dlg.ShowModal() != wx.ID_OK:
+            dlg.Destroy()
+            return
+        raw_name = dlg.GetValue().strip().replace(" ", "_")
+        dlg.Destroy()
+        if not raw_name:
+            return
+        presets_dir = self._get_presets_dir()
+        os.makedirs(presets_dir, exist_ok=True)
+        filename = f"user_{raw_name}.json"
+        path = os.path.join(presets_dir, filename)
+        cats = {row[0]: row[1] for row in self._labels_data}
+        order = [row[0] for row in self._labels_data]
+        data = {"categories": cats, "order": order}
+        try:
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+        except Exception as e:
+            wx.MessageBox(_("Failed to save preset:\n{}").format(e), _("Error"), wx.OK | wx.ICON_ERROR)
+            return
+        # Refresh preset list
+        self._preset_list = self._list_presets()
+        preset_names = [p[0] for p in self._preset_list]
+        self._preset_choice.SetItems(preset_names)
+        # Select the newly saved preset
+        for i, (n, p) in enumerate(self._preset_list):
+            if os.path.basename(p) == filename:
+                self._preset_choice.SetSelection(i)
+                break
+
     def _load_current_settings(self):
         """Load values from settings manager into UI."""
         # Language
@@ -504,7 +968,8 @@ class SettingsDialog(wx.Dialog):
         self.user_name.SetValue(self.settings_manager.get("annotator_name", ""))
         self.user_quality.SetValue(self.settings_manager.get("annotator_quality", 100.0))
         self.chk_save_user_info.SetValue(self.settings_manager.get("save_user_info", True))
-        
+        self.chk_save_empty.SetValue(self.settings_manager.get("save_empty_annotation", False))
+
         # Annotation
         self.chk_embed.SetValue(self.settings_manager.get("embed_base64", False))
         self.chk_attr_panel.SetValue(self.settings_manager.get("enable_attribute_panel", False))
@@ -517,6 +982,14 @@ class SettingsDialog(wx.Dialog):
         self.ai_throttle.SetValue(self.settings_manager.get("ai_inference_throttle_ms", 100))
         self.chk_auto_simplify.SetValue(self.settings_manager.get("ai_auto_simplify_polygon", True))
         self.chk_denoise.SetValue(self.settings_manager.get("ai_denoise_mask", True))
+
+        # AI Models visibility
+        hidden_ai = self.settings_manager.get("ai_models_hidden", [])
+        hidden_ocr = self.settings_manager.get("ocr_backends_hidden", [])
+        for name, chk in self._ai_model_chks.items():
+            chk.SetValue(name not in hidden_ai)
+        for name, chk in self._ocr_backend_chks.items():
+            chk.SetValue(name not in hidden_ocr)
         
     def _on_apply(self, event):
         """Save settings and apply changes immediately."""
@@ -538,6 +1011,7 @@ class SettingsDialog(wx.Dialog):
         self.settings_manager.set("annotator_name", self.user_name.GetValue(), save=False)
         self.settings_manager.set("annotator_quality", self.user_quality.GetValue(), save=False)
         self.settings_manager.set("save_user_info", self.chk_save_user_info.GetValue(), save=False)
+        self.settings_manager.set("save_empty_annotation", self.chk_save_empty.GetValue(), save=False)
         
         # 4. Save Annotation settings
         self.settings_manager.set("embed_base64", self.chk_embed.GetValue(), save=False)
@@ -552,14 +1026,29 @@ class SettingsDialog(wx.Dialog):
         self.settings_manager.set("ai_inference_throttle_ms", self.ai_throttle.GetValue(), save=False)
         self.settings_manager.set("ai_auto_simplify_polygon", self.chk_auto_simplify.GetValue(), save=False)
         self.settings_manager.set("ai_denoise_mask", self.chk_denoise.GetValue(), save=False)
-        
+
+        # 6. Save AI Models visibility
+        hidden_ai = [n for n, chk in self._ai_model_chks.items() if not chk.GetValue()]
+        hidden_ocr = [n for n, chk in self._ocr_backend_chks.items() if not chk.GetValue()]
+        self.settings_manager.set("ai_models_hidden", hidden_ai, save=False)
+        self.settings_manager.set("ocr_backends_hidden", hidden_ocr, save=False)
+
         # Final save for settings_manager
         self.settings_manager.save()
-        
+
+        # 6. Apply Labels changes
+        if self.category_manager is not None and hasattr(self, 'labels_panel'):
+            self.category_manager.clear_all()
+            for name, color in self._labels_data:
+                if name:
+                    self.category_manager.add_category(name, color)
+            if hasattr(self.GetParent(), '_refresh_label_list_ui'):
+                self.GetParent()._refresh_label_list_ui()
+
         # Notify parent to refresh if needed (MainWindow will handle this)
         if hasattr(self.GetParent(), "_on_settings_applied"):
             self.GetParent()._on_settings_applied(new_lang, new_theme_id)
-            
+
         # Refresh own labels immediately
         self.refresh_translations()
 
@@ -612,7 +1101,11 @@ class SettingsDialog(wx.Dialog):
         self.SetForegroundColour(fg_color)
         
         # Update panels
-        for panel in [self.lang_panel, self.theme_panel, self.user_panel, self.anno_panel, self.ai_panel]:
+        panels = [self.lang_panel, self.theme_panel, self.user_panel, self.anno_panel, self.ai_panel,
+                  self._ai_scroll, self.models_panel, self._models_scroll]
+        if hasattr(self, 'labels_panel'):
+            panels.append(self.labels_panel)
+        for panel in panels:
             panel.SetBackgroundColour(bg_color)
             for child in panel.GetChildren():
                 if isinstance(child, (wx.StaticText, wx.CheckBox, wx.StaticBox)):

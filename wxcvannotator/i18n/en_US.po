@@ -1381,3 +1381,192 @@ msgstr "Valid"
 
 msgid "📏 Line"
 msgstr "📏 Line"
+
+msgid "AI Mask annotation added."
+msgstr "AI Mask annotation added."
+
+msgid "Backend:"
+msgstr "Backend:"
+
+msgid "Category '{}' not found"
+msgstr "Category '{}' not found"
+
+msgid "Create Annotations"
+msgstr "Create Annotations"
+
+msgid "Deselect All"
+msgstr "Deselect All"
+
+msgid "Edit Label Classes"
+msgstr "Edit Label Classes"
+
+msgid "No OCR backends available"
+msgstr "No OCR backends available"
+
+msgid "No image loaded"
+msgstr "No image loaded"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "OCR Full Image"
+
+msgid "OCR Full: cancelled"
+msgstr "OCR Full: cancelled"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "OCR Full: created {} annotation(s)"
+
+msgid "OCR Full: no results selected"
+msgstr "OCR Full: no results selected"
+
+msgid "OCR Full: no text detected"
+msgstr "OCR Full: no text detected"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "OCR Results — {} region(s) detected"
+
+msgid "OCR Transcribe"
+msgstr "OCR Transcribe"
+
+msgid "OCR service not available"
+msgstr "OCR service not available"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "Run OCR on the entire image and create text annotations"
+
+msgid "Running full-image OCR ({})..."
+msgstr "Running full-image OCR ({})..."
+
+msgid "Select All"
+msgstr "Select All"
+
+msgid "{} backend(s) available"
+msgstr "{} backend(s) available"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 OCR Full Image"
+
+msgid "+ Add Category"
+msgstr "+ Add Category"
+
+msgid "Category name:"
+msgstr "Category name:"
+
+msgid "Delete category"
+msgstr "Delete category"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "Failed to load preset:\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "Failed to save preset:\\n{}"
+
+msgid "Label Classes"
+msgstr "Label Classes"
+
+msgid "Labels"
+msgstr "Labels"
+
+msgid "Load"
+msgstr "Load"
+
+msgid "Move down"
+msgstr "Move down"
+
+msgid "Move up"
+msgstr "Move up"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "Preset name (will be saved as user_<name>.json):"
+
+msgid "Preset:"
+msgstr "Preset:"
+
+msgid "Reset to Default"
+msgstr "Reset to Default"
+
+msgid "Save As"
+msgstr "Save As"
+
+msgid "Save Preset As"
+msgstr "Save Preset As"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+
+msgid "AI Models"
+msgstr "AI Models"
+
+msgid "AI Segmentation Models"
+msgstr "AI Segmentation Models"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+
+msgid "OCR Backends"
+msgstr "OCR Backends"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "General images, better accuracy than Sam (shubham0204 ONNX)"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr "High-res images, small objects; native-res inference"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr "High-res small objects; LabelMe-compatible accuracy"
+
+msgid "Model Selection Guide:"
+msgstr "Model Selection Guide:"
+
+msgid "First run may take longer to load the model."
+msgstr "First run may take longer to load the model."
+
+msgid "Preparing OCR engine ({})..."
+msgstr "Preparing OCR engine ({})..."
+
+msgid "AI segmentation"
+msgstr "AI segmentation"
+
+msgid "No AI models were loaded"
+msgstr "No AI models were loaded"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+
+msgid "Unloaded: {}"
+msgstr "Unloaded: {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 Free AI Memory"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+
+msgid "Save Behavior"
+msgstr "Save Behavior"
+
+msgid "Save annotation file for unannotated images"
+msgstr "Save annotation file for unannotated images"
+
+msgid "Set Status: {}"
+msgstr "Set Status: {}"
+
+msgid "Show in Explorer"
+msgstr "Show in Explorer"

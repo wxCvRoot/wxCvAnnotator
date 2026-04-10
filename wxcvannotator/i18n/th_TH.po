@@ -1381,3 +1381,193 @@ msgstr "ตรวจสอบ"
 
 msgid "📏 Line"
 msgstr "📏 เส้น"
+
+msgid "AI Mask annotation added."
+msgstr "เพิ่มคำอธิบายประกอบ AI Mask แล้ว"
+
+msgid "Backend:"
+msgstr "แบ็กเอนด์:"
+
+msgid "Category '{}' not found"
+msgstr "ไม่พบหมวดหมู่ '{}'"
+
+msgid "Create Annotations"
+msgstr "สร้างคำอธิบายประกอบ"
+
+msgid "Deselect All"
+msgstr "ยกเลิกการเลือกทั้งหมด"
+
+msgid "Edit Label Classes"
+msgstr "แก้ไขคลาสของป้ายกำกับ"
+
+msgid "No OCR backends available"
+msgstr "ไม่มีแบ็กเอนด์ OCR ให้บริการ"
+
+msgid "No image loaded"
+msgstr "ไม่ได้โหลดรูปภาพ"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "OCR รูปภาพเต็ม"
+
+msgid "OCR Full: cancelled"
+msgstr "OCR เต็มรูปแบบ: ยกเลิกแล้ว"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "OCR เต็มรูปแบบ: สร้างคำอธิบายประกอบ {} รายการ"
+
+msgid "OCR Full: no results selected"
+msgstr "OCR เต็มรูปแบบ: ไม่ได้เลือกผลลัพธ์"
+
+msgid "OCR Full: no text detected"
+msgstr "OCR เต็มรูปแบบ: ไม่พบข้อความ"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "ผลลัพธ์ OCR - พบภูมิภาค {} แห่ง"
+
+msgid "OCR Transcribe"
+msgstr "การถอดข้อความ OCR"
+
+msgid "OCR service not available"
+msgstr "ไม่มีบริการ OCR"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "เรียกใช้ OCR กับรูปภาพทั้งหมดและสร้างคำอธิบายประกอบแบบข้อความ"
+
+msgid "Running full-image OCR ({})..."
+msgstr "กำลังรัน OCR รูปภาพเต็ม ({})..."
+
+msgid "Select All"
+msgstr "เลือกทั้งหมด"
+
+msgid "{} backend(s) available"
+msgstr "มีแบ็กเอนด์ {} ระบบ"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 OCR รูปภาพเต็ม"
+
+msgid "+ Add Category"
+msgstr "+ เพิ่มหมวดหมู่"
+
+msgid "Category name:"
+msgstr "ชื่อหมวดหมู่:"
+
+msgid "Delete category"
+msgstr "ลบหมวดหมู่"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "โหลดค่าที่ตั้งล่วงหน้าไม่สำเร็จ:\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "ไม่สามารถบันทึกค่าที่ตั้งล่วงหน้า:\\n{}"
+
+msgid "Label Classes"
+msgstr "คลาสป้ายกำกับ"
+
+msgid "Labels"
+msgstr "ป้ายกำกับ"
+
+msgid "Load"
+msgstr "โหลด"
+
+msgid "Move down"
+msgstr "เลื่อนลง"
+
+msgid "Move up"
+msgstr "เลื่อนขึ้น"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "ชื่อที่ตั้งไว้ล่วงหน้า (จะถูกบันทึกเป็น user_<name>.json):"
+
+msgid "Preset:"
+msgstr "ที่ตั้งไว้ล่วงหน้า:"
+
+msgid "Reset to Default"
+msgstr "รีเซ็ตเป็นค่าเริ่มต้น"
+
+msgid "Save As"
+msgstr "บันทึกเป็น"
+
+msgid "Save Preset As"
+msgstr "บันทึกค่าที่ตั้งล่วงหน้าเป็น"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+"\\u24d8 YOLO: การเปลี่ยนลำดับหมวดหมู่ส่งผลต่อดัชนีคลาส "
+"(ต้องมีการส่งออกใหม่และฝึกอบรมใหม่)"
+
+msgid "AI Models"
+msgstr "โมเดลเอไอ"
+
+msgid "AI Segmentation Models"
+msgstr "โมเดลการแบ่งส่วน AI"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+"โมเดลที่ซ่อนอยู่จะถูกลบออกจากเมนูแบบเลื่อนลงของแถบเครื่องมือ "
+"โมเดลใหม่จะแสดงตามค่าเริ่มต้น"
+
+msgid "OCR Backends"
+msgstr "แบ็กเอนด์ OCR"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "ภาพทั่วไปแม่นยำกว่าแซม (shubham0204 ONNX)"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "รูปภาพทั่วไป วัตถุ \\u226510% ของเฟรม รวดเร็ว (Xenova ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr "รูปภาพความละเอียดสูง วัตถุขนาดเล็ก การอนุมานแบบความละเอียดดั้งเดิม"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr "วัตถุขนาดเล็กที่มีความละเอียดสูง ความแม่นยำที่เข้ากันได้กับ LabelMe"
+
+msgid "Model Selection Guide:"
+msgstr "คู่มือการเลือกรุ่น:"
+
+msgid "First run may take longer to load the model."
+msgstr "การเรียกใช้ครั้งแรกอาจใช้เวลานานขึ้นในการโหลดโมเดล"
+
+msgid "Preparing OCR engine ({})..."
+msgstr "กำลังเตรียมเครื่องมือ OCR ({}) ..."
+
+msgid "AI segmentation"
+msgstr "การแบ่งส่วนด้วย AI"
+
+msgid "No AI models were loaded"
+msgstr "ไม่ได้โหลดโมเดล AI"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr "ยกเลิกการโหลดโมเดล AI และ OCR จากหน่วยความจำเพื่อคืนค่า GPU/RAM"
+
+msgid "Unloaded: {}"
+msgstr "ยกเลิกการโหลดแล้ว: {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 คืนค่าหน่วยความจำ AI"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"หมายเหตุ: เมื่อไม่ได้เลือกไว้ ไฟล์ JSON "
+"จะถูกเขียนเมื่อมีการเพิ่มคำอธิบายประกอบหรือตั้งค่าสถานะชุดข้อมูล "
+"(train/val/test) เท่านั้น"
+
+msgid "Save Behavior"
+msgstr "พฤติกรรมการบันทึก"
+
+msgid "Save annotation file for unannotated images"
+msgstr "บันทึกไฟล์คำอธิบายประกอบสำหรับรูปภาพที่ไม่มีคำอธิบาย"
+
+msgid "Set Status: {}"
+msgstr "ตั้งค่าสถานะ: {}"
+
+msgid "Show in Explorer"
+msgstr "แสดงใน Explorer"

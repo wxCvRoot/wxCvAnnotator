@@ -1375,3 +1375,186 @@ msgstr "验证集 (Val)"
 
 msgid "📏 Line"
 msgstr "📏 线段"
+
+msgid "AI Mask annotation added."
+msgstr "已添加 AI 掩码标注。"
+
+msgid "Backend:"
+msgstr "后端："
+
+msgid "Category '{}' not found"
+msgstr "未找到类别 '{}'"
+
+msgid "Create Annotations"
+msgstr "创建标注"
+
+msgid "Deselect All"
+msgstr "取消全选"
+
+msgid "Edit Label Classes"
+msgstr "编辑标签类别"
+
+msgid "No OCR backends available"
+msgstr "没有可用的 OCR 后端"
+
+msgid "No image loaded"
+msgstr "未加载图像"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "全图 OCR"
+
+msgid "OCR Full: cancelled"
+msgstr "全图 OCR：已取消"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "全图 OCR：创建了 {} 个标注"
+
+msgid "OCR Full: no results selected"
+msgstr "全图 OCR：未选择任何结果"
+
+msgid "OCR Full: no text detected"
+msgstr "全图 OCR：未检测到文本"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "OCR 结果 — 检测到 {} 个区域"
+
+msgid "OCR Transcribe"
+msgstr "OCR 转录"
+
+msgid "OCR service not available"
+msgstr "OCR 服务不可用"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "在整张图上运行 OCR 并创建文本标注"
+
+msgid "Running full-image OCR ({})..."
+msgstr "正在运行全图 OCR ({})，请稍候..."
+
+msgid "Select All"
+msgstr "全选"
+
+msgid "{} backend(s) available"
+msgstr "可用 {} 个后端"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 全图 OCR"
+
+msgid "+ Add Category"
+msgstr "+ 添加类别"
+
+msgid "Category name:"
+msgstr "类别名称："
+
+msgid "Delete category"
+msgstr "删除类别"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "无法加载预设：\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "无法保存预设：\\n{}"
+
+msgid "Label Classes"
+msgstr "标签类别"
+
+msgid "Labels"
+msgstr "标签"
+
+msgid "Load"
+msgstr "加载"
+
+msgid "Move down"
+msgstr "下移"
+
+msgid "Move up"
+msgstr "向上移动"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "预设名称（将保存为 user_<name>.json）："
+
+msgid "Preset:"
+msgstr "预设："
+
+msgid "Reset to Default"
+msgstr "重置为默认值"
+
+msgid "Save As"
+msgstr "另存为"
+
+msgid "Save Preset As"
+msgstr "将预设另存为"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr "YOLO：更改类别顺序会影响类别索引（需要重新导出和重新训练）"
+
+msgid "AI Models"
+msgstr "人工智能模型"
+
+msgid "AI Segmentation Models"
+msgstr "AI细分模型"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr "隐藏模型已从工具栏下拉列表中删除。默认显示新模型。"
+
+msgid "OCR Backends"
+msgstr "OCR 后端"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "一般图像，精度比Sam好（shubham0204 ONNX）"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "一般图像、物体占帧的%；快速（Xenova ONNX）"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr "高分辨率图像、小物体；原生资源推理"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr "高分辨率小物体； LabelMe 兼容精度"
+
+msgid "Model Selection Guide:"
+msgstr "选型指南："
+
+msgid "First run may take longer to load the model."
+msgstr "首次运行时加载模型可能需要较长时间。"
+
+msgid "Preparing OCR engine ({})..."
+msgstr "正在准备 OCR 引擎 ({})对..."
+
+msgid "AI segmentation"
+msgstr "AI 分割"
+
+msgid "No AI models were loaded"
+msgstr "未加载任何 AI 模型"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr "从内存中卸载 AI 分割与 OCR 模型以释放 GPU/RAM"
+
+msgid "Unloaded: {}"
+msgstr "已卸载：{}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 释放 AI 内存"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr "注意：取消勾选时，仅在有标注或已设置数据集状态（train/val/test）时才会写入 JSON 文件。"
+
+msgid "Save Behavior"
+msgstr "保存行为"
+
+msgid "Save annotation file for unannotated images"
+msgstr "为未标注的图片保存标注文件"
+
+msgid "Set Status: {}"
+msgstr "设置状态：{}"
+
+msgid "Show in Explorer"
+msgstr "在资源管理器中显示"

@@ -595,10 +595,15 @@ class ImageDisplayPanel(wx.Panel):
         self.cv_panel.Refresh()
 
     def _hex_to_bgr(self, hex_color: str) -> Tuple[int, int, int]:
-        """Hex to BGR for OpenCV colors"""
-        hex_color = hex_color.lstrip('#')
-        rgb = [int(hex_color[i:i+2], 16) for i in (0, 2, 4)]
-        return (rgb[2], rgb[1], rgb[0])
+        """Hex to BGR for OpenCV colors. Returns gray (128,128,128) for None/invalid."""
+        if not hex_color:
+            return (128, 128, 128)
+        try:
+            hex_color = hex_color.lstrip('#')
+            rgb = [int(hex_color[i:i+2], 16) for i in (0, 2, 4)]
+            return (rgb[2], rgb[1], rgb[0])
+        except (ValueError, IndexError):
+            return (128, 128, 128)
 
     def _mode_to_annotation_type(self, mode: int) -> str:
         """Map ROI mode to annotation type"""
@@ -634,12 +639,18 @@ class ImageDisplayPanel(wx.Panel):
     
     def zoom_in(self):
         if self.cv_panel: self.cv_panel.ZoomIn()
-    
+
     def zoom_out(self):
         if self.cv_panel: self.cv_panel.ZoomOut()
-    
+
     def zoom_fit(self):
         if self.cv_panel: self.cv_panel.SetZoomToFit()
+
+    def get_zoom_factor(self) -> float:
+        """Return current display zoom factor (1.0 = 100%). Returns 0.0 if no panel."""
+        if self.cv_panel:
+            return self.cv_panel.GetZoomFactor()
+        return 0.0
         
     def _on_zoom_in(self, event):
         self.zoom_in()
@@ -827,7 +838,8 @@ class ImageDisplayPanel(wx.Panel):
                     self.current_image_mat = img
                     
                     self.annotation_manager.clear_all()
-                    self.ai_service.image_embedding = None # Reset embedding for new image
+                    self.ai_service.image_embedding = None  # Reset embedding for new image
+                    self.ai_service.osam_embedding = None  # Reset osam embedding (SAM 2.1) for new image
                     self.select_annotation(None) # Reset selection and ROI state
                     return True
             return False
@@ -986,12 +998,9 @@ class ImageDisplayPanel(wx.Panel):
             self.sync_overlays()
 
     def _update_mouse_pos_display(self, img_x: float, img_y: float):
-        """Fire on_pos_update callback with current image coordinates.
-
-        Zoom is not included here — see REQ-013 (GetZoomFactor C++ API).
-        """
+        """Fire on_pos_update callback with current image coordinates and zoom factor."""
         if self.on_pos_update:
-            self.on_pos_update(img_x, img_y)
+            self.on_pos_update(img_x, img_y, self.get_zoom_factor())
 
     def _on_ai_double_click_left_cv(self, pt):
         """[REQ-010] Double-left-click to complete AI annotation from C++ callback"""
@@ -1382,11 +1391,44 @@ class ImageDisplayPanel(wx.Panel):
             return True
         return False
     
+    def _get_image_dimensions(self) -> Tuple[int, int]:
+        """Return (width, height) of current image.
+
+        Priority:
+        1. In-memory numpy array (current_image_mat) — fastest, already decoded.
+        2. PIL header-only read from current_image_path — light, no full decode.
+        3. Fallback (0, 0) with WARNING — logged but does not raise.
+        """
+        # 1. In-memory mat
+        if self.current_image_mat is not None:
+            h, w = self.current_image_mat.shape[:2]
+            return w, h
+
+        # 2. PIL header read
+        if self.current_image_path:
+            try:
+                from PIL import Image as _PILImage
+                with _PILImage.open(self.current_image_path) as im:
+                    return im.size  # (width, height)
+            except Exception:
+                pass
+
+        # 3. Fallback
+        import logging
+        filename = self.current_image_path or "<unknown>"
+        logging.warning(
+            "[SaveJSON] Cannot determine image dimensions for '%s': "
+            "imagePath not found or unreadable. "
+            "imageHeight/imageWidth will be written as 0 — downstream tools may fail.",
+            filename,
+        )
+        return 0, 0
+
     def save_annotations(self, file_path: str, embed_data: bool = False, **kwargs) -> bool:
         """Save annotations to file"""
-        w, h = self.image_size if self.image_size else (0, 0)
+        w, h = self._get_image_dimensions()
         return self.annotation_manager.save_to_file(
-            file_path, 
+            file_path,
             image_path=self.current_image_path,
             width=w,
             height=h,
@@ -1535,6 +1577,11 @@ class ImageDisplayPanel(wx.Panel):
                 y = ann.attributes.get("y", ann.points[0][1])
                 w = ann.attributes.get("width", 0)
                 h = ann.attributes.get("height", 0)
+                # Fallback: derive w/h from points when attributes are absent
+                # (e.g. annotations created by OCR/import without explicit attributes)
+                if (w == 0 or h == 0) and len(ann.points) >= 2:
+                    w = ann.points[1][0] - ann.points[0][0]
+                    h = ann.points[1][1] - ann.points[0][1]
                 points = [(x, y), (w, h)]
                 
             elif ann.type == "circle":
@@ -1574,6 +1621,9 @@ class ImageDisplayPanel(wx.Panel):
                 y = ann.attributes.get("y", ann.points[0][1])
                 w = ann.attributes.get("width", 0)
                 h = ann.attributes.get("height", 0)
+                if (w == 0 or h == 0) and len(ann.points) >= 2:
+                    w = ann.points[1][0] - ann.points[0][0]
+                    h = ann.points[1][1] - ann.points[0][1]
                 self.cv_panel.SetRect((int(x), int(y), int(w), int(h)))
                 if "angle" in ann.attributes:
                     self.cv_panel.SetRotateAngle(float(ann.attributes["angle"]))

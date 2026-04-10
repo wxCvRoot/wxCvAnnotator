@@ -35,7 +35,7 @@ from .i18n import get_i18n_manager, _
 from ..utils.settings_manager import SettingsManager
 from ..utils.ai_service import AIService
 from .theme_manager import get_theme_manager
-from .ocr_components import TextEditPopup
+from .ocr_components import TextEditPopup, OCRResultReviewDialog, OcrLoadingDialog
 from .settings_dialog import SettingsDialog
 from .attribute_panel import AttributePanel
 from .. import __version__
@@ -45,11 +45,13 @@ from .. import __version__
 class WxCvAnnotatorMainWindow(wx.Frame):
     """wxCvAnnotator Main Window - Designed based on LabelMe mode"""
     
-    def __init__(self, path=None, labels=None, nodata=False, embed=False, output=None, config_path=None):
+    def __init__(self, path=None, labels=None, nodata=False, embed=False, output=None, config_path=None, no_help=False):
         """Initialize main window"""
+        self._no_help = no_help
+        _title = "Annotation Tool" if no_help else f"wxCvAnnotator {__version__} - Image Annotation Tool"
         super().__init__(
             None,
-            title=f"wxCvAnnotator {__version__} - Image Annotation Tool",
+            title=_title,
             size=wx.Size(1400, 900),
             style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL
         )
@@ -96,6 +98,10 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         
         # Export system
         self.export_system = None
+
+        # OCR service
+        self.ocr_service = None
+        self._ocr_loading_dlg = None
         
         # Category manager
         self.category_manager = CategoryManager()
@@ -122,6 +128,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         self.id_load_labels_from_project = wx.NewId()
         self.id_settings = wx.NewId()
         self.id_about = wx.NewId()
+        self.id_transcribe = wx.NewId()
+        self.id_ocr_full = wx.NewId()
         
         # 創建菜單並設置到窗口
         menu_bar = self._create_menu()
@@ -225,7 +233,7 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         self.main_splitter.SetMinimumPaneSize(50) # 工具列最小寬度
 
         # 2. 創建左側工具欄 (父層為 main_splitter)
-        self.toolbar = AnnotationToolbar(self.main_splitter)
+        self.toolbar = AnnotationToolbar(self.main_splitter, settings_manager=self.settings_manager)
 
         # 3. 創建右側內容 Splitter (左右分割：圖像區 vs 列表區)
         # 這是 main_splitter 的右側面板
@@ -239,6 +247,9 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         if not AIService.is_available():
             print("⚠️ AIService: onnxruntime not found. Disabling AI features.")
             self.toolbar.enable_ai_section(False)
+
+        # 4.2 Initialize OCR service
+        self._init_ocr_service()
         
         # 5. 創建右側面板 (父層為 content_splitter)
         # 注意：_create_right_panel 原本接受 sizer，現在我們需要它接受父層窗口
@@ -256,24 +267,60 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         self.content_splitter.SplitVertically(self.image_display_panel, self.right_panel, splitter_right_pos)
         self.content_splitter.SetSashGravity(1.0) # 右側列表固定寬度
 
+        # Persist sash positions whenever the user finishes dragging either splitter.
+        self._sash_save_timer = None
+        self.main_splitter.Bind(wx.EVT_SPLITTER_SASH_POS_CHANGED, self._on_sash_changed)
+        self.content_splitter.Bind(wx.EVT_SPLITTER_SASH_POS_CHANGED, self._on_sash_changed)
+
         # 添加到主佈局
         main_sizer.Add(self.main_splitter, 1, wx.EXPAND | wx.ALL, 0)
-        
+
         self.Layout()
+
+    def _save_splitter_positions(self):
+        """Persist both splitter sash positions to settings (window-size-independent)."""
+        if hasattr(self, 'main_splitter'):
+            # Left splitter: toolbar width — absolute value is correct because
+            # gravity=0.0 keeps the toolbar at a fixed pixel width.
+            self.settings_manager.set(
+                "splitter_left_pos",
+                self.main_splitter.GetSashPosition(),
+                save=False,
+            )
+        if hasattr(self, 'content_splitter'):
+            # Right splitter: save as *negative* right-panel width so that
+            # SplitVertically can restore it correctly regardless of window size.
+            # (SplitVertically treats negative sash_pos as "distance from right edge".)
+            total = self.content_splitter.GetSize().width
+            sash  = self.content_splitter.GetSashPosition()
+            if total > 0 and sash > 0:
+                self.settings_manager.set(
+                    "splitter_right_pos",
+                    -(total - sash),
+                    save=False,
+                )
+        self.settings_manager.save()
+
+    def _on_sash_changed(self, event):
+        """Save splitter positions after the user finishes dragging a sash."""
+        event.Skip()
+        # EVT_SPLITTER_SASH_POS_CHANGED fires once per drag (after mouse release),
+        # but use a short CallLater as a safety debounce for SP_LIVE_UPDATE.
+        if hasattr(self, '_sash_save_timer') and self._sash_save_timer:
+            self._sash_save_timer.Stop()
+        self._sash_save_timer = wx.CallLater(300, self._save_splitter_positions)
 
     def _on_close(self, event):
         """Handle window close event"""
-        # Save splitter positions
-        if hasattr(self, 'main_splitter'):
-            self.settings_manager.set("splitter_left_pos", self.main_splitter.GetSashPosition())
-            
-        if hasattr(self, 'content_splitter'):
-            self.settings_manager.set("splitter_right_pos", self.content_splitter.GetSashPosition())
-            
+        # Cancel any pending debounced save and flush immediately.
+        if hasattr(self, '_sash_save_timer') and self._sash_save_timer:
+            self._sash_save_timer.Stop()
+        self._save_splitter_positions()
+
         # Clean up
         if self.image_display_panel:
             self.image_display_panel.Destroy()
-            
+
         event.Skip()
     
     def _create_right_panel_content(self, parent_window):
@@ -292,10 +339,12 @@ class WxCvAnnotatorMainWindow(wx.Frame):
 
         # Upper: Label List (Category Selection)
         self.label_list_panel = self._create_label_list_panel()
+        self.label_list_panel.SetMinSize((-1, 80))
         right_sizer.Add(self.label_list_panel, 1, wx.EXPAND | wx.ALL, 2)
-        
+
         # Middle: Annotation List
         self.annotation_list_panel = self._create_annotation_list_panel()
+        self.annotation_list_panel.SetMinSize((-1, 80))
         right_sizer.Add(self.annotation_list_panel, 2, wx.EXPAND | wx.ALL, 2)
 
         # Attribute Panel (conditional)
@@ -306,10 +355,12 @@ class WxCvAnnotatorMainWindow(wx.Frame):
                 panel, default_flags=default_flags,
                 on_change=self._on_attribute_panel_changed
             )
-            right_sizer.Add(self.attribute_panel, 1, wx.EXPAND | wx.ALL, 2)
+            self.attribute_panel.SetMinSize((-1, 80))
+            right_sizer.Add(self.attribute_panel, 2, wx.EXPAND | wx.ALL, 2)
 
         # Lower: File List
         self.file_list_panel = self._create_file_list_panel()
+        self.file_list_panel.SetMinSize((-1, 80))
         right_sizer.Add(self.file_list_panel, 2, wx.EXPAND | wx.ALL, 2)
         
         # Set min width
@@ -329,13 +380,21 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         sizer = wx.BoxSizer(wx.VERTICAL)
         panel.SetBackgroundColour(wx.Colour(40, 40, 43))
         
-        # Title
+        # Title row with gear button shortcut to Labels settings
+        title_row = wx.BoxSizer(wx.HORIZONTAL)
         self.label_list_title = wx.StaticText(panel, wx.ID_ANY, _("Label List"))
         self.label_list_title.SetForegroundColour(wx.WHITE)
         title_font = self.label_list_title.GetFont()
         title_font.SetWeight(wx.FONTWEIGHT_BOLD)
         self.label_list_title.SetFont(title_font)
-        sizer.Add(self.label_list_title, 0, wx.ALL | wx.CENTER, 5)
+        title_row.Add(self.label_list_title, 1, wx.ALIGN_CENTER_VERTICAL | wx.LEFT, 5)
+        self.btn_label_settings = wxbuttons.GenButton(panel, wx.ID_ANY, "...", size=(28, 22))
+        self.btn_label_settings.SetForegroundColour(wx.WHITE)
+        self.btn_label_settings.SetBackgroundColour(wx.Colour(60, 60, 65))
+        self.btn_label_settings.SetToolTip(_("Edit Label Classes"))
+        self.btn_label_settings.Bind(wx.EVT_BUTTON, self._on_open_label_settings)
+        title_row.Add(self.btn_label_settings, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
+        sizer.Add(title_row, 0, wx.EXPAND | wx.TOP | wx.BOTTOM, 5)
         
         # Search box (optional, but LabelMe has a small filter)
         # self.label_search = wx.TextCtrl(panel, wx.ID_ANY, style=wx.TE_PROCESS_ENTER)
@@ -526,7 +585,10 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         edit_menu.Append(wx.ID_REDO, _("Redo") + "\tCtrl+Y")
         edit_menu.AppendSeparator()
         edit_menu.Append(wx.ID_DELETE, _("Delete Annotation") + "\tDelete")
-        
+        edit_menu.AppendSeparator()
+        edit_menu.Append(self.id_transcribe, _("OCR Transcribe") + "\tCtrl+T")
+        edit_menu.Append(self.id_ocr_full, _("OCR Full Image") + "\tCtrl+Shift+T")
+
         menu_bar.Append(edit_menu, _("Edit"))
         
         # 標註菜單
@@ -566,11 +628,11 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         
         menu_bar.Append(settings_menu, _("Settings"))
         
-        # Help Menu
-        help_menu = wx.Menu()
-        help_menu.Append(self.id_about, _("About") + " wxCvAnnotator")
-        
-        menu_bar.Append(help_menu, _("Help"))
+        # Help Menu (hidden when --no-help is passed)
+        if not self._no_help:
+            help_menu = wx.Menu()
+            help_menu.Append(self.id_about, _("About") + " wxCvAnnotator")
+            menu_bar.Append(help_menu, _("Help"))
         
         return menu_bar
     
@@ -581,9 +643,9 @@ class WxCvAnnotatorMainWindow(wx.Frame):
     def _create_status_bar(self):
         """Create or update status bar"""
         if not hasattr(self, 'status_bar') or not self.status_bar:
-            self.status_bar = self.CreateStatusBar(5)
-            # Fields: [0] main message, [1] tool, [2] count, [3] cursor pos + RGB, [4] image size
-            self.status_bar.SetStatusWidths([-1, 110, 80, 240, 130])
+            self.status_bar = self.CreateStatusBar(6)
+            # Fields: [0] main message, [1] tool, [2] count, [3] cursor+RGB, [4] image size, [5] zoom
+            self.status_bar.SetStatusWidths([-1, 110, 80, 240, 130, 70])
 
         # 初始化狀態 (及更新翻譯)
         self.status_bar.SetStatusText(_("Ready"), 0)
@@ -591,6 +653,7 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         self.status_bar.SetStatusText(_("Count: 0"), 2)
         self.status_bar.SetStatusText("", 3)
         self.status_bar.SetStatusText("", 4)
+        self.status_bar.SetStatusText("", 5)
     
     def _bind_events(self):
         """Bind event handlers"""
@@ -604,6 +667,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         self.Bind(wx.EVT_MENU, self._on_undo, id=wx.ID_UNDO)
         self.Bind(wx.EVT_MENU, self._on_redo, id=wx.ID_REDO)
         self.Bind(wx.EVT_MENU, self._on_delete_annotation, id=wx.ID_DELETE)
+        self.Bind(wx.EVT_MENU, self._on_transcribe_annotation, id=self.id_transcribe)
+        self.Bind(wx.EVT_MENU, self._on_ocr_full_image, id=self.id_ocr_full)
         
         self.Bind(wx.EVT_MENU, self._on_tool_rectangle, id=self.id_tool_rectangle)
         self.Bind(wx.EVT_MENU, self._on_tool_line, id=self.id_tool_line)
@@ -645,6 +710,18 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         # New: AI Model Change callback
         if hasattr(self.toolbar, 'ai_model_selector'):
             self.toolbar.ai_model_selector.Bind(wx.EVT_COMBOBOX, self._on_ai_model_ui_changed)
+
+        # OCR backend selector
+        if hasattr(self.toolbar, 'ocr_backend_selector'):
+            self.toolbar.ocr_backend_selector.Bind(wx.EVT_COMBOBOX, self._on_ocr_backend_changed)
+
+        # OCR Full Image button
+        if hasattr(self.toolbar, 'ocr_full_btn'):
+            self.toolbar.ocr_full_btn.Bind(wx.EVT_BUTTON, self._on_ocr_full_image)
+
+        # Free AI Memory button
+        if hasattr(self.toolbar, 'unload_ai_btn'):
+            self.toolbar.unload_ai_btn.Bind(wx.EVT_BUTTON, self._on_unload_ai_models)
         
         # Image panel events
         self.image_display_panel.set_annotation_changed_callback(self._on_annotation_changed)
@@ -667,19 +744,108 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         self._update_annotation_list()
         
         print("✓ Annotation system initialized")
-    
+
+    def _close_ocr_loading_dlg(self):
+        """Close the OCR loading dialog and clear the status callback."""
+        dlg = self._ocr_loading_dlg
+        if dlg:
+            try:
+                dlg.close()
+            except Exception:
+                pass
+            self._ocr_loading_dlg = None
+        if self.ocr_service:
+            self.ocr_service.set_status_callback(None)
+
+    def _on_unload_ai_models(self, event):
+        """Unload both AI segmentation and OCR models from memory."""
+        unloaded = []
+        if hasattr(self.image_display_panel, 'ai_service'):
+            ai = self.image_display_panel.ai_service
+            if ai and ai.is_loaded:
+                ai.unload()
+                unloaded.append(_("AI segmentation"))
+        if self.ocr_service and self.ocr_service.is_backend_loaded:
+            self.ocr_service.unload()
+            unloaded.append(_("OCR"))
+        if unloaded:
+            self._update_status(_("Unloaded: {}").format(", ".join(unloaded)))
+        else:
+            self._update_status(_("No AI models were loaded"))
+
+    def _init_ocr_service(self):
+        """Initialize OCR service and pre-select saved or first available backend."""
+        try:
+            from ..utils.ocr_service import OCRService
+            self.ocr_service = OCRService()
+            backends = OCRService.available_backends()
+            if backends:
+                saved = self.settings_manager.get("ocr_selected_backend", "")
+                target = saved if saved in backends else backends[0]
+                self.ocr_service.set_backend(target)
+                # Sync toolbar selector to match
+                if hasattr(self.toolbar, 'ocr_backend_selector'):
+                    if target in self.toolbar.OCR_BACKENDS:
+                        self.toolbar.ocr_backend_selector.SetStringSelection(target)
+                print(f"✓ OCR service initialized: {target}")
+            else:
+                print("⚠️ OCR: no backends available. Install torch + wxcvannotator[ocr]")
+        except Exception as e:
+            self.ocr_service = None
+            print(f"⚠️ OCR service init failed: {e}")
+
     def _on_open_settings(self, event):
         """Open settings dialog"""
-        dialog = SettingsDialog(self, self.settings_manager)
+        dialog = SettingsDialog(self, self.settings_manager,
+                                category_manager=self.category_manager)
         dialog.ShowModal()
         dialog.Destroy()
+        # Rebuild toolbar dropdowns in case hidden lists changed
+        self.toolbar.refresh_model_selectors()
+        # Sync OCR service to the (possibly changed) toolbar selection
+        current_ocr = self.toolbar.ocr_backend_selector.GetStringSelection()
+        if self.ocr_service and current_ocr:
+            try:
+                self.ocr_service.set_backend(current_ocr)
+            except Exception:
+                pass
+
+    def _on_open_label_settings(self, event):
+        """Open settings dialog directly on the Labels tab."""
+        dialog = SettingsDialog(self, self.settings_manager,
+                                category_manager=self.category_manager,
+                                initial_page=6)
+        dialog.ShowModal()
+        dialog.Destroy()
+        # Rebuild toolbar dropdowns in case hidden lists changed
+        self.toolbar.refresh_model_selectors()
+        current_ocr = self.toolbar.ocr_backend_selector.GetStringSelection()
+        if self.ocr_service and current_ocr:
+            try:
+                self.ocr_service.set_backend(current_ocr)
+            except Exception:
+                pass
         
     def _on_ai_model_ui_changed(self, event):
         """Handle AI model change from toolbar ComboBox"""
         model = self.toolbar.ai_model_selector.GetStringSelection()
+        self.settings_manager.set("ai_selected_model", model)
         if self.image_display_panel:
             self.image_display_panel.set_ai_model(model)
-        
+
+    def _on_ocr_backend_changed(self, event):
+        """Handle OCR backend change from toolbar ComboBox"""
+        backend = self.toolbar.ocr_backend_selector.GetStringSelection()
+        if backend:
+            self.settings_manager.set("ocr_selected_backend", backend)
+        if self.ocr_service and backend:
+            try:
+                self.ocr_service.set_backend(backend)
+                print(f"OCR backend switched to: {backend}")
+            except Exception as e:
+                print(f"⚠️ OCR backend switch failed: {e}")
+                self._update_status(f"OCR backend error: {e}")
+
     def _on_settings_applied(self, lang_code, theme_id):
         """Apply settings changes globally"""
         # Re-apply theme
@@ -705,7 +871,7 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             unused_name, local_name = self.i18n_manager.get_language_display_name(lang_code)
             
             # 1. Update window title
-            self.SetTitle("wxCvAnnotator")
+            self.SetTitle("Annotation Tool" if self._no_help else "wxCvAnnotator")
             
             # 2. Refresh menu bar immediately
             menu_bar = self._create_menu()
@@ -1106,10 +1272,13 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             self._on_delete_annotation(None)
         elif operation == "zoom_in":
             self.image_display_panel.zoom_in()
+            self._update_zoom_display()
         elif operation == "zoom_out":
             self.image_display_panel.zoom_out()
+            self._update_zoom_display()
         elif operation == "fit_view":
             self.image_display_panel.zoom_fit()
+            self._update_zoom_display()
     
     def _on_annotation_changed(self, action: str, annotation_id):
         """Annotation Changed"""
@@ -1257,14 +1426,17 @@ class WxCvAnnotatorMainWindow(wx.Frame):
     def _on_zoom_in(self, event):
         """放大"""
         self.image_display_panel._on_zoom_in(event)
-    
+        self._update_zoom_display()
+
     def _on_zoom_out(self, event):
         """縮小"""
         self.image_display_panel._on_zoom_out(event)
-    
+        self._update_zoom_display()
+
     def _on_zoom_fit(self, event):
         """適合視窗"""
         self.image_display_panel._on_zoom_fit(event)
+        self._update_zoom_display()
     
     def _on_prev_image(self, event):
         """Previous image"""
@@ -1561,6 +1733,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             self._on_file_open(None)
         elif key_code == wx.WXK_DELETE:
             self._on_delete_annotation(None)
+        elif key_code == ord('T') and modifiers == wx.MOD_CONTROL:
+            self._on_transcribe_annotation(None)
         elif key_code == wx.WXK_RETURN:
             # If in AI mode or creating ROI, Enter confirms the action
             if self.toolbar.get_current_tool().startswith("ai_") or \
@@ -1576,11 +1750,25 @@ class WxCvAnnotatorMainWindow(wx.Frame):
     def _on_close(self, event):
         """窗口關閉事件"""
         print("🚪 Closing wxCvAnnotator...")
-        
+
+        # Unload AI models to release GPU/VRAM before wx cleanup
+        if self.ocr_service:
+            try:
+                self.ocr_service.unload()
+            except Exception:
+                pass
+        if hasattr(self.image_display_panel, 'ai_service'):
+            ai = self.image_display_panel.ai_service
+            if ai:
+                try:
+                    ai.unload()
+                except Exception:
+                    pass
+
         # 進行清理
         if self.image_display_panel:
             self.image_display_panel.cleanup()
-            
+
         # 銷毀窗口
         self.Destroy()
         
@@ -1895,8 +2083,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
                 self._refresh_label_list_ui()
                 self._update_status(_("Category deleted: {}").format(selection))
             else:
-                wx.MessageBox(_("Cannot delete default category '{}'").format(selection), 
-                             _("Constraint"), wx.OK | wx.ICON_WARNING)
+                wx.MessageBox(_("Category '{}' not found").format(selection),
+                             _("Error"), wx.OK | wx.ICON_WARNING)
 
     def _on_file_list_key_down(self, event):
         """Handle keyboard navigation in file list"""
@@ -1909,20 +2097,41 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         item_index = event.GetIndex()
         if item_index == -1:
             return
-            
+
         menu = wx.Menu()
         statuses = ["None", "train", "val", "test"]
-        
+
         for status in statuses:
-            item = menu.Append(wx.ID_ANY, f"Set Status: {status}")
+            item = menu.Append(wx.ID_ANY, _("Set Status: {}").format(status))
             self.Bind(wx.EVT_MENU, lambda evt, s=status, idx=item_index: self._set_image_status(idx, s), item)
-            
+
+        menu.AppendSeparator()
+        explore_item = menu.Append(wx.ID_ANY, _("Show in Explorer"))
+        self.Bind(wx.EVT_MENU, lambda evt, idx=item_index: self._on_show_in_explorer(idx), explore_item)
+
         menu.AppendSeparator()
         del_item = menu.Append(wx.ID_ANY, _("Delete Annotation File"))
         self.Bind(wx.EVT_MENU, lambda evt, idx=item_index: self._on_delete_annotation_file(idx), del_item)
-            
+
         self.PopupMenu(menu)
         menu.Destroy()
+
+    def _on_show_in_explorer(self, item_index: int):
+        """Open the system file manager and select the image file."""
+        import subprocess
+        if item_index < 0 or item_index >= len(self.image_files):
+            return
+        image_path = str(self.image_files[item_index])
+        try:
+            if platform.system() == "Windows":
+                subprocess.Popen(["explorer", "/select,", image_path])
+            elif platform.system() == "Darwin":
+                subprocess.Popen(["open", "-R", image_path])
+            else:
+                # Linux: open the containing folder (most file managers don't support select)
+                subprocess.Popen(["xdg-open", str(Path(image_path).parent)])
+        except Exception as e:
+            print(f"❌ Show in Explorer failed: {e}")
 
     def _on_delete_annotation_file(self, item_index):
         """刪除選定圖片的 .json 標註文件並更新介面"""
@@ -2036,11 +2245,37 @@ class WxCvAnnotatorMainWindow(wx.Frame):
                 # 載入標註文件
                 success = self.image_display_panel.load_annotations(str(annotation_path))
                 if success:
-                    # Sync colors with current category manager
+                    # Sync colors from category manager.
+                    # - Known category  → use manager color.
+                    # - Unknown category → auto-register it; use stored color if visible,
+                    #   otherwise generate one (stored #808080 = canvas gray = invisible).
+                    _CANVAS_GRAY = "#808080"
+                    color_changed = False
+                    cat_registered = False
                     annotations = self.image_display_panel.get_annotations()
                     for ann in annotations:
-                        ann.color = self.category_manager.get_color(ann.category)
-                        
+                        if ann.category in self.category_manager.categories:
+                            mgr_color = self.category_manager.categories[ann.category]
+                            if mgr_color != ann.color:
+                                ann.color = mgr_color
+                                color_changed = True
+                        else:
+                            # Auto-register unknown category so it becomes visible
+                            use_color = (
+                                ann.color
+                                if ann.color and ann.color.upper() != _CANVAS_GRAY.upper()
+                                else self._generate_category_color(ann.category)
+                            )
+                            self.category_manager.add_category(ann.category, use_color)
+                            ann.color = use_color
+                            color_changed = True
+                            cat_registered = True
+                    # Re-render overlays and refresh label list if anything changed.
+                    if color_changed:
+                        self.image_display_panel.sync_overlays()
+                    if cat_registered:
+                        self._refresh_label_list_ui()
+
                     self._update_status(f"已載入標註: {annotation_path.name}")
                 else:
                     self._update_status("標註載入失敗")
@@ -2052,12 +2287,19 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         """保存當前圖片的標註"""
         if not self.image_files or self.current_image_index >= len(self.image_files):
             return
-        
+
         current_image = self.image_files[self.current_image_index]
         annotation_path = Path(current_image).with_suffix('.json')
-        
+
+        # Respect "save_empty_annotation" setting: skip writing JSON when there are
+        # no annotations and no dataset status, unless the user opted in.
+        save_empty = self.settings_manager.get("save_empty_annotation", False)
+
         try:
-            success = self.image_display_panel.save_annotations(str(annotation_path))
+            success = self.image_display_panel.save_annotations(
+                str(annotation_path),
+                skip_if_empty=not save_empty
+            )
             if success:
                 self._update_status(f"已保存標註: {annotation_path.name}")
             else:
@@ -2095,26 +2337,29 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         # Update status bar
         self.status_bar.SetStatusText(f"Count: {len(annotations)}", 2)
 
-    def _on_edit_transcription(self, event):
-        """Open floating editor for transcription"""
-        # Get selected annotation
+    def _resolve_selected_annotation(self):
+        """Return the currently selected Annotation object, or None."""
         if not self.image_display_panel:
-            return
-            
-        selected_id = self.image_display_panel.get_selected_annotation_id()
+            return None
+        # Primary: canvas selection
+        selected_id = self.image_display_panel.selected_annotation_id
+        # Fallback: annotation list selection
         if not selected_id:
-            # If nothing selected, maybe check list
             list_idx = self.annotation_list.GetFirstSelected()
             if list_idx != -1:
                 annotations = self.image_display_panel.get_annotations()
                 if list_idx < len(annotations):
                     selected_id = annotations[list_idx].id
-        
         if not selected_id:
+            return None
+        return self.image_display_panel.get_annotation_manager().get_annotation(selected_id)
+
+    def _on_edit_transcription(self, event):
+        """Open floating editor for transcription"""
+        if not self.image_display_panel:
             return
-            
-        # Get annotation object
-        anno = self.image_display_panel.get_annotation_by_id(selected_id)
+
+        anno = self._resolve_selected_annotation()
         if not anno:
             return
             
@@ -2142,9 +2387,215 @@ class WxCvAnnotatorMainWindow(wx.Frame):
 
         popup.Destroy()
 
-    
-    def _on_pos_update(self, x: float, y: float):
-        """Update cursor position + RGB pixel value in status bar (field 3)."""
+    def _on_transcribe_annotation(self, event):
+        """Run OCR on the selected annotation's ROI crop (Ctrl+T)."""
+        if not self.ocr_service:
+            self._update_status("OCR service not available")
+            return
+
+        anno = self._resolve_selected_annotation()
+        if not anno:
+            self._update_status("No annotation selected for OCR")
+            return
+
+        mat = self.image_display_panel.current_image_mat
+        if mat is None:
+            self._update_status("No image loaded")
+            return
+
+        # Crop ROI — 4-point polygon: perspective warp (handles rotated text correctly)
+        #            other shapes: bounding box with 5 px padding
+        pts = anno.points
+        if not pts:
+            return
+        h, w = mat.shape[:2]
+        if len(pts) == 4:
+            from ..utils.ocr_service import crop_polygon_for_ocr
+            roi_bgr = crop_polygon_for_ocr(mat, pts)
+            if roi_bgr is None or roi_bgr.size == 0:
+                print(f"[OCR DEBUG] crop_polygon_for_ocr returned empty/None — pts={pts}")
+                return
+        else:
+            xs = [p[0] for p in pts]
+            ys = [p[1] for p in pts]
+            pad = 5
+            x1 = max(0, int(min(xs)) - pad)
+            y1 = max(0, int(min(ys)) - pad)
+            x2 = min(w, int(max(xs)) + pad)
+            y2 = min(h, int(max(ys)) + pad)
+            if x2 <= x1 or y2 <= y1:
+                return
+            roi_bgr = mat[y1:y2, x1:x2].copy()
+
+        # Run OCR in background thread
+        backend_name = self.ocr_service.active_backend
+        self._update_status(f"Running OCR ({backend_name})...")
+        self.lock_ui_for_ai(True)
+
+        import threading
+        if not self.ocr_service.is_backend_loaded:
+            ocr_dlg = OcrLoadingDialog(self, backend_name)
+            self._ocr_loading_dlg = ocr_dlg
+            self.ocr_service.set_status_callback(lambda msg: wx.CallAfter(ocr_dlg.update_status, msg))
+            ocr_dlg.Show()
+
+        def _run():
+            try:
+                text = self.ocr_service.recognize_roi(roi_bgr)
+            except Exception as exc:
+                text = ""
+                print(f"[OCR] recognize_roi raised: {exc}")
+            wx.CallAfter(self._on_ocr_result, anno.id, text)
+
+        threading.Thread(target=_run, daemon=True).start()
+
+    def _on_ocr_result(self, annotation_id: str, text: str):
+        """Handle OCR result on the main thread."""
+        self._close_ocr_loading_dlg()
+        self.lock_ui_for_ai(False)
+
+        anno = self.image_display_panel.get_annotation_manager().get_annotation(annotation_id)
+        if not anno:
+            self._update_status("OCR: annotation no longer exists")
+            return
+
+        anno.transcription = text
+        anno.source = "AI"
+        anno.modified_time = datetime.now()
+
+        self.image_display_panel.Refresh()
+        self._update_annotation_list()
+        self._save_annotation_for_current_image()
+
+        if self.attribute_panel:
+            self.attribute_panel.set_annotation(anno)
+
+        if text:
+            self._update_status(f"OCR: {text[:60]}")
+        else:
+            self._update_status("OCR: no text detected")
+
+    # ------------------------------------------------------------------
+    # OCR Phase 2 — Full-image OCR (Mode 1)
+    # ------------------------------------------------------------------
+
+    def _on_ocr_full_image(self, event):
+        """Run full-image OCR and open review dialog to create text annotations."""
+        if not self.ocr_service:
+            self._update_status(_("OCR service not available"))
+            return
+
+        mat = self.image_display_panel.current_image_mat
+        if mat is None:
+            self._update_status(_("No image loaded"))
+            return
+
+        # Snapshot for background thread
+        image_bgr = mat.copy()
+        img_h, img_w = image_bgr.shape[:2]
+
+        backend_name = self.ocr_service.active_backend
+        self._update_status(_("Running full-image OCR ({})...").format(backend_name))
+        self.lock_ui_for_ai(True)
+
+        import threading
+        if not self.ocr_service.is_backend_loaded:
+            ocr_dlg = OcrLoadingDialog(self, backend_name)
+            self._ocr_loading_dlg = ocr_dlg
+            self.ocr_service.set_status_callback(lambda msg: wx.CallAfter(ocr_dlg.update_status, msg))
+            ocr_dlg.Show()
+
+        def _run():
+            try:
+                results = self.ocr_service.recognize_full(image_bgr)
+            except Exception as exc:
+                results = []
+                print(f"[OCR] recognize_full raised: {exc}")
+                import traceback; traceback.print_exc()
+            wx.CallAfter(self._on_ocr_full_result, results, img_h, img_w)
+
+        threading.Thread(target=_run, daemon=True).start()
+
+    def _on_ocr_full_result(self, results, img_h: int, img_w: int):
+        """Handle full-image OCR result on the main thread."""
+        self._close_ocr_loading_dlg()
+        self.lock_ui_for_ai(False)
+
+        if not results:
+            self._update_status(_("OCR Full: no text detected"))
+            return
+
+        dlg = OCRResultReviewDialog(self, results)
+        if dlg.ShowModal() != wx.ID_OK:
+            dlg.Destroy()
+            self._update_status(_("OCR Full: cancelled"))
+            return
+
+        accepted = dlg.get_accepted_results()
+        dlg.Destroy()
+
+        if not accepted:
+            self._update_status(_("OCR Full: no results selected"))
+            return
+
+        count = self._create_annotations_from_ocr_results(accepted, img_h, img_w)
+
+        self.image_display_panel.sync_overlays()
+        self.image_display_panel.Refresh()
+        self._update_annotation_list()
+        self._save_annotation_for_current_image()
+        self._update_status(_("OCR Full: created {} annotation(s)").format(count))
+
+    def _create_annotations_from_ocr_results(self, results, img_h: int, img_w: int) -> int:
+        """Create Annotation objects from OCR results and add them to the annotation manager.
+
+        Args:
+            results: Accepted ``OCRResult`` objects (each with ``text``, ``bbox``,
+                     ``confidence``, ``line_id``, ``word_id``).
+            img_h:   Image height in pixels.
+            img_w:   Image width in pixels.
+
+        Returns:
+            Number of annotations created.
+        """
+        OCR_CATEGORY = "text"
+        OCR_COLOR_DEFAULT = "#00AAFF"
+
+        # Ensure the 'text' category exists in the label registry
+        if not self.category_manager.get_color(OCR_CATEGORY):
+            self.category_manager.add_category(OCR_CATEGORY, OCR_COLOR_DEFAULT)
+            self._refresh_label_list_ui()
+
+        color = self.category_manager.get_color(OCR_CATEGORY) or OCR_COLOR_DEFAULT
+        am = self.image_display_panel.get_annotation_manager()
+        count = 0
+
+        for result in results:
+            if result.bbox:
+                xs = [p[0] for p in result.bbox]
+                ys = [p[1] for p in result.bbox]
+                x1 = max(0.0, float(min(xs)))
+                y1 = max(0.0, float(min(ys)))
+                x2 = min(float(img_w), float(max(xs)))
+                y2 = min(float(img_h), float(max(ys)))
+                points = [(x1, y1), (x2, y2)]
+            else:
+                # No location data — span the full image
+                points = [(0.0, 0.0), (float(img_w), float(img_h))]
+
+            anno = Annotation("rectangle", points, OCR_CATEGORY, color)
+            anno.transcription = result.text
+            anno.confidence = result.confidence
+            anno.source = "AI"
+            anno.line_id = result.line_id
+            anno.word_id = result.word_id
+            am.add_annotation(anno)
+            count += 1
+
+        return count
+
+    def _on_pos_update(self, x: float, y: float, zoom: float = 0.0):
+        """Update cursor position + RGB pixel value in status bar (field 3) and zoom (field 5)."""
         ix, iy = int(x), int(y)
         text = f"X:{ix}  Y:{iy}"
         mat = self.image_display_panel.current_image_mat
@@ -2155,6 +2606,14 @@ class WxCvAnnotatorMainWindow(wx.Frame):
                 b, g, r = int(px[0]), int(px[1]), int(px[2])
                 text += f"  R:{r} G:{g} B:{b}"
         self.status_bar.SetStatusText(text, 3)
+        if zoom > 0.0:
+            self.status_bar.SetStatusText(f"{zoom * 100:.0f}%", 5)
+
+    def _update_zoom_display(self):
+        """Read current zoom factor from panel and update status bar field 5."""
+        zoom = self.image_display_panel.get_zoom_factor()
+        if zoom > 0.0:
+            self.status_bar.SetStatusText(f"{zoom * 100:.0f}%", 5)
 
     def _update_image_info(self, image_path: str, image_index: int = -1, total_images: int = 0):
         """Update window title and image-size field after a successful image load.
@@ -2166,9 +2625,9 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         """
         abs_path = str(Path(image_path).resolve())
         if image_index >= 0 and total_images > 0:
-            self.SetTitle(f"wxCvAnnotator - {abs_path} [{image_index + 1}/{total_images}]")
+            self.SetTitle(f"Annotation Tool - {abs_path} [{image_index + 1}/{total_images}]" if self._no_help else f"wxCvAnnotator - {abs_path} [{image_index + 1}/{total_images}]")
         else:
-            self.SetTitle(f"wxCvAnnotator - {abs_path}")
+            self.SetTitle(f"Annotation Tool - {abs_path}" if self._no_help else f"wxCvAnnotator - {abs_path}")
         # Field 4 → W × H × C (use original channel count before BGR normalisation)
         mat = self.image_display_panel.current_image_mat
         if mat is not None:
@@ -2177,6 +2636,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             self.status_bar.SetStatusText(f"{w}×{h}×{c}", 4)
         else:
             self.status_bar.SetStatusText("", 4)
+        # Field 5 → zoom (C++ SetZoomToFit runs async; defer one event cycle)
+        wx.CallAfter(self._update_zoom_display)
 
     def _update_status(self, message: str):
         """Update status bar"""
@@ -2207,10 +2668,12 @@ class WxCvAnnotatorMainWindow(wx.Frame):
                 # Update current categories
                 categories = self.category_manager.get_all_categories()
                 
-                # Update colors for existing annotations
+                # Update colors for existing annotations (skip if category unknown)
                 annotations = self.image_display_panel.get_annotations()
                 for ann in annotations:
-                    ann.color = self.category_manager.get_color(ann.category)
+                    color = self.category_manager.get_color(ann.category)
+                    if color:
+                        ann.color = color
                 
                 # Refresh display
                 self._refresh_label_list_ui()
@@ -2365,17 +2828,31 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             if loaded:
                 self._update_status("Loaded global default labels")
         
-        # Sync colors for existing annotations based on newly loaded categories
+        # Sync colors for existing annotations based on newly loaded categories (skip if unknown)
         if self.image_display_panel:
             annotations = self.image_display_panel.get_annotations()
             for ann in annotations:
-                ann.color = self.category_manager.get_color(ann.category)
+                color = self.category_manager.get_color(ann.category)
+                if color:
+                    ann.color = color
             
         # 更新 UI
         self._refresh_label_list_ui()
         self._update_annotation_list()
         if self.image_display_panel:
             self.image_display_panel.Refresh()
+
+    def _generate_category_color(self, category_name: str) -> str:
+        """Generate a deterministic, visually distinct hex color for an unknown category.
+
+        Uses the category name hash to pick a hue on the HSV color wheel so that
+        different names consistently get different colors and none of them land on
+        the canvas-background gray (#808080).
+        """
+        import colorsys
+        hue = (hash(category_name) & 0xFFFF) / 0xFFFF  # 0.0 – 1.0, deterministic
+        r, g, b = colorsys.hsv_to_rgb(hue, 0.85, 0.95)
+        return "#{:02X}{:02X}{:02X}".format(int(r * 255), int(g * 255), int(b * 255))
 
     def _refresh_label_list_ui(self):
         """Refresh the label ListBox with current category manager state"""

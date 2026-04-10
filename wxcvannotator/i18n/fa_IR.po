@@ -1388,3 +1388,194 @@ msgstr "ارزیابی"
 
 msgid "📏 Line"
 msgstr "📏 خط"
+
+msgid "AI Mask annotation added."
+msgstr "حاشیه نویسی ماسک هوش مصنوعی اضافه شد."
+
+msgid "Backend:"
+msgstr "پس زمینه:"
+
+msgid "Category '{}' not found"
+msgstr "دسته '{}' پیدا نشد"
+
+msgid "Create Annotations"
+msgstr "ایجاد حاشیه نویسی"
+
+msgid "Deselect All"
+msgstr "لغو انتخاب همه"
+
+msgid "Edit Label Classes"
+msgstr "ویرایش کلاس های برچسب"
+
+msgid "No OCR backends available"
+msgstr "هیچ پس‌زمینه OCR در دسترس نیست"
+
+msgid "No image loaded"
+msgstr "هیچ تصویری بارگذاری نشده است"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "OCR کل تصویر"
+
+msgid "OCR Full: cancelled"
+msgstr "OCR کامل: لغو شد"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "OCR کامل: {} حاشیه نویسی ایجاد شد"
+
+msgid "OCR Full: no results selected"
+msgstr "OCR کامل: هیچ نتیجه ای انتخاب نشده است"
+
+msgid "OCR Full: no text detected"
+msgstr "OCR کامل: هیچ متنی شناسایی نشد"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "نتایج OCR — {} منطقه شناسایی شد"
+
+msgid "OCR Transcribe"
+msgstr "رونویسی OCR"
+
+msgid "OCR service not available"
+msgstr "سرویس OCR در دسترس نیست"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "OCR را روی کل تصویر اجرا کنید و حاشیه نویسی های متنی ایجاد کنید"
+
+msgid "Running full-image OCR ({})..."
+msgstr "در حال اجرای OCR کل تصویر ({})..."
+
+msgid "Select All"
+msgstr "انتخاب همه"
+
+msgid "{} backend(s) available"
+msgstr "{} پس‌زمینه در دسترس است"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 OCR کل تصویر"
+
+msgid "+ Add Category"
+msgstr "+ اضافه کردن دسته"
+
+msgid "Category name:"
+msgstr "نام دسته:"
+
+msgid "Delete category"
+msgstr "حذف دسته"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "از پیش تعیین شده بارگیری نشد:\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "از پیش تعیین شده ذخیره نشد:\\n{}"
+
+msgid "Label Classes"
+msgstr "کلاس های برچسب"
+
+msgid "Labels"
+msgstr "برچسب ها"
+
+msgid "Load"
+msgstr "بارگذاری کنید"
+
+msgid "Move down"
+msgstr "به پایین حرکت کنید"
+
+msgid "Move up"
+msgstr "حرکت به بالا"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "نام از پیش تعیین شده (به عنوان user_<name>.json ذخیره خواهد شد):"
+
+msgid "Preset:"
+msgstr "از پیش تعیین شده:"
+
+msgid "Reset to Default"
+msgstr "به حالت پیش فرض بازنشانی کنید"
+
+msgid "Save As"
+msgstr "ذخیره به عنوان"
+
+msgid "Save Preset As"
+msgstr "ذخیره از پیش تعیین شده به عنوان"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+"\\u24d8 YOLO: تغییر ترتیب دسته‌ها بر شاخص کلاس تأثیر می‌گذارد (نیاز به صدور "
+"مجدد و آموزش مجدد دارد)"
+
+msgid "AI Models"
+msgstr "مدل های هوش مصنوعی"
+
+msgid "AI Segmentation Models"
+msgstr "مدل های تقسیم بندی هوش مصنوعی"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+"مدل های پنهان از نوار ابزار کشویی حذف می شوند. مدل های جدید به طور پیش فرض "
+"نشان داده می شوند."
+
+msgid "OCR Backends"
+msgstr "OCR Backends"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "تصاویر عمومی، دقت بهتر از Sam (shubham0204 ONNX)"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "تصاویر عمومی، اشیاء \\u226510% قاب؛ سریع (Xenova ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr "تصاویر با وضوح بالا، اشیاء کوچک؛ استنتاج native-res"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr "اشیاء کوچک با وضوح بالا؛ دقت سازگار با LabelMe"
+
+msgid "Model Selection Guide:"
+msgstr "راهنمای انتخاب مدل:"
+
+msgid "First run may take longer to load the model."
+msgstr "اولین اجرا ممکن است برای بارگذاری مدل زمان بیشتری ببرد."
+
+msgid "Preparing OCR engine ({})..."
+msgstr "در حال آماده‌سازی موتور OCR ({}) ..."
+
+msgid "AI segmentation"
+msgstr "بخش‌بندی هوش مصنوعی"
+
+msgid "No AI models were loaded"
+msgstr "هیچ مدل هوش مصنوعی بارگذاری نشد"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr ""
+"تخلیه مدل‌های بخش‌بندی هوش مصنوعی و OCR از حافظه برای آزادسازی GPU/RAM"
+
+msgid "Unloaded: {}"
+msgstr "تخلیه شد: {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 آزادسازی حافظه هوش مصنوعی"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"توجه: در صورت عدم انتخاب، فایل‌های JSON فقط در صورتی نوشته می‌شوند که "
+"حاشیه‌نویسی وجود داشته باشد یا وضعیت مجموعه داده (train/val/test) تنظیم شده "
+"باشد."
+
+msgid "Save Behavior"
+msgstr "رفتار ذخیره‌سازی"
+
+msgid "Save annotation file for unannotated images"
+msgstr "ذخیره فایل حاشیه‌نویسی برای تصاویر بدون حاشیه‌نویسی"
+
+msgid "Set Status: {}"
+msgstr "تنظیم وضعیت: {}"
+
+msgid "Show in Explorer"
+msgstr "نمایش در اکسپلورر"

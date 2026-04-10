@@ -2,12 +2,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2026-02-21 08:03\n"
+"POT-Creation-Date: 2026-04-10 12:59\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "+ Add"
+msgstr ""
+
+msgid "+ Add Category"
 msgstr ""
 
 msgid "AI Active: {} positive, {} negative prompts."
@@ -25,6 +28,9 @@ msgstr ""
 msgid "AI Assisted Labeling Settings"
 msgstr ""
 
+msgid "AI Mask annotation added."
+msgstr ""
+
 msgid ""
 "AI Mode Active: Left-click (Green) to add, Right-click (Red) to exclude."
 msgstr ""
@@ -33,6 +39,15 @@ msgid "AI Mode: UI locked. Use Enter/Esc to finish."
 msgstr ""
 
 msgid "AI Model Directory:"
+msgstr ""
+
+msgid "AI Models"
+msgstr ""
+
+msgid "AI Segmentation Models"
+msgstr ""
+
+msgid "AI segmentation"
 msgstr ""
 
 msgid "AI-Assisted Pixel Mask (SAM)"
@@ -133,6 +148,9 @@ msgstr ""
 msgid "Automated directory structure generation"
 msgstr ""
 
+msgid "Backend:"
+msgstr ""
+
 msgid "Base64 Embedding: {}"
 msgstr ""
 
@@ -163,9 +181,6 @@ msgstr ""
 msgid "Cancel current drawing (Esc)"
 msgstr ""
 
-msgid "Cannot delete default category '{}'"
-msgstr ""
-
 msgid "Cannot load image: {}"
 msgstr ""
 
@@ -178,6 +193,9 @@ msgstr ""
 msgid "Category '{}' already exists"
 msgstr ""
 
+msgid "Category '{}' not found"
+msgstr ""
+
 msgid "Category Index Start:"
 msgstr ""
 
@@ -188,6 +206,9 @@ msgid "Category deleted: {}"
 msgstr ""
 
 msgid "Category name cannot be empty"
+msgstr ""
+
+msgid "Category name:"
 msgstr ""
 
 msgid "Category:"
@@ -214,9 +235,6 @@ msgstr ""
 msgid "Confirm Deletion"
 msgstr ""
 
-msgid "Constraint"
-msgstr ""
-
 msgid "Copy Image Files (create standalone dataset)"
 msgstr ""
 
@@ -224,6 +242,9 @@ msgid "Count"
 msgstr ""
 
 msgid "Count: 0"
+msgstr ""
+
+msgid "Create Annotations"
 msgstr ""
 
 msgid "Create Annulus"
@@ -296,10 +317,16 @@ msgstr ""
 msgid "Delete Selected Category"
 msgstr ""
 
+msgid "Delete category"
+msgstr ""
+
 msgid "Deleted annotation file for: {}"
 msgstr ""
 
 msgid "Denoise Mask (Filter small fragments)"
+msgstr ""
+
+msgid "Deselect All"
 msgstr ""
 
 msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
@@ -330,6 +357,9 @@ msgid "Edit Category..."
 msgstr ""
 
 msgid "Edit Label"
+msgstr ""
+
+msgid "Edit Label Classes"
 msgstr ""
 
 msgid "Editing {}. Shape locked. Press Enter to update."
@@ -392,7 +422,13 @@ msgstr ""
 msgid "Failed to load folder: {}"
 msgstr ""
 
+msgid "Failed to load preset:\\n{}"
+msgstr ""
+
 msgid "Failed to save annotations"
+msgstr ""
+
+msgid "Failed to save preset:\\n{}"
 msgstr ""
 
 msgid "Failed to switch image: {}"
@@ -416,6 +452,9 @@ msgstr ""
 msgid "Finished"
 msgstr ""
 
+msgid "First run may take longer to load the model."
+msgstr ""
+
 msgid "Fit Window"
 msgstr ""
 
@@ -434,6 +473,12 @@ msgstr ""
 msgid "Full Screen"
 msgstr ""
 
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr ""
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr ""
+
 msgid "Generating Dataset..."
 msgstr ""
 
@@ -444,6 +489,17 @@ msgid "Help"
 msgstr ""
 
 msgid "Hidden"
+msgstr ""
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+
+msgid "High-res images, small objects; native-res inference"
+msgstr ""
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
 msgstr ""
 
 msgid "Hint"
@@ -482,9 +538,6 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-msgid "Image Annotation Tool"
-msgstr ""
-
 msgid "Image Files"
 msgstr ""
 
@@ -506,6 +559,9 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
+msgid "Label Classes"
+msgstr ""
+
 msgid "Label List"
 msgstr ""
 
@@ -516,6 +572,9 @@ msgid "Label updated to: {}"
 msgstr ""
 
 msgid "LabelMe Storage Format"
+msgstr ""
+
+msgid "Labels"
 msgstr ""
 
 msgid "Language"
@@ -539,6 +598,9 @@ msgstr ""
 msgid "List Only"
 msgstr ""
 
+msgid "Load"
+msgstr ""
+
 msgid "Loaded folder: {} ({} images)"
 msgstr ""
 
@@ -554,10 +616,19 @@ msgstr ""
 msgid "Manage Categories..."
 msgstr ""
 
+msgid "Model Selection Guide:"
+msgstr ""
+
 msgid "Model:"
 msgstr ""
 
 msgid "Monokai"
+msgstr ""
+
+msgid "Move down"
+msgstr ""
+
+msgid "Move up"
 msgstr ""
 
 msgid "Moved object to bottom layer"
@@ -572,6 +643,12 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+msgid "No AI models were loaded"
+msgstr ""
+
+msgid "No OCR backends available"
+msgstr ""
+
 msgid "No annotation file found for this image."
 msgstr ""
 
@@ -579,6 +656,9 @@ msgid "No current image"
 msgstr ""
 
 msgid "No image files found in folder\\n{}"
+msgstr ""
+
+msgid "No image loaded"
 msgstr ""
 
 msgid "No images loaded"
@@ -599,6 +679,41 @@ msgid ""
 msgstr ""
 
 msgid "Note: User info will only be added to JSON when enabled above."
+msgstr ""
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+
+msgid "OCR"
+msgstr ""
+
+msgid "OCR Backends"
+msgstr ""
+
+msgid "OCR Full Image"
+msgstr ""
+
+msgid "OCR Full: cancelled"
+msgstr ""
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr ""
+
+msgid "OCR Full: no results selected"
+msgstr ""
+
+msgid "OCR Full: no text detected"
+msgstr ""
+
+msgid "OCR Results — {} region(s) detected"
+msgstr ""
+
+msgid "OCR Transcribe"
+msgstr ""
+
+msgid "OCR service not available"
 msgstr ""
 
 msgid "OK"
@@ -649,6 +764,15 @@ msgstr ""
 msgid "Polygon"
 msgstr ""
 
+msgid "Preparing OCR engine ({})..."
+msgstr ""
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr ""
+
+msgid "Preset:"
+msgstr ""
+
 msgid "Prev"
 msgstr ""
 
@@ -694,22 +818,46 @@ msgstr ""
 msgid "Renamed '{}' to '{}' in {} files"
 msgstr ""
 
+msgid "Reset to Default"
+msgstr ""
+
 msgid "Rotated Rect"
+msgstr ""
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr ""
+
+msgid "Running full-image OCR ({})..."
 msgstr ""
 
 msgid "Save"
 msgstr ""
 
+msgid "Save As"
+msgstr ""
+
 msgid "Save As..."
 msgstr ""
 
+msgid "Save Behavior"
+msgstr ""
+
 msgid "Save Labels to Project Folder"
+msgstr ""
+
+msgid "Save Preset As"
+msgstr ""
+
+msgid "Save annotation file for unannotated images"
 msgstr ""
 
 msgid "Save failed"
 msgstr ""
 
 msgid "Select"
+msgstr ""
+
+msgid "Select All"
 msgstr ""
 
 msgid "Select Category:"
@@ -745,10 +893,16 @@ msgstr ""
 msgid "Send to Back"
 msgstr ""
 
+msgid "Set Status: {}"
+msgstr ""
+
 msgid "Settings"
 msgstr ""
 
 msgid "Settings..."
+msgstr ""
+
+msgid "Show in Explorer"
 msgstr ""
 
 msgid "Shown"
@@ -835,6 +989,12 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr ""
+
+msgid "Unloaded: {}"
+msgstr ""
+
 msgid "Update All"
 msgstr ""
 
@@ -901,6 +1061,11 @@ msgstr ""
 msgid "Zoom to Fit"
 msgstr ""
 
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+
 msgid "added"
 msgstr ""
 
@@ -917,6 +1082,9 @@ msgid "undone"
 msgstr ""
 
 msgid "updated"
+msgstr ""
+
+msgid "{} backend(s) available"
 msgstr ""
 
 msgid "↩️ Undo"
@@ -946,6 +1114,9 @@ msgstr ""
 msgid "🎯 Select"
 msgstr ""
 
+msgid "📄 OCR Full Image"
+msgstr ""
+
 msgid "📏 Line"
 msgstr ""
 
@@ -965,6 +1136,9 @@ msgid "🔷 Polygon"
 msgstr ""
 
 msgid "🖼️ Fit View"
+msgstr ""
+
+msgid "🗑 Free AI Memory"
 msgstr ""
 
 msgid "🚫 Cancel"

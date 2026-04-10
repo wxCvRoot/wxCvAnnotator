@@ -18,5 +18,10 @@
         "occluded",
         "truncated",
         "difficult"
-    ]
+    ],
+    "ai_selected_model": "",
+    "ocr_selected_backend": "",
+    "ai_models_hidden": [],
+    "ocr_backends_hidden": [],
+    "save_empty_annotation": false
 }

@@ -1393,3 +1393,193 @@ msgstr "Doğrulama"
 
 msgid "📏 Line"
 msgstr "📏 Çizgi"
+
+msgid "AI Mask annotation added."
+msgstr "AI Maske açıklaması eklendi."
+
+msgid "Backend:"
+msgstr "Arka uç:"
+
+msgid "Category '{}' not found"
+msgstr "Kategori '{}' bulunamadı"
+
+msgid "Create Annotations"
+msgstr "Açıklamalar Oluştur"
+
+msgid "Deselect All"
+msgstr "Tüm Seçimi Kaldır"
+
+msgid "Edit Label Classes"
+msgstr "Etiket Sınıflarını Düzenle"
+
+msgid "No OCR backends available"
+msgstr "Kullanılabilir OCR arka ucu yok"
+
+msgid "No image loaded"
+msgstr "Resim yüklenmedi"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "Tam Görüntü OCR"
+
+msgid "OCR Full: cancelled"
+msgstr "Tam OCR: iptal edildi"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "Tam OCR: {} açıklama oluşturuldu"
+
+msgid "OCR Full: no results selected"
+msgstr "Tam OCR: hiçbir sonuç seçilmedi"
+
+msgid "OCR Full: no text detected"
+msgstr "Tam OCR: metin algılanmadı"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "OCR Sonuçları — {} bölge algılandı"
+
+msgid "OCR Transcribe"
+msgstr "OCR ile Yazıya Çevir"
+
+msgid "OCR service not available"
+msgstr "OCR hizmeti kullanılamıyor"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "Görüntünün tamamında OCR çalıştırın ve metin açıklamaları oluşturun"
+
+msgid "Running full-image OCR ({})..."
+msgstr "Tam görüntü OCR çalıştırılıyor ({})..."
+
+msgid "Select All"
+msgstr "Tümünü Seç"
+
+msgid "{} backend(s) available"
+msgstr "{} arka uç mevcut"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 Tam Görüntü OCR"
+
+msgid "+ Add Category"
+msgstr "+ Kategori Ekle"
+
+msgid "Category name:"
+msgstr "Kategori adı:"
+
+msgid "Delete category"
+msgstr "Kategoriyi sil"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "Ön ayar yüklenemedi:\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "Ön ayar kaydedilemedi:\\n{}"
+
+msgid "Label Classes"
+msgstr "Etiket Sınıfları"
+
+msgid "Labels"
+msgstr "Etiketler"
+
+msgid "Load"
+msgstr "Yük"
+
+msgid "Move down"
+msgstr "Aşağı taşı"
+
+msgid "Move up"
+msgstr "Yukarı taşı"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "Ön ayar adı (user_<name>.json olarak kaydedilecektir):"
+
+msgid "Preset:"
+msgstr "Ön ayar:"
+
+msgid "Reset to Default"
+msgstr "Varsayılana Sıfırla"
+
+msgid "Save As"
+msgstr "Farklı Kaydet"
+
+msgid "Save Preset As"
+msgstr "Ön Ayarı Farklı Kaydet"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+"\\u24d8 YOLO: kategori sırasının değiştirilmesi sınıf dizinini etkiler "
+"(yeniden dışa aktarma ve yeniden eğitim gerektirir)"
+
+msgid "AI Models"
+msgstr "Yapay Zeka Modelleri"
+
+msgid "AI Segmentation Models"
+msgstr "Yapay Zeka Segmentasyon Modelleri"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+"Gizli modeller araç çubuğu açılır menüsünden kaldırılır. Yeni modeller "
+"varsayılan olarak gösterilir."
+
+msgid "OCR Backends"
+msgstr "OCR Arka Uçları"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "Genel görüntüler, Sam'den daha iyi doğruluk (shubham0204 ONNX)"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr ""
+"Genel görüntüler, nesneler \\u226510 çerçevenin %'si; hızlı (Xenova ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr "Yüksek çözünürlüklü görüntüler, küçük nesneler; yerel res çıkarımı"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr "Yüksek çözünürlüklü küçük nesneler; LabelMe uyumlu doğruluk"
+
+msgid "Model Selection Guide:"
+msgstr "Model Seçim Kılavuzu:"
+
+msgid "First run may take longer to load the model."
+msgstr "Modelin yüklenmesi ilk çalıştırmada daha uzun sürebilir."
+
+msgid "Preparing OCR engine ({})..."
+msgstr "OCR motoru hazırlanıyor ({}) ..."
+
+msgid "AI segmentation"
+msgstr "Yapay Zeka Segmentasyonu"
+
+msgid "No AI models were loaded"
+msgstr "Hiçbir yapay zeka modeli yüklenmedi"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr "GPU/RAM boşaltmak için yapay zeka ve OCR modellerini bellekten kaldır"
+
+msgid "Unloaded: {}"
+msgstr "Kaldırıldı: {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 YZ Belleğini Boşalt"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"Not: İşaretlenmediğinde, JSON dosyaları yalnızca açıklamalar varsa veya bir "
+"veri kümesi durumu (train/val/test) ayarlanmışsa yazılır."
+
+msgid "Save Behavior"
+msgstr "Kaydetme Davranışı"
+
+msgid "Save annotation file for unannotated images"
+msgstr "Açıklama eklenmemiş resimler için açıklama dosyasını kaydet"
+
+msgid "Set Status: {}"
+msgstr "Durumu Ayarla: {}"
+
+msgid "Show in Explorer"
+msgstr "Gezginde Göster"

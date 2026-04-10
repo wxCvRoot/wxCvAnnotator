@@ -1380,3 +1380,194 @@ msgstr "Kiểm định"
 
 msgid "📏 Line"
 msgstr "📏 Đường thẳng"
+
+msgid "AI Mask annotation added."
+msgstr "Đã thêm chú thích AI Mask."
+
+msgid "Backend:"
+msgstr "Backend:"
+
+msgid "Category '{}' not found"
+msgstr "Không tìm thấy danh mục '{}'"
+
+msgid "Create Annotations"
+msgstr "Tạo chú thích"
+
+msgid "Deselect All"
+msgstr "Bỏ chọn tất cả"
+
+msgid "Edit Label Classes"
+msgstr "Chỉnh sửa các lớp nhãn"
+
+msgid "No OCR backends available"
+msgstr "Không có backend OCR nào khả dụng"
+
+msgid "No image loaded"
+msgstr "Không có hình ảnh nào được tải"
+
+msgid "OCR"
+msgstr "OCR"
+
+msgid "OCR Full Image"
+msgstr "OCR toàn bộ hình ảnh"
+
+msgid "OCR Full: cancelled"
+msgstr "OCR toàn bộ: đã hủy"
+
+msgid "OCR Full: created {} annotation(s)"
+msgstr "OCR toàn bộ: đã tạo {} chú thích"
+
+msgid "OCR Full: no results selected"
+msgstr "OCR toàn bộ: không có kết quả nào được chọn"
+
+msgid "OCR Full: no text detected"
+msgstr "OCR toàn bộ: không phát hiện văn bản"
+
+msgid "OCR Results — {} region(s) detected"
+msgstr "Kết quả OCR — Phát hiện {} vùng"
+
+msgid "OCR Transcribe"
+msgstr "Xử lý văn bản OCR"
+
+msgid "OCR service not available"
+msgstr "Dịch vụ OCR không khả dụng"
+
+msgid "Run OCR on the entire image and create text annotations"
+msgstr "Chạy OCR trên toàn bộ hình ảnh và tạo chú thích văn bản"
+
+msgid "Running full-image OCR ({})..."
+msgstr "Đang chạy OCR toàn bộ nền ({})..."
+
+msgid "Select All"
+msgstr "Chọn tất cả"
+
+msgid "{} backend(s) available"
+msgstr "Cung cấp {} backend"
+
+msgid "📄 OCR Full Image"
+msgstr "📄 OCR toàn bộ hình ảnh"
+
+msgid "+ Add Category"
+msgstr "+ Thêm danh mục"
+
+msgid "Category name:"
+msgstr "Tên danh mục:"
+
+msgid "Delete category"
+msgstr "Xóa danh mục"
+
+msgid "Failed to load preset:\\n{}"
+msgstr "Không tải được giá trị đặt trước:\\n{}"
+
+msgid "Failed to save preset:\\n{}"
+msgstr "Không lưu được giá trị đặt trước:\\n{}"
+
+msgid "Label Classes"
+msgstr "Lớp nhãn"
+
+msgid "Labels"
+msgstr "Nhãn"
+
+msgid "Load"
+msgstr "Trọng tải"
+
+msgid "Move down"
+msgstr "Di chuyển xuống"
+
+msgid "Move up"
+msgstr "Di chuyển lên"
+
+msgid "Preset name (will be saved as user_<name>.json):"
+msgstr "Tên đặt trước (sẽ được lưu dưới dạng user_<name>.json):"
+
+msgid "Preset:"
+msgstr "Đặt trước:"
+
+msgid "Reset to Default"
+msgstr "Đặt lại về mặc định"
+
+msgid "Save As"
+msgstr "Lưu dưới dạng"
+
+msgid "Save Preset As"
+msgstr "Lưu cài sẵn dưới dạng"
+
+msgid ""
+"\\u24d8  YOLO: changing category order affects class index (requires re-"
+"export & retrain)"
+msgstr ""
+"\\u24d8 YOLO: việc thay đổi thứ tự danh mục sẽ ảnh hưởng đến chỉ mục lớp "
+"(yêu cầu xuất lại và đào tạo lại)"
+
+msgid "AI Models"
+msgstr "Mô hình AI"
+
+msgid "AI Segmentation Models"
+msgstr "Mô hình phân khúc AI"
+
+msgid ""
+"Hidden models are removed from the toolbar dropdown. New models are shown by"
+" default."
+msgstr ""
+"Các mô hình ẩn sẽ bị xóa khỏi danh sách thả xuống của thanh công cụ. Các mô "
+"hình mới được hiển thị theo mặc định."
+
+msgid "OCR Backends"
+msgstr "Phần cuối OCR"
+
+msgid "General images, better accuracy than Sam (shubham0204 ONNX)"
+msgstr "Hình ảnh tổng thể, độ chính xác tốt hơn Sam (shubham0204 ONNX)"
+
+msgid "General images, objects \\u226510% of frame; fast (Xenova ONNX)"
+msgstr "Hình ảnh, vật thể chung \\u226510% khung hình; nhanh (Xenova ONNX)"
+
+msgid "High-res images, small objects; native-res inference"
+msgstr "Hình ảnh độ phân giải cao, vật thể nhỏ; suy luận độ phân giải gốc"
+
+msgid "High-res small objects; LabelMe-compatible accuracy"
+msgstr ""
+"Các vật thể nhỏ có độ phân giải cao; Độ chính xác tương thích với LabelMe"
+
+msgid "Model Selection Guide:"
+msgstr "Hướng dẫn lựa chọn mô hình:"
+
+msgid "First run may take longer to load the model."
+msgstr "Lần chạy đầu tiên có thể mất nhiều thời gian hơn để tải mô hình."
+
+msgid "Preparing OCR engine ({})..."
+msgstr "Đang chuẩn bị công cụ OCR ({}) ..."
+
+msgid "AI segmentation"
+msgstr "Phân đoạn AI"
+
+msgid "No AI models were loaded"
+msgstr "Không có mô hình AI nào được tải"
+
+msgid "Unload AI segmentation and OCR models from memory to free GPU/RAM"
+msgstr ""
+"Giải phóng các mô hình phân đoạn AI và OCR khỏi bộ nhớ để giải phóng GPU/RAM"
+
+msgid "Unloaded: {}"
+msgstr "Đã giải phóng: {}"
+
+msgid "🗑 Free AI Memory"
+msgstr "🗑 Giải phóng bộ nhớ AI"
+
+msgid ""
+"Note: When unchecked, JSON files are only written if there are annotations "
+"or a dataset status (train/val/test) is set."
+msgstr ""
+"Lưu ý: Khi không được chọn, các tệp JSON chỉ được ghi nếu có chú thích hoặc "
+"trạng thái tập dữ liệu (train/val/test) được đặt."
+
+msgid "Save Behavior"
+msgstr "Hành vi lưu"
+
+msgid "Save annotation file for unannotated images"
+msgstr "Lưu tệp chú thích cho các hình ảnh chưa được chú thích"
+
+msgid "Set Status: {}"
+msgstr "Đặt trạng thái: {}"
+
+msgid "Show in Explorer"
+msgstr "Hiển thị trong Explorer"
