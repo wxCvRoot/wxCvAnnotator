@@ -1584,3 +1584,112 @@ msgstr "Установить статус: {}"
 
 msgid "Show in Explorer"
 msgstr "Показать в проводнике"
+
+msgid "Annotation updated"
+msgstr "Аннотация обновлена"
+
+msgid "Annotations hidden"
+msgstr "Аннотации скрыты"
+
+msgid "Annotations shown"
+msgstr "Аннотации показаны"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "Конвертировать Маску → Полигон"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "Конвертировать Маску → Полигон..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "Обнаружены отверстия: {n} → применена техника моста"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "Изображение: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "Итерации:"
+
+msgid "Kernel size:"
+msgstr "Размер ядра:"
+
+msgid "No image loaded."
+msgstr "Изображение не загружено."
+
+msgid "Operation"
+msgstr "Операция"
+
+msgid "Preview"
+msgstr "Предпросмотр"
+
+msgid "Refine Shape"
+msgstr "Уточнить форму"
+
+msgid "Refine Shape..."
+msgstr "Уточнить форму..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "Гладкий (ε):"
+
+msgid "Toggle Annotations"
+msgstr "Переключить аннотации"
+
+msgid "px"
+msgstr "пикс."
+
+msgid "px  (0 = keep all)"
+msgstr "пикс. (0 = сохранить все)"
+
+msgid "(overlay transparency)"
+msgstr "(прозрачность наложения)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "Конвертировать Полигон → Маску"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "Конвертировать Полигон → Маску..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "Изображение: {w} × {h} | Точки: {n}"
+
+msgid "Mask alpha:"
+msgstr "Альфа маски:"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "Аннотация: #{id} \"{label}\" [{type}]"
+
+msgid "Closing"
+msgstr "Закрытие"
+
+msgid "Convert Mask → Polygon"
+msgstr "Конвертировать Маску → Полигон"
+
+msgid "Convert Polygon → Mask"
+msgstr "Конвертировать Полигон → Маску"
+
+msgid "Dilation"
+msgstr "Дилатация"
+
+msgid "Erosion"
+msgstr "Эрозия"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "Обнаружены отверстия: {n} → применена техника моста"
+
+msgid "Image: {w} × {h}"
+msgstr "Изображение: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "Изображение: {w} × {h} | Точки: {n}"
+
+msgid "Opening"
+msgstr "Открытие"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+"Операция привела к пустой форме.\n"
+"Попробуйте уменьшить размер ядра или количество итераций."
+
+msgid "Smooth (ε):"
+msgstr "Гладкий (ε):"

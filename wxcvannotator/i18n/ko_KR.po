@@ -1568,3 +1568,113 @@ msgstr "상태 설정: {}"
 
 msgid "Show in Explorer"
 msgstr "파일 탐색기에서 보기"
+
+msgid "Annotation updated"
+msgstr "주석 업데이트됨"
+
+msgid "Annotations hidden"
+msgstr "주석 숨겨짐"
+
+msgid "Annotations shown"
+msgstr "주석 표시됨"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "마스크 → 다각형 변환"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "마스크 → 다각형 변환..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "구멍 감지됨: {n} → 브리지 기법 적용됨"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "이미지: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "반복:"
+
+msgid "Kernel size:"
+msgstr "커널 크기:"
+
+msgid "No image loaded."
+msgstr "이미지가 없습니다."
+
+msgid "Operation"
+msgstr "작업"
+
+msgid "Preview"
+msgstr "미리보기"
+
+msgid "Refine Shape"
+msgstr "모양 다듬기"
+
+msgid "Refine Shape..."
+msgstr "모양 다듬기..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "평활화 (ε):"
+
+msgid "Toggle Annotations"
+msgstr "주석 전환"
+
+msgid "px"
+msgstr "px"
+
+msgid "px  (0 = keep all)"
+msgstr "px (0 = 모두 유지)"
+
+msgid "(overlay transparency)"
+msgstr "(오버레이 투명도)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "다각형 → 마스크 변환"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "다각형 → 마스크 변환..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "이미지: {w} × {h} | 포인트: {n}"
+
+msgid "Mask alpha:"
+msgstr "마스크 알파:"
+
+msgid "Closing"
+msgstr "닫기"
+
+msgid "Dilation"
+msgstr "팽창"
+
+msgid "Erosion"
+msgstr "침식"
+
+msgid "Opening"
+msgstr "열기"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr "작업 결과 빈 모양이 생성되었습니다。\\n커널 크기 또는 반복 횟수를 줄여보세요。"
+
+msgid "Annotation: #{id}  \\\"{label}\\\"  [{type}]"
+msgstr "주석: #{id}  \\\"{label}\\\"  [{type}]"
+
+msgid "Convert Mask → Polygon"
+msgstr "마스크 → 다각형 변환"
+
+msgid "Convert Polygon → Mask"
+msgstr "다각형 → 마스크 변환"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "구멍 감지됨: {n} → 브리지 기법 적용됨"
+
+msgid "Image: {w} × {h}"
+msgstr "이미지: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "이미지: {w} × {h} | 포인트: {n}"
+
+msgid "Smooth (ε):"
+msgstr "평활화 (ε):"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "주석: #{id}  “{label}”  [{type}]"

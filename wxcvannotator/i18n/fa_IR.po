@@ -1579,3 +1579,112 @@ msgstr "تنظیم وضعیت: {}"
 
 msgid "Show in Explorer"
 msgstr "نمایش در اکسپلورر"
+
+msgid "Annotation updated"
+msgstr "حاشیه نویسی به روز شد"
+
+msgid "Annotations hidden"
+msgstr "حاشیه نویسی ها پنهان شدند"
+
+msgid "Annotations shown"
+msgstr "حاشیه نویسی ها نشان داده شدند"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "تبدیل ماسک ← چندضلعی"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "تبدیل ماسک ← چندضلعی..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "سوراخ ها شناسایی شدند: {n} ← تکنیک پل اعمال شد"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "تصویر: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "تکرارها:"
+
+msgid "Kernel size:"
+msgstr "اندازه هسته:"
+
+msgid "No image loaded."
+msgstr "هیچ تصویری بارگذاری نشده است."
+
+msgid "Operation"
+msgstr "عملیات"
+
+msgid "Preview"
+msgstr "پیش‌نمایش"
+
+msgid "Refine Shape"
+msgstr "بهبود شکل"
+
+msgid "Refine Shape..."
+msgstr "بهبود شکل..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "صاف (ε):"
+
+msgid "Toggle Annotations"
+msgstr "تغییر وضعیت حاشیه نویسی ها"
+
+msgid "px"
+msgstr "پیکسل"
+
+msgid "px  (0 = keep all)"
+msgstr "پیکسل (0 = حفظ همه)"
+
+msgid "(overlay transparency)"
+msgstr "(شفافیت همپوشانی)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "تبدیل چندضلعی ← ماسک"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "تبدیل چندضلعی ← ماسک..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "تصویر: {w} × {h} | نقاط: {n}"
+
+msgid "Mask alpha:"
+msgstr "آلفا ماسک:"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "حاشیه نویسی: #{id} \"{label}\" [{type}]"
+
+msgid "Closing"
+msgstr "بستن"
+
+msgid "Convert Mask → Polygon"
+msgstr "تبدیل ماسک ← چندضلعی"
+
+msgid "Convert Polygon → Mask"
+msgstr "تبدیل چندضلعی ← ماسک"
+
+msgid "Dilation"
+msgstr "انبساط"
+
+msgid "Erosion"
+msgstr "فرسایش"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "سوراخ ها شناسایی شدند: {n} ← تکنیک پل اعمال شد"
+
+msgid "Image: {w} × {h}"
+msgstr "تصویر: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "تصویر: {w} × {h} | نقاط: {n}"
+
+msgid "Opening"
+msgstr "باز کردن"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+"عملیات منجر به یک شکل خالی شد.\n"
+"سعی کنید اندازه هسته یا تکرارها را کاهش دهید."
+
+msgid "Smooth (ε):"
+msgstr "صاف (ε):"

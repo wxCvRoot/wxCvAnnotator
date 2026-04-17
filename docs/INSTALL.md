@@ -1,5 +1,7 @@
 # wxCvAnnotator 安裝指南
 
+> **最後更新：2026-02-25** — linux add ocr service
+
 ## 目錄
 
 - [系統需求](#系統需求)
@@ -7,6 +9,7 @@
 - [macOS 安裝](#macos-安裝)
 - [Windows 安裝](#windows-安裝)
 - [Linux 安裝](#linux-安裝)
+- [選擇性功能安裝](#選擇性功能安裝)
 - [常見問題](#常見問題)
 
 ---
@@ -223,6 +226,87 @@ wxcv-annotator
 > ```bash
 > pip install onnxruntime-gpu
 > ```
+
+---
+
+---
+
+## 選擇性功能安裝
+
+wxCvAnnotator 核心功能（標註、編輯、匯出）安裝後即可使用，無需額外套件。
+AI 相關功能可依需求選擇性安裝，不影響主程式運作。
+
+### AI 輪廓標註（SAM / EfficientSAM）
+
+使用 ONNX Runtime 推論，**已包含在核心依賴中**（`onnxruntime`），安裝主程式後即可使用。
+模型在首次點擊「AI 標註」時自動從 HuggingFace 下載（40 MB – 600 MB）。
+
+```bash
+# GPU 加速（NVIDIA）
+pip install onnxruntime-gpu
+```
+
+### AI OCR 文字識別（VLM 後端）
+
+使用大型語言視覺模型（Qwen3-VL、InternVL3、GOT-OCR2.0 等），需額外安裝依賴。
+模型在首次使用時自動從 HuggingFace 下載（1.4 GB – 8 GB）。
+
+> **注意**：安裝前必須先安裝 PyTorch（選擇符合你的 CUDA 版本）。
+> OCR 功能**不安裝也不影響**標註與 AI 輪廓功能。
+
+#### 步驟 1：安裝 PyTorch
+
+選擇符合你的 CUDA 版本（從 [pytorch.org](https://pytorch.org/get-started/locally/) 查詢指令）：
+
+```bash
+# CUDA 12.1（最常見，NVIDIA GTX/RTX 20xx–40xx）
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+
+# CUDA 11.8
+pip install torch --index-url https://download.pytorch.org/whl/cu118
+
+# CPU only（無 GPU 或 Mac）
+pip install torch
+```
+
+> macOS Apple Silicon 使用者：`pip install torch` 即可（MPS 加速內建）。
+
+#### 步驟 2：安裝 OCR 套件
+
+```bash
+pip install "wxcvannotator[ocr]"
+```
+
+此指令安裝所有 VLM 後端所需套件：
+
+| 套件 | 用途 | 使用的後端 |
+|------|------|-----------|
+| `transformers>=4.50` | 模型載入與推論 | 全部 VLM |
+| `Pillow>=9.0` | 影像處理 | 全部 VLM |
+| `accelerate>=0.26` | 4-bit 量化所需 | Qwen 系列 |
+| `bitsandbytes>=0.43` | 4-bit 量化（低 VRAM GPU）| Qwen 系列 |
+| `qwen-vl-utils` | Qwen2.5-VL 影像前處理 | Qwen2.5-VL |
+| `tiktoken` | GOT-OCR2.0 tokenizer | GOT-OCR2.0 |
+| `verovio` | GOT-OCR2.0 格式輸出 | GOT-OCR2.0 |
+| `sentencepiece` | InternVL3 tokenizer | InternVL3 |
+
+#### 關於 PaddleOCR
+
+PaddleOCR 是獨立的深度學習框架（非 PyTorch），安裝相依套件較多。
+目前在 Linux + CUDA 12 環境下有已知推論問題（GTX 10xx，輸出全零），**待 Windows 驗證通過後加入**。
+目前版本尚未整合，敬請期待。
+
+#### VRAM 需求參考
+
+| 後端 | 磁碟 | VRAM（推論） | 最低 GPU |
+|------|------|------------|---------|
+| GOT-OCR2.0 | 1.4 GB | ~1.4 GB (fp16) | GTX 1060 6GB |
+| Qwen3-VL-2B | ~4 GB | ~1.7 GB (4-bit) | GTX 1060 6GB |
+| Qwen2.5-VL-3B | 7.5 GB | ~2.5 GB (4-bit) | GTX 1060 6GB |
+| Qwen3-VL-4B | ~8.3 GB | ~3.1 GB (4-bit) | GTX 1060 6GB |
+| InternVL3-2B | ~4 GB | ~4.2 GB (bf16) | RTX 3060 8GB+ |
+
+> 若無 NVIDIA GPU，所有 VLM 後端均可使用 CPU 推論，但速度會慢 20–100 倍。
 
 ---
 

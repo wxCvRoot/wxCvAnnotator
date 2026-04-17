@@ -36,6 +36,7 @@ from ..utils.settings_manager import SettingsManager
 from ..utils.ai_service import AIService
 from .theme_manager import get_theme_manager
 from .ocr_components import TextEditPopup, OCRResultReviewDialog, OcrLoadingDialog
+from .annotation_refine_dialog import RefineMorphDialog, MaskToPolygonDialog, PolygonToMaskDialog
 from .settings_dialog import SettingsDialog
 from .attribute_panel import AttributePanel
 from .. import __version__
@@ -45,7 +46,7 @@ from .. import __version__
 class WxCvAnnotatorMainWindow(wx.Frame):
     """wxCvAnnotator Main Window - Designed based on LabelMe mode"""
     
-    def __init__(self, path=None, labels=None, nodata=False, embed=False, output=None, config_path=None, no_help=False):
+    def __init__(self, path=None, labels=None, nodata=False, embed=False, output=None, config_path=None, no_help=False, model_path=None):
         """Initialize main window"""
         self._no_help = no_help
         _title = "Annotation Tool" if no_help else f"wxCvAnnotator {__version__} - Image Annotation Tool"
@@ -71,6 +72,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             self.settings_manager.set("embed_base64", False, save=False)
         elif embed:
             self.settings_manager.set("embed_base64", True, save=False)
+        if model_path:
+            self.settings_manager.set("ai_model_path", model_path, save=False)
             
         # 主題管理器
         self.theme_manager = get_theme_manager(config_dir=config_dir)
@@ -87,6 +90,9 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         self.file_navigation_enabled = False
         self.current_image_index = 0
         self.image_files = []
+        # File list optimisation: track previous selection and cache annotation info
+        self._prev_file_list_index: int = -1
+        self._file_list_info_cache: dict = {}  # image_path -> (count, status)
         
         # 窗口組件
         self.image_display_panel = None
@@ -130,6 +136,7 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         self.id_about = wx.NewId()
         self.id_transcribe = wx.NewId()
         self.id_ocr_full = wx.NewId()
+        self.id_toggle_overlay = wx.NewId()
         
         # 創建菜單並設置到窗口
         menu_bar = self._create_menu()
@@ -248,8 +255,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             print("⚠️ AIService: onnxruntime not found. Disabling AI features.")
             self.toolbar.enable_ai_section(False)
 
-        # 4.2 Initialize OCR service
-        self._init_ocr_service()
+        # 4.2 OCR service — lazy init on first use
+        self.ocr_service = None
         
         # 5. 創建右側面板 (父層為 content_splitter)
         # 注意：_create_right_panel 原本接受 sizer，現在我們需要它接受父層窗口
@@ -490,6 +497,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         
         # Bind events
         self.annotation_list.Bind(wx.EVT_LIST_ITEM_SELECTED, self._on_annotation_selected)
+        self.annotation_list.Bind(wx.EVT_LIST_KEY_DOWN, self._on_list_key_down_space)
+        self.annotation_list.Bind(wx.EVT_LIST_ITEM_RIGHT_CLICK, self._on_annotation_list_right_click)
         self.btn_edit.Bind(wx.EVT_BUTTON, self._on_edit_annotation)
         self.btn_delete.Bind(wx.EVT_BUTTON, self._on_delete_annotation)
         self.btn_visibility.Bind(wx.EVT_BUTTON, self._on_toggle_visibility)
@@ -610,6 +619,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         view_menu.Append(wx.ID_ZOOM_IN, _("Zoom In") + "\tCtrl+=")
         view_menu.Append(wx.ID_ZOOM_OUT, _("Zoom Out") + "\tCtrl+-")
         view_menu.Append(wx.ID_ZOOM_FIT, _("Fit Window") + "\tCtrl+0")
+        view_menu.AppendSeparator()
+        view_menu.Append(self.id_toggle_overlay, _("Toggle Annotations") + "\tSpace")
         
         menu_bar.Append(view_menu, _("View"))
         
@@ -702,6 +713,9 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         
         # Settings events
         self.Bind(wx.EVT_MENU, self._on_open_settings, id=self.id_settings)
+
+        # View events
+        self.Bind(wx.EVT_MENU, self._on_toggle_overlay, id=self.id_toggle_overlay)
         
         # Toolbar events
         self.toolbar.set_tool_changed_callback(self._on_tool_changed)
@@ -838,6 +852,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         backend = self.toolbar.ocr_backend_selector.GetStringSelection()
         if backend:
             self.settings_manager.set("ocr_selected_backend", backend)
+        if not self.ocr_service and backend:
+            self._init_ocr_service()
         if self.ocr_service and backend:
             try:
                 self.ocr_service.set_backend(backend)
@@ -1483,6 +1499,10 @@ class WxCvAnnotatorMainWindow(wx.Frame):
                 #     print("💾 Saving current annotations...")
                 #     self._save_annotation_for_current_image()
                 
+                # Restore overlay visibility before loading new image
+                if self.image_display_panel:
+                    self.image_display_panel.restore_overlay_visibility()
+
                 # Load new image
                 print(f"🔄 Calling image_display_panel.load_image...")
                 if self.image_display_panel:
@@ -1689,7 +1709,7 @@ class WxCvAnnotatorMainWindow(wx.Frame):
                     # 載入新圖片
                     print(f"🖼️  載入新圖片...")
                     self._load_current_image()
-                    
+
                     # Update status
                     self._update_status(f"Switched to: {Path(selected_file_path).name}")
                     
@@ -1743,10 +1763,22 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             else:
                 # Normal mode: Edit transcription on Enter
                 self._on_edit_transcription(None)
+        elif key_code == wx.WXK_SPACE:
+            self._on_toggle_overlay(None)
 
-        
+
         event.Skip()
     
+    def _on_toggle_overlay(self, event):
+        """Toggle annotation overlay visibility (Space bar)."""
+        if not self.image_display_panel:
+            return
+        visible = self.image_display_panel.toggle_overlay_visibility()
+        if visible:
+            self._update_status(_("Annotations shown"))
+        else:
+            self._update_status(_("Annotations hidden"))
+
     def _on_close(self, event):
         """窗口關閉事件"""
         print("🚪 Closing wxCvAnnotator...")
@@ -1832,76 +1864,85 @@ class WxCvAnnotatorMainWindow(wx.Frame):
             wx.MessageBox(_("Failed to load folder: {}").format(e), _("Error"), wx.OK | wx.ICON_ERROR)
             print(f"載入文件夾失敗: {e}")
     
-    def _update_file_list(self):
-        """更新文件列表"""
+    def _update_file_list(self, force_rebuild: bool = False):
+        """更新文件列表
+
+        正常切換圖片時只更新「前一張」和「當前張」兩個 row，
+        避免對整個資料夾的每個 JSON 做 I/O。
+        """
         if not self.file_list or not self.file_navigation_enabled:
             return
-        
+
         try:
             if not getattr(self, 'image_files', None):
                 self.file_list.DeleteAllItems()
+                self._file_list_info_cache.clear()
+                self._prev_file_list_index = -1
                 self._update_navigation_buttons()
                 return
-            
+
             # Get theme colors
             theme = self.theme_manager.get_current_theme()
             bg_normal = wx.NullColour
             bg_selected = wx.Colour(100, 100, 200) # Default blue
-            
+
             if theme:
                 bg_normal = wx.Colour(theme.bg_list)
                 bg_selected = wx.Colour(theme.bg_item_hover)
-            
-            # Use incremental update if list count matches
+
             curr_count = self.file_list.GetItemCount()
             img_count = len(self.image_files)
-            
-            if curr_count == img_count:
-                for i in range(img_count):
-                    # Only update current index and others that might have changed
-                    # For simplicity, update all visible text/status
-                    image_path = self.image_files[i]
-                    annotation_count, status = self._peek_annotation_info(image_path)
-                    
-                    self.file_list.SetItem(i, 1, str(annotation_count))
-                    self.file_list.SetItem(i, 2, status)
-                    
-                    # Highlight current
-                    if i == self.current_image_index:
-                        self.file_list.SetItemBackgroundColour(i, bg_selected)
-                        self.file_list.SetItemState(i, wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED, 
-                                                   wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED)
-                    else:
-                        # Reset background for others
-                        self.file_list.SetItemBackgroundColour(i, bg_normal)
-                        self.file_list.SetItemState(i, 0, wx.LIST_STATE_SELECTED)
-                
-                self.file_list.EnsureVisible(self.current_image_index)
+            cur = self.current_image_index
+
+            if not force_rebuild and curr_count == img_count:
+                # Fast path: only touch rows that changed
+                # 1. Refresh current row (always re-read JSON — count may have changed after save)
+                image_path = self.image_files[cur]
+                annotation_count, status = self._peek_annotation_info(image_path)
+                self._file_list_info_cache[image_path] = (annotation_count, status)
+                self.file_list.SetItem(cur, 1, str(annotation_count))
+                self.file_list.SetItem(cur, 2, status)
+                self.file_list.SetItemBackgroundColour(cur, bg_selected)
+                self.file_list.SetItemState(cur, wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED,
+                                            wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED)
+
+                # 2. Clear highlight on previous row (no JSON read needed)
+                prev = self._prev_file_list_index
+                if 0 <= prev < img_count and prev != cur:
+                    self.file_list.SetItemBackgroundColour(prev, bg_normal)
+                    self.file_list.SetItemState(prev, 0, wx.LIST_STATE_SELECTED)
+
+                self._prev_file_list_index = cur
+                self.file_list.EnsureVisible(cur)
                 self.file_list.Refresh()
                 self._update_navigation_buttons()
                 return
 
-            # Fallback: Full rebuild only if count differs
+            # Full rebuild: folder changed or count differs
             self.file_list.DeleteAllItems()
-            
+            self._file_list_info_cache.clear()
+
             for i, image_path in enumerate(self.image_files):
                 path = Path(image_path)
                 annotation_count, status = self._peek_annotation_info(image_path)
-                
+                self._file_list_info_cache[image_path] = (annotation_count, status)
+
                 index = self.file_list.InsertItem(i, path.name)
                 self.file_list.SetItem(index, 1, str(annotation_count))
                 self.file_list.SetItem(index, 2, status)
-                
-                if i == self.current_image_index:
+
+                if i == cur:
                     self.file_list.SetItemBackgroundColour(index, bg_selected)
-                    self.file_list.SetItemState(index, wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED, 
+                    self.file_list.SetItemState(index, wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED,
                                                wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED)
                 else:
                     self.file_list.SetItemBackgroundColour(index, bg_normal)
-            self.file_list.EnsureVisible(self.current_image_index)
+
+            self._prev_file_list_index = cur
+            self.file_list.EnsureVisible(cur)
             self.file_list.Refresh()
             self._update_navigation_buttons()
-            
+
         except Exception as e:
             print(f"更新文件列表失敗: {e}")
             import traceback
@@ -2088,9 +2129,114 @@ class WxCvAnnotatorMainWindow(wx.Frame):
 
     def _on_file_list_key_down(self, event):
         """Handle keyboard navigation in file list"""
-        # Let default ListCtrl handle UP/DOWN navigation
-        # We respond to EVT_LIST_ITEM_SELECTED to load the image
+        if event.GetKeyCode() == wx.WXK_SPACE:
+            self._on_toggle_overlay(None)
+            return  # do NOT Skip — prevent ListCtrl from consuming Space
         event.Skip()
+
+    def _on_list_key_down_space(self, event):
+        """Forward Space key from annotation list to overlay toggle."""
+        if event.GetKeyCode() == wx.WXK_SPACE:
+            self._on_toggle_overlay(None)
+            return
+        event.Skip()
+
+    def _on_annotation_list_right_click(self, event):
+        """Annotation list right-click context menu (Refine / Convert)."""
+        item_index = event.GetIndex()
+        if item_index == -1:
+            return
+        annotations = self.image_display_panel.get_annotations()
+        if not (0 <= item_index < len(annotations)):
+            return
+        ann = annotations[item_index]
+        if ann.type not in ("polygon", "mask"):
+            return
+
+        menu = wx.Menu()
+        refine_item = menu.Append(wx.ID_ANY, _("Refine Shape..."))
+        self.Bind(
+            wx.EVT_MENU,
+            lambda evt, a=ann: self._open_refine_dialog(a),
+            refine_item,
+        )
+        menu.AppendSeparator()
+        if ann.type == "polygon":
+            poly2mask_item = menu.Append(wx.ID_ANY, _("Convert Polygon \u2192 Mask..."))
+            self.Bind(
+                wx.EVT_MENU,
+                lambda evt, a=ann: self._open_polygon_to_mask_dialog(a),
+                poly2mask_item,
+            )
+        elif ann.type == "mask":
+            mask2poly_item = menu.Append(wx.ID_ANY, _("Convert Mask \u2192 Polygon..."))
+            self.Bind(
+                wx.EVT_MENU,
+                lambda evt, a=ann: self._open_mask_to_polygon_dialog(a),
+                mask2poly_item,
+            )
+        self.PopupMenu(menu)
+        menu.Destroy()
+
+    def _open_refine_dialog(self, annotation) -> None:
+        """Open RefineMorphDialog (non-modal) for *annotation*."""
+        img_w, img_h = self.image_display_panel._get_image_dimensions()
+        if img_h == 0 or img_w == 0:
+            wx.MessageBox(
+                _("No image loaded."), _("Refine Shape"),
+                wx.OK | wx.ICON_WARNING, self,
+            )
+            return
+
+        def _on_applied():
+            self._update_annotation_list()
+            self._update_status(_("Annotation updated"))
+
+        dlg = RefineMorphDialog(
+            self, annotation, self.image_display_panel, img_h, img_w,
+            on_applied=_on_applied,
+        )
+        dlg.Show()  # Non-modal; dialog destroys itself on Close
+
+    def _open_polygon_to_mask_dialog(self, annotation) -> None:
+        """Open PolygonToMaskDialog (non-modal) for *annotation*."""
+        img_w, img_h = self.image_display_panel._get_image_dimensions()
+        if img_h == 0 or img_w == 0:
+            wx.MessageBox(
+                _("No image loaded."), _("Convert Polygon \u2192 Mask"),
+                wx.OK | wx.ICON_WARNING, self,
+            )
+            return
+
+        def _on_applied():
+            self._update_annotation_list()
+            self._update_status(_("Annotation updated"))
+
+        dlg = PolygonToMaskDialog(
+            self, annotation, self.image_display_panel, img_h, img_w,
+            on_applied=_on_applied,
+        )
+        dlg.Show()
+
+    def _open_mask_to_polygon_dialog(self, annotation) -> None:
+        """Open MaskToPolygonDialog (non-modal) for *annotation*."""
+        img_w, img_h = self.image_display_panel._get_image_dimensions()
+        if img_h == 0 or img_w == 0:
+            wx.MessageBox(
+                _("No image loaded."), _("Convert Mask \u2192 Polygon"),
+                wx.OK | wx.ICON_WARNING, self,
+            )
+            return
+
+        def _on_applied():
+            self._update_annotation_list()
+            self._update_status(_("Annotation updated"))
+
+        dlg = MaskToPolygonDialog(
+            self, annotation, self.image_display_panel, img_h, img_w,
+            on_applied=_on_applied,
+        )
+        dlg.Show()  # Non-modal; dialog destroys itself on Close
 
     def _on_file_list_right_click(self, event):
         """文件列表右鍵菜單 (設置 Status)"""
@@ -2390,6 +2536,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
     def _on_transcribe_annotation(self, event):
         """Run OCR on the selected annotation's ROI crop (Ctrl+T)."""
         if not self.ocr_service:
+            self._init_ocr_service()
+        if not self.ocr_service:
             self._update_status("OCR service not available")
             return
 
@@ -2481,6 +2629,8 @@ class WxCvAnnotatorMainWindow(wx.Frame):
 
     def _on_ocr_full_image(self, event):
         """Run full-image OCR and open review dialog to create text annotations."""
+        if not self.ocr_service:
+            self._init_ocr_service()
         if not self.ocr_service:
             self._update_status(_("OCR service not available"))
             return

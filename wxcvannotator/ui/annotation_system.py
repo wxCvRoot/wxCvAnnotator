@@ -239,6 +239,16 @@ class AnnotationManager:
                     ann.flags.update(data["flags"])
                 if "transcription" in data:
                     ann.transcription = data["transcription"]
+                # Shape-refinement fields (set by RefineMorphDialog / MaskToPolygonDialog / PolygonToMaskDialog)
+                if "type" in data:
+                    ann.type = data["type"]
+                if "mask_data" in data:
+                    ann.mask_data = data["mask_data"]
+                if "mask_shape" in data:
+                    ms = data["mask_shape"]
+                    ann.mask_shape = tuple(ms) if ms is not None else None
+                if "mask_alpha" in data:
+                    ann.mask_alpha = data["mask_alpha"]
 
                 ann.modified_time = datetime.now()
                 self.redo_stack.clear()

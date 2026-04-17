@@ -2,10 +2,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2026-04-10 12:59\n"
+"POT-Creation-Date: 2026-04-16 13:17\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+msgid "(overlay transparency)"
+msgstr ""
 
 msgid "+ Add"
 msgstr ""
@@ -107,13 +110,25 @@ msgstr ""
 msgid "Annotation Tools"
 msgstr ""
 
+msgid "Annotation updated"
+msgstr ""
+
 msgid "Annotation {}"
+msgstr ""
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
 msgstr ""
 
 msgid "Annotations Saved (Base64: {})"
 msgstr ""
 
+msgid "Annotations hidden"
+msgstr ""
+
 msgid "Annotations saved as... (Base64: {})"
+msgstr ""
+
+msgid "Annotations shown"
 msgstr ""
 
 msgid "Annotator Information"
@@ -217,6 +232,9 @@ msgstr ""
 msgid "Circle"
 msgstr ""
 
+msgid "Closing"
+msgstr ""
+
 msgid "Color Theme:"
 msgstr ""
 
@@ -233,6 +251,24 @@ msgid "Confirm Delete"
 msgstr ""
 
 msgid "Confirm Deletion"
+msgstr ""
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr ""
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr ""
+
+msgid "Convert Mask → Polygon"
+msgstr ""
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr ""
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr ""
+
+msgid "Convert Polygon → Mask"
 msgstr ""
 
 msgid "Copy Image Files (create standalone dataset)"
@@ -332,6 +368,9 @@ msgstr ""
 msgid "Detection (BBox), Segmentation (Polygon), and OBB (Rotated Rect)"
 msgstr ""
 
+msgid "Dilation"
+msgstr ""
+
 msgid "Disabled"
 msgstr ""
 
@@ -378,6 +417,9 @@ msgid "Enable User Information (Save to JSON)"
 msgstr ""
 
 msgid "Enabled"
+msgstr ""
+
+msgid "Erosion"
 msgstr ""
 
 msgid "Error"
@@ -529,6 +571,9 @@ msgstr ""
 msgid "Hint: Right-click for options"
 msgstr ""
 
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr ""
+
 msgid "Honor Manual Status (fixed in File List)"
 msgstr ""
 
@@ -544,6 +589,12 @@ msgstr ""
 msgid "Image Panel not initialized"
 msgstr ""
 
+msgid "Image: {w} × {h}"
+msgstr ""
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr ""
+
 msgid "Industry standard JSON, configurable Index=0 (Custom) or 1 (Standard)"
 msgstr ""
 
@@ -554,6 +605,12 @@ msgid "Info"
 msgstr ""
 
 msgid "Information"
+msgstr ""
+
+msgid "Iterations:"
+msgstr ""
+
+msgid "Kernel size:"
 msgstr ""
 
 msgid "Label"
@@ -616,6 +673,9 @@ msgstr ""
 msgid "Manage Categories..."
 msgstr ""
 
+msgid "Mask alpha:"
+msgstr ""
+
 msgid "Model Selection Guide:"
 msgstr ""
 
@@ -659,6 +719,9 @@ msgid "No image files found in folder\\n{}"
 msgstr ""
 
 msgid "No image loaded"
+msgstr ""
+
+msgid "No image loaded."
 msgstr ""
 
 msgid "No images loaded"
@@ -731,6 +794,17 @@ msgstr ""
 msgid "Opened: {}"
 msgstr ""
 
+msgid "Opening"
+msgstr ""
+
+msgid "Operation"
+msgstr ""
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+
 msgid "Output Dir:"
 msgstr ""
 
@@ -776,6 +850,9 @@ msgstr ""
 msgid "Prev"
 msgstr ""
 
+msgid "Preview"
+msgstr ""
+
 msgid "Preview of split distribution"
 msgstr ""
 
@@ -804,6 +881,12 @@ msgid "Redo"
 msgstr ""
 
 msgid "Redo operation (Ctrl+Y)"
+msgstr ""
+
+msgid "Refine Shape"
+msgstr ""
+
+msgid "Refine Shape..."
 msgstr ""
 
 msgid "Reload Labels from Project"
@@ -908,6 +991,9 @@ msgstr ""
 msgid "Shown"
 msgstr ""
 
+msgid "Smooth (ε):"
+msgstr ""
+
 msgid "Standardized to VOC 2012 XML with 1-based pixel precision"
 msgstr ""
 
@@ -939,6 +1025,9 @@ msgid "Test (%):"
 msgstr ""
 
 msgid "Theme"
+msgstr ""
+
+msgid "Toggle Annotations"
 msgstr ""
 
 msgid "Tool Help"
@@ -1073,6 +1162,12 @@ msgid "deleted"
 msgstr ""
 
 msgid "loaded"
+msgstr ""
+
+msgid "px"
+msgstr ""
+
+msgid "px  (0 = keep all)"
 msgstr ""
 
 msgid "redone"

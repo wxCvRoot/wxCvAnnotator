@@ -1572,3 +1572,112 @@ msgstr "تعيين الحالة: {}"
 
 msgid "Show in Explorer"
 msgstr "إظهار في المستكشف"
+
+msgid "Annotation updated"
+msgstr "تم تحديث التعليق التوضيحي"
+
+msgid "Annotations hidden"
+msgstr "التعليقات التوضيحية مخفية"
+
+msgid "Annotations shown"
+msgstr "تظهر التعليقات التوضيحية"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "تحويل قناع ← مضلع"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "تحويل قناع ← مضلع..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "تم اكتشاف الثقوب: {n} → تم تطبيق تقنية الجسر"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "الصورة: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "التكرارات:"
+
+msgid "Kernel size:"
+msgstr "حجم النواة:"
+
+msgid "No image loaded."
+msgstr "لم يتم تحميل أي صورة."
+
+msgid "Operation"
+msgstr "عملية"
+
+msgid "Preview"
+msgstr "معاينة"
+
+msgid "Refine Shape"
+msgstr "تحسين الشكل"
+
+msgid "Refine Shape..."
+msgstr "تحسين الشكل..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "سلس (ε):"
+
+msgid "Toggle Annotations"
+msgstr "تبديل التعليقات التوضيحية"
+
+msgid "px"
+msgstr "بكسل"
+
+msgid "px  (0 = keep all)"
+msgstr "بكسل (0 = الاحتفاظ بالكل)"
+
+msgid "(overlay transparency)"
+msgstr "(شفافية التراكب)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "تحويل مضلع ← قناع"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "تحويل مضلع ← قناع..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "الصورة: {w} × {h} | النقاط: {n}"
+
+msgid "Mask alpha:"
+msgstr "ألفا القناع:"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "التعليق التوضيحي: #{id} \"{label}\" [{type}]"
+
+msgid "Closing"
+msgstr "إغلاق"
+
+msgid "Convert Mask → Polygon"
+msgstr "تحويل قناع ← مضلع"
+
+msgid "Convert Polygon → Mask"
+msgstr "تحويل مضلع ← قناع"
+
+msgid "Dilation"
+msgstr "توسيع"
+
+msgid "Erosion"
+msgstr "تآكل"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "تم اكتشاف الثقوب: {n} → تم تطبيق تقنية الجسر"
+
+msgid "Image: {w} × {h}"
+msgstr "الصورة: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "الصورة: {w} × {h} | النقاط: {n}"
+
+msgid "Opening"
+msgstr "فتح"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+"أدت العملية إلى شكل فارغ.\n"
+"حاول تقليل حجم النواة أو التكرارات."
+
+msgid "Smooth (ε):"
+msgstr "سلس (ε):"

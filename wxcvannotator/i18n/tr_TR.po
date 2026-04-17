@@ -1583,3 +1583,112 @@ msgstr "Durumu Ayarla: {}"
 
 msgid "Show in Explorer"
 msgstr "Gezginde Göster"
+
+msgid "Annotation updated"
+msgstr "Açıklama güncellendi"
+
+msgid "Annotations hidden"
+msgstr "Açıklamalar gizlendi"
+
+msgid "Annotations shown"
+msgstr "Açıklamalar gösterildi"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "Maske → Poligon Dönüştür"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "Maske → Poligon Dönüştür..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "Delikler tespit edildi: {n} → Köprü tekniği uygulandı"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "Görüntü: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "Yinelemeler:"
+
+msgid "Kernel size:"
+msgstr "Çekirdek boyutu:"
+
+msgid "No image loaded."
+msgstr "Yüklenen resim yok."
+
+msgid "Operation"
+msgstr "İşlem"
+
+msgid "Preview"
+msgstr "Önizleme"
+
+msgid "Refine Shape"
+msgstr "Şekli Düzenle"
+
+msgid "Refine Shape..."
+msgstr "Şekli Düzenle..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "Pürüzsüz (ε):"
+
+msgid "Toggle Annotations"
+msgstr "Açıklamaları Değiştir"
+
+msgid "px"
+msgstr "px"
+
+msgid "px  (0 = keep all)"
+msgstr "px (0 = hepsini tut)"
+
+msgid "(overlay transparency)"
+msgstr "(yer paylaşımı şeffaflığı)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "Poligon → Maske Dönüştür"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "Poligon → Maske Dönüştür..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "Görüntü: {w} × {h} | Noktalar: {n}"
+
+msgid "Mask alpha:"
+msgstr "Maske alfa:"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "Açıklama: #{id} \"{label}\" [{type}]"
+
+msgid "Closing"
+msgstr "Kapatma"
+
+msgid "Convert Mask → Polygon"
+msgstr "Maske → Poligon Dönüştür"
+
+msgid "Convert Polygon → Mask"
+msgstr "Poligon → Maske Dönüştür"
+
+msgid "Dilation"
+msgstr "Genişletme"
+
+msgid "Erosion"
+msgstr "Aşınma"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "Delikler tespit edildi: {n} → Köprü tekniği uygulandı"
+
+msgid "Image: {w} × {h}"
+msgstr "Görüntü: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "Görüntü: {w} × {h} | Noktalar: {n}"
+
+msgid "Opening"
+msgstr "Açma"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+"İşlem boş bir şekille sonuçlandı.\n"
+"Çekirdek boyutunu veya yinelemeleri azaltmayı deneyin."
+
+msgid "Smooth (ε):"
+msgstr "Pürüzsüz (ε):"

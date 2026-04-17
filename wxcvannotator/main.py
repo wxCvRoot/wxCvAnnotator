@@ -9,7 +9,6 @@ import sys
 import os
 import argparse
 import wx
-from pathlib import Path
 
 from . import __version__
 
@@ -62,18 +61,28 @@ def main():
             dest="no_help",
             help="Hide Help menu from menu bar and set app title to 'Annotation Tool'",
         )
+        parser.add_argument(
+            "--model-path",
+            dest="model_path",
+            metavar="PATH",
+            help="Override AI/OCR model weights directory for this session (does not change saved setting)",
+        )
 
         args = parser.parse_args()
 
         # Create wxPython app
         app = wx.App(False)
 
-        # Check for C++ module (dev lib override in package dir)
-        lib_path = Path(__file__).parent / "lib"
-        module_found = any(lib_path.glob("wxCvModule.*"))
+        # Check for C++ module (installed via pip install wxcvmodule,
+        # or dev override in wxcvannotator/lib/)
+        try:
+            import wxCvModule  # noqa: F401
+            module_found = True
+        except ImportError:
+            module_found = False
 
         if not module_found:
-            print(f"⚠️  Warning: Cannot find wxCvModule lib in: {lib_path}")
+            print("⚠️  Warning: wxCvModule not found. Install it with: pip install wxcvmodule")
             print("   Running in mock mode...")
 
         # Create main window with CLI arguments
@@ -85,6 +94,7 @@ def main():
             output=args.output,
             config_path=args.config,
             no_help=args.no_help,
+            model_path=args.model_path,
         )
 
         # Show window

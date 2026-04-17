@@ -1558,3 +1558,113 @@ msgstr "设置状态：{}"
 
 msgid "Show in Explorer"
 msgstr "在资源管理器中显示"
+
+msgid "Annotation updated"
+msgstr "标注已更新"
+
+msgid "Annotations hidden"
+msgstr "标注已隐藏"
+
+msgid "Annotations shown"
+msgstr "标注已显示"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "转换遮罩 → 多边形"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "转换遮罩 → 多边形..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "检测到孔洞：{n} → 已应用桥接技术"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "图像：{w} × {h}"
+
+msgid "Iterations:"
+msgstr "迭代次数："
+
+msgid "Kernel size:"
+msgstr "内核大小："
+
+msgid "No image loaded."
+msgstr "未加载图像。"
+
+msgid "Operation"
+msgstr "操作"
+
+msgid "Preview"
+msgstr "预览"
+
+msgid "Refine Shape"
+msgstr "优化形状"
+
+msgid "Refine Shape..."
+msgstr "优化形状..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "平滑度 (ε)："
+
+msgid "Toggle Annotations"
+msgstr "切换标注"
+
+msgid "px"
+msgstr "像素"
+
+msgid "px  (0 = keep all)"
+msgstr "px (0 = 全部保留)"
+
+msgid "(overlay transparency)"
+msgstr "(叠加透明度)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "转换多边形 → 遮罩"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "转换多边形 → 遮罩..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "图像：{w} × {h} | 顶点数：{n}"
+
+msgid "Mask alpha:"
+msgstr "遮罩透明度："
+
+msgid "Closing"
+msgstr "闭运算"
+
+msgid "Dilation"
+msgstr "膨胀"
+
+msgid "Erosion"
+msgstr "腐蚀"
+
+msgid "Opening"
+msgstr "开运算"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr "操作导致形状为空。\\n请尝试减小内核大小或迭代次数。"
+
+msgid "Annotation: #{id}  \\\"{label}\\\"  [{type}]"
+msgstr "标注：#{id}  \\\"{label}\\\"  [{type}]"
+
+msgid "Convert Mask → Polygon"
+msgstr "转换遮罩 → 多边形"
+
+msgid "Convert Polygon → Mask"
+msgstr "转换多边形 → 遮罩"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "检测到孔洞：{n} → 已应用桥接技术"
+
+msgid "Image: {w} × {h}"
+msgstr "图像：{w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "图像：{w} × {h} | 顶点数：{n}"
+
+msgid "Smooth (ε):"
+msgstr "平滑度 (ε)："
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "标注：#{id}  “{label}”  [{type}]"

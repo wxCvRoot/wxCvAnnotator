@@ -1570,3 +1570,110 @@ msgstr "Set Status: {}"
 
 msgid "Show in Explorer"
 msgstr "Show in Explorer"
+
+msgid "Annotation updated"
+msgstr ""
+
+msgid "Annotations hidden"
+msgstr ""
+
+msgid "Annotations shown"
+msgstr ""
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr ""
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr ""
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr ""
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr ""
+
+msgid "Iterations:"
+msgstr ""
+
+msgid "Kernel size:"
+msgstr ""
+
+msgid "No image loaded."
+msgstr ""
+
+msgid "Operation"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Refine Shape"
+msgstr ""
+
+msgid "Refine Shape..."
+msgstr ""
+
+msgid "Smooth (\\u03b5):"
+msgstr ""
+
+msgid "Toggle Annotations"
+msgstr ""
+
+msgid "px"
+msgstr ""
+
+msgid "px  (0 = keep all)"
+msgstr ""
+
+msgid "(overlay transparency)"
+msgstr ""
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr ""
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr ""
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr ""
+
+msgid "Mask alpha:"
+msgstr ""
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr ""
+
+msgid "Closing"
+msgstr ""
+
+msgid "Convert Mask → Polygon"
+msgstr ""
+
+msgid "Convert Polygon → Mask"
+msgstr ""
+
+msgid "Dilation"
+msgstr ""
+
+msgid "Erosion"
+msgstr ""
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr ""
+
+msgid "Image: {w} × {h}"
+msgstr ""
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr ""
+
+msgid "Opening"
+msgstr ""
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+
+msgid "Smooth (ε):"
+msgstr ""

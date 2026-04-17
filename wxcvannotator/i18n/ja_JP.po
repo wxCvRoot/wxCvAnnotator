@@ -1569,3 +1569,113 @@ msgstr "ステータス設定: {}"
 
 msgid "Show in Explorer"
 msgstr "エクスプローラーで表示"
+
+msgid "Annotation updated"
+msgstr "注釈を更新しました"
+
+msgid "Annotations hidden"
+msgstr "注釈を非表示にしました"
+
+msgid "Annotations shown"
+msgstr "注釈を表示しました"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "マスク → ポリゴン変換"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "マスク → ポリゴン変換..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "穴を検出: {n} → ブリッジ技術適用済"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "画像: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "反復回数:"
+
+msgid "Kernel size:"
+msgstr "カーネルサイズ:"
+
+msgid "No image loaded."
+msgstr "画像がありません。"
+
+msgid "Operation"
+msgstr "操作"
+
+msgid "Preview"
+msgstr "プレビュー"
+
+msgid "Refine Shape"
+msgstr "形状の調整"
+
+msgid "Refine Shape..."
+msgstr "形状の調整..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "平滑化 (ε):"
+
+msgid "Toggle Annotations"
+msgstr "注釈の切り替え"
+
+msgid "px"
+msgstr "px"
+
+msgid "px  (0 = keep all)"
+msgstr "px (0 = すべて保持)"
+
+msgid "(overlay transparency)"
+msgstr "(オーバーレイの透明度)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "ポリゴン → マスク変換"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "ポリゴン → マスク変換..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "画像: {w} × {h} | ポイント: {n}"
+
+msgid "Mask alpha:"
+msgstr "マスクのアルファ値:"
+
+msgid "Closing"
+msgstr "クロージング"
+
+msgid "Dilation"
+msgstr "膨張 (Dilation)"
+
+msgid "Erosion"
+msgstr "収縮 (Erosion)"
+
+msgid "Opening"
+msgstr "オープニング"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr "操作により形状が空になりました。\\nカーネルサイズまたは反復回数を減らしてください。"
+
+msgid "Annotation: #{id}  \\\"{label}\\\"  [{type}]"
+msgstr "注釈: #{id}  \\\"{label}\\\"  [{type}]"
+
+msgid "Convert Mask → Polygon"
+msgstr "マスク → ポリゴン変換"
+
+msgid "Convert Polygon → Mask"
+msgstr "ポリゴン → マスク変換"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "穴を検出: {n} → ブリッジ技術適用済"
+
+msgid "Image: {w} × {h}"
+msgstr "画像: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "画像: {w} × {h} | ポイント: {n}"
+
+msgid "Smooth (ε):"
+msgstr "平滑化 (ε):"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "注釈: #{id}  “{label}”  [{type}]"

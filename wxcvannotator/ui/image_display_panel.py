@@ -594,6 +594,25 @@ class ImageDisplayPanel(wx.Panel):
         self.cv_panel.UpdateDrawImage(True)
         self.cv_panel.Refresh()
 
+    def toggle_overlay_visibility(self) -> bool:
+        """Toggle annotation overlay on/off. Returns the new visibility state."""
+        if not self.cv_panel or not self.cv_panel.IsOk():
+            return True
+        current = self.cv_panel.GetDisplayOverlay()
+        self.cv_panel.SetDisplayOverlay(not current)
+        self.cv_panel.UpdateDrawImage(True)
+        self.cv_panel.Refresh()
+        return not current
+
+    def restore_overlay_visibility(self):
+        """Ensure overlay is visible (called on image switch)."""
+        if not self.cv_panel or not self.cv_panel.IsOk():
+            return
+        if not self.cv_panel.GetDisplayOverlay():
+            self.cv_panel.SetDisplayOverlay(True)
+            self.cv_panel.UpdateDrawImage(True)
+            self.cv_panel.Refresh()
+
     def _hex_to_bgr(self, hex_color: str) -> Tuple[int, int, int]:
         """Hex to BGR for OpenCV colors. Returns gray (128,128,128) for None/invalid."""
         if not hex_color:

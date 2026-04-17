@@ -1584,3 +1584,112 @@ msgstr "Status setzen: {}"
 
 msgid "Show in Explorer"
 msgstr "Im Explorer anzeigen"
+
+msgid "Annotation updated"
+msgstr "Anmerkung aktualisiert"
+
+msgid "Annotations hidden"
+msgstr "Anmerkungen ausgeblendet"
+
+msgid "Annotations shown"
+msgstr "Anmerkungen angezeigt"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "Maske → Polygon konvertieren"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "Maske → Polygon konvertieren..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "Löcher erkannt: {n} → Brückentechnik angewendet"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "Bild: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "Iterationen:"
+
+msgid "Kernel size:"
+msgstr "Kernelgröße:"
+
+msgid "No image loaded."
+msgstr "Kein Bild geladen."
+
+msgid "Operation"
+msgstr "Operation"
+
+msgid "Preview"
+msgstr "Vorschau"
+
+msgid "Refine Shape"
+msgstr "Form verfeinern"
+
+msgid "Refine Shape..."
+msgstr "Form verfeinern..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "Glatt (ε):"
+
+msgid "Toggle Annotations"
+msgstr "Anmerkungen umschalten"
+
+msgid "px"
+msgstr "px"
+
+msgid "px  (0 = keep all)"
+msgstr "px (0 = alle behalten)"
+
+msgid "(overlay transparency)"
+msgstr "(Overlay-Transparenz)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "Polygon → Maske konvertieren"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "Polygon → Maske konvertieren..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "Bild: {w} × {h} | Punkte: {n}"
+
+msgid "Mask alpha:"
+msgstr "Masken-Alpha:"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "Anmerkung: #{id} \"{label}\" [{type}]"
+
+msgid "Closing"
+msgstr "Schließen"
+
+msgid "Convert Mask → Polygon"
+msgstr "Maske → Polygon konvertieren"
+
+msgid "Convert Polygon → Mask"
+msgstr "Polygon → Maske konvertieren"
+
+msgid "Dilation"
+msgstr "Dilatation"
+
+msgid "Erosion"
+msgstr "Erosion"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "Löcher erkannt: {n} → Brückentechnik angewendet"
+
+msgid "Image: {w} × {h}"
+msgstr "Bild: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "Bild: {w} × {h} | Punkte: {n}"
+
+msgid "Opening"
+msgstr "Öffnung"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+"Operation führte zu einer leeren Form.\n"
+"Versuchen Sie, die Kernelgröße oder Iterationen zu reduzieren."
+
+msgid "Smooth (ε):"
+msgstr "Glatt (ε):"

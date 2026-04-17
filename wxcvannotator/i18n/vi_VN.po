@@ -1571,3 +1571,112 @@ msgstr "Đặt trạng thái: {}"
 
 msgid "Show in Explorer"
 msgstr "Hiển thị trong Explorer"
+
+msgid "Annotation updated"
+msgstr "Chú thích đã được cập nhật"
+
+msgid "Annotations hidden"
+msgstr "Chú thích đã bị ẩn"
+
+msgid "Annotations shown"
+msgstr "Chú thích đã được hiển thị"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "Chuyển đổi Mặt nạ → Đa giác"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "Chuyển đổi Mặt nạ → Đa giác..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "Đã phát hiện lỗ hổng: {n} → kỹ thuật cầu nối đã được áp dụng"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "Hình ảnh: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "Số vòng lặp:"
+
+msgid "Kernel size:"
+msgstr "Kích thước hạt nhân:"
+
+msgid "No image loaded."
+msgstr "Không có hình ảnh nào được tải."
+
+msgid "Operation"
+msgstr "Hoạt động"
+
+msgid "Preview"
+msgstr "Xem trước"
+
+msgid "Refine Shape"
+msgstr "Tinh chỉnh hình dạng"
+
+msgid "Refine Shape..."
+msgstr "Tinh chỉnh hình dạng..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "Làm mịn (ε):"
+
+msgid "Toggle Annotations"
+msgstr "Chuyển đổi chú thích"
+
+msgid "px"
+msgstr "px"
+
+msgid "px  (0 = keep all)"
+msgstr "px (0 = giữ tất cả)"
+
+msgid "(overlay transparency)"
+msgstr "(độ trong suốt của lớp phủ)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "Chuyển đổi Đa giác → Mặt nạ"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "Chuyển đổi Đa giác → Mặt nạ..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "Hình ảnh: {w} × {h} | Điểm: {n}"
+
+msgid "Mask alpha:"
+msgstr "Alpha mặt nạ:"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "Chú thích: #{id} \"{label}\" [{type}]"
+
+msgid "Closing"
+msgstr "Đóng"
+
+msgid "Convert Mask → Polygon"
+msgstr "Chuyển đổi Mặt nạ → Đa giác"
+
+msgid "Convert Polygon → Mask"
+msgstr "Chuyển đổi Đa giác → Mặt nạ"
+
+msgid "Dilation"
+msgstr "Giãn nở"
+
+msgid "Erosion"
+msgstr "Xói mòn"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "Đã phát hiện lỗ hổng: {n} → kỹ thuật cầu nối đã được áp dụng"
+
+msgid "Image: {w} × {h}"
+msgstr "Hình ảnh: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "Hình ảnh: {w} × {h} | Điểm: {n}"
+
+msgid "Opening"
+msgstr "Mở"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+"Thao tác dẫn đến một hình dạng trống.\n"
+"Hãy thử giảm kích thước kernel hoặc số lần lặp lại."
+
+msgid "Smooth (ε):"
+msgstr "Làm mịn (ε):"

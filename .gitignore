@@ -41,13 +41,11 @@ image_cache/
 *.log
 .vscode/
 .idea/
-.claude/
+.claude/settings.local.json
+.claude/*.lock
 .antigravity/
 test_models/
 labelme/
-
-# AI context files (local use only, not for end users)
-CLAUDE.md
 
 # Downloaded AI models
 models/
@@ -58,6 +56,9 @@ config/settings.json
 config/theme_settings.json
 wxcvannotator/config/settings.json
 wxcvannotator/config/theme_settings.json
+
+# User-defined label presets (built-in presets are committed; user presets are local)
+wxcvannotator/config/presets/user_*.json
 
 # Dev lib override (local C++ binaries, not committed)
 wxcvannotator/lib/

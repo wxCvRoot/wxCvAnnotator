@@ -1597,3 +1597,112 @@ msgstr "Définir le statut : {}"
 
 msgid "Show in Explorer"
 msgstr "Afficher dans l'explorateur"
+
+msgid "Annotation updated"
+msgstr "Annotation mise à jour"
+
+msgid "Annotations hidden"
+msgstr "Annotations masquées"
+
+msgid "Annotations shown"
+msgstr "Annotations affichées"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "Convertir Masque → Polygone"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "Convertir Masque → Polygone..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "Trous détectés: {n} → technique du pont appliquée"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "Image : {w} × {h}"
+
+msgid "Iterations:"
+msgstr "Itérations :"
+
+msgid "Kernel size:"
+msgstr "Taille du noyau :"
+
+msgid "No image loaded."
+msgstr "Aucune image chargée."
+
+msgid "Operation"
+msgstr "Opération"
+
+msgid "Preview"
+msgstr "Aperçu"
+
+msgid "Refine Shape"
+msgstr "Affiner la forme"
+
+msgid "Refine Shape..."
+msgstr "Affiner la forme..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "Lisse (ε) :"
+
+msgid "Toggle Annotations"
+msgstr "Basculer les annotations"
+
+msgid "px"
+msgstr "px"
+
+msgid "px  (0 = keep all)"
+msgstr "px (0 = tout conserver)"
+
+msgid "(overlay transparency)"
+msgstr "(transparence de la superposition)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "Convertir Polygone → Masque"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "Convertir Polygone → Masque..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "Image : {w} × {h} | Points : {n}"
+
+msgid "Mask alpha:"
+msgstr "Alpha du masque:"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "Annotation : #{id} \"{label}\" [{type}]"
+
+msgid "Closing"
+msgstr "Fermeture"
+
+msgid "Convert Mask → Polygon"
+msgstr "Convertir Masque → Polygone"
+
+msgid "Convert Polygon → Mask"
+msgstr "Convertir Polygone → Masque"
+
+msgid "Dilation"
+msgstr "Dilatation"
+
+msgid "Erosion"
+msgstr "Érosion"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "Trous détectés: {n} → technique du pont appliquée"
+
+msgid "Image: {w} × {h}"
+msgstr "Image : {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "Image : {w} × {h} | Points : {n}"
+
+msgid "Opening"
+msgstr "Ouverture"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+"L'opération a donné une forme vide.\n"
+"Essayez de réduire la taille du noyau ou les itérations."
+
+msgid "Smooth (ε):"
+msgstr "Lisse (ε) :"

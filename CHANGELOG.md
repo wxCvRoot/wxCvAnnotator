@@ -1,9 +1,35 @@
 # Changelog
 
+> **最後更新：2026-04-15** — OCR lazy init, --model-path CLI
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+- **`--model-path PATH` CLI parameter** (`wxcvannotator/main.py`, `main_window.py`): session-only override for the AI/OCR model weights directory. Passed to `SettingsManager` as `ai_model_path` with `save=False`, so it does not modify the saved settings. Intended for deployment scenarios where models are stored on a NAS or shared drive.
+
+### Fixed
+- **OCR lazy initialization** (`main_window.py`): `_init_ocr_service()` was called unconditionally during `__init__`, triggering top-level `import torch` / `import transformers` inside `ocr_service.py` and causing several seconds of startup delay. Fixed by setting `self.ocr_service = None` at init time and initializing lazily on first OCR use (`_on_transcribe_annotation`, `_on_ocr_full_image`, `_on_ocr_backend_changed`).
+
+---
+
+## [0.1.1] - 2026-03-11
+
+### Added
+- **`--no-help` CLI parameter** (`wxcvannotator/main.py`, `main_window.py`): when passed, hides the Help menu from the menu bar and changes the window title to `"Annotation Tool"`. Intended for OEM / embedded deployments requiring a neutral brand.
+
+### Fixed
+- **Language list ordering** (`i18n.py` `get_language_list()`): returned dict was previously in filesystem scan order (arbitrary). Now sorted alphabetically by English name, so Settings dropdown and language menu are consistent. Chinese (Simplified) and Chinese (Traditional) now appear adjacent.
+- **Duplicate "English" entry** (`i18n.py` `_discover_languages()`): the `'en'` hardcoded fallback was always inserted even when `en_US` was already discovered, causing two English entries. Fix: only insert fallback when no `en*` variant exists at all.
+
+### Removed
+- `en_IN` locale files (`en_IN.po`, `en_IN.mo`, `translations/en_IN/`) — not in the official supported language list and was causing a spurious "English (India)" entry in the language selector.
+
+---
 
 ## [0.1.0] - 2026-02-21
 

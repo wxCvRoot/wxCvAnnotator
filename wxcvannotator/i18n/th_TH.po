@@ -1571,3 +1571,112 @@ msgstr "ตั้งค่าสถานะ: {}"
 
 msgid "Show in Explorer"
 msgstr "แสดงใน Explorer"
+
+msgid "Annotation updated"
+msgstr "อัปเดตคำอธิบายประกอบแล้ว"
+
+msgid "Annotations hidden"
+msgstr "ซ่อนคำอธิบายประกอบแล้ว"
+
+msgid "Annotations shown"
+msgstr "แสดงคำอธิบายประกอบแล้ว"
+
+msgid "Convert Mask \\u2192 Polygon"
+msgstr "แปลงมาสก์ → รูปหลายเหลี่ยม"
+
+msgid "Convert Mask \\u2192 Polygon..."
+msgstr "แปลงมาสก์ → รูปหลายเหลี่ยม..."
+
+msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
+msgstr "ตรวจพบรู: {n} → ใช้เทคนิคสะพานแล้ว"
+
+msgid "Image: {w} \\u00d7 {h}"
+msgstr "รูปภาพ: {w} × {h}"
+
+msgid "Iterations:"
+msgstr "การทำซ้ำ:"
+
+msgid "Kernel size:"
+msgstr "ขนาดเคอร์เนล:"
+
+msgid "No image loaded."
+msgstr "ไม่มีการโหลดรูปภาพ"
+
+msgid "Operation"
+msgstr "การทำงาน"
+
+msgid "Preview"
+msgstr "ดูตัวอย่าง"
+
+msgid "Refine Shape"
+msgstr "ปรับแต่งรูปร่าง"
+
+msgid "Refine Shape..."
+msgstr "ปรับแต่งรูปร่าง..."
+
+msgid "Smooth (\\u03b5):"
+msgstr "เรียบ (ε):"
+
+msgid "Toggle Annotations"
+msgstr "สลับคำอธิบายประกอบ"
+
+msgid "px"
+msgstr "px"
+
+msgid "px  (0 = keep all)"
+msgstr "px (0 = เก็บทั้งหมด)"
+
+msgid "(overlay transparency)"
+msgstr "(ความโปร่งใสของโอเวอร์เลย์)"
+
+msgid "Convert Polygon \\u2192 Mask"
+msgstr "แปลงรูปหลายเหลี่ยม → มาสก์"
+
+msgid "Convert Polygon \\u2192 Mask..."
+msgstr "แปลงรูปหลายเหลี่ยม → มาสก์..."
+
+msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
+msgstr "รูปภาพ: {w} × {h} | จุด: {n}"
+
+msgid "Mask alpha:"
+msgstr "อัลฟ่าหน้ากาก:"
+
+msgid "Annotation: #{id}  “{label}”  [{type}]"
+msgstr "คำอธิบายประกอบ: #{id} \"{label}\" [{type}]"
+
+msgid "Closing"
+msgstr "การปิด"
+
+msgid "Convert Mask → Polygon"
+msgstr "แปลงมาสก์ → รูปหลายเหลี่ยม"
+
+msgid "Convert Polygon → Mask"
+msgstr "แปลงรูปหลายเหลี่ยม → มาสก์"
+
+msgid "Dilation"
+msgstr "การขยาย"
+
+msgid "Erosion"
+msgstr "การกัดกร่อน"
+
+msgid "Holes detected: {n}  →  Bridge technique applied"
+msgstr "ตรวจพบรู: {n} → ใช้เทคนิคสะพานแล้ว"
+
+msgid "Image: {w} × {h}"
+msgstr "รูปภาพ: {w} × {h}"
+
+msgid "Image: {w} × {h}  |  Points: {n}"
+msgstr "รูปภาพ: {w} × {h} | จุด: {n}"
+
+msgid "Opening"
+msgstr "การเปิด"
+
+msgid ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
+msgstr ""
+"การทำงานส่งผลให้เกิดรูปร่างว่างเปล่า\n"
+"ลองลดขนาดเคอร์เนลหรือการทำซ้ำ"
+
+msgid "Smooth (ε):"
+msgstr "เรียบ (ε):"
