@@ -36,6 +36,10 @@ Icon?
 .Spotlight-V100
 .Trashes
 
+# AI development context (local only, never push to GitHub)
+CLAUDE.md
+README_AIGuide.md
+
 # Project specific
 image_cache/
 *.log
