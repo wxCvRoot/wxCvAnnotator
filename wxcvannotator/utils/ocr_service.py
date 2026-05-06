@@ -45,69 +45,80 @@ _DEFAULT_MODEL_DIR = _PACKAGE_ROOT / 'models'
 # Optional dependency probes (mirror ai_service.py pattern)
 # ---------------------------------------------------------------------------
 
-try:
-    import torch as _torch
-    _torch_available = True
-except ImportError:
-    _torch = None          # type: ignore[assignment]
-    _torch_available = False
+import importlib.util
 
-try:
-    import transformers as _tfm   # noqa: F401
-    _transformers_available = True
-except ImportError:
-    _tfm = None            # type: ignore[assignment]
-    _transformers_available = False
+def _has_package(name: str) -> bool:
+    try:
+        return importlib.util.find_spec(name) is not None
+    except (ImportError, ValueError):
+        return False
 
-try:
-    import bitsandbytes    # noqa: F401
-    _bnb_available = True
-except ImportError:
-    _bnb_available = False
+# Global flags for lazy loading
+_torch = None
+_tfm = None
+_ort = None
+_PILImage = None
 
-try:
-    import accelerate      # noqa: F401
-    _accelerate_available = True
-except ImportError:
-    _accelerate_available = False
+def _get_torch():
+    global _torch
+    if _torch is None:
+        try:
+            import torch
+            _torch = torch
+        except ImportError:
+            pass
+    return _torch
 
-try:
-    from PIL import Image as _PILImage
-    _pil_available = True
-except ImportError:
-    _PILImage = None       # type: ignore[assignment]
-    _pil_available = False
+def _is_torch_available():
+    return _has_package("torch")
 
-try:
-    from qwen_vl_utils import process_vision_info as _process_vision_info
-    _qwen_vl_utils_available = True
-except ImportError:
-    _qwen_vl_utils_available = False
+def _get_transformers():
+    global _tfm
+    if _tfm is None:
+        try:
+            import transformers
+            _tfm = transformers
+        except ImportError:
+            pass
+    return _tfm
 
-try:
-    import tiktoken        # noqa: F401
-    _tiktoken_available = True
-except ImportError:
-    _tiktoken_available = False
+def _is_transformers_available():
+    return _has_package("transformers")
 
-try:
-    import verovio         # noqa: F401
-    _verovio_available = True
-except ImportError:
-    _verovio_available = False
+def _is_bnb_available():
+    return _has_package("bitsandbytes")
 
-try:
-    import sentencepiece   # noqa: F401
-    _sentencepiece_available = True
-except ImportError:
-    _sentencepiece_available = False
+def _is_accelerate_available():
+    return _has_package("accelerate")
 
-try:
-    import onnxruntime as _ort
-    _ort_available = True
-except ImportError:
-    _ort = None            # type: ignore[assignment]
-    _ort_available = False
+def _get_pil_image():
+    global _PILImage
+    if _PILImage is None:
+        try:
+            from PIL import Image
+            _PILImage = Image
+        except ImportError:
+            pass
+    return _PILImage
+
+def _is_pil_available():
+    return _has_package("PIL")
+
+def _is_qwen_vl_utils_available():
+    return _has_package("qwen_vl_utils")
+
+def _get_ort():
+    global _ort
+    if _ort is None:
+        try:
+            import onnxruntime
+            _ort = onnxruntime
+        except ImportError:
+            pass
+    return _ort
+
+def _is_ort_available():
+    return _has_package("onnxruntime")
 
 # ---------------------------------------------------------------------------
 # Public utility: 4-point perspective crop (used by PPOCRv5 and main_window)
@@ -243,8 +254,9 @@ class OCRBackend(ABC):
         """Release model from GPU memory."""
         self._model = None
         self._processor = None
-        if _torch_available and _torch.cuda.is_available():
-            _torch.cuda.empty_cache()
+        torch = _get_torch()
+        if torch and torch.cuda.is_available():
+            torch.cuda.empty_cache()
         logger.debug('%s unloaded.', self.__class__.__name__)
 
 # ---------------------------------------------------------------------------
@@ -254,20 +266,22 @@ class OCRBackend(ABC):
 def _bgr_to_pil(bgr: np.ndarray):
     """Convert OpenCV BGR numpy array to PIL RGB Image."""
     rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
-    return _PILImage.fromarray(rgb)
+    return _get_pil_image().fromarray(rgb)
 
 
 def _get_device() -> str:
     """Return 'cuda' or 'cpu'."""
-    if _torch_available and _torch.cuda.is_available():
+    torch = _get_torch()
+    if torch and torch.cuda.is_available():
         return 'cuda'
     return 'cpu'
 
 
 def _get_vram_gb() -> float:
     """Return total VRAM of primary GPU in GB; 0 if no GPU."""
-    if _torch_available and _torch.cuda.is_available():
-        return _torch.cuda.get_device_properties(0).total_memory / 1e9
+    torch = _get_torch()
+    if torch and torch.cuda.is_available():
+        return torch.cuda.get_device_properties(0).total_memory / 1e9
     return 0.0
 
 
@@ -325,17 +339,18 @@ class GOTOCRBackend(OCRBackend):
 
     @staticmethod
     def is_available() -> bool:
-        return (_torch_available and _transformers_available
-                and _pil_available and _tiktoken_available and _verovio_available)
+        return (_is_torch_available() and _is_transformers_available()
+                and _is_pil_available() and _has_package("tiktoken") 
+                and _has_package("verovio"))
 
     @staticmethod
     def missing_packages() -> List[str]:
         missing = []
-        if not _torch_available:          missing.append('torch')
-        if not _transformers_available:   missing.append('transformers>=4.50')
-        if not _pil_available:            missing.append('Pillow')
-        if not _tiktoken_available:       missing.append('tiktoken')
-        if not _verovio_available:        missing.append('verovio')
+        if not _is_torch_available():          missing.append('torch')
+        if not _is_transformers_available():   missing.append('transformers>=4.50')
+        if not _is_pil_available():            missing.append('Pillow')
+        if not _has_package("tiktoken"):       missing.append('tiktoken')
+        if not _has_package("verovio"):        missing.append('verovio')
         return missing
 
     def _load(self) -> bool:
@@ -354,9 +369,10 @@ class GOTOCRBackend(OCRBackend):
             logger.info('Loading GOT-OCR2.0 on %s ...', device)
             t0 = time.time()
             self._processor = GotOcr2Processor.from_pretrained(str(model_dir), use_fast=True)
+            torch = _get_torch()
             self._model = GotOcr2ForConditionalGeneration.from_pretrained(
                 str(model_dir),
-                dtype=_torch.float16,
+                dtype=torch.float16,
                 device_map=device,
             ).eval()
             logger.info('GOT-OCR2.0 loaded in %.1fs', time.time() - t0)
@@ -368,10 +384,11 @@ class GOTOCRBackend(OCRBackend):
 
     def _infer_pil(self, pil_image, max_new_tokens: int = 256) -> str:
         inputs = self._processor(pil_image, return_tensors='pt')
-        inputs = {k: v.to(self._device, _torch.float16) if (hasattr(v, 'to') and v.is_floating_point())
+        torch = _get_torch()
+        inputs = {k: v.to(self._device, torch.float16) if (hasattr(v, 'to') and v.is_floating_point())
                   else v.to(self._device) if hasattr(v, 'to') else v
                   for k, v in inputs.items()}
-        with _torch.no_grad():
+        with torch.no_grad():
             ids = self._model.generate(
                 **inputs,
                 do_sample=False,
@@ -391,7 +408,7 @@ class GOTOCRBackend(OCRBackend):
             # Upscale tiny images to avoid repetition artifacts
             if min(w, h) < 64:
                 scale = 64 / min(w, h)
-                img = img.resize((int(w * scale), int(h * scale)), _PILImage.LANCZOS)
+                img = img.resize((int(w * scale), int(h * scale)), _get_pil_image().LANCZOS)
             return self._infer_pil(img, max_new_tokens=32)
         except Exception as exc:
             logger.error('GOT-OCR2.0 recognize_roi failed: %s', exc)
@@ -435,16 +452,16 @@ class QwenVLBackend(OCRBackend):
 
     @staticmethod
     def is_available() -> bool:
-        return (_torch_available and _transformers_available
-                and _pil_available and _qwen_vl_utils_available)
+        return (_is_torch_available() and _is_transformers_available()
+                and _is_pil_available() and _is_qwen_vl_utils_available())
 
     @staticmethod
     def missing_packages() -> List[str]:
         missing = []
-        if not _torch_available:           missing.append('torch')
-        if not _transformers_available:    missing.append('transformers>=4.50')
-        if not _pil_available:             missing.append('Pillow')
-        if not _qwen_vl_utils_available:   missing.append('qwen-vl-utils')
+        if not _is_torch_available():           missing.append('torch')
+        if not _is_transformers_available():    missing.append('transformers>=4.50')
+        if not _is_pil_available():             missing.append('Pillow')
+        if not _is_qwen_vl_utils_available():   missing.append('qwen-vl-utils')
         return missing
 
     def _load(self) -> bool:
@@ -461,7 +478,7 @@ class QwenVLBackend(OCRBackend):
             device = _get_device()
             self._device = device
             vram_gb = _get_vram_gb()
-            use_4bit = _bnb_available and _accelerate_available and device == 'cuda' and vram_gb < 7.0
+            use_4bit = _is_bnb_available() and _is_accelerate_available() and device == 'cuda' and vram_gb < 7.0
             logger.info('Loading Qwen2.5-VL-3B on %s (4-bit=%s, VRAM=%.1f GB) ...',
                         device, use_4bit, vram_gb)
             t0 = time.time()
@@ -470,7 +487,8 @@ class QwenVLBackend(OCRBackend):
             if use_4bit:
                 load_kw['quantization_config'] = BitsAndBytesConfig(load_in_4bit=True)
             else:
-                load_kw['torch_dtype'] = _torch.float16
+                torch = _get_torch()
+                load_kw['torch_dtype'] = torch.float16
             self._model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
                 str(model_dir), **load_kw
             ).eval()
@@ -497,7 +515,8 @@ class QwenVLBackend(OCRBackend):
             padding=True,
             return_tensors='pt',
         ).to(self._device)
-        with _torch.no_grad():
+        torch = _get_torch()
+        with torch.no_grad():
             ids = self._model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
         response = self._processor.batch_decode(
             ids[:, inputs['input_ids'].shape[1]:], skip_special_tokens=True
@@ -556,14 +575,14 @@ class _Qwen3VLBackend(OCRBackend):
 
     @staticmethod
     def is_available() -> bool:
-        return _torch_available and _transformers_available and _pil_available
+        return _is_torch_available() and _is_transformers_available() and _is_pil_available()
 
     @staticmethod
     def missing_packages() -> List[str]:
         missing = []
-        if not _torch_available:          missing.append('torch')
-        if not _transformers_available:   missing.append('transformers>=4.50')
-        if not _pil_available:            missing.append('Pillow')
+        if not _is_torch_available():          missing.append('torch')
+        if not _is_transformers_available():   missing.append('transformers>=4.50')
+        if not _is_pil_available():            missing.append('Pillow')
         return missing
 
     def _load(self) -> bool:
@@ -581,7 +600,7 @@ class _Qwen3VLBackend(OCRBackend):
             self._device = device
             vram_gb = _get_vram_gb()
             threshold = self.MODEL_SIZE_B * 3.5
-            use_4bit = (_bnb_available and _accelerate_available
+            use_4bit = (_is_bnb_available() and _is_accelerate_available()
                         and device == 'cuda' and vram_gb < threshold)
             logger.info('Loading %s on %s (4-bit=%s, VRAM=%.1f GB, threshold=%.0f GB) ...',
                         self.MODEL_SUBDIR, device, use_4bit, vram_gb, threshold)
@@ -614,7 +633,8 @@ class _Qwen3VLBackend(OCRBackend):
             return_dict=True,
             return_tensors='pt',
         ).to(self._device)
-        with _torch.no_grad():
+        torch = _get_torch()
+        with torch.no_grad():
             ids = self._model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
         response = self._processor.batch_decode(
             ids[:, inputs['input_ids'].shape[1]:], skip_special_tokens=True
@@ -684,16 +704,16 @@ class InternVL3Backend(OCRBackend):
 
     @staticmethod
     def is_available() -> bool:
-        return (_torch_available and _transformers_available
-                and _pil_available and _sentencepiece_available)
+        return (_is_torch_available() and _is_transformers_available()
+                and _is_pil_available() and _has_package("sentencepiece"))
 
     @staticmethod
     def missing_packages() -> List[str]:
         missing = []
-        if not _torch_available:            missing.append('torch')
-        if not _transformers_available:     missing.append('transformers>=4.50')
-        if not _pil_available:              missing.append('Pillow')
-        if not _sentencepiece_available:    missing.append('sentencepiece')
+        if not _is_torch_available():            missing.append('torch')
+        if not _is_transformers_available():     missing.append('transformers>=4.50')
+        if not _is_pil_available():              missing.append('Pillow')
+        if not _has_package("sentencepiece"):    missing.append('sentencepiece')
         return missing
 
     def _load(self) -> bool:
@@ -715,9 +735,10 @@ class InternVL3Backend(OCRBackend):
             # Limit tiles to prevent OOM on 6 GB GPU (default 12 tiles → OOM)
             if hasattr(self._processor, 'image_processor'):
                 self._processor.image_processor.max_patches = 2
+            torch = _get_torch()
             self._model = AutoModelForImageTextToText.from_pretrained(
                 str(model_dir),
-                torch_dtype=_torch.bfloat16,
+                torch_dtype=torch.bfloat16,
                 device_map=device,
             ).eval()
             logger.info('InternVL3-2B loaded in %.1fs', time.time() - t0)
@@ -739,8 +760,9 @@ class InternVL3Backend(OCRBackend):
             tokenize=True,
             return_dict=True,
             return_tensors='pt',
-        ).to(self._device, dtype=_torch.bfloat16)
-        with _torch.no_grad():
+        ).to(self._device, dtype=_get_torch().bfloat16)
+        torch = _get_torch()
+        with torch.no_grad():
             ids = self._model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
         response = self._processor.decode(
             ids[0, inputs['input_ids'].shape[1]:], skip_special_tokens=True
@@ -831,7 +853,7 @@ class _PPOCRv5Backend(OCRBackend):
 
     @staticmethod
     def missing_packages() -> List[str]:
-        return [] if _ort_available else ['onnxruntime']
+        return [] if _is_ort_available() else ['onnxruntime']
 
     # ── lazy load ────────────────────────────────────────────────────────────
 
@@ -843,7 +865,7 @@ class _PPOCRv5Backend(OCRBackend):
         if self._rec_sess is not None:
             return True
         self._status(f"Loading PPOCRv5-{self._VARIANT}...")
-        if not _ort_available:
+        if not _is_ort_available():
             logger.error('PPOCRv5: onnxruntime not installed.')
             return False
 
@@ -856,14 +878,15 @@ class _PPOCRv5Backend(OCRBackend):
             return False
 
         # Provider: try CUDA → fallback CPU
+        ort = _get_ort()
         providers = []
-        if 'CUDAExecutionProvider' in _ort.get_available_providers():
+        if 'CUDAExecutionProvider' in ort.get_available_providers():
             providers = ['CUDAExecutionProvider', 'CPUExecutionProvider']
         else:
             providers = ['CPUExecutionProvider']
 
         try:
-            self._det_sess = _ort.InferenceSession(
+            self._det_sess = ort.InferenceSession(
                 str(self._det_onnx_path()), providers=providers)
             # Verify CUDA actually works with a tiny dummy forward pass
             dummy = np.zeros((1, 3, _PPOCR_DET_ALIGN, _PPOCR_DET_ALIGN), dtype=np.float32)
@@ -874,7 +897,7 @@ class _PPOCRv5Backend(OCRBackend):
             # CUDA provider present but GPU incompatible (e.g. Pascal / CC<7.0)
             providers = ['CPUExecutionProvider']
             try:
-                self._det_sess = _ort.InferenceSession(
+                self._det_sess = ort.InferenceSession(
                     str(self._det_onnx_path()), providers=providers)
                 self._providers = providers
                 logger.info('PPOCRv5-%s: det session on CPU (CUDA fallback)', self._VARIANT)
@@ -883,7 +906,7 @@ class _PPOCRv5Backend(OCRBackend):
                 return False
 
         try:
-            self._rec_sess = _ort.InferenceSession(
+            self._rec_sess = ort.InferenceSession(
                 str(self._rec_onnx_path()), providers=self._providers)
             logger.info('PPOCRv5-%s: rec session on %s', self._VARIANT, self._providers[0])
         except Exception as exc:
@@ -1121,11 +1144,11 @@ class PPOCRv5MobileBackend(_PPOCRv5Backend):
 
     @staticmethod
     def is_available() -> bool:
-        return _ort_available and PPOCRv5MobileBackend._models_exist()
+        return _is_ort_available() and PPOCRv5MobileBackend._models_exist()
 
     @staticmethod
     def missing_packages() -> List[str]:
-        return [] if _ort_available else ['onnxruntime']
+        return [] if _is_ort_available() else ['onnxruntime']
 
 
 class PPOCRv5ServerBackend(_PPOCRv5Backend):
@@ -1135,11 +1158,11 @@ class PPOCRv5ServerBackend(_PPOCRv5Backend):
 
     @staticmethod
     def is_available() -> bool:
-        return _ort_available and PPOCRv5ServerBackend._models_exist()
+        return _is_ort_available() and PPOCRv5ServerBackend._models_exist()
 
     @staticmethod
     def missing_packages() -> List[str]:
-        return [] if _ort_available else ['onnxruntime']
+        return [] if _is_ort_available() else ['onnxruntime']
 
 
 # ---------------------------------------------------------------------------

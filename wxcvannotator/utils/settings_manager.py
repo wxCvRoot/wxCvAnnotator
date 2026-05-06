@@ -16,7 +16,7 @@ class SettingsManager:
         "last_folder": "",
         "embed_base64": False, # Changed from 'false' to 'False' to match Python boolean
         "canvas_bg_color": "#808080",
-        "language": "zh_TW",
+        "language": "en",
         "recent_folders": [],
         "annotator_name": "",
         "annotator_quality": 100.0,
@@ -27,7 +27,7 @@ class SettingsManager:
         "ai_auto_simplify_polygon": True,
         "ai_denoise_mask": True,
         "ai_polygon_tolerance": 0.004,
-        "enable_attribute_panel": False,
+        "enable_attribute_panel": True,
         "default_flags": ["occluded", "truncated", "difficult"]
     }
 

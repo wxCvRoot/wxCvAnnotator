@@ -14,22 +14,51 @@ import os
 import cv2
 import traceback
 
-try:
-    import onnxruntime as ort
-except ImportError:
-    ort = None
+import importlib.util
 
-try:
-    import skimage.measure as _skimage_measure
-except ImportError:
-    _skimage_measure = None
+def _has_package(name: str) -> bool:
+    try:
+        return importlib.util.find_spec(name) is not None
+    except (ImportError, ValueError):
+        return False
 
-try:
-    import osam.apis as _osam_apis
-    import osam.types as _osam_types
-except ImportError:
-    _osam_apis = None
-    _osam_types = None
+# Heavy imports (skimage, onnxruntime, osam) are moved inside methods to enable Lazy Loading
+_skimage_measure = None
+ort = None
+_osam_apis = None
+_osam_types = None
+
+def _ensure_skimage():
+    global _skimage_measure
+    if _skimage_measure is None:
+        try:
+            import skimage.measure as _m
+            _skimage_measure = _m
+        except ImportError:
+            pass
+    return _skimage_measure
+
+def _ensure_onnxruntime():
+    global ort
+    if ort is None:
+        try:
+            import onnxruntime as _ort
+            ort = _ort
+        except ImportError:
+            pass
+    return ort
+
+def _ensure_osam():
+    global _osam_apis, _osam_types
+    if _osam_apis is None:
+        try:
+            import osam.apis as _apis
+            import osam.types as _types
+            _osam_apis = _apis
+            _osam_types = _types
+        except ImportError:
+            pass
+    return _osam_apis
 
 class AIService:
     """AI Inference Service Wrapper with multi-family support (SAM, SAM2, EfficientSAM)"""
@@ -37,7 +66,7 @@ class AIService:
     @staticmethod
     def is_available() -> bool:
         """Check if AI backend (onnxruntime) is available in the environment"""
-        return ort is not None
+        return _has_package("onnxruntime")
     
     # Model Registry (Public URLs from shubham0204 and Acly)
     MODEL_REGISTRY = {
@@ -207,7 +236,7 @@ class AIService:
 
         # osam family: managed by osam package (auto-downloads to ~/.cache/osam/)
         if self.current_family == "osam":
-            if _osam_apis is None:
+            if _ensure_osam() is None:
                 print("❌ osam not installed. Run: pip install osam")
                 return False
             osam_name = model_info["osam_model_name"]
@@ -286,7 +315,7 @@ class AIService:
 
     def _load_model_parts(self, model_info: Dict) -> bool:
         """Initialize ONNX sessions"""
-        if ort is None:
+        if _ensure_onnxruntime() is None:
             print("❌ onnxruntime not found. Cannot load models.")
             return False
             
@@ -733,11 +762,12 @@ class AIService:
         projected = self._project_mask(mask, denoise=denoise)
         h_orig, w_orig = self.original_size
 
-        if _skimage_measure is not None:
+        _sk = _ensure_skimage()
+        if _sk is not None:
             # --- skimage path (preferred, matches LabelMe exactly) ---
             bool_mask = projected > 0
             # pad_width=1 ensures the contour can be traced at mask edges
-            raw_contours = _skimage_measure.find_contours(np.pad(bool_mask, pad_width=1))
+            raw_contours = _sk.find_contours(np.pad(bool_mask, pad_width=1))
             if not raw_contours:
                 return []
             # Pick contour with longest perimeter (most points → largest object)
@@ -745,7 +775,7 @@ class AIService:
                           key=lambda c: float(np.sum(np.linalg.norm(np.diff(c, axis=0), axis=1))))
             # Adaptive RDP tolerance — based on contour's own extent (not image size)
             tol = np.ptp(contour, axis=0).max() * tolerance
-            polygon = _skimage_measure.approximate_polygon(contour, tolerance=tol)
+            polygon = _sk.approximate_polygon(contour, tolerance=tol)
             # Clip back to original mask bounds (handles pad offset)
             polygon = np.clip(polygon, (0, 0), (h_orig - 1, w_orig - 1))
             polygon = polygon[:-1]  # remove duplicate closing point
