@@ -1678,3 +1678,23 @@ msgstr "평활화 (ε):"
 
 msgid "Annotation: #{id}  “{label}”  [{type}]"
 msgstr "주석: #{id}  “{label}”  [{type}]"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"정말로 영구적으로 삭제하시겠습니까:\n"
+"  • {}\n"
+"이 작업은 취소할 수 없습니다."
+
+msgid "Confirm Delete Image"
+msgstr "이미지 삭제 확인"
+
+msgid "Delete Image and Annotation"
+msgstr "이미지 및 어노테이션 삭제"
+
+msgid "Deleted image: {}"
+msgstr "삭제된 이미지: {}"
+
+msgid "Failed to delete file: {}"
+msgstr "파일 삭제 실패: {}"

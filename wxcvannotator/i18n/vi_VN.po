@@ -1680,3 +1680,23 @@ msgstr ""
 
 msgid "Smooth (ε):"
 msgstr "Làm mịn (ε):"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"Bạn có chắc chắn muốn xóa vĩnh viễn:\n"
+"  • {}\n"
+"Hành động này không thể hoàn tác."
+
+msgid "Confirm Delete Image"
+msgstr "Xác nhận xóa hình ảnh"
+
+msgid "Delete Image and Annotation"
+msgstr "Xóa hình ảnh và chú thích"
+
+msgid "Deleted image: {}"
+msgstr "Đã xóa hình ảnh: {}"
+
+msgid "Failed to delete file: {}"
+msgstr "Không xóa được tệp: {}"

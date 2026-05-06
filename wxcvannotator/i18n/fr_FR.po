@@ -1706,3 +1706,23 @@ msgstr ""
 
 msgid "Smooth (ε):"
 msgstr "Lisse (ε) :"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer définitivement :\n"
+"  • {}\n"
+"Cette action est irréversible."
+
+msgid "Confirm Delete Image"
+msgstr "Confirmer la suppression de l'image"
+
+msgid "Delete Image and Annotation"
+msgstr "Supprimer l'image et l'annotation"
+
+msgid "Deleted image: {}"
+msgstr "Image supprimée : {}"
+
+msgid "Failed to delete file: {}"
+msgstr "Échec de la suppression du fichier : {}"

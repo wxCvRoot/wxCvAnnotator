@@ -1679,3 +1679,23 @@ msgstr "平滑化 (ε):"
 
 msgid "Annotation: #{id}  “{label}”  [{type}]"
 msgstr "注釈: #{id}  “{label}”  [{type}]"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"本当に永久に削除しますか：\n"
+"  • {}\n"
+"この操作は取り消せません。"
+
+msgid "Confirm Delete Image"
+msgstr "画像の削除を確認"
+
+msgid "Delete Image and Annotation"
+msgstr "画像とアノテーションを削除"
+
+msgid "Deleted image: {}"
+msgstr "画像を削除しました：{}"
+
+msgid "Failed to delete file: {}"
+msgstr "ファイルの削除に失敗しました：{}"

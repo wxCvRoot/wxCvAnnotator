@@ -1,19 +1,31 @@
 # Changelog
 
-> **最後更新：2026-04-15** — OCR lazy init, --model-path CLI
+> **最後更新：2026-05-06** — Delete Image and Annotation, i18n 100%
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.1.3] - 2026-05-06
 
 ### Added
-- **`--model-path PATH` CLI parameter** (`wxcvannotator/main.py`, `main_window.py`): session-only override for the AI/OCR model weights directory. Passed to `SettingsManager` as `ai_model_path` with `save=False`, so it does not modify the saved settings. Intended for deployment scenarios where models are stored on a NAS or shared drive.
+- **Delete Image and Annotation**: new right-click option in the file list removes both the image file and its annotation JSON in one step.
+
+### Changed
+- Faster application startup: OCR and AI backends now initialize lazily on first use instead of at launch.
+- i18n: 17 languages at 100% translation coverage.
+
+---
+
+## [0.1.2] - 2026-04-15
+
+### Added
+- **Shape Refinement dialogs**: right-click an annotation to access morphological refinement (erosion/dilation/opening/closing) and Mask ↔ Polygon type conversion.
+- **`--model-path PATH` CLI parameter**: session-only override for the AI/OCR model weights directory; does not persist to saved settings.
 
 ### Fixed
-- **OCR lazy initialization** (`main_window.py`): `_init_ocr_service()` was called unconditionally during `__init__`, triggering top-level `import torch` / `import transformers` inside `ocr_service.py` and causing several seconds of startup delay. Fixed by setting `self.ocr_service = None` at init time and initializing lazily on first OCR use (`_on_transcribe_annotation`, `_on_ocr_full_image`, `_on_ocr_backend_changed`).
+- **OCR lazy initialization**: moved OCR service init to first use, eliminating several seconds of startup delay caused by eager `import torch` / `import transformers`.
 
 ---
 

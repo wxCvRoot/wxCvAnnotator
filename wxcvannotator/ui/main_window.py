@@ -2259,6 +2259,9 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         del_item = menu.Append(wx.ID_ANY, _("Delete Annotation File"))
         self.Bind(wx.EVT_MENU, lambda evt, idx=item_index: self._on_delete_annotation_file(idx), del_item)
 
+        del_img_item = menu.Append(wx.ID_ANY, _("Delete Image and Annotation"))
+        self.Bind(wx.EVT_MENU, lambda evt, idx=item_index: self._on_delete_image_and_annotation(idx), del_img_item)
+
         self.PopupMenu(menu)
         menu.Destroy()
 
@@ -2324,6 +2327,63 @@ class WxCvAnnotatorMainWindow(wx.Frame):
         except Exception as e:
             print(f"❌ Failed to delete annotation file: {e}")
             wx.MessageBox(_("Failed to delete annotation file: {}").format(e), _("Error"), wx.OK | wx.ICON_ERROR)
+
+    def _on_delete_image_and_annotation(self, item_index: int):
+        """刪除影像檔及其標註 JSON，並從清單中移除"""
+        if item_index < 0 or item_index >= len(self.image_files):
+            return
+
+        image_path = Path(self.image_files[item_index])
+        json_path = image_path.with_suffix('.json')
+
+        files_to_delete = [image_path.name]
+        if json_path.exists():
+            files_to_delete.append(json_path.name)
+        files_str = "\n  • ".join(files_to_delete)
+
+        confirm = wx.MessageBox(
+            _("Are you sure you want to permanently delete:\n  • {}\nThis action cannot be undone.").format(files_str),
+            _("Confirm Delete Image"),
+            wx.YES_NO | wx.NO_DEFAULT | wx.ICON_WARNING
+        )
+        if confirm != wx.YES:
+            return
+
+        try:
+            if json_path.exists():
+                os.remove(json_path)
+            os.remove(image_path)
+            print(f"\U0001f5d1️ Deleted image: {image_path}")
+        except Exception as e:
+            wx.MessageBox(_("Failed to delete file: {}").format(e), _("Error"), wx.OK | wx.ICON_ERROR)
+            return
+
+        self.image_files.pop(item_index)
+        remaining = len(self.image_files)
+
+        if remaining == 0:
+            self.current_image_index = 0
+            self.current_image_path = None
+            if self.image_display_panel:
+                self.image_display_panel.get_annotation_manager().clear_all()
+                self.image_display_panel.select_annotation(None)
+                self.image_display_panel.sync_overlays()
+            self._update_annotation_list()
+            self.file_list.DeleteAllItems()
+            title = "Annotation Tool" if self._no_help else "wxCvAnnotator"
+            self.SetTitle(title)
+            self.status_bar.SetStatusText("", 4)
+            self._update_navigation_buttons()
+        elif item_index == self.current_image_index:
+            self.current_image_index = min(item_index, remaining - 1)
+            self._load_current_image()
+        elif item_index < self.current_image_index:
+            self.current_image_index -= 1
+            self._update_file_list(force_rebuild=True)
+        else:
+            self._update_file_list(force_rebuild=True)
+
+        self._update_status(_("Deleted image: {}").format(image_path.name))
 
     def _set_image_status(self, item_index, status):
         """設置圖片標註狀態並保存"""

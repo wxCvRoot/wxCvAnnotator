@@ -1688,3 +1688,23 @@ msgstr ""
 
 msgid "Smooth (ε):"
 msgstr "صاف (ε):"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"آیا مطمئن هستید که می‌خواهید برای همیشه حذف کنید:\n"
+"  • {}\n"
+"این عمل قابل بازگشت نیست."
+
+msgid "Confirm Delete Image"
+msgstr "تأیید حذف تصویر"
+
+msgid "Delete Image and Annotation"
+msgstr "حذف تصویر و یادداشت"
+
+msgid "Deleted image: {}"
+msgstr "تصویر حذف شد: {}"
+
+msgid "Failed to delete file: {}"
+msgstr "حذف فایل ناموفق بود: {}"

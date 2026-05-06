@@ -1668,3 +1668,23 @@ msgstr "平滑度 (ε)："
 
 msgid "Annotation: #{id}  “{label}”  [{type}]"
 msgstr "标注：#{id}  “{label}”  [{type}]"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"您确定要永久删除：\n"
+"  • {}\n"
+"此操作无法撤销。"
+
+msgid "Confirm Delete Image"
+msgstr "确认删除图片"
+
+msgid "Delete Image and Annotation"
+msgstr "删除图片与标注"
+
+msgid "Deleted image: {}"
+msgstr "已删除图片：{}"
+
+msgid "Failed to delete file: {}"
+msgstr "删除文件失败：{}"

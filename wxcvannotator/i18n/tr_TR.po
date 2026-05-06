@@ -1692,3 +1692,23 @@ msgstr ""
 
 msgid "Smooth (ε):"
 msgstr "Pürüzsüz (ε):"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"Kalıcı olarak silmek istediğinizden emin misiniz:\n"
+"  • {}\n"
+"Bu işlem geri alınamaz."
+
+msgid "Confirm Delete Image"
+msgstr "Görüntü Silmeyi Onayla"
+
+msgid "Delete Image and Annotation"
+msgstr "Görüntüyü ve Açıklamayı Sil"
+
+msgid "Deleted image: {}"
+msgstr "Görüntü silindi: {}"
+
+msgid "Failed to delete file: {}"
+msgstr "Dosya silinemedi: {}"

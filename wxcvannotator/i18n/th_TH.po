@@ -1680,3 +1680,23 @@ msgstr ""
 
 msgid "Smooth (ε):"
 msgstr "เรียบ (ε):"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"คุณแน่ใจหรือไม่ว่าต้องการลบอย่างถาวร:\n"
+"  • {}\n"
+"การดำเนินการนี้ไม่สามารถย้อนกลับได้"
+
+msgid "Confirm Delete Image"
+msgstr "ยืนยันการลบรูปภาพ"
+
+msgid "Delete Image and Annotation"
+msgstr "ลบรูปภาพและคำอธิบายประกอบ"
+
+msgid "Deleted image: {}"
+msgstr "ลบรูปภาพแล้ว: {}"
+
+msgid "Failed to delete file: {}"
+msgstr "ลบไฟล์ไม่สำเร็จ: {}"

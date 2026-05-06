@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2026-04-16 13:17\n"
+"POT-Creation-Date: 2026-05-06 09:18\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -151,6 +151,11 @@ msgstr ""
 msgid "Are you sure you want to delete the selected annotation?"
 msgstr ""
 
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+
 msgid "Attribute Panel"
 msgstr ""
 
@@ -250,6 +255,9 @@ msgstr ""
 msgid "Confirm Delete"
 msgstr ""
 
+msgid "Confirm Delete Image"
+msgstr ""
+
 msgid "Confirm Deletion"
 msgstr ""
 
@@ -347,6 +355,9 @@ msgstr ""
 msgid "Delete Annotation File"
 msgstr ""
 
+msgid "Delete Image and Annotation"
+msgstr ""
+
 msgid "Delete Object"
 msgstr ""
 
@@ -357,6 +368,9 @@ msgid "Delete category"
 msgstr ""
 
 msgid "Deleted annotation file for: {}"
+msgstr ""
+
+msgid "Deleted image: {}"
 msgstr ""
 
 msgid "Denoise Mask (Filter small fragments)"
@@ -456,6 +470,9 @@ msgid "Failed to delete annotation file: {}"
 msgstr ""
 
 msgid "Failed to delete annotation: {}"
+msgstr ""
+
+msgid "Failed to delete file: {}"
 msgstr ""
 
 msgid "Failed to edit annotation: {}"

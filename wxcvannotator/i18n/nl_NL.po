@@ -1700,3 +1700,23 @@ msgstr ""
 
 msgid "Smooth (ε):"
 msgstr "Vloeiend (ε):"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+msgstr ""
+"Weet u zeker dat u definitief wilt verwijderen:\n"
+"  • {}\n"
+"Deze actie kan niet ongedaan worden gemaakt."
+
+msgid "Confirm Delete Image"
+msgstr "Verwijder afbeelding bevestigen"
+
+msgid "Delete Image and Annotation"
+msgstr "Afbeelding en annotatie verwijderen"
+
+msgid "Deleted image: {}"
+msgstr "Afbeelding verwijderd: {}"
+
+msgid "Failed to delete file: {}"
+msgstr "Bestand verwijderen mislukt: {}"

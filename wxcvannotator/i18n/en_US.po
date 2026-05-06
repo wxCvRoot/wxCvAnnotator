@@ -1572,108 +1572,129 @@ msgid "Show in Explorer"
 msgstr "Show in Explorer"
 
 msgid "Annotation updated"
-msgstr ""
+msgstr "Annotation updated"
 
 msgid "Annotations hidden"
-msgstr ""
+msgstr "Annotations hidden"
 
 msgid "Annotations shown"
-msgstr ""
+msgstr "Annotations shown"
 
 msgid "Convert Mask \\u2192 Polygon"
-msgstr ""
+msgstr "Convert Mask \\u2192 Polygon"
 
 msgid "Convert Mask \\u2192 Polygon..."
-msgstr ""
+msgstr "Convert Mask \\u2192 Polygon..."
 
 msgid "Holes detected: {n}  \\u2192  Bridge technique applied"
-msgstr ""
+msgstr "Holes detected: {n}  \\u2192  Bridge technique applied"
 
 msgid "Image: {w} \\u00d7 {h}"
-msgstr ""
+msgstr "Image: {w} \\u00d7 {h}"
 
 msgid "Iterations:"
-msgstr ""
+msgstr "Iterations:"
 
 msgid "Kernel size:"
-msgstr ""
+msgstr "Kernel size:"
 
 msgid "No image loaded."
-msgstr ""
+msgstr "No image loaded."
 
 msgid "Operation"
-msgstr ""
+msgstr "Operation"
 
 msgid "Preview"
-msgstr ""
+msgstr "Preview"
 
 msgid "Refine Shape"
-msgstr ""
+msgstr "Refine Shape"
 
 msgid "Refine Shape..."
-msgstr ""
+msgstr "Refine Shape..."
 
 msgid "Smooth (\\u03b5):"
-msgstr ""
+msgstr "Smooth (\\u03b5):"
 
 msgid "Toggle Annotations"
-msgstr ""
+msgstr "Toggle Annotations"
 
 msgid "px"
-msgstr ""
+msgstr "px"
 
 msgid "px  (0 = keep all)"
-msgstr ""
+msgstr "px  (0 = keep all)"
 
 msgid "(overlay transparency)"
-msgstr ""
+msgstr "(overlay transparency)"
 
 msgid "Convert Polygon \\u2192 Mask"
-msgstr ""
+msgstr "Convert Polygon \\u2192 Mask"
 
 msgid "Convert Polygon \\u2192 Mask..."
-msgstr ""
+msgstr "Convert Polygon \\u2192 Mask..."
 
 msgid "Image: {w} \\u00d7 {h}  |  Points: {n}"
-msgstr ""
+msgstr "Image: {w} \\u00d7 {h}  |  Points: {n}"
 
 msgid "Mask alpha:"
-msgstr ""
+msgstr "Mask alpha:"
 
 msgid "Annotation: #{id}  “{label}”  [{type}]"
-msgstr ""
+msgstr "Annotation: #{id}  “{label}”  [{type}]"
 
 msgid "Closing"
-msgstr ""
+msgstr "Closing"
 
 msgid "Convert Mask → Polygon"
-msgstr ""
+msgstr "Convert Mask → Polygon"
 
 msgid "Convert Polygon → Mask"
-msgstr ""
+msgstr "Convert Polygon → Mask"
 
 msgid "Dilation"
-msgstr ""
+msgstr "Dilation"
 
 msgid "Erosion"
-msgstr ""
+msgstr "Erosion"
 
 msgid "Holes detected: {n}  →  Bridge technique applied"
-msgstr ""
+msgstr "Holes detected: {n}  →  Bridge technique applied"
 
 msgid "Image: {w} × {h}"
-msgstr ""
+msgstr "Image: {w} × {h}"
 
 msgid "Image: {w} × {h}  |  Points: {n}"
-msgstr ""
+msgstr "Image: {w} × {h}  |  Points: {n}"
 
 msgid "Opening"
-msgstr ""
+msgstr "Opening"
 
 msgid ""
 "Operation resulted in an empty shape.\\nTry reducing kernel size or "
 "iterations."
 msgstr ""
+"Operation resulted in an empty shape.\\nTry reducing kernel size or "
+"iterations."
 
 msgid "Smooth (ε):"
+msgstr "Smooth (ε):"
+
+msgid ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
 msgstr ""
+"Are you sure you want to permanently delete:\\n  • {}\\nThis action cannot "
+"be undone."
+
+msgid "Confirm Delete Image"
+msgstr "Confirm Delete Image"
+
+msgid "Delete Image and Annotation"
+msgstr "Delete Image and Annotation"
+
+msgid "Deleted image: {}"
+msgstr "Deleted image: {}"
+
+msgid "Failed to delete file: {}"
+msgstr "Failed to delete file: {}"
